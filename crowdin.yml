@@ -1,0 +1,3 @@
+files:
+  - source: en-GB/Term 1/**/*.md
+    translation: '%locale%/Term 1/**/%original_file_name%'
