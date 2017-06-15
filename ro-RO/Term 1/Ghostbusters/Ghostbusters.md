@@ -1,199 +1,192 @@
----
-title: Ghostbusters
-level: Scratch 1
-language: ro-RO
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*.*"]
-...
+* * *
 
-## Note: { .challenge .pdf-hidden }
+title: Ghostbusters level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
+
+## Note: {.challenge.pdf-hidden}
+
 The 'Balloons' project has been moved to the [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) section.
 
-# Introducere { .intro }
+# Introduction {.intro}
 
-Vei crea jocul ”Vânătorul de fantome”!
- 
+You are going to make a ghost-catching game!
+
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
-  <img src="ghost-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
+    <img src="ghost-final.png">
 </div>
 
-# Pasul 1: Animează fantoma { .activity }
+# Step 1: Animating a ghost {.activity}
 
-## Lista de Activități { .check }
+## Activity Checklist {.check}
 
-+ Deschide un proiect nou în Scratch și șterge sprite-ul pisică pentru a avea un proiect gol.
- 
-+ Adaugă un sprite nou fantoma și o scenă adecvată.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-	![screenshot](ghost-ghost.png)
++ Add in a new ghost sprite, and a suitable stage backdrop.
+    
+    ![screenshot](ghost-ghost.png)
 
-+ Adaugă codul de mai jos pentru fantomă. Dacă l-ai adăugat corect, fantoma ar trebui să apară și dispară tot timpul:
++ Add this code to your ghost, so that it repeatedly appears and disappears:
+    
+    ```blocks
+    when flag clicked
+    forever
+    hide
+    wait (1) secs
+    show
+    wait (1) secs
+    end
+```
 
-	```blocks
-		when flag clicked
-		forever
-			hide
-			wait (1) secs
-			show
-			wait (1) secs
-		end
-	```
++ Test out your ghost's code, by clicking the green flag.
 
-+ Testează-ți codul prin apăsarea steagului verde.
+## Save your project {.save}
 
-## Salvează proiectul { .save }
+# Step 2: Random ghosts {.activity}
 
+Your ghost is really easy to catch, because it doesn't move!
 
-# Pasul 2: Fantome la întâmplare { .activity }
+## Activity Checklist {.check}
 
-Fantoma ta este foarte ușor de prins pentru că nu se mișcă!
++ Instead of staying in the same position, you can let Scratch choose random x and y coordinates instead. Add a `go to` {.blockmotion} block to your ghost's code, so that it looks like this:
+    
+    ```blocks
+    when flag clicked
+    forever
+        hide
+        wait (1) secs
+        go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+        show
+        wait (1) secs
+    end
+```
 
-## Lista de Activități { .check }
++ Test our your ghost again, and you should notice that it appears in a different place each time.
 
-+ În loc să stea în aceeași poziție, poți lăsa programul să aleagă la întâmplare coordonatele x și y. Adaugă un bloc `go to` {.blockmotion} la codul dedicat fantomei. Codul tău va arăta așa:
+## Save your project {.save}
 
-	```blocks
-		when flag clicked
-		forever
-			hide
-			wait (1) secs
-			go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
-			show
-			wait (1) secs
-		end
-	```
+## Challenge: More randomness {.challenge}
 
-+ Testează-ți fantoma din nou. Ar trebui să apară de fiecare dată în locuri diferite.
+Can you make your ghost `wait` {.blockcontrol} a random amount of time before appearing? Can you use the `set size` {.blocklooks} block to make your ghost a random size each time it appears?
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Și mai multe lucruri întâmplătoare {.challenge}
+# Step 3: Catching ghosts {.activity}
 
-Poți să controlezi fantoma să aștepte (`wait` {.blockcontrol}) o perioadă de timp aleatorie înainte de să reapară? Poți să utilizezi blocul `set size` {.blocklooks} pentru a modifica fantoma să aibe o altă dimensiune de fiecare data când apare?
+Let's allow the player to catch ghosts!
 
-## Salvează proiectul { .save }
+## Activity Checklist {.check}
 
-# Step 3: Să prindem fantomele { .activity }
++ To allow the player to catch a ghost, add this code:
+    
+    ```blocks
+    when this sprite clicked
+    hide
+```
 
-Haideți să le permitem celor care vor să se joace să prindă fantomele!
++ Test out your project. Can you catch ghosts as they appear? If you find it difficult to catch the ghosts, you can play the game in fullscreen mode by clicking this button:
+    
+    ![screenshot](ghost-fullscreen.png)
 
-## Lista de Activități { .check }
+## Challenge: Adding a sound {.challenge}
 
-+ Pentru a permite jucătorilor să prindă o fantomă, adaugă codul:
+Can you make a sound each time a ghost is caught?
 
-	```blocks
-		when this sprite clicked
-		hide
-	```
+## Save your project {.save}
 
-+ Testează-ți proiectul. Poți să prinzi fantomele când apar? Dacă e prea dificil să le prinzi, poți juca jocul pe tot ecranul apăsând pe acest buton:
+# Step 4: Adding a score {.activity.new-page}
 
-	![screenshot](ghost-fullscreen.png)
+Let's make things more interesting by keeping score.
 
-## Provocare: Adaugă sunet { .challenge }
-Poți să scoți un sunet de fiecare data când prinzi o fantomă?
+## Activity Checklist {.check}
 
-## Salvează proiectul { .save }
++ To keep the player's score, you need a place to put it. A **variable** is a place to store data that can change, like a score.
+    
+    To create a new variable, click on the 'Scripts' tab, select `Data` {.blockdata} and then click 'Make a Variable'.
+    
+    ![screenshot](ghost-score.png)
+    
+    Type 'score' as the name of the variable, make sure that it is available for all sprites, and click 'OK' to create it. You'll then see lots of code blocks that can be used with your `score` {.blockdata} variable.
+    
+    ![screenshot](ghost-variable.png)
+    
+    You'll also see the score in the top-left of the stage.
+    
+    ![screenshot](ghost-stage-score.png)
 
-# Pasul 4: Adaugă scorul { .activity .new-page }
++ When a new game is started (by clicking the flag), you should set the player's score to 0:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [0]
+```
 
-Haideți să complicăm un pic lucrurile prin adăugarea scorului. 
++ Whenever a ghost is caught, you need to add 1 to the player's score:
+    
+    ![screenshot](ghost-change-score.png)
 
-## Lista de activități { .check }
++ Run your program again and catch some ghosts. Does your score change?
 
-+ Pentru a ține scorul, trebuie să ai un loc unde să-l pui. O __variabilă__ este un loc unde poți păstra date care se schimbă, ca un scor. 
+## Save your project {.save}
 
-	Pentru a crea o nouă variabilă, apasă pe tab-ul 'Scripts', selectează `Data` {.blockdata} și apoi apasă pe 'Make a Variable'.
+# Step 5: Adding a timer {.activity}
 
-	![screenshot](ghost-score.png)
+You can make your game more interesting, by only giving your player 10 seconds to catch as many ghosts as possible.
 
-	Schimbă numele variabilei în 'score'. Fii sigur că variabila va apărea pentru toate sprite-urile, apoi apasă 'OK' ca să o creezi. Vei vedea o mulțime de blocuri de cod care se pot folosi cu variabila ta `score` {.blockdata}.
+## Activity Checklist {.check}
 
-	![screenshot](ghost-variable.png)
++ You can use another variable to store the remaining time left. Click on the stage, and create a new variable called 'time':
+    
+    ![screenshot](ghost-time.png)
 
-	Poți vedea scorul in colțul din stânga-sus al scenei. 
++ This is how the timer should work:
+    
+    + The timer should start at 10 seconds;
+    + The timer should count down every second;
+    + The game should stop when the timer gets to 0.
+    
+    Here's the code to do this, which you can add to your **stage**:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [10]
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]
+```
 
-	![screenshot](ghost-stage-score.png)
+This is how you add the `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} code:
 
-+ Când începi nou joc (apăsând pe steagul verde), trebuie să setezi scorul la 0:
+![screenshot](ghost-timer-help.png)
 
-	```blocks
-	when flag clicked
-	set [score v] to [0]
-	```
++ Drag your 'time' variable display to the right side of the stage. You can also right-click on the variable display and choose 'large readout' to change how the time is displayed.
+    
+    ![screenshot](ghost-readout.png)
 
-+ În momentul în care jucătorul a prins o fantomă, adaugă 1 la scor:
++ Ask a friend to test your game. How many points can they score? If your game is too easy, you can:
+    
+    + Give the player less time;
+    + Make the ghosts appear less often;
+    + Make the ghosts smaller.
+    
+    Test your game a few times until you're happy that it's the right level of difficulty.
 
-	![screenshot](ghost-change-score.png)
+## Save your project {.save}
 
-+ Pornește programul și prinde niște fantome. Se schimbă scorul? 
+## Challenge: More objects {.challenge}
 
-## Salvează proiectul { .save }
-
-# Step 5: Adaugă un cronometru { .activity }
-
-Jocul poate devein mai interesant dacă îi dai jucătorului 10 secunde să prindă cât mai multe fantome. 
-
-## Lista de activități { .check }
-
-+ Poți utiliza o altă variabilă pentru a păstra timpul rămas din joc. Click în scenă și adaugă o nouă variabilă numită 'time':
-
-	![screenshot](ghost-time.png)
-
-+ Cronometrul ar trebui să arate în felul următor:
-
-	+ Cronometrul trebuie să începă la 10 secunde;
-	+ Cronometrul trebuie să numere descrescător în fiecare secundă;
-	+ Jocul trebuie oprit când cronometrul ajunge la 0.
-
-	Codul de mai jos va face exact acest lucru. Îl poți adăuga la __scena__ ta:
-
-	```blocks
-		when flag clicked
-		set [time v] to [10]
-		repeat until <(time) = [0]>
-			wait (1) secs
-			change [time v] by (-1)
-		end
-		stop [all v]
-	```
-
-	Așa adaugi codul `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators}:
-
-	![screenshot](ghost-timer-help.png)
-
-+ Mută variabila 'time' să apară în partea dreaptă a scenei. Poți să faci click dreapta pe variabilă și să selectezi 'large readout' pentru a schimba cum apare timpul.
-
-	![screenshot](ghost-readout.png)
-
-+ Cere unui prieten să testeze jocul. Câte puncte a reușit să câștige? Dacă jocul ți se pare prea ușor, poți să faci următoarele:
-
-	+ Dă-i jucătorului mai puțin timp;
-	+ Fă fantomele să apară mai rar;
-	+ Fă fantomele mai mici.
-
-	Testează jocul de câteva ori până când ești mulțumit de nivelul de dificultate.
-
-## Salvează proiectul { .save }
-
-## Provocare: Mai multe obiecte {.challenge}
-Poți să adaugi mai multe obiecte în joc?
+Can you add in other objects to your game?
 
 ![screenshot](ghost-final.png)
 
-Gândește-te la obiectul pe care îl adaugi:
+You'll need to think about the objects you're adding. Think about:
 
-+ Cât de mare este?
-+ Va apărea de mai multe sau de mai puține ori decât fantoma?
-+ Cum va arăta / ce sunet va face când va fi prins?
-+ Câte puncte vei aduna (sau pierde) dacă îl prinzi?
++ How big is it?
++ Will it appear more or less often than the ghosts?
++ What will it look/sound like when it has been caught?
++ How many points will you score (or lose) for catching it?
 
-Dacă ai nevoie de ajutor să adaugi un obiect nou, poți să reutilizezi pașii de mai sus!
+If you need help adding another object, you can reuse the steps above!
 
-## Salvează proiectul { .save }
-
-## Community Contributed Translation { .challenge .pdf-hidden }
-
-This project was translated by Catalin Dragomir. Our amazing translation volunteers help us give children around the world the chance to learn to code.  You can help us reach more children by translating a Code Club project via [Github](https://github.com/CodeClub/curriculum_documentation/blob/master/contributing.md) or by getting in touch with us at hello@codeclubworld.
+## Save your project {.save}
