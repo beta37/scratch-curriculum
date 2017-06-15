@@ -1,192 +1,183 @@
----
-title: Lost in Space
-level: Scratch 1
-language: ro-RO
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*.*"]
-...
+* * *
 
-# Introducere { .intro }
+title: Lost in Space level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-Vei învăța cum să faci propria ta animație!
+# Introduction {.intro}
+
+You are going to learn how to program your own animation!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
-  <img src="space-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
+    <img src="space-final.png">
 </div>
 
-# Pasul 1: Animează o navetă spațială { .activity .new-page}
+# Step 1: Animating a spaceship {.activity.new-page}
 
-Să facem o navetă spațială care navighează spre Pământ!
+Let's make a spaceship that flies towards the Earth!
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Pornește un nou proiect Scratch și șterge sprite-ul pisică astfel încât proiectul tău să fie gol. Poți găsi editorul online de Scratch la <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Adaugă sprite-urile 'Spaceship' (naveta spațială) și 'Earth' (Pământ) pe scena ta. Ar trebui să adaugi și fundalul 'Stars' (stele) la scenă. Scena ta ar trebui să arate așa:
++ Add 'Spaceship' and 'Earth' sprites to your stage. You should also add the 'Stars' backdrop to your stage. This is how your stage should look:
+    
+    ![screenshot](space-sprites.png)
 
-	![screenshot](space-sprites.png)
++ Click on your new spaceship sprite, and click the 'Costumes' tab.
+    
+    ![screenshot](space-costume.png)
 
-+ Fă click pe noul tău sprite naveta spațială, apoi fă click pe tab-ul 'Costumes'.
++ Use the arrow tool to select the image. Then click on the circular rotate handle, and rotate the image until it is on its side.
+    
+    ![screenshot](space-rotate.png)
 
-	![screenshot](space-costume.png)
++ Add this code to your spaceship sprite:
+    
+    ![screenshot](space-animate.png)
+    
+    Change the numbers in the code blocks, so that the code is exactly the same as in the image above.
 
-+ Folosește unealta săgeată (arrow tool) pentru a selecta imaginea. Apoi fă click pe mânerul circular și rotește imaginea până ajunge în poziție orizontală.
++ If you click on the code blocks to run the code, you should see the spaceship speak, turn and move towards the centre of the stage.
+    
+    ![screenshot](space-animate-stage.png)
+    
+    The screen position `x:(0) y:(0)` {.blockmotion} is the centre of the stage. A position like `x:(-150) y:(-150)` {.blockmotion} is towards the bottom-left of the stage, and a position like `x:(150) y:(150)` {.blockmotion} is near the top-right.
+    
+    ![screenshot](space-xy.png)
+    
+    If you need to know the coordinates of a position on the stage, move the mouse to the position you want and make a note of the coordinates, which are displayed below the stage.
+    
+    ![screenshot](space-coordinates.png)
 
-	![screenshot](space-rotate.png)
++ Try out your animation, by clicking on the green flag just above the stage.
+    
+    ![screenshot](space-flag.png)
 
-+ Adaugă acest cod la sprite-ul tău naveta spațială:
+## Challenge: Improving your animation {.challenge}
 
-	![screenshot](space-animate.png)
+Can you change the numbers in your animation code, so that: + The spaceship moves until it touches the Earth? + The spaceship moves more slowly towards the Earth?
 
-	Schimbă numerele în blocurile de cod, astfel încât codul să fie exact ca în imaginea de deasupra.
-
-+ Dacă faci click pe blocurile de cod pentru a executa codul, ar trebui să vezi naveta spațială vorbind, întorcându-se și mișcându-se către centrul scenei.
-
-	![screenshot](space-animate-stage.png)
-
-	Poziția de pe ecran `x:(0) y:(0)` {.blockmotion} este centrul scenei. O poziție ca `x:(-150) y:(-150)` {.blockmotion} este spre partea din stânga-jos a scenei, iar o poziție ca `x:(150) y:(150)` {.blockmotion} este aproape de colțul din dreapta sus.
-
-	![screenshot](space-xy.png)
-
-	Dacă vrei să afli coordonatele unei poziții de pe scena, mută cursorul mouse-ului în poziția pe care o dorești și notează coordonatele, care sunt afișate sub scenă.
-
-	![screenshot](space-coordinates.png)
-
-+ Pornește animația, făcând click pe steagul verde situat chiar deasupra scenei.
-
-	![screenshot](space-flag.png)
-
-## Provocare: Îmbunătățește animația {.challenge}
-Poți modifica numerele în codul animației tale, astfel încât:
-+ naveta spațială se mișcă până atinge Pământul?
-+ naveta spațială se mișcă mai încet spre Pământ?
-
-Va trebui să modifici numerele în acest bloc de cod:
+You'll need to change the numbers in this block:
 
 ```blocks
-	glide (1) secs to x:(0) y:(0)
+    glide (1) secs to x:(0) y:(0)
 ```
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Pasul 2: Animați folosind bucle { .activity .new-page }
+# Step 2: Animating using loops {.activity.new-page}
 
-Un alt mod de a anima naveta spațială este prin a o instrui să se miște în pași mici, de multe ori.
+Another way of animating the spaceship is to tell it to move a small amount, lots of times.
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Șterge blocul `glide` {.blockmotion} din codul tău, făcând click dreapta pe bloc, iar apoi click pe 'delete'. De asemenea poți șterge cod trăgându-l afara din zona de script, înapoi în zona blocurilor de cod.
++ Delete the `glide` {.blockmotion} block from your code, by right-clicking on the block and clicking 'delete'. You can also delete code by dragging it off the script area, back into the code blocks area.
+    
+    ![screenshot](space-delete-glide.png)
 
-	![screenshot](space-delete-glide.png)
++ Once you've removed your code, add this code instead:
+    
+    ![screenshot](space-loop.png)
+    
+    The `repeat` {.blockcontrol} block is used to repeat something lots of times, and is also known as a **loop**.
 
-+ Odată ce ai șters codul, adaugă acest cod în locul lui:
++ If you click the flag to try out this new code, you'll see that it does pretty much the same thing as before.
 
-	![screenshot](space-loop.png)
++ You can add more code to your loop, to do interesting things. Add the `change color effect by 25` {.blocklooks} block into the loop (from the 'Looks' section), to repeatedly change the colour of the spaceship as it moves:
+    
+    ![screenshot](space-colour.png)
 
-	Blocul `repeat` {.blockcontrol} este folosit pentru a repeta o acțiune de multe ori și este cunoscut sub numele de __bucla__.
++ Click the flag to see your new animation.
+    
+    ![screenshot](space-colour-test.png)
 
-+ Dacă faci click pe steag pentru a încerca acest nou cod, vei observa că face aproximativ aceleași acțiuni ca înainte.
++ You can also make your spaceship get smaller as it moves towards the Earth.
+    
+    ![screenshot](space-size.png)
 
-+ Poți adauga mai mult cod în bucla ta, pentru a face lucruri interesante. Adaugă blocul `change color effect by 25` {.blocklooks} în buclă (din sectiunea 'Looks'), pentru a schimba culoarea navetei spațiale în mod repetat în timp ce se mișcă:
++ Test out your animation. What happens if you click the flag a second time? Does your spaceship start off the right size? Can you use this block to fix your animation:
+    
+    ```scratch
+    set size to (100) %
+```
 
-	![screenshot](space-colour.png)
+## Save your project {.save}
 
-+ Fă click pe steag pentru a vedea noua ta animație.
+# Step 3: Floating Monkey {.activity.new-page}
 
-	![screenshot](space-colour-test.png)
+Let's add monkey to your animation, who's lost in space!
 
-+ Poți și să faci naveta să se micșoreze în timp ce se mișcă spre Pământ.
+## Activity Checklist {.check}
 
-	![screenshot](space-size.png)
++ Start by adding in the monkey sprite from the library.
+    
+    ![screenshot](space-monkey.png)
 
-+ Testează animatia. Ce se întâmplă dacă faci click pe steag a doua oară? Naveta pornește cu dimensiunea corectă? Poți folosi acest bloc să corectezi animația:
++ If you click on your new monkey sprite and then click 'Costumes', you can edit how the monkey looks. Click the 'Ellipse' tool, and draw a white space helmet around the monkey's head.
+    
+    ![screenshot](space-monkey-edit.png)
 
-	```scratch
-	set size to (100) %
-	```
++ Now click 'Scripts', and add this code to the monkey, so that it spins slowly in a circle forever:
+    
+    ```blocks
+    when FLAG clicked
+    forever
+    turn right (1) degrees
+    end
+```
 
-## Salvează proiectul { .save }
+The `forever` {.blockcontrol} block is another loop, but this time one that never ends.
 
-# Pasul 3: Maimuța Plutitoare { .activity .new-page }
++ Click the flag to test your monkey. You'll have to click the stop button (next to the flag) to end this animation.
+    
+    ![screenshot](space-monkey-loop.png)
 
-Hai să adaugam o maimuta animației tale, care e pierduta în spatiu! 
+# Step 4: Bouncing Asteroids {.activity.new-page}
 
-## Lista de activități { .check }
+Let's add some floating space-rock to your animation.
 
-+ Începe prin a adăuga sprite-ul monkey (maimuța) din librărie.
+## Activity Checklist {.check}
 
-	![screenshot](space-monkey.png)
++ Add a 'rock' sprite to your animation.
+    
+    ![screenshot](space-rock-sprite.png)
 
-+ Dacă faci click pe noul 'sprite' maimuță și pe urmă pe 'Costumes'(costume), poți schimba cum arată maimuța. Apasă pe unealta 'Elipse' și desenează o cască spațiala albă în jurul capului maimuței.
++ Add this code to your rock, to make it bounce around the stage:
+    
+    ```scratch
+    when flag clicked
+    point towards [Earth v]
+    forever
+    move (2) steps
+    if on edge, bounce
+```
 
-	![screenshot](space-monkey-edit.png)
++ Click the flag to test your rock. Does it bounce around the stage?
 
-+ Acum fă click pe 'Scripts' și adaugă acest cod maimuței, astfel încât ea să se învârtă încet, în cerc, pentru todeauna :
+# Step 5: Shining Stars {.activity.new-page}
 
-	```blocks
-		when FLAG clicked
-		forever
-		    turn right (1) degrees
-		end
-	```
+Let's combine loops to make a shining star.
 
-	Blocul `forever` {.blockcontrol} este alta buclă, dar de data aceasta una care nu se termină.
+## Activity Checklist {.check}
 
-+ Fă click pe steag pentru a-ți testa maimuța. Va trebui să dai pe click pe butonul de stop (lângă steag) ca să oprești animația.
++ Add a 'star' sprite to your animation
+    
+    ![screenshot](space-star-sprite.png)
 
-	![screenshot](space-monkey-loop.png)
++ Add this code to your star:
+    
+    ![screenshot](space-star.png)
 
-# Pasul 4: Asteroizi Săltăreți { .activity .new-page }
++ Click the flag to test out this star animation. What does this code do? Well, the star is made slightly bigger 20 times, and then made slightly smaller 20 times, back to it's original size. These 2 loops are inside a `forever` {.blockcontrol} loop, so the animation keeps repeating.
 
-Hai să adăugăm niște roci spațiale plutitoare animației tale.
+## Save your project {.save}
 
-## Lista de activități { .check }
+## Challenge: Make your own animation {.challenge}
 
-+ Adaugă un sprite 'rock' (piatra) animației tale.
+Stop your space animation, and click 'File' and then 'New', to start a new project.
 
-	![screenshot](space-rock-sprite.png)
-
-+ Adaugă acest cod asteroidului tău ca să îl faci să salte (bounce) în jurul scenei:
-
-	```scratch
-	when flag clicked
-	point towards [Earth v]
-	forever
-		move (2) steps
-		if on edge, bounce
-	```
-
-+ Fă click pe steag să îți testezi asteroidul. Saltă în jurul scenei ?
-
-# Pasul 5: Stele strălucitoare { .activity .new-page }
-
-Hai să combinăm bucle ca să creem o stea strălucitoare.
-
-## Lista de activități { .check }
-
-+ Adaugă un sprite 'star' (stea) animației tale
-
-	![screenshot](space-star-sprite.png)
-
-+ Adaugă acest cod stelei tale:
-
-	![screenshot](space-star.png)
-
-+ Fă click pe steag să testezi această animație pentru stea. Ce face acest cod? Păi, această stea este mărită puțin de 20 de ori, și apoi este micșorată puțin de 20 de ori, înapoi la dimensiunea originală. Aceste 2 bucle sunt înăuntrul buclei `forever` {.blockcontrol}, astfel încât animația se tot repetă.
-
-## Salvează proiectul { .save }
-
-## Provocare: Creează animația ta {.challenge}
-Oprește animația spațială, și apoi fă click pe 'File' și pe urmă pe 'New', pentru a începe un nou proiect.
-
-Folosește ce ai învățat în acest proiect pentru a crea propria ta animație. Poate să fie orice îți place, dar încearcă să îți faci animația să corespundă contextului. Aici ai câteva exemple:
+Use what you've learnt in this project to make your own animation. It can be anything you like, but try to make your animation match the setting. Here are some examples:
 
 ![screenshot](space-egs.png)
 
-## Salvează proiectul { .save }
-
-## Community Contributed Translation { .challenge .pdf-hidden }
-
-This project was translated by Catalin Dragomir. Our amazing translation volunteers help us give children around the world the chance to learn to code.  You can help us reach more children by translating a Code Club project via [Github](https://github.com/CodeClub/curriculum_documentation/blob/master/contributing.md) or by getting in touch with us at hello@codeclubworld.
+## Save your project {.save}
