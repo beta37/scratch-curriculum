@@ -1,26 +1,28 @@
-﻿---
-title: 채팅 로봇 — Notes for Club Leaders
-language: ko-KR
-embeds: "*.png"
-...
+* * *
 
-#소개:
-이 프로젝트에선 아이들이 `만약` 조건을 사용해서 프로그램에서 결정을 내리게 만들 것입니다.
+title: ChatBot — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#소재
-이 프로젝트에는 Scratch 2 가 사용됩니다. Scratch 2는 [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on)에서 온라인으로 쓰거나 [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) 에서 다운 받아서 오프라인에서 사용할 수 있습니다.
+# Introduction:
 
-이 프로젝트의 완성본은 <a href="http://scratch.mit.edu/projects/26762091/#editor">online</a>에서 찾거나 이 프로젝트의 'Download Project Materials'링크를 클릭하셔서 받으실 수 있고 내용은:
+In this project, children will learn how to use 'if' statements to make decisions in their programs.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26762091/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + ChatBot.sb2
 
-#배움 목표
-+ 텍스트 넣기;
-+ 결정:
-	+ `만약 ... 라면` {.blockcontrol} 조건;
-	+ `만약 ... 라면 ... 아니면` {.blockcontrol} 조건.
+# Learning Objectives
 
-#도전과제
-+ "더 많은 질문" - 입력과 `대답` {.blocksensing} 블록에 대한 배움 통합시키기;
-+ "더 많은 결정" - 결정 사용하기;
-+ "나만의 채팅 로봇 만들기" - 이전에 배운 것과 새로 배운 것들을 통합시키기.
++ Text input;
++ Decisions: 
+    + `if ... then` {.blockcontrol} statements;
+    + `if ... then ... else` {.blockcontrol} statements.
+
+# Challenges
+
++ "More questions" - consolidating learning of input and the `answer` {.blocksensing} block;
++ "More decisions" - using decisions;
++ "Make your own chatbot" - consolidation of learning from this and past projects.
