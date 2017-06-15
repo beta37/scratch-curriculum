@@ -1,36 +1,39 @@
-﻿---
-title: 락 밴드 — 클럽 리더를 위한 노트
-language: ko-KR
-embeds: "*.png" 
-...
+* * *
 
-#소개:
-아이들은 프로젝트에 음향효과와 음악을 넣는 방법과 스프라이트 모양을 바꾸고 프로그램 하는 방법을 배울 것입니다.
+title: Rock Band — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#소재
-이 프로젝트에는 Scratch 2 가 사용됩니다. Scratch 2 는 [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) 에서 온라인으로 사용하거나 [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) 에서 다운받아 오프라인에서 사용할 수도 있습니다.
+# Introduction:
 
-Y이 프로젝트의 완성본은 <a href="http://scratch.mit.edu/projects/26741186/#editor">online</a> 에서 보거나  이 프로젝트의 'Download Project Materials' 링크를 클릭해서 다운로드 할수 있으며 다음을 포함하고 있습니다:
+In this project, children will learn how to add sound and music to their projects, as well as changing and programming sprite costumes.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26741186/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + RockBand.sb2
 
-#배움 목표
-+ 스프라이트;
-+ 모양;
-+ 코드 블록 연결;
-+ 이벤트;
-+ 음향효과와 음악.
+# Learning Objectives
 
-#도전과제
-+ "드럼 개선하기" - 스프라이트 소리 바꾸기와 이벤트 더하기;
-+ "가수 모양 바꾸기" - 스프라이트 모양 더하기와 조종하기;
-+ "내 밴드 만들기" - 배운 기술들을 응용하여 새로운 악기들 만들기.
++ Sprites;
++ Costumes;
++ Sequential code blocks;
++ Events;
++ Sound and music.
 
-#자주 묻는 질문들
-+ 아이들이 자신의 스프라이트를 만들 때 스프라이트가 클릭해서 모양을 바꿀 때 '뛰는 걸' 볼 수 있습니다. 이 문제는 모양들이 같은 곳에 중심이 설정되 있지 않기 때문입니다. 
+# Challenges
 
-	이 문제를 고치려면 _양쪽_ 스프라이트 다 '모양 중심 설정'을 눌러서 같은 위치에 중심이 잡혀 있도록 만들면 됩니다. 
++ "Improving your drum" - Changing sprite sounds and adding events;
++ "Changing your singer's costume" - adding and controlling sprite costumes;
++ "Make your own band" - using the skills learnt to create new instruments.
 
-	![screenshot](band-center.png)
+# Frequently Asked Questions
 
-+ 리눅스에선 스프라이트를 지울 때 오른쪽 클릭으로 지워지지 않을 수 있습니다. 이경우엔 shift키와 마우스 왼쪽 버튼을 누르고 있으면 스프라이트를 지울 수 있는 메뉴를 불러 올 것입니다.
++ When creating their own sprites, children may find that their sprite 'jumps' when it's clicked, as it changes costume. This is because the two costumes are't centered in the same place.
+    
+    To fix this, click 'Set costume center' on *both* sprites, and make sure they are centered at the same point in both costumes.
+    
+    ![screenshot](band-center.png)
+
++ On Linux, right-clicking to delete a sprite may not work. If this is the case, holding shift and left-clicking will bring up the menu to delete a sprite.
