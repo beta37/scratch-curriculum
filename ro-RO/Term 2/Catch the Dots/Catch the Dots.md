@@ -1,214 +1,216 @@
----
-title: Catch the Dots
-level: Scratch 2
-language: ro-RO
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*", "Project Resources/*"]
-beta: true
-...
+* * *
 
-# Introducere { .intro }
+title: Catch the Dots level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*", "Project Resources/*"] beta: true ...
 
-În acest proiect vei învăța cum să creezi un joc în care în care trebuie să potrivești punctele colorate cu partea corectă a controlerului.
+# Introduction {.intro}
+
+In this project you'll learn how to create a game, in which you have to match up coloured dots with the correct part of the controller.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/44942820/?autostart=false" frameborder="0"></iframe>
   <img src="dots-final.png">
 </div>
 
-# Pasul 1: Crează controlerul { .activity }
+# Step 1: Creating a controller {.activity}
 
-Haide să începem prin a crea controlerul care va fi folosit pentru a colecta punctele.
+Let's start by creating a controller, that will be used to collect dots.
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Începe un nou proiect Scratch și șterge sprite-ul pisică. Poți găsi editorul de Scratch online la <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Dacă liderul clubului ți-a dat un director numit 'Resurse', click pe 'Upload sprite from file' și atașează imaginea 'controller.svg'. Mută sprite-ul în centrul scenei.
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'controller.svg' image. You should move this sprite to the center of the stage.
+    
+    ![screenshot](dots-controller.png)
+    
+    If you don't have this image, you can draw it yourself!
 
-	![screenshot](dots-controller.png)
-	
-	Dacă nu ai imaginea, poți să desenezi un controler singur!
-	
-+ Îndreaptă controlerul înspre dreapta când tasta săgeată-dreapta este apăsată:
++ Turn your controller to the right when the right arrow key is pressed:
+    
+    ```blocks
+    when flag clicked
+    forever
+        if <key [right arrow v] pressed?> then
+            turn right (3) degrees
+        end
+    end
+```
 
-	```blocks
-		when flag clicked
-		forever
-			if <key [right arrow v] pressed?> then
-				turn right (3) degrees
-			end
-		end
-	```
-+ Testează controlerul – ar trebui să se învârtă înspre dreapta.
++ Test out your controller -- it should spin to the right.
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Învârte înspre stânga {.challenge}
-Poți să învârți controlerul înspre stânga când săgeata-stângă este apăsată?
+## Challenge: Spinning left {.challenge}
 
-## Salvează proiectul { .save }
+Can you make your controller spin to the left when the left arrow key is pressed?
 
-# Pasul 2: Colectează puncte { .activity }
+## Save your project {.save}
 
-Haide să adăugăm câteva puncte pe care jucătorul le va colecta cu ajutorul controlerului.
+# Step 2: Collecting dots {.activity}
 
-## Lista de activități { .check }
+Let's add some dots for the player to collect with their controller.
 
-+ Crează un nou sprite numit 'roșu'. Acest sprite trebuie să fie un mic punct roșu.
+## Activity Checklist {.check}
 
-	![screenshot](dots-red.png)
++ Create a new sprite called 'red'. This sprite should be a small red dot.
+    
+    ![screenshot](dots-red.png)
 
-+ Adaugă scriptul de mai jos la sprite-ul 'roșu', pentru a crea un nou punct la un interval de câteva secunde:
++ Add this script to your 'red' dot sprite, to create a new dot clone every few seconds:
+    
+    ```blocks
+    when flag clicked
+    hide
+    wait (2) secs
+    forever
+        create clone of [myself v]
+        wait (pick random (5) to (10)) secs
+    end
+```
 
-	```blocks
-		when flag clicked
-		wait (2) secs
-		forever
-			create clone of [myself v]
-			wait (pick random (5) to (10)) secs
-		end
-	```
++ When each clone is created, you want it to appear in one of the 4 corners of the stage.
+    
+    ![screenshot](dots-start.png)
+    
+    To do this, first create a new list variable called `start positions` {.blockdata} and click the `(+)` to add in the values `-180` and `180`.
+    
+    ![screenshot](dots-list.png)
 
-+ Când fiecare clonă a fost creată, vei vrea să apară în unul din cele 4 colțuri ale scenei.
++ You can use these 2 list items to pick a random corner of the stage. Add this code to the 'dot' sprite, so that each new clone moves to a random corner and then slowly moves towards the controller.
+    
+    ```blocks
+    when I start as a clone
+    go to x: (item (random v) of [start positions v]) y: (item (random v) of [start positions v])
+    point towards [controller v]
+    show
+    repeat until <touching [controller v]?>
+        move (1) steps
+    end
+```
 
-	![screenshot](dots-start.png)
+The code above chooses either `-180` or `180` for the x *and* y positions, meaning that each clone starts in one corner of the stage.
 
-	Pentru aceasta, în primul rând vei crea o nouă listă numită `start positions` {.blockdata} și apasă pe `(+)` pentru a adăuga valorile `-180` și `180`.
++ Test your project. You should see lots of red dots appear in each corner of the screen, and move slowly towards the controller.
+    
+    ![screenshot](dots-red-test.png)
 
-	![screenshot](dots-list.png)
++ Create 2 new variables called `lives` {.blockdata} and `score` {.blockdata}.
 
-+ Poți utiliza aceste două valori pentru a alege un colț aleator al scenei. Adaugă codul de mai jos la sprite-ul "dot", astfel încât fiecare nouă clonă se mută aleatoriu într-un colț și apoi încet se mișcă spre controler.
++ Add code to your stage to set the `lives` {.blockdata} to 3 and the `score` {.blockdata} to 0 at the start of the game.
 
-	```blocks
-		when I start as a clone
-		go to x: (item (random v) of [start positions v]) y: (item (random v) of [start positions v])
-		point towards [controller v]
-		show
-		repeat until <touching [controller v]?>
-			move (1) steps
-		end
-	```
++ You need to add code to the end of your red dot's `when I start as a clone` {.blockcontrol} code, so that either 1 is added to the player's `score` {.blockdata} if the colours match, or 1 is taken from the player's `lives` {.blockdata} if the colours don't match.
+    
+    ```blocks
+    move (5) steps
+    if <touching color [#FF0000]?> then
+        change [score v] by (1)
+        play sound [pop v]
+    else
+        change [lives v] by (-1)
+        play sound [laser1 v]
+    end
+    delete this clone
+```
 
-	Codul de mai sus alege fie `180` sau `-180` pentru pozițiile x și y, ceea ce înseamnă că fiecare clonă începe într-un colț al scenei.
++ Add this code to the end of your stage's script, so that the game ends when the player loses all of their lives:
+    
+    ```blocks
+    wait until <(lives) < [1]>
+    stop [all v]
+```
 
-+ Testează proiectul. Ar trebui să vezi multe puncte roșii care apar în fiecare colt al ecranului și coboară încet înspre controler.
++ Test your game to make sure this code works as expected.
 
-	![screenshot](dots-red-test.png)
+## Save your project {.save}
 
-+ Creează două noi variabile `vieți` {.blockdata} și `scor` {.blockdata}.
+## Challenge: More dots {.challenge}
 
-+ Adaugă cod la scenă pentru a seta variabila `vieți` {.blockdata} la 3 și `scor` {.blockdata} la 0 la începutul jocului.
-
-+ Trebuie să adaugi cod la sfârșitul blocului `when I start as a clone` {.blockcontrol} în cadrul scriptului pentru sprite-ul `roșu`, astfel încât să crească scorul cu 1 dacă se potrivesc culorile, sau scade numărul de vieți cu 1 în cazul în care culorile nu se potrivesc.
-
-	```blocks
-		move (5) steps
-		if <touching color [#FF0000]?> then
-			change [score v] by (1)
-			play sound [pop v]
-		else
-			change [lives v] by (-1)
-			play sound [laser1 v]
-		end
-		delete this clone
-	```
-
-+ Adaugă codul de mai jos la sfârșitul scriptului scenei astfel încât jocul se termină dacă jucătorul a pierdut toate cele 3 vieți.:
-
-	```blocks
-		wait until <(lives) < [1]>
-		stop [all v]
-	```
-
-+ Testează jocul și vezi dacă funcționează cum te-ai așteptat.
-
-## Salvează proiectul { .save }
-
-## Provocare: Mai multe puncte {.challenge}
-Duplică sprite-ul roșu de două ori și denumește noile sprite-uri 'galben' și 'albastru'.
+Duplicate your 'red' dot sprite twice, and name the two new sprites 'yellow' and 'blue'.
 
 ![screenshot](dots-more-dots.png)
 
-Editează aceste sprite-uri (inclusiv codul), astfel încât fiecare punct se potrivește cu culoarea corectă de pe controler. Nu uita să testezi proiectul, asigurându-te că poți câștiga puncte și pierde vieți la momentul potrivit, și că jocul nu este prea ușor sau prea greu!
+Edit these sprites (including their code), so that each coloured dot has to match the correct colour on the controller. Remember to test your project, making sure you gain points and lose lives at the right times, and that your game isn't too easy or too hard!
 
 ![screenshot](dots-all-test.png)
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Pasul 3: Mărește nivelul de dificultate { .activity .new-page}
+# Step 3: Increasing the difficulty {.activity.new-page}
 
-Haide să facem jocul din ce în ce mai greu cu cât jucătorul supraviețuiește mai mult, prin reducerea graduală a intervalului dintre aparițiile a două puncte.
+Let's make the game get more difficult the longer the player survives, by slowly reducing the delay between dots appearing.
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Creează o nouă variabilă numită `întârziere` {.blockdata} .
++ Create a new variable called `delay` {.blockdata}.
 
-+ În scenă creează un script nou care setează `întârziere` la un număr mare și gradual o micșorează.
++ On your stage, create a new script that sets the delay to a high number, and then slowly reduces the delay time.
+    
+    ```blocks
+    when flag clicked
+    set [delay v] to (8)
+    repeat until < (delay) = (2)>
+        wait (10) secs
+        change [delay v] by (-0.5)
+    end
+```
 
-	```blocks
-		when flag clicked
-		set [delay v] to (8)
-		repeat until < (delay) = (2)>
-			wait (10) secs
-			change [delay v] by (-0.5)
-		end
-	```
+Notice that this is very similar to how a game timer works!
 
-+ La final, poți să utilizezi această variabilă `întârziere` {.blockdata} in scripturile pentru punctele roșii, galbene și albastre. Înlocuiește codul care așteaptă un interval aleatoriu de timp între crearea clonelor și înlocuiește-l cu noua variabilă `întârziere` {.blockdata}:
++ Finally, you can use this `delay` {.blockdata} variable in your red, yellow and blue dots' scripts. Remove the code that waits a random number of seconds between creating clones, and replace it with your new `delay` {.blockdata} variable:
+    
+    ```blocks
+    wait (delay) secs
+```
 
-	```blocks
-		wait (delay) secs
-	```
++ Test your new `delay` {.blockdata} variable, and see whether the delay between dots reduces slowly. Does this work for all 3 coloured dots? Can you see the value of the `delay` {.blockdata} variable reducing?
 
-+ Verifică dacă intervalul de timp între crearea a două clone se micșorează în timp. Funcționează codul pentru toate cele 3 puncte colorate?
+## Save your project {.save}
 
-## Salvează proiectul { .save }
+## Challenge: Faster moving dots {.challenge}
 
-## Provocare: Puncte care se mișcă mai rapid {.challenge}
-Poți să îmbunătățești jocul prin adăugarea unei variabile `viteză` {.blockdata} care controlează viteza, astfel încât punctele la început se deplasează câte un pas, și în mod constant încep să se miște din ce în ce mai repede? Este asemănător cu felul în care am utilizat mai sus variabila `întârziere` {.blockdata}.
+Can you improve your game by adding a `speed` {.blockdata} variable, so that the dots start off moving 1 step at a time, and steadily get faster and faster? This will work in a very similar way to the `delay` {.blockdata} variable used above, and you can use this code to help you.
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Pasul 4: Cel mai mare scor { .activity }
+# Step 4: High score {.activity}
 
-Haide să salvăm cel mai mare scor, astfel încât jucătorii să știe cât de buni sunt.
+Let's save the high score, so that players can see how well they're doing.
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Creează o nouă variabilă numită `scor mare` {.blockdata}.
++ Create a new variable called `high score` {.blockdata}.
 
-+ Click pe scenă și creează un nou bloc personalizat numit `verifică cel mai mare scor` {.blockmoreblocks} .
++ Click on your stage, and create a new custom block called `check high score` {.blockmoreblocks}.
+    
+    ![screenshot](dots-custom-1.png)
 
-	![screenshot](dots-custom-1.png)
++ Just before the end of the game, add in your new custom block.
+    
+    ![screenshot](dots-custom-2.png)
 
-+ Chiar înainte de sfârșitul jocului adaugă noul bloc personalizat.
++ Add code to your custom block to store the current `score` {.blockdata} as the `high score` {.blockdata} `if` {.blockcontrol} it's the highest score so far:
+    
+    ```blocks
+    define [check high score]
+    if <(score) > (high score)> then
+        set [high score v] to (score)
+    end
+```
 
-	![screenshot](dots-custom-2.png)
++ Test the code you've added. Play your game to check whether the `high score` {.blockdata} is updated correctly.
 
-+ Adaugă cod la noul bloc pentru a păstra scorul curent `scor` {.blockdata} ca cel mai mare scor `scor mare` {.blockdata} dacă`if` {.blockcontrol} este cel mai mare scor de până acum:
+## Save your project {.save}
 
-	```blocks
-		define [check high score]
-		if <(score) > (high score)> then
-			set [high score v] to (score)
-		end
-	```
+## Challenge: Improve your game! {.challenge}
 
-+ Testează codul nou creat. Verifică dacă variabila `high score` {.blockdata} se modifică corect.
+Can you think of ways to improve your game? For example, you could create special dots that:
 
-## Salvează proiectul { .save }
++ double your score;
++ slow down the dots;
++ hide all the other dots on the screen!
 
-## Provocare: Îmbunătățește jocul! {.challenge}
-Poți să te gândești la cum poți să îmbunătățești jocul? De exemplu, ai putea crea puncte special cu care poți să:
+## Save your project {.save}
 
-+ dublezi scorul;
-+ încetinești coborârea punctelor;
-+ ascunzi toate celelalte puncte de pe ecran!
+## Challenge: Game menu {.challenge}
 
-## Salvează proiectul { .save }
-
-## Provocare: Meniul jocului {.challenge}
-Poți să adaugi la joc un meniu (cu butoane)? Ai putea adăuga un ecran cu instrucțiuni, sau un ecran separat pentru a arăta scorul cel mai mare. Dacă ai nevoie de ajutor, proiectul "Brain Game" îți poate fi de folos.
-
+Can you add a menu (with buttons) to your game? You could add an instructions screen, or a separate screen for showing the high score. If you need help with this, the 'Brain Game' project will help you.
