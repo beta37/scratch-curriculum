@@ -1,241 +1,221 @@
----
-title: ChatBot
-level: Scratch 1
-language: en-GB
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*.*"]
-...
+* * *
 
-# Introducere { .intro }
+title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-Acum vom învăța cum să programăm propriul nostru robot vorbitor!
+# Introduction {.intro}
+
+You are going to learn how to program your own talking robot!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26762091/?autostart=false" frameborder="0"></iframe>
   <img src="chatbot-final.png">
 </div>
 
-# Pasul 1: Robotul vostru vorbitor { .activity}
+# Step 1: Your chatbot {.activity}
 
-## Lista de Activități { .check }
+## Activity Checklist {.check}
 
-+ Înainte de a începe să construim robotul vorbitor trebuie să hotărâm care sunt trăsăturile sale.
-	+ Care este numele robotului?
-	+ Unde locuiește robotul?
-	+ Cum este robotul? Este vesel? Este amuzant? Timid? Prietenos?
++ Before you start making your chatbot, you need to decide on their personality.
+    
+    + What is their name?
+    + Where do they live?
+    + Are they happy? serious? funny? shy? friendly?
 
-+ Porniți un nou proiect Scratch și ștergeți sprite-ul pisică astfel încât proiectul vostru să fie gol. Puteți găsi editorul online Scratch la adresa <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Alegeți un personaj dintre cele de mai jos și adăugați-l la proiectul vostru:
++ Choose one of these character sprites, and add them to your project:
+    
+    ![screenshot](chatbot-characters.png)
 
-	![screenshot](chatbot-characters.png)
++ Choose a backdrop that fits your chatbot's personality. Here's an example, although yours doesn't have to look like this:
+    
+    ![screenshot](chatbot-sprite.png)
 
-+ Alegeți un fundal care se potrivește cu personalitatea robotului. Mai jos aveți un exemplu, dar fundalul voastru nu trebuie să arate la fel:
+## Save your project {.save}
 
-	![screenshot](chatbot-sprite.png)
+# Step 2: A talking chatbot {.activity}
 
-## Salvează proiectul { .save }	
+Now that you have a chatbot with a personality, let's program it to talk to you.
 
-# Pasul 2: Un robot care vorbește { .activity }
+## Activity Checklist {.check}
 
-Acum că avem un robot cu personalitate, haideți să îl programăm să vorbeasca cu noi.
++ Click on your chatbot character, and add this code:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say [What a lovely name!] for (2) secs
+```
 
-## Lista de Activități { .check }
++ Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage.
+    
+    ![screenshot](chatbot-text.png)
 
-+ Faceți click pe personajul robot și adăugați codul următor:
++ Your chatbot simply replies `What a lovely name!` every time. You can personalise your chatbot's reply, by making use of the user's answer. Change the chatbot's code, so that it looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say <join [Hi] (answer)> for (2) secs
+```
 
-	```blocks
-		cand se da click pe acest sprite
-		întreabă [Salut! Care e numele tău?] și așteaptă
-		spune [Ce nume frumos!] pentru (2) sec
-	```
-+ Faceți clic pe robot pentru a-l testa. După ce sunteți întrebați despre numele vostru, introduceți răspunsul în cutia din partea de jos a scenei.
+To create the last block, you'll need to first drag on a green `join` {.blockoperators} block, and drag it on to the `say` {.blocklooks} block.
 
-	![screenshot](chatbot-text.png)
+![screenshot](chatbot-join.png)
 
-+ Robotul va răspunde "Ce nume frumos!" de fiecare dată. Puteți să personalizați răspunsul robotului folosindu-vă de răspunsul dat de utilizator. Modificați codul robotului ca să arate în felul următor: 
+You can then change the text `hello` to say `Hi`, and drag the light blue `answer` {.blocksensing} block (from the 'Sensing' section) onto the text `world`.
 
-	```blocks
-		cand se da click pe acest sprite
-		întreabă [Salut! Care e numele tău?] și așteaptă
-		spune <imbina [Salut] (răspuns)> pentru (2) sec
-	```
-	
-	Pentru a crea ultimul bloc de cod trebuie să faceți clic pe un bloc verde 'imbina' {.blockoperators} și să îl trageți peste blocul 'spune' {.blocklooks}.
-	
-	![screenshot](chatbot-join.png)
-	
-	Acum putem să modificăm textul 'hello', înlocuindu-l cu 'Salut', și să tragem blocul albastru deschis 'răspuns' {.blocksensing} peste textul 'world'.
+![screenshot](chatbot-answer.png)
 
++ Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)
 
-	![screenshot](chatbot-answer.png)
++ It may be that you want to store the user's name in a variable, so that you can use it again later. Create a new variable called `name` {.blockdata}. If you've forgotten how to do this, the 'Balloons' project will help you.
 
-+ Testați acest nou program. Funcționează cum ne așteptam? Vedeți vreo problemă la el și puteți să o rezolvați? (Indiciu: puteți încerca să adăugați un spațiu undeva!)	
++ The information that you entered is already stored in a special variable called `answer` {.blocksensing}. Go to the Sensing group of blocks and click the answer block so that a tick appears. The current value in `answer` {.blocksensing} should then be shown on the top-left of the stage.
 
-+ Poate doriți să păstrați numele utilizatorului într-o variabilă, pentru a-l folosi din nou mai târziu. Creați o nouă variabilă numită 'nume' {.blockdata}. Dacă ați uitat cum se creează o variabilă, proiectul 'Balloons' vă va ajuta.
++ Once you've created your new variable, make sure that your chatbot's code looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+```
 
-+ Informația introdusă de voi este deja păstrată într-o variabilă specială numită 'răspuns' {.blocksensing}. Mergeți la grupul de blocuri Detectie și faceți clic pe blocul răspuns astfel încât să apară o bifă. Valoarea curentă a variabilei 'răspuns' {.blocksensing} ar trebui să fie afișată în partea din stânga sus a scenei.
++ If you test your program again, you'll notice that the answer is stored in the `name` {.blockdata} variable, and is shown in the top-left of the stage. The `name` {.blockdata} variable should now contain the same value as the `answer` {.blocksensing} variable.
+    
+    ![screenshot](chatbot-variable.png)
+    
+    If you'd rather not see the variables on your stage, you can click the tick next to the variable names in the 'Scripts' tab to hide them.
 
-+ Odată ce ați creat variabila nouă, codul robotului vostru ar trebui să arate cam așa:
+## Save your project {.save}
 
-	```blocks
-		cand se da click pe acest sprite
-		întreabă [Salut! Care e numele tău?] și așteaptă
-		modifică [nume v] cu (răspuns)
-		spune <imbina [Salut ] (nume)> pentru (2) sec
-	```
+## Challenge: More questions {.challenge}
 
-+ Dacă testați programul din nou veți observa că răspunsul dat este păstrat în variabila 'nume' {.blockdata} și este afișat în partea din stânga sus a scenei. Variabila 'nume' {.blockdata} ar trebui să conțină acum aceeași valoare ca și variabila 'răspuns' {.blocksensing}.
-
-	![screenshot](chatbot-variable.png)
-	
-	Dacă nu doriți să vedeți variabilele afișate pe scena voastră puteți să faceți clic pe bifa alăturată numelui variabilei din secțiunea 'Script-uri' pentru a le ascunde.
-
-
-## Salvează proiectul { .save }
-
-## Provocare: Mai multe întrebări { .challenge }
-
-Programați robotul vostru să pună altă întrebare. Puteți păstra răspunsul utilizatorului într-o variabilă?
+Program your chatbot to ask another question. Can you store their answer in a variable?
 
 ![screenshot](chatbot-question.png)
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Pasul 3: Să luăm decizii { .activity }
+# Step 3: Making decisions {.activity}
 
-Puteți programa robotul să decidă ce să facă, în funcție de răspunsurile utilizatorului.
+You can program your chatbot to decide what to do, based on the user's responses.
 
-## Lista de Activități { .check }
+## Activity Checklist {.check}
 
-+ Haideți să facem robotul să pună o întrebare la care să răspundem cu 'da' sau 'nu'. Aici aveți un exemplu, dar puteți schimba întrebarea dacă vreți:
++ Let's get your chatbot to ask the user a question which has a `yes` or `no` answer. Here's an example, but you can change the question if you like:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    end
+```
 
-	```blocks
-		cand se da click pe acest sprite
-		întreabă [Salut! Care e numele tău?] și așteaptă
-		modifică [nume v] cu (răspuns)
-		spune <imbina [Salut ] (nume)> pentru (2) sec
-		întreabă <imbina [Te simți bine ] (nume)> and wait
-		dacă ((răspuns)=[Da]) atunci
-			spune [Mă bucur să aud asta!] pentru (2) sec
-		end
-	```
-	
-	Observați că acum ați păstrat numele utilizatorului într-o variabilă și puteți să o folosiți cât de des vreți.
+Notice that now you've stored the user's name in a variable, you can use it as much as you like.
 
-+ Pentru a testa acest program cum trebuie, va trebui să îl testați de două ori - o dată răspunzând cu 'Nu' și o dată cu 'Da'. Robotul ar trebui să răspundă doar 'dacă' {.blockcontrol} răspunsul dat este 'Da'.
++ To test this program properly, you'll need to test it twice - once typing `no` as your answer, and once typing `yes`. You should only get a response from your chatbot `if` {.blockcontrol} you answer `yes`.
 
-+ Problema cu robotul vostru este că nu dă nici o replică dacă utilizatorul răspunde cu 'Nu'. Puteți să rezolvați această problemă modificând blocul 'dacă' {.blockcontrol} într-un block 'dacă/altfel' {.blockcontrol}, astfel încât codul vostru să arate așa:
++ The trouble with your chatbot is that it doesn't give a reply if the user answers `no`. You can fix this, by changing the `if` {.blockcontrol} block to an `if/else` {.blockcontrol} block, so that your code now looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    else
+        say [Oh no!] for (2) secs
+    end
+```
 
-	```blocks
-		cand se da click pe acest sprite
-		întreabă [Salut! Care e numele tău?] și așteaptă
-		modifică [nume v] cu (răspuns)
-		spune <imbina [Salut ] (nume)> pentru (2) sec
-		întreabă <imbina [Te simți bine ] (nume)> and wait
-		dacă ((răspuns)=[Da]) atunci
-			spune [Mă bucur să aud asta!] pentru (2) sec
-		altfel
-			spune [Oh nu!] pentru (2) sec
-		end
-	```
++ If you test your code, you'll now see that you get a response when you answer `yes` or `no`. Your chatbot should reply with `That's great to hear!` when you answer `yes`, but will reply with `Oh no!` if you type anything other than `yes` (`else` {.blockcontrol} means 'otherwise').
+    
+    ![screenshot](chatbot-else.png)
 
-+ Dacă testați codul acum, veți observa că primiți o replică atât atunci când răspundeți cu 'Da' cât și cu 'Nu'. Robotul ar trebui să spună `Mă bucur să aud asta!` când răspundeți cu 'da', dar va spune `Oh nu!` dacă răspundeți orice altceva decât 'da' ('altfel' {.blockcontrol} înseamnă 'în caz contrar')
-	
-	![screenshot](chatbot-else.png)
++ You can put any code inside an `if` {.blockcontrol} or `else` {.blockcontrol} block, not just code to make your chatbot speak. For example, you can change the chatbot's costume to match the response.
+    
+    If you have a look at your chatbot's costumes, you may see that there is more than one. (If not, you can always add more yourself!)
+    
+    ![screenshot](chatbot-costumes.png)
+    
+    You can use these costumes as part of your chatbot's response, by adding this code:
+    
+    ![screenshot](chatbot-costumes-code.png)
 
-+ Puteți pune orice cod în cadrul unui block 'dacă' {.blockcontrol} sau 'altfel' {.blockcontrol}, nu doar cod ce face robotul să vorbească. De exemplu puteți să schimbați înfățișarea robotului în așa fel încât să se potrivească cu răspunsul primit.
-	
-	Dacă vă uitați la costumele robotului, veți vedea că sunt mai multe. (Dacă nu sunt mai multe, puteți să le adăugați voi!)
++ Test out your program, and you should see your chatbot's face change depending on the answer you give.
+    
+    ![screenshot](chatbot-face.png)
 
-	![screenshot](chatbot-costumes.png)
+## Save your project {.save}
 
-	Puteți să folosiți aceste costume ca parte a răspunsului robotului adăugând acest cod:
+## Challenge: More decisions {.challenge}
 
-	```blocks
-		cand se da click pe acest sprite
-		întreabă [Salut! Care e numele tău?] și așteaptă
-		modifică [nume v] cu (răspuns)
-		spune <imbina [Salut ] (nume)> pentru (2) sec
-		întreabă <imbina [Te simți bine ] (nume)> and wait
-		dacă ((răspuns)=[Da]) atunci
-			switch costume to [nano-c]
-			spune [Mă bucur să aud asta!] pentru (2) sec
-		altfel
-			switch costume to [nano-d]
-			spune [Oh nu!] pentru (2) sec
-		end
-	```
-
-+ Testați din nou programul. Ar trebui să vedeți cum fața robotului se schimbă în funcție de răspunsul pe care îl dați.
-
-	![screenshot](chatbot-face.png)
-
-## Salvează proiectul { .save }
-
-## Provocare: Mai multe decizii { .challenge }
-
-Programați robotul să pună o altă întrebare - din nou o întrebare la care se răspunde cu 'da' sau 'nu'. Puteți să faceți robotul să reacționeze la răspunsul primit?
+Program your chatbot to ask another question - something with a `yes` or `no` answer. Can you make your chatbot respond to the answer?
 
 ![screenshot](chatbot-joke.png)
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Pasul 4: Să schimbăm locația { .activity }
+# Step 4: Changing location {.activity}
 
-Puteți programa robotul să își schimbe și locația.
+You can also program your chatbot to change its location.
 
-## Lista de Activități { .check }
+## Activity Checklist {.check}
 
-+ Adăugați un nou fundal scenei voastre, de exemplu fundalul 'lună'
++ Add another backdrop to your stage, for example the 'moon' backdrop.
+    
+    ![screenshot](chatbot-moon.png)
 
-	![screenshot](chatbot-moon.png)
++ You can now program your chatbot to change location, by adding this code to your chatbot:
+    
+    ```blocks
+    ask [I'm going to the moon. Do you want to come with me?] and wait
+    if ((answer) = [yes]) then
+        switch backdrop to [moon v]
+    end
+```
 
-+ Acum puteți să programați robotul să își schimbe locația, adăugând această bucată de cod:
++ You also need to make sure that your chatbot is outside when you start talking to it. Add this block to the top of your chatbot code:
+    
+    ![screenshot](chatbot-outside.png)
 
-	```blocks
-		întreabă [Mă duc pe lună. Vrei să vii cu mine?] și așteaptă
-		dacă ((răspuns) = [da]) atunci
-			switch backdrop to [moon v]
-		end
-	```
-+ De asemenea trebuie să ne asigurăm că robotul nostru este afară când începem să vorbim cu el. Adăugați acest bloc la începutul codului robotului:
++ Test your program, and answer `yes` when asked if you want to go to the moon. You should see that the chatbot's location has changed.
+    
+    ![screenshot](chatbot-backdrop.png)
 
-	![screenshot](chatbot-outside.png)
++ Does your chatbot change location if you type `no`? What about if you type `I'm not sure`?
 
-+ Testați programul și răspundeti 'da' când sunteți întrebați dacă vreți să mergeți pe Lună. Ar trebui să vedeți cum locația robotului se modifică.
++ You can also add this code inside your `if` {.blockcontrol} block, to make your chatbot jump up and down 4 times if the answer is `yes`:
+    
+    ```scratch
+repeat (4)
+    change y by (10)
+    wait (0.1) secs
+    change y by (-10)
+    wait (0.1) secs
+end
+```
 
-	![screenshot](chatbot-backdrop.png)
+![screenshot](chatbot-loop.png)
 
-+ Își va schimba robotul locația dacă răspundeți 'nu' la întrebarea lui? Dar dacă răspundeți 'nu sunt sigur'?
++ Test your code again. Does your chatbot jump up and down if you answer `yes`?
 
-+ Puteți să adăugați și acest cod in blocul 'dacă' {.blockcontrol} pentru a-l face pe robot să sară în sus de 4 ori dacă răspundeți cu 'da' la întrebarea lui:
+## Save your project {.save}
 
-	```scratch
-	repeta (4)
-		modifică y cu (10)
-		asteapta (0.1) sec
-		modifică y cu (-10)
-		asteapta (0.1) sec
-	end
-	```
+## Challenge: Make your own chatbot {.challenge}
 
-	![screenshot](chatbot-loop.png)
-
-+ Testați-vă codul din nou. Robotul vostru sare dacă răspundeți cu 'da'?
-
-## Salvează proiectul { .save }
-
-## Provocare: Construiți propriul vostru robot {.challenge}
-Folosiți ce ați învățat în această lecție pentru a termina robotul vostru interactiv. Iată câteva idei pe care le puteți folosi:
+Use what you've learnt to finish creating your interactive chatbot. Here are some ideas:
 
 ![screenshot](chatbot-ideas.png)
 
-Odată ce ați terminat de programat robotul vostru, chemați-vă prietenii să povestească cu el! Le place robotul vostru? Au găsit vreo problemă la el?
+Once you've finished making your chatbot, get your friends to have a conversation with it! Do they like your character? Did they spot any problems?
 
-## Salvează proiectul { .save }
-
-## Community Contributed Translation { .challenge .pdf-hidden }
-
-This project was translated by Elena-Georgeta Popa. Our amazing translation volunteers help us give children around the world the chance to learn to code.  You can help us reach more children by translating a Code Club project via [Github](https://github.com/CodeClub/curriculum_documentation/blob/master/contributing.md) or by getting in touch with us at hello@codeclubworld.
+## Save your project {.save}
