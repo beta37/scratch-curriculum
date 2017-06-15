@@ -1,26 +1,28 @@
-﻿---
-title: צ'אט בוט (רובוט שיחה) - הערות למדריכי המועדון
-language: he-IL
-embeds: "*.png"
-...
+* * *
 
-#הקדמה:
-בפרויקט זה, הילדים ילמדו איך להשתמש במשפטי 'אם' כדי לבצע החלטות בתכנית שלהם.
+title: ChatBot — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#חומרי הלימוד
-לפרויקט זה, יש להשתמש ב- סקראצ' 2. ניתן להשתמש בסקראצ' 2 בין אם באון ליין בכתובת [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) ובין אם אוף ליין בהורדה מהכתובת [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off).
+# Introduction:
 
-אתה יכול למצוא גרסה מלאה של הפרויקט <a href="http://scratch.mit.edu/projects/26762091/#editor">און ליין</a>, או להוריד אותה על ידי לחיצה על הקישור "הורד חומרי פרויקט" לפרויקט זה, אשר מכיל:
+In this project, children will learn how to use 'if' statements to make decisions in their programs.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26762091/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + ChatBot.sb2
 
-#תכני הלימוד
-+ קליטת טקסט;
-+ החלטות:
-	+ משפטי `אם ... אז` {.blockcontrol};
-	+ משפטי `אם ... אז ... ואם לא` {.blockcontrol}.
+# Learning Objectives
 
-#אתגרים
-+ "שאלות נוספות" - לחזק את לימוד קליטת הטקסט ואת הבלוק `תשובה` {.blocksensing};
-+ "החלטות נוספות" - שימוש בהחלטות;
-+ "צור צ'אט בוט משלך" - לחזק את הלימוד מהפרויקט הזה ומהפרויקטים הקודמים.
++ Text input;
++ Decisions: 
+    + `if ... then` {.blockcontrol} statements;
+    + `if ... then ... else` {.blockcontrol} statements.
+
+# Challenges
+
++ "More questions" - consolidating learning of input and the `answer` {.blocksensing} block;
++ "More decisions" - using decisions;
++ "Make your own chatbot" - consolidation of learning from this and past projects.
