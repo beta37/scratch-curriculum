@@ -1,199 +1,192 @@
----
-title: 고스트버스터즈
-level: Scratch 1 
-language: ko-KR
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-## 노트: { .challenge .pdf-hidden }
-'풍선' 프로젝트는 [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) 으로 옮겨졌습니다.
+title: Ghostbusters level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# 소개 { .intro }
+## Note: {.challenge.pdf-hidden}
 
-유령을 잡는 게임을 만들어 볼 것입니다!
+The 'Balloons' project has been moved to the [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) section.
+
+# Introduction {.intro}
+
+You are going to make a ghost-catching game!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
-  <img src="ghost-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
+    <img src="ghost-final.png">
 </div>
 
-# 1 단계: 유령 움직이게 하기 { .activity }
+# Step 1: Animating a ghost {.activity}
 
-## 단계별 체크리스트 { .check }
+## Activity Checklist {.check}
 
-+ 새 스크래치 프로젝트를 시작하고 고양이 스프라이트를 지워서 텅 빈 프로젝트를 만드세요. 스크래치 온라인 에디터는 <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a> 에서 찾을 수 있습니다.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ 유령 스프라이트와 어울리는 배경을 넣으세요.
++ Add in a new ghost sprite, and a suitable stage backdrop.
+    
+    ![screenshot](ghost-ghost.png)
 
-	![screenshot](ghost-ghost.png)
-
-+ 유령에게 이 코드를 넣어서 나타났다 사라지게 만드세요:
-
-```blocks
-
-깃발 클릭했을 때
-무한 반복하기
-   숨기기
-   (1) 초 기다리기
-   보이기
-   (1) 초 기다리기
-end
++ Add this code to your ghost, so that it repeatedly appears and disappears:
+    
+    ```blocks
+    when flag clicked
+    forever
+    hide
+    wait (1) secs
+    show
+    wait (1) secs
+    end
 ```
 
-+ 녹색 깃발을 눌러서 유령의 코드가 작동하는지 확인해보세요.
++ Test out your ghost's code, by clicking the green flag.
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}
 
-# 2 단계: 무작위 유령들 { .activity }
+# Step 2: Random ghosts {.activity}
 
-지금의 유령은 움직이지 않기 때문에 잡기 너무 쉽습니다!
+Your ghost is really easy to catch, because it doesn't move!
 
-## 단계별 체크리스트 { .check }
+## Activity Checklist {.check}
 
-+ 유령이 가만히 있지 않고 스크래치가 무작위 x와 y 좌표를 지정하게 만들 수 있습니다. 유령의 코드에 `x:... y:...로 이동하기` {.blockmotion} 블록을 더해 이렇게 보이게 만드세요:
-
-```blocks
-
-깃발 클릭했을 때
-무한 반복하기
-   숨기기
-   (1) 초 기다리기
-   x:((-150) 부터 (150) 사이의 난수) y:((-150) 부터 (150) 사이의 난수) 로 이동하기
-   보이기
-   (1) 초 기다리기
-end
++ Instead of staying in the same position, you can let Scratch choose random x and y coordinates instead. Add a `go to` {.blockmotion} block to your ghost's code, so that it looks like this:
+    
+    ```blocks
+    when flag clicked
+    forever
+        hide
+        wait (1) secs
+        go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+        show
+        wait (1) secs
+    end
 ```
 
-+ 유령을 다시 시험해보세요. 이제 매번 다른 곳에서 나타날 것입니다.
++ Test our your ghost again, and you should notice that it appears in a different place each time.
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}
 
-## 도전과제: 더욱 더 무작위로 {.challenge}
-유령이 다시 나타나기 전 무작위로 `...초 기다리기` {.blockcontrol} 하게 할 수 있나요? `크기를 ...%로 정하기` {.blocklooks} 블록을 써서 유령이 나타날 때마다 무작위 크기로 나오게 만들 수 있나요? 
+## Challenge: More randomness {.challenge}
 
-## 프로젝트를 저장하세요 { .save }
+Can you make your ghost `wait` {.blockcontrol} a random amount of time before appearing? Can you use the `set size` {.blocklooks} block to make your ghost a random size each time it appears?
 
-# 3 단계: 유령 잡기 { .activity }
+## Save your project {.save}
 
-플레이어가 유령을 잡을 수 있도록 만듭시다!
+# Step 3: Catching ghosts {.activity}
 
-## 단계별 체크리스트 { .check }
+Let's allow the player to catch ghosts!
 
-+ 플레이어가 유령을 잡을 수 있게 하려면 이 코드를 더해주세요:
+## Activity Checklist {.check}
 
-```blocks
-
-이 스프라이트를 클릭했을 때
-숨기기
++ To allow the player to catch a ghost, add this code:
+    
+    ```blocks
+    when this sprite clicked
+    hide
 ```
 
-+ 프로젝트를 다시 시험해보세요. 유령이 나타났을 때 클릭해서 잡을 수 있나요? 유령을 잡기 힘들다면 이 버튼을 클릭해서 전체화면 모드로 플레이 할 수 있습니다:
++ Test out your project. Can you catch ghosts as they appear? If you find it difficult to catch the ghosts, you can play the game in fullscreen mode by clicking this button:
+    
+    ![screenshot](ghost-fullscreen.png)
 
-	![screenshot](ghost-fullscreen.png)
+## Challenge: Adding a sound {.challenge}
 
-## 도전과제: 음향효과 더하기 { .challenge }
-유령이 잡힐때 마다 소리가 나게 할 수 있나요?
+Can you make a sound each time a ghost is caught?
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}
 
-# 4 단계: 점수 더하기 { .activity .new-page }
+# Step 4: Adding a score {.activity.new-page}
 
-점수를 더해 게임을 좀 더 흥미롭게 만들어 봅시다.
+Let's make things more interesting by keeping score.
 
-## 단계별 체크리스트 { .check }
+## Activity Checklist {.check}
 
-+ 플레이어의 점수를 세기 위한 장소가 필요합니다. __변수__는 점수와 같이 달라지는 데이터를 저장할 수 있는 장소 입니다.
++ To keep the player's score, you need a place to put it. A **variable** is a place to store data that can change, like a score.
+    
+    To create a new variable, click on the 'Scripts' tab, select `Data` {.blockdata} and then click 'Make a Variable'.
+    
+    ![screenshot](ghost-score.png)
+    
+    Type 'score' as the name of the variable, make sure that it is available for all sprites, and click 'OK' to create it. You'll then see lots of code blocks that can be used with your `score` {.blockdata} variable.
+    
+    ![screenshot](ghost-variable.png)
+    
+    You'll also see the score in the top-left of the stage.
+    
+    ![screenshot](ghost-stage-score.png)
 
-	새 변수를 만들려면 '스크립트' 탭을 누른 후 `데이터` {.blockdata} 란으로 간 후 '변수 만들기'를 클릭하세요.
-
-	![screenshot](ghost-score.png)
-
-	변수의 이름을 'score' 로 짓고 모든 스프라이트에서 사용 가능하게 만든 후 '확인'을 눌러서 변수를 만드세요. 그러면 `score` {.blockdata} 변수와 함께 쓸 수 있는 코드 블록들이 보일 것입니다.
-
-	![screenshot](ghost-variable.png)
-
-	또한 점수를 스테이지의 왼쪽 상단에서 확인 할 수도 있을 것입니다.
-
-	![screenshot](ghost-stage-score.png)
-
-+ 녹색 깃발을 클릭해서 새 게임이 시작되면 플레이어의 점수를 0으로 맞춰줘야 합니다:
-
-```blocks
-
-깃발 클릭했을 때
-[score v] 에 [0] 저장하기
++ When a new game is started (by clicking the flag), you should set the player's score to 0:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [0]
 ```
 
-+ 유령이 잡힐 때 마다 점수가 1씩 올라가도록 해야 합니다:
++ Whenever a ghost is caught, you need to add 1 to the player's score:
+    
+    ![screenshot](ghost-change-score.png)
 
-	![screenshot](ghost-change-score.png)
++ Run your program again and catch some ghosts. Does your score change?
 
-+ 게임을 다시 시작해서 유령을 잡아보세요. 점수가 올라가나요?
+## Save your project {.save}
 
-## 프로젝트를 저장하세요 { .save }
+# Step 5: Adding a timer {.activity}
 
-# 5 단계: 타이머 더하기 { .activity }
+You can make your game more interesting, by only giving your player 10 seconds to catch as many ghosts as possible.
 
-또한 10초 안에 최대한 많은 유령을 잡게 해서 게임을 더 흥미롭게 만들 수 있습니다.
+## Activity Checklist {.check}
 
-## 단계별 체크리스트 { .check }
++ You can use another variable to store the remaining time left. Click on the stage, and create a new variable called 'time':
+    
+    ![screenshot](ghost-time.png)
 
-+ 남은 시간을 표기하기 위해 다른 변수를 사용합시다. 스테이지를 클릭 한 후 새로운 변수 'time'을 만드세요:
-
-	![screenshot](ghost-time.png)
-
-+ 타이머는 이렇게 작동해야 합니다:
-
-	+ 타이머는 10초에서 시작합니다;
-	+ 타이머는 1초씩 내려갑니다;
-	+ 타이머가 0초가 되면 게임이 끝나야 합니다.
-
-	__스테이지__에 더할 코드는 이렇습니다:
-
-```blocks
-
-깃발 클릭했을 때
-[time v] 에 [10] 저장하기
-<(time) = [0]> 까지 반복하기
-   (1) 초 기다리기
-   [time v] 을(를) (-1) 만큼 바꾸기
-end
-[모두 v] 멈추기
-
++ This is how the timer should work:
+    
+    + The timer should start at 10 seconds;
+    + The timer should count down every second;
+    + The game should stop when the timer gets to 0.
+    
+    Here's the code to do this, which you can add to your **stage**:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [10]
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]
 ```
 
-	`...까지 반복하기`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} 코드를 사용하는 방법입니다:
+This is how you add the `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} code:
 
-	![screenshot](ghost-timer-help.png)
+![screenshot](ghost-timer-help.png)
 
-+ 'time'변수 디스플레이를 스테이지 오른쪽으로 옮기세요. 또한 변수 디스플레이에 오른쪽 클릭 한 후 '변수값 크게 보기'를 선택해서 더 크게 보이게 만들 수 있습니다.
++ Drag your 'time' variable display to the right side of the stage. You can also right-click on the variable display and choose 'large readout' to change how the time is displayed.
+    
+    ![screenshot](ghost-readout.png)
 
-	![screenshot](ghost-readout.png)
++ Ask a friend to test your game. How many points can they score? If your game is too easy, you can:
+    
+    + Give the player less time;
+    + Make the ghosts appear less often;
+    + Make the ghosts smaller.
+    
+    Test your game a few times until you're happy that it's the right level of difficulty.
 
-+ 친구에게 게임을 해보게 하세요. 몇 점을 받을 수 있나요? 게임이 너무 쉬워 보인다면 다음으로 난이도를 올릴 수 있습니다:
+## Save your project {.save}
 
-	+ 플레이어에게 시간을 더 적게 주기;
-	+ 유령들이 더 뜸하게 나오게 하기;
-	+ 유령을 더 작게 만들기.
+## Challenge: More objects {.challenge}
 
-	게임이 알맞는 난이도라고 생각될 때까지 몇 번 더 시험해보세요.
-
-## 프로젝트를 저장하세요 { .save }
-
-## 도전과제: 더 많은 오브젝트 {.challenge}
-게임에 다른 오브젝트들을 더할 수 있나요?
+Can you add in other objects to your game?
 
 ![screenshot](ghost-final.png)
 
-더할 오브젝트에 대해 몇가지를 생각해보세요:
+You'll need to think about the objects you're adding. Think about:
 
-+ 얼마나 큰 가요?
-+ 유령보다 더 자주 혹은 뜸하게 나올 건가요?
-+ 잡혔을 땐 어떻게 보이고 들릴 건가요?
-+ 잡았을 땐 몇 점을 얻거나 잃게 되나요?
++ How big is it?
++ Will it appear more or less often than the ghosts?
++ What will it look/sound like when it has been caught?
++ How many points will you score (or lose) for catching it?
 
-다른 오브젝트를 더하는데 도움이 필요하다면 위의 단계들을 다시 자세히 살펴보세요!
- 
-## 프로젝트를 저장하세요 { .save }
+If you need help adding another object, you can reuse the steps above!
+
+## Save your project {.save}
