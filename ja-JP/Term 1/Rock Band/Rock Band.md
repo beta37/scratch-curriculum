@@ -1,186 +1,189 @@
----
-title: ロックバンド
-level: Scratch 1
-language: ja-JP
-stylesheet: スクラッチ
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-# まえがき { .intro }
+title: Rock Band level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-このプロジェクトではプログラミングを使った楽器の作り方を学びます！
+# Introduction {.intro}
+
+In this project you'll learn how to code your own musical instruments!
 
 <div class="scratch-preview">
-	<iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26741186/?autostart=false" frameborder="0"></iframe>
-	<img src="band-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26741186/?autostart=false" frameborder="0"></iframe>
+    <img src="band-final.png">
 </div>
 
-# ステップ１: スプライト { .activity }
+# Step 1: Sprites {.activity}
 
-プログラミングをはじめる前に、ある「モノ」を取り入れる必要があります。この「モノ」はスクラッチでは　__スプライト__　と呼ばれています。
+Before you can start coding, you'll need to add in a 'thing' to code. In Scratch, these 'things' are called **sprites**.
 
-## チェックリスト { .check }
+## Activity Checklist {.check}
 
-+ まず、スクラッチエディタを開きましょう。スクラッチエディタはオンラインでも開くことができます（<a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>）。こんなふうに<ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>されるはずです。
++ First, open up the Scratch editor. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new" target="_blank">jumpto.cc/scratch-new</a>. It looks like this:
+    
+    ![screenshot](band-scratch.png)
 
-	![screenshot](band-scratch.png)
++ The cat sprite that you can see is the Scratch mascot. Let's get rid of it, by right-clicking and then clicking 'delete'.
+    
+    ![screenshot](band-delete.png)
 
-+ <ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>されているネコのスプライトはスクラッチのマスコットですが、最初にこれを<ruby>削除<rp>（</rp><rt>さくじょ</rt><rp>）</rp></ruby>してください。右クリックで<ruby>削除<rp>（</rp><rt>さくじょ</rt><rp>）</rp></ruby>を選んでください。
++ Next, click 'Choose sprite from library' to open up a list of all the Scratch sprites.
+    
+    ![screenshot](band-sprite-library.png)
 
-  ![screenshot](band-delete.png)
++ Scroll down until you see a drum sprite. Click on a drum, and click 'OK' to add it to your project.
+    
+    ![screenshot](band-sprite-drum.png)
 
-+ 次に「スプライトをライブラリーから<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>」をクリックして、スプライトのリストを開きましょう。
++ Click the 'shrink' icon, and then click on the drum a few times to make it smaller.
+    
+    ![screenshot](band-shrink.png)
 
-	![screenshot](band-sprite-library.png)
+## Save your project {.save}
 
-+ 下の方にスクロールしていき、ドラムを<ruby>探<rp>（</rp><rt>さが</rt><rp>）</rp></ruby>しましょう。ドラムをクリックして、右下の「OK」ボタンをクリック。自分のプロジェクトに追加されます。
+Give your program a name, by typing one into the text box in the top-left corner.
 
-	![screenshot](band-sprite-drum.png)
-
-+ 「<ruby>縮小<rp>（</rp><rt>しゅくしょう</rt><rp>）</rp></ruby>」アイコンをクリックして、次にドラムを何回かクリックして、ドラムを小さくしましょう。
-
-	![screenshot](band-shrink.png)
-
-## プロジェクトを保存してください { .save }
-
-プログラムに<ruby>名称<rp>（</rp><rt>めいしょう</rt><rp>）</rp></ruby>をつけるには、左上のテキストボックスに入力してください。
-
-「ファイル」をクリックして「直ちに<ruby>保存<rp>（</rp><rt>ほぞん</rt><rp>）</rp></ruby>」を<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>するとプロジェクトが<ruby>保存<rp>（</rp><rt>ほぞん</rt><rp>）</rp></ruby>されます。
+You can then click 'File' and then 'Save now' to save your project.
 
 ![screenshot](band-save.png)
 
-（スクラッチのアカウントをもってない場合は、「手元のコンピュータにダウンロード」をクリックして<ruby>保存<rp>（</rp><rt>ほぞん</rt><rp>）</rp></ruby>してください。）
+(If you don't have a Scratch account, you can save a copy of your project by clicking 'Download to your computer' instead).
 
-# ステップ２: ステージ { .activity }
+# Step 2: The Stage {.activity}
 
-　__ステージ__　は左のエリアです。この場所でプロジェクトが動きます。本物のステージのように考えてください！
+The **stage** is the area on the left, and is where your project comes to life. Think of it as a performance area, just like a real stage!
 
-## チェックリスト { .check }
+## Activity Checklist {.check}
 
-+ 今はステージが真白で、とても<ruby>退屈<rp>（</rp><rt>たいくつ</rt><rp>）</rp></ruby>に見えます！ステージに背景を追加しましょう。「ライブラリーから背景を<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>」をクリックしてください。
++ At the moment, the stage is white, and looks pretty boring! Let's add a backdrop to the stage, by clicking 'Choose backdrop from library'.
+    
+    ![screenshot](band-stage-choose.png)
 
-	![screenshot](band-stage-choose.png)
++ Click 'Indoors' on the left, and then click on a stage backdrop and click 'OK'.
+    
+    ![screenshot](band-backdrop.png)
 
-+ 左の「屋内」をクリックして、ステージの背景をクリック。さらに右下の「OK」ボタンをクリック。
++ Your stage should now look like this:
+    
+    ![screenshot](band-stage.png)
 
-	![screenshot](band-backdrop.png)
+# Step 3: Making a Drum {.activity}
 
-+ みなさんのステージはこんなふうに見えているはずです。
+Let's code your drum to make a sound when it's hit.
 
-	![screenshot](band-stage.png)
+## Activity Checklist {.check}
 
-# ステップ３: ドラムの作成 { .activity }
++ You can find the code blocks in the 'Scripts' tab, and they are all colour-coded!
+    
+    Click on the drum sprite, and then drag these 2 blocks into the code area to the right, making sure that they are connected together (like Lego blocks):
+    
+    ![screenshot](band-code.png)
 
-クリックすると音が鳴るプログラムを作りましょう。
++ Click the drum to try out your new instrument!
 
-## チェックリスト { .check }
+## Save your project {.save}
 
-+ 「スクリプト」のタブの中にプログラムのためのブロックがあります。すべて色付けされています。 
+## Challenge: Improving your drum {.challenge}
 
-	ドラムのスプライトをクリックして、この２つのブロックを右のプログラムエリアにドラッグしてください。ブロックがレゴのように合体しているのを<ruby>確認<rp>（</rp><rt>かくにん</rt><rp>）</rp></ruby>しましょう。
-	
-	![screenshot](band-code.png)
-
-+ ドラムをクリックして、自分の新しい楽器を試してください！
-
-+ 新たにコスチュームをつくることで、クリックしたときのドラムの見え方を変えることもできます。「コスチューム」タブをクリックするとドラムのイメージが<ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>されます。
-
-	![screenshot](band-drum-costume.png)
-
-+ そのコスチュームを右クリックして<ruby>複製<rp>（</rp><rt>ふくせい</rt><rp>）</rp></ruby>をクリックすると、コスチュームのコピーができます。
-
-	![screenshot](band-drum-duplicate.png)
-
-+ 新しいコスチューム（「drum2」という<ruby>名称<rp>（</rp><rt>めいしょう</rt><rp>）</rp></ruby>）をクリックしてください。そして直線ツールを使って、音が鳴っているように線を引きましょう。
-
-	![screenshot](band-drum-hit.png)
-
-+ コスチュームの<ruby>名称<rp>（</rp><rt>めいしょう</rt><rp>）</rp></ruby>がわかりづらいので、「not hit」と「hit」に<ruby>名称<rp>（</rp><rt>めいしょう</rt><rp>）</rp></ruby>を書き換えましょう。それぞれのコスチュームのテキストボックスに入力してください。
-
-	![screenshot](band-drum-name.png)
-
-+ みなさんのドラムには２種類のコスチュームができました。どちらのコスチュームを<ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>させるか自分で選ぶことができます。この２つのブロックを自分のドラムに追加してください。
-
-	![screenshot](band-looks.png)
-	
-	コスチュームを変えるブロックは`見た目`{.blocklooks}のところにあります。
-
-+ 自分のドラムを試してください。クリックしたとき、ドラムが<ruby>叩<rp>（</rp><rt>たた</rt><rp>）</rp></ruby>かれているように見えるはずです
-
-## プロジェクトを保存してください { .save }
-
-##チャレンジ：ドラムの<ruby>改良<rp>（</rp><rt>かいりょう</rt><rp>）</rp></ruby> { .challenge }
-
-+ ドラムをクリックしたときに鳴る音を変えることはできますか？
++ Can you change the sound that the drum makes when it's clicked?
 
 ![screenshot](band-drum-sound.png)
 
-+ スペースキーを押したときにドラムが鳴るようにできますか？この`イベント` {.blockevents}ブロックが必要になります。
++ Can you also get the drum to make a sound when the spacebar is pressed? You'll need to use this `event` {.blockevents} block:
 
 ```blocks
-	  [スペース v] キーが押されたとき
+    when [space v] key pressed
 ```
 
-右クリックで「<ruby>複製<rp>（</rp><rt>ふくせい</rt><rp>）</rp></ruby>」を<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>すると、ブロックがコピーされます。
+You can copy your existing code by right-clicking on it and clicking 'duplicate'.
 
 ![screenshot](band-duplicate-code.png)
 
-## プロジェクトを保存してください { .save }
+## Save your project {.save}
 
-# ステップ４: 歌手の作成 { .activity .new-page }
+# Step 4: Making a Singer {.activity.new-page}
 
-バンドに歌手を追加しましょう！
+Let's add a singer to your band!
 
-## チェックリスト { .check }
+## Activity Checklist {.check}
 
-+ ステージに２つのスプライト、歌手とマイクを追加してください。
++ Add another 2 sprites to your stage; a singer and a microphone.
+    
+    ![screenshot](band-singer-mic.png)
 
-	![screenshot](band-singer-mic.png)
++ Before you can make your singer sing, you need to add a sound to your sprite. Make sure that you have selected your singer, then click the 'Sounds' tab, and click 'Choose sound from library':
+    
+    ![screenshot](band-import-sound.png)
 
-+ 歌手に歌わせる前に、スプライトに音を追加する必要があります。歌手をクリックして、「音」タブをクリック、そして「音をライブラリーから<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>」をクリックしてください。
++ If you click 'Vocals' on the left hand side, you will then be able to choose a suitable sound to add to your sprite.
+    
+    ![screenshot](band-choose-sound.png)
 
-	![screenshot](band-import-sound.png)
++ Now that the sound has been added, you can add this code to your singer:
+    
+    ```blocks
+    when this sprite clicked
+    play sound [singer1 v] until done
+```
 
-+ 左側の「ボーカル」をクリックして、スプライトに追加する音を選びましょう。
++ Click on your singer, to make sure that she sings when clicked.
 
-	![screenshot](band-choose-sound.png)
+## Save your project {.save}
 
-+ 右下の「OK」ボタンをクリックすると音が追加されます。このプログラムを自分の歌手に入れてください。
+# Step 5: Costumes {.activity.new-page}
 
-	```blocks
-		このスプライトがクリックされたとき
-		終わるまで [singer1 v] の音を鳴らす
-	```
+Let's make your singer look like she's singing!
 
-+ 歌手をクリックして、ちゃんと歌うか<ruby>確認<rp>（</rp><rt>かくにん</rt><rp>）</rp></ruby>しましょう。
+## Activity Checklist {.check}
 
-## プロジェクトを保存してください { .save }
++ You can also change how your singer sprite looks when it's clicked, by creating a new costume. Click the 'Costumes' tab, and you'll see the singer image.
+    
+    ![screenshot](band-singer-costume.png)
 
-##チェレンジ：歌手のコスチュームの<ruby>変更<rp>（</rp><rt>へんこう</rt><rp>）</rp></ruby> { .challenge }
-歌手をクリックしたときに、歌っているように<ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>させることはできますか？わからないことがあれば、上記のドラムの説明をもう一度読んでください。
++ Right-click on the costume and click 'duplicate' to create a copy of the costume.
+    
+    ![screenshot](band-singer-duplicate.png)
 
-![screenshot](band-singer-final.png)
++ Click on the new costume (called 'Singer2') and then select the line tool and draw lines to make it look like your singer is making a sound.
+    
+    ![screenshot](band-singer-click.png)
 
-新しいプログラムをつくったら、ちゃんと動くかテストする事を<ruby>覚<rp>（</rp><rt>おぼ</rt><rp>）</rp></ruby>えておきましょう。
++ The names of the costumes aren't very helpful at the moment. Rename the 2 costumes to 'not singing' and 'singing' by typing the new name of each costume into the text box.
+    
+    ![screenshot](band-singer-name.png)
 
-## プロジェクトを保存してください<Save your project> { .save }
++ Now that you have 2 different costumes for your singer, you can choose which costume is displayed! Add these 2 blocks to your singer:
+    
+    ![screenshot](band-looks.png)
+    
+    The code block for changing the costume is in the `Looks` {.blocklooks} section.
 
-##チャレンジ：自分のバンドの作成 { .challenge }
-このプロジェクトで学んだことを生かしてください。みなさんはどんな楽器でも好きなものを作ることができます。
++ Test your singer. When clicked, your singer should now look like she is singing!
+
+## Challenge: Changing your drum's costume {.challenge}
+
+Can you make your drum look like it's being hit? If you need help, you can use the instructions for changing your singer's costume above.
+
+![screenshot](band-drum-final.png)
+
+Remember to test that your new code works!
+
+## Save your project {.save}
+
+## Challenge: Make your own band {.challenge}
+
+Use what you've learnt in this project to make your own band! You can create any instruments you like, but look at the available sounds and instruments to get some ideas.
 
 ![screenshot](band-ideas.png)
 
-楽器は<ruby>正確<rp>（</rp><rt>せいかく</rt><rp>）</rp></ruby>である必要はありません。たとえば、マフィンでピアノを作ることもできます！
+Your instruments don't have to be sensible though. For example, you could make a piano made out of muffins!
 
 ![screenshot](band-piano.png)
 
-すでにあるスプライトを使うこともできますし、自分で絵を描くこともできます。<As well as using existing sprites, you can also draw your own.>
+As well as using existing sprites, you can also draw your own.
 
 ![screenshot](band-draw.png)
 
-もしマイクを持っていたら、自分で<ruby>録音<rp>（</rp><rt>ろくおん</rt><rp>）</rp></ruby>することができます。またWEBカメラを使って、自分の楽器を鳴らすこともできます。<If you have a microphone you can record your own sounds, or even use a webcam to hit your instruments!>
+If you have a microphone you can record your own sounds, or even use a webcam to hit your instruments!
 
 ![screenshot](band-io.png)
 
-## プロジェクトを保存してください<Save your project> { .save }
+## Save your project {.save}
