@@ -1,264 +1,265 @@
----
-title: Boat Race
-level: Scratch 1
-language: ro-RO
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*.*","Project Resources/*.*"]
-...
+* * *
 
-# Introducere { .intro }
+title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-Vei învăța cum să creezi un joc în care vei utiliza mouse-ul ca să navighezi o barcă înspre o insulă pustie.
+# Introduction {.intro}
+
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# Pasul 1: Planifică jocul { .activity }
+# Step 1: Planning your game {.activity}
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Deschide un nou proiect în Scratch și șterge sprite-ul pisică. În acest fel ai un proiect gol. Poți să găsești editorul online pentru Scratch la <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Click pe scenă și planifică nivelul de dificultate. Ar trebui să adaugi:
-	+ Bușteni pe care barca ta trebuie să le ocolească;
-	+ O insulă pustie la care barca trebuie să ajungă.
++ Click on your stage backdrop and plan out your level. You should add:
+    
+    + Wood that your boat has to avoid;
+    + A desert island that your boat has to get to.
+    
+    Here's how your game could look:
+    
+    ![screenshot](boat-bg.png)
 
-	Jocul ar trebui să arate cam așa: 
+# Step 2: Controlling the boat {.activity}
 
-	![screenshot](boat-bg.png) 
+## Activity Checklist {.check}
 
-# Pasul 2: Controlul bărcii { .activity }
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
+    
+    ![screenshot](boat-boat.png)
+    
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-## Lista de activități { .check }
++ You are going to control the boat with your mouse. Add this code to your boat:
+    
+    ```blocks
+    when flag clicked
+    point in direction (0 v)
+    go to x: (-190) y: (-150)
+    forever
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
+```
 
-+ Dacă ați primit un folder cu resurse click 'Incarca sprite din fisier' și selectează imaginea 'boat.png'. Trebuie să micșorezi sprite-ul și să-l pui în poziția de plecare. 
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
+    
+    ![screenshot](boat-mouse.png)
+    
+    **Note: There is currently a bug in Scratch which means your boat may not move towards the mouse pointer. If this happens, click the arrow on the `point towards` {.blockmotion} block and re-select 'mouse-pointer'.**
+    
+    ![screenshot](images/boat-bug.png)
 
-	![screenshot](boat-boat.png)
++ What happens if the boat reaches the mouse pointer?
+    
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    
+    ![screenshot](boat-pointer.png)
 
-	Dacă nu ai imaginea boat.png, poți să-ți desenezi singur barca!
++ Test out your boat again, to check whether the problem has been fixed.
 
-+ Vei controla barca cu mouse-ul. Adaugă codul de mai jos la barcă:
+## Save your project {.save}
 
-	```blocks
-		cand se da clic pe flag
-		orienteaza in directia (0 v)
-		du-te la x: (-190) y: (-150)
-		la infinit
-			orienteaza inspre [cursorul mouse-ului v]
-			muta (1) pasi
-		end
-	```
+# Step 3: Crashing! {.activity.new-page}
 
-+ Testează-ți barca. Fă clic pe steag și mișcă mouse-ul. Barca se îndreaptă înspre mouse? 
+Your boat can sail through the wooden barriers! Let's fix that.
 
-	![screenshot](boat-mouse.png)
+## Activity Checklist {.check}
 
-+ Ce se întâmplă dacă barca atinge vârful mouse-ului? 
++ You'll need 2 costumes for your boat, one normal costume, and one for when the boat crashes. Duplicate your boat costume, and name them 'normal' and 'hit'.
 
-	Pentru a rezolva problema, trebuie să adaugi un bloc `dacă` {.blockcontrol} la codul tău. În acest fel barca se va mișca numai dacă este la mai mult de 5 pixeli de mouse. 
++ Click on your 'hit' costume, and choose the 'Select' tool to grab bits of the boat and move and rotate them around. Make your boat look as if it's crashed.
+    
+    ![screenshot](boat-hit-costume.png)
 
-	![screenshot](boat-pointer.png)	
++ Add this code to your boat, inside the `forever` {.blockcontrol} loop, so that it crashes when it touches any brown wooden bits:
+    
+    ```blocks
+    if <touching color [#603C15]?> then
+        switch costume to [hit v]
+        say [Noooooo!] for (1) secs
+        switch costume to [normal v]
+        point in direction (0 v)
+        go to x: (-215) y: (-160)
+    end
+```
 
-+ Testează-ți barca din nou. Verifică dacă problema a fost rezolvată.
+This code is inside the `forever` {.blockcontrol} loop, so that your code keeps checking if the boat has crashed.
 
-## Salvează proiectul { .save }
++ You should also make sure that your boat always starts looking like it's 'normal'.
 
-# Pasul 3: Accident! { .activity .new-page }
++ Now if you try to sail through a wooden barrier, you should see that your boat crashes and moves back to the start.
+    
+    ![screenshot](boat-crash.png)
 
-Barca poate naviga prin barierele de bușteni! Haideți să rezolvăm problema aceasta.
+## Save your project {.save}
 
-## Lista de activități { .check }
+## Challenge: Winning! {.challenge}
 
-+ Vei avea nevoie de două costume pentru barca ta, un costum normal și unul pentru momentul când barca are un accident. Copiază costumul barcă. Redenumește-le 'normal' și 'lovit'.
+Can you add another `if` {.blockcontrol} statement to your boat's code, so that the player wins when they get to the desert island?
 
-+ Clic pe costumul 'lovit' și alege unealta 'Selecteaza' pentru a captura bucățele de barcă. Mută-le și rotește-le. Încearcă să creezi o barcă care arată ca după un accident.
-
-	![screenshot](boat-hit-costume.png)
-
-+ Adaugă codul de mai jos la scriptul bărcii în blocul `forever` {.blockcontrol}. Barca va avea un accident când atinge orice buștean:
-
-	```blocks
-		dacă <atinge culoarea [#603C15]?> atunci
-			switch costume to [lovit v]
-			spune [Noooooo!] pentru (1) sec
-			switch costume to [normal v]
-			orienteaza in directia (0 v)
-			du-te la x: (-215) y: (-160)
-		end
-	```
-
-	Acest cod este inclus în bucla `la infinit` {.blockcontrol} astfel încât codul tău va continua să verifice dacă barca are vreun accident.
-
-+ Ar trebui să ai grijă ca barca să arate 'normal' de fiecare dată când începi un joc nou.
- 
-+ Acum, dacă încerci să navighezi printr-o barieră de bușteni, ar trebui să vezi că barca s-a accidentat și o ia de la început.
-
-	![screenshot](boat-crash.png)
-
-## Salvează proiectul { .save }
-
-## Provocare: Câștigă! {.challenge}
-Poți să adaugi o comandă `dacă` {.blockcontrol} la codul bărcii, pentru ca jucătorul să câștige când ajunge la insula pustie?
-
-Când barca ajunge la insula pustie, ar trebui să spună 'URA!' și jocul trebuie să ia sfârșit. Trebuie să utilizezi codul următor:
+When the boat gets to the yellow desert island, it should say 'YEAH!' and then the game should stop. You'll need to use this code:
 
 ```blocks
-	spune [URA!] pentru (1) sec
-	opreste [tot v]
+    say [YEAH!] for (1) secs
+    stop [all v]
 ```
 
 ![screenshot](boat-win.png)
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Efecte de sunet {.challenge}
-Poți sa adaugi efecte de sunet pentru momentul când barca se accidentează sau când ajunge la insulă. Poți să adaugi și fundal sonor (vezi proiectul anterior 'Rock Band' dacă ai nevoie de ajutor).
+## Challenge: Sound effects {.challenge}
 
-## Salvează proiectul { .save }
+Can you add sound effects to your game, for when the boat crashes, or reaches the island at the end? You could even add background music (see the previous 'Rock Band' project if you need help with this).
 
-# Pasul 4: Contra Cronometru { .activity }
+## Save your project {.save}
 
-Haideți să adăugăm un cronometru la joc, pentru ca jucătorul să încerce să ajungă la insula pustie cât mai repede.
+# Step 4: Time Trial {.activity}
 
-## Lista de activități { .check }
+Let's add a timer to your game, so that the player has to get to the desert island as fast as possible.
 
-+ Adaugă la scenă o nouă variabilă numită `timp` {.blockdata}.
+## Activity Checklist {.check}
 
-	![screenshot](boat-variable.png)
++ Add a new variable called `time` {.blockdata} to your stage. You can also change the display of your new variable. If you need help, have a look at the 'Ghostbusters' project.
+    
+    ![screenshot](boat-variable.png)
 
-+ Adaugă codul de mai jos la __scena__ ta, astfel încât să poți cronometra cât de repede ajungi la insula pustie:
++ Add this code to your **stage**, so that the timer counts up until the boat reaches the desert island:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [0]
+    forever
+        wait (0.1) secs
+        change [time v] by (0.1)
+    end
+```
 
-	```blocks
-		cand se da clicl pe flag
-		seteaza [timp v] la [0]
-		la infinit
-			asteapta (0.1) sec
-			modifică [timp v] cu (0.1)
-		end
-	```
++ That's it! Test out your game and see how quickly you can get to the desert island!
+    
+    ![screenshot](boat-variable-test.png)
 
-+ Atât! Testează jocul și vezi cât de repede reușești să ajungi la insula pustie!
+## Save your project {.save}
 
-	![screenshot](boat-variable-test.png)
+# Step 5: Obstacles and power-ups {.activity}
 
-## Salvează proiectul { .save }
+This game is *far* too easy - let's add things to make it more interesting.
 
-# Pasul 5: Obstacole și 'acceleatori' { .activity }
+## Activity Checklist {.check}
 
-Jocul este mult prea simplu. Hai să adăugăm lucruri ca să-l facem mai interesant.
++ First let's add some 'boosts' to your game, which will speed up the boat. Edit your stage backdrop and add in some white booster arrows.
+    
+    ![screenshot](boat-boost.png)
 
-## Lista de activități { .check }
++ You can now add some code to your boat's `forever` {.blockcontrol} loop, so that it moves 2 *extra* steps when touching a white booster.
+    
+    ```blocks
+    if <touching color [#FFFFFF]?> then
+        move (3) steps
+    end
+```
 
-+ Pentru început putem adăuga 'acceleratori' care vor face barca să navigheze mai repede. Editează fundalul scenei și adaugă săgeți albe de accelerare.
++ You can also add in a spinning gate, which your boat has to avoid. Add in a new sprite called 'gate', which looks like this:
+    
+    ![screenshot](boat-gate.png)
+    
+    Make sure that the colour of the gate is the same as the other wooden barriers.
 
-	![screenshot](boat-boost.png)
++ Set the centre of the gate sprite.
+    
+    ![screenshot](boat-center.png)
 
-+ Acum poți să adaugi în scriptul bărcii cod la bucla `la infinit` {.blockcontrol}, astfel încât barca se va muta doi pași când atingi un accelerator alb.
++ Add code to your gate, to make it spin slowly `forever` {.blockcontrol}.
 
-	```blocks
-		dacă <atinge culoarea [#FFFFFF]?> atunci
-			muta (3) pasi
-		end
-	```
++ Test out your game. You should now have a spinning gate that you must avoid.
+    
+    ![screenshot](boat-gate-test.png)
 
-+ Poți adăuga o poartă care se rotește pe care barca trebuie să o ocolească. Adaugă un sprite nou numit 'poartă', care arată cam așa:
+## Save your project {.save}
 
-	![screenshot](boat-gate.png)
+## Challenge: More obstacles! {.challenge.new-page}
 
-	Ai grijă ca poarta să aibă aceeași culoare ca și buștenii.
+Can you add more obstacles to your game? Here are some ideas:
 
-+ Setează centrul pentru sprite-ul poartă.
-
-	![screenshot](boat-center.png)
-
-+ Adaugă cod pentru sprite-ul poartă pentru a o face să se rotească încet `la infinit` {.blockcontrol}.
-
-+ Testează jocul. Ar trebui să ai acum o poartă care se rotește pe care trebuie să o ocolești.
-
-	![screenshot](boat-gate-test.png)
-
-## Salvează proiectul { .save }
-
-## Provocare: Mai multe obstacole! {.challenge .new-page}
-Poți să adaugi mai multe obstacole la joc? Mai jos câteva idei:
-
-+ Poți să adaugi mâzgă verde care va încetini jucătorul dacă o atinge. Poți să utilizezi blocul `asteapta` {.blockcontrol}:
++ You could add green slime to your backdrop, which slows the player down when they touch it. You can use a `wait` {.blockcontrol} block to do this:
 
 ```blocks
-	asteapta (0.01) sec
+    wait (0.01) secs
 ````
 
 ![screenshot](boat-algae.png)
 
-+ Poți să adaugi obiecte mișcătoare, de exemplu un buștean sau un rechin!
++ You could add a moving object, like a log or a shark!
 
 ![screenshot](boat-obstacles.png)
 
-Blocul de cod de mai jos ți-ar putea fi de ajutor:
+These blocks may help you:
 
 ```blocks
-	muta (1) pasi
-	daca se afla pe margine, ricoseaza
+    move (1) steps
+    if on edge, bounce
 ````
 
-Dacă noul obiect nu este maro, trebuie să adaugi codul următor la scriptul bărcii:
+If your new object isn't brown, you'll need to add to your boat code:
 
 ```blocks
-	dacă <  <atinge culoarea [#603C15]?> sau <touching [rechin v]?> > atunci
-	end
+    if <  <touching color [#603C15]?> or <touching [shark v]?> > then
+    end
 ```
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Mai multe bărci! {.challenge .new-page}
-Poți schimba jocul într-o cursă între doi jucători?
+## Challenge: More boats! {.challenge.new-page}
 
-+ Copiază barca, denumește-o 'Jucător 2' și schimbă-i culoarea.
+Can you turn your game into a race between 2 players?
+
++ Duplicate the boat, rename it 'Player 2' and change its colour.
 
 ![screenshot](boat-p2.png)
 
-+ Schimbă poziția de start pentru al doilea jucător schimbând următorul cod:
++ Change Player 2's starting position, by changing this code:
 
 ```blocks
-	du-te la x: (-190) y: (-150)
+    go to x: (-190) y: (-150)
 ```
 
-+ Șterge codul care utilizează mouse-ul pentru controlul bărcii:
++ Delete the code that uses the mouse to control the boat:
 
 ```blocks
-	dacă < (distanța până la [cursorul mouse-ului v]) > [5] > atunci
-		orienteaza inspre [cursorul mouse-ului v]
-		muta (1) pasi
-	end
+    if < (distance to [mouse-pointer v]) > [5] > then
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
 ```
 
-...și în loc lui adaugă codul următor pentru a controla barca cu tastele săgeți.
+...and replace it with code to control the boat using the arrow keys.
 
-Acesta este codul de care vei avea nevoie pentru a avansa barca înainte:
+This is the code you'll need to move the boat forward:
 
 ```blocks
-	dacă < tasta [sageata sus v] este apasata? > atunci
-		muta (1) pasi
-	end
+    if < key [up arrow v] pressed? > then
+        move (1) steps
+    end
 ```
 
-De asemenea vei avea nevoie de cod pentru a `roti` {.blockmotion} barca atunci când tastele ’săgeată stânga’ și ’săgeată dreapta’ sunt apăsate.
+You'll also need code to `turn` {.blockmotion} the boat when the left and right arrow keys are pressed.
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Mai multe nivele! {.challenge .new-page}
-Poți crea scene noi și să-i lași pe jucători să aleagă între nivele?
+## Challenge: More levels! {.challenge.new-page}
+
+Can you create additional backdrops, and allow the player to choose between levels?
 
 ```blocks
-	cand tasta [spatiu v] este apasata
-	urmatorul fundal
+    when [space v] key pressed
+    next backdrop
 ```
 
-## Salvează proiectul { .save }
-
-## Community Contributed Translation { .challenge .pdf-hidden }
-
-This project was translated by Elena-Georgeta Popa. Our amazing translation volunteers help us give children around the world the chance to learn to code.  You can help us reach more children by translating a Code Club project via [Github](https://github.com/CodeClub/curriculum_documentation/blob/master/contributing.md) or by getting in touch with us at hello@codeclubworld.
+## Save your project {.save}
