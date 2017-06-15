@@ -1,230 +1,262 @@
-﻿---
-title: תיבת צביעה
-level: סקראצ' 1
-language: he-IL
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# מבוא { .intro }
+title: Paint Box level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-בפרויקט זה, אתה תיצור תוכנת צייר משלך.
+# Introduction {.intro}
+
+In this project, you will be making your own paint program!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63473366/?autostart=false" frameborder="0"></iframe>
   <img src="paint-final.png">
 </div>
 
-# שלב 1: יצירת עיפרון { .activity }
+# Step 1: Making a pencil {.activity}
 
-בוא נתחיל ביצירת עיפרון, שניתן להשתמש בו כדי לצייר על הבמה.
+Let's start by making a pencil, that can be used to draw on the stage.
 
-## רשימת פעולות { .check }
+## Activity Checklist {.check}
 
-+ התחל פרויקט סקראצ' חדש, ומחק את דמות החתול כך שהפרויקט שלך יהיה ריק. אתה יכול למצוא את עורך הסקראצ' און ליין בכתובת <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ הוסף דמות של עיפרון לפרויקט שלך.
++ Add the pencil sprite to your project.
+    
+    ![screenshot](paint-pencil.png)
 
-	![screenshot](paint-pencil.png) 
++ Click 'Costumes', and delete the 'pencil-b' costume.
+    
+    ![screenshot](paint-pencil-delete.png)
 
-+ לחץ על 'תלבושות', ומחק את התלבושת 'pencil-b'.
++ Rename your costume 'pencil-blue', and use the 'Color a shape' tool to make the pencil blue.
+    
+    ![screenshot](paint-pencil-blue.png)
 
-	![screenshot](paint-pencil-delete.png) 
++ As you'll be using the mouse to draw, you'll want the pencil to follow the mouse `forever` {.blockcontrol}. Add this code to your pencil sprite:
+    
+    ```blocks
+    when flag clicked
+    forever
+      go to [mouse pointer v]
+    end
+```
 
-+ שנה את שם התלבושת שלך ל- 'עיפרון-כחול', והשתמש בכלי 'צבע צורה' כדי לצבוע את העיפרון בכחול.
++ Test out this code by clicking the flag and then moving the mouse around the stage. Does this work as you expected?
 
-	![screenshot](paint-pencil-blue.png) 
++ Have you noticed that it's the centre of the pencil, and not the tip, that follows the mouse pointer?
+    
+    ![screenshot](paint-center.png)
+    
+    To fix this, click on the 'pencil-blue' costume of your pencil sprite, and click 'Set costume center'.
+    
+    ![screenshot](paint-center-icon.png)
 
-+ כיוון שאתה תשתמש בעכבר שלך כדי לצייר, אתה תרצה שהעיפרון יעקוב אחרי העכבר `לעולמים` {.blockcontrol}. הוסף את הקוד הזה לדמות העיפרון שלך:
++ You should notice that a crosshair appears on the costume. You can now click just below the tip of the pencil, to set this point as the costume centre.
+    
+    ![screenshot](paint-pencil-center.png)
 
-	![screenshot](paint-code-block-1.png)
++ Click the 'Scripts' tab, and then test out your pencil again - does it work better than it did before?
 
-+ בדוק את הקוד הזה על ידי לחיצה על הדגל ולאחר מכן הזז את העכבר על הבמה. האם זה עובד כמו שציפית?
++ Next, let's make your pencil draw `if` {.blockcontrol} the mouse has been clicked. Add this code to your pencil sprite:
+    
+    ![screenshot](paint-pencil-draw-code.png)
 
-+ האם שמת לב שמרכז העיפרון, ולא הקצה שלו, הוא שעוקב אחר מצביע העכבר?
++ Test your code again. This time, move the pencil around the stage and hold down the mouse button. Can you draw with your pencil?
+    
+    ![screenshot](paint-draw.png)
 
-	![screenshot](paint-center.png)
+## Save your project {.save}
 
-	כדי לסדר את זה, לחץ על התלבושת 'עיפרון-כחול' של דמות העיפרון שלך, ולחץ על 'קביעת מרכז התלבושת'.
+# Step 2: Coloured pens {.activity}
 
-	![screenshot](paint-center-icon.png)
+Let's add different colour pens to your project, and allow the user to choose between them!
 
-+ שים לב שכעת מופיע סימן פלוס גדול על התלבושת. עכשיו אתה יכול ללחוץ בקצה העיפרון, כדי לקבוע נקודה זו כמרכז התלבושת.
+## Activity Checklist {.check}
 
-	![screenshot](paint-pencil-center.png)
++ Click on your pencil sprite, click 'Costumes' and duplicate your 'pencil-blue' costume.
+    
+    ![screenshot](paint-blue-duplicate.png)
 
-+ לחץ על המחיצה 'תסריטים', ולאחר מכן בדוק את בעיפרון שלך שוב - האם הוא עובד טוב יותר מאיך שהוא עבד קודם לכן?
++ Rename your new costume 'pencil-green', and colour the pencil green.
+    
+    ![screenshot](paint-pencil-green.png)
 
-+ הדבר הבא, בוא נגרום לעיפרון שלך לצייר `אם` {.blockcontrol} לחצו על העכבר. הוסף את הקוד הזה לדמות העיפרון שלך:
++ Create two new sprites, which you will use to select the blue or green pencil.
+    
+    ![screenshot](paint-selectors.png)
 
-	![screenshot](paint-pencil-draw-code.png)	
++ When the green selector icon is clicked, you need to `broadcast` {.blockevents} a message to the pencil sprite, telling it to change its costume and pencil colour.
+    
+    To do this, first add this code to the green selector icon:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [green v]
+```
 
-+ בדוק את הקוד שלך שוב. הפעם, הזז את העיפרון שלך סביב הבמה והחזק את כפתור העכבר לחוץ. האם אתה יכול צייר עם העיפרון שלך?
+To create the `broadcast` {.blockevents} block, click the down arrow and select 'new message...'.
 
-	![screenshot](paint-draw.png)
+![screenshot](paint-broadcast.png)
+
+You can then type 'green' to create your new message.
 
-## שמור את הפרויקט שלך { .save }
+![screenshot](paint-green-message.png)
+
++ You now need to tell your pencil sprite what to do when it receives the message. Add this code to your pencil sprite:
+    
+    ```blocks
+    when I receive [green v]
+    switch costume to [pencil-green v]
+    set pen color to [#00ff00]
+```
 
-# שלב 2: עטים צבעוניים { .activity }
+To set the pencil colour to green, click the coloured box in the `set color` {.blockpen} block, and click on the green selector icon to choose green as your pencil colour.
 
-בוא נוסיף עטים בצבעים שונים לפרויקט שלך, ונאפשר למשתמש לבחור ביניהם!
++ You can now do the same for the blue pencil icon, adding this code to the blue selector sprite:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [blue v]
+```
+
+...and adding this code to the pencil sprite:
+
+```blocks
+    when I receive [blue v]
+    switch costume to [pencil-blue v]
+    set pen color to [#0000ff]
+```
+
++ Finally, you need to tell your pencil sprite what costume and pencil colour to choose, as well as clearing the screen, when your project is started. Add this code to the beginning of the pencil's `when flag clicked` {.blockevents} code (before the `forever` {.blockcontrol} loop):
+    
+    ```blocks
+    clear
+    switch costume to [blue-pencil v]
+    set pen color to [#0000ff]
+```
+
+If you prefer, you can start with a different colour pencil!
+
++ Test out your project. Can you switch between the blue and green pens?
+    
+    ![screenshot](paint-pens-test.png)
+
+## Save your project {.save}
+
+# Step 3: Making mistakes {.activity.new-page}
+
+Sometimes mistakes happen, so let's add a 'clear' button and an eraser to our project!
+
+## Activity Checklist {.check}
+
++ Let's add a button to clear the stage. To do this, add the 'X-block' letter sprite to the stage, and colour it in red.
+    
+    ![screenshot](paint-x.png)
+
++ Add code to your new cancel button to clear the stage when it's clicked.
+    
+    ```blocks
+    when this sprite clicked
+    clear
+```
 
-## רשימת פעולות { .check }
+Notice that you don't need to send a message to clear the stage, as any sprite can do it!
 
-+ לחץ על דמות העיפרון שלך, לחץ על 'תלבושות' ושכפל את תלבושת ה- 'עיפרון-כחול' שלך.
++ You can also create an eraser. If your club leader has given you a 'Resources' folder, click 'Upload costume from file' and add the 'eraser.svg' image.
+    
+    ![screenshot](paint-eraser-costume.png)
+    
+    If you don't have the eraser.svg image, just create a new white pen instead!
 
-	![screenshot](paint-blue-duplicate.png)
++ You should also add the eraser image as a new selector sprite. This is how your stage shoud look:
+    
+    ![screenshot](paint-eraser-stage.png)
 
-+ שנה את שם התלבושת החדשה שלך ל- 'עיפרון-ירוק', וצבע את העיפרון בירוק.
++ You can then add code to the eraser selector sprite, to tell the pencil to switch to an eraser.
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [eraser v]
+```
 
-	![screenshot](paint-pencil-green.png)
++ When the pencil receives this message, you can create an eraser by switching the pencil costume to the eraser, and switching the pencil colour to the same colour as the stage!
+    
+    ```blocks
+    when I receive [eraser v]
+    switch costume to [eraser v]
+    set pen color to [#FFFFFF]
+```
 
-+ צור שתי דמויות חדשות, שישמשו אותך כדי לבחור בעיפרון הכחול או הירוק.
++ Test your project, to see if you can clear and erase on the stage.
+    
+    ![screenshot](paint-erase-test.png)
 
-	![screenshot](paint-selectors.png)
++ There's one more problem with the pencil - you can draw anywhere on the stage, including near the selector icons!
+    
+    ![screenshot](paint-draw-problem.png)
+    
+    To fix this, you have to tell the pencil only to draw if the mouse is clicked *and* if the y-position of the mouse is greater than -110 (`mouse y`{.blocksensing}`> -120` {.blockoperators}). Change your pencil's `if` {.blockcontrol} statement to look like this:
+    
+    ![screenshot](pencil-gt-code.png)
 
-+ כאשר ילחצו על הסמל הבורר הירוק, אתה צריך ל- `שדר מסר` {.blockevents} לדמות העיפרון, שאומר לה לשנות את התלבושת שלה ואת צבע העיפרון שלה.
++ Test your project; you now shouldn't be able to draw near the selector blocks.
+    
+    ![screenshot](paint-fixed.png)
 
-	על מנת לעשות זאת, תחילה הוסף את הקוד הזה לסמל הבורר הירוק:
+## Save your project {.save}
 
-	![screenshot](paint-code-block-2.png)
+# Step 4: Changing the pencil width {.activity.new-page}
 
-	כדי ליצור את הבלוק `שדר מסר` {.blockevents}, לחץ על החץ למטה ובחר 'מסר חדש...'.
+Let's allow the user to draw using a range of different pencil sizes.
 
-	![screenshot](paint-broadcast.png)
+## Activity Checklist {.check}
 
-	לאחר מכן אתה יכול להקליד 'ירוק' כדי ליצור את ההודעה החדשה שלך.
++ First, add a new variable called 'width'. If you're not sure how to do this, the 'Balloons' project will help you.
 
-	![screenshot](paint-green-message.png)
++ Add this line *inside* the `forever` {.blockcontrol} loop of your pencil's code:
+    
+    ```blocks
+    set pen size to (width)
+```
 
-+ עכשיו אתה צריך לומר לדמות העיפרון שלך מה לעשות כאשר היא מקבלת את המסר. הוסף את הקוד הזה לדמות העיפרון שלך:
+Your pencil width will now repeatedly be set to the value of your 'width' variable.
 
-	![screenshot](paint-code-block-3.png)
++ You can change the number stored in this variable by right-clicking on your variable (on the stage) and clicking 'slider'.
+    
+    ![screenshot](paint-slider.png)
+    
+    You can now drag the slider below the variable to change its value.
+    
+    ![screenshot](paint-slider-change.png)
 
-	כדי לקבוע את צבע העיפרון לירוק, לחץ על התיבה הצבועה בבלוק `קבע צבע` {.blockpen}, ולחץ על סמל הבורר הירוק כדי לבחור את הצבע הירוק לעיפרון שלך.
++ Test your project, and see if you can modify the pencil width.
+    
+    ![screenshot](paint-width-test.png)
+    
+    If you prefer, you can set the minimum and maximum value of 'width' that's allowed. To do this, right-click on your variable again and click 'set slider min and max'. Set the minimum and maximum values of your variable to something more sensible, like 1 and 20.
+    
+    ![screenshot](paint-slider-max.png)
+    
+    Keep testing your 'width' variable until you're happy.
 
-+ עכשיו אתה יכול לעשות אותו הדבר לסמל הבורר הכחול, הוסף את הקוד הזה לדמות הבורר הכחול:
+## Save your project {.save}
 
-	![screenshot](paint-code-block-4.png)
+## Challenge: Shortcuts {.challenge}
 
-	...והוסף את הקוד הזה לדמות העיפרון:
+Can you create keyboard shortcuts for your commands? For example:
 
-	![screenshot](paint-code-block-5.png)
++ b = switch to blue pen
++ g = switch to green pen
++ e = switch to eraser
++ c = clear screen
 
-+ לבסוף, אתה צריך לומר לדמות העיפרון שלך איזו תלבושת וצבע עיפרון לבחור, כמו גם לנקות את המסך, כאשר הפרויקט שלך מתחיל. הוסף את הקוד הזה בהתחלה של קטע הקוד `כאשר לוחצים על הדגל` {.blockevents} של העיפרון שלך (לפני לולאת ה- `לעולמים` {.blockcontrol}):
+You could even allow the user to change the pen width with the arrow keys!
 
-	![screenshot](paint-code-block-6.png)
+## Save your project {.save}
 
-	אם אתה מעדיף, אתה יכול להתחיל עם עיפרון בצבע שונה!
+## Challenge: More pens {.challenge}
 
-+ בדוק את הפרויקט שלך. האם אתה יכול להחליף בין עטים כחולים לירוקים?
+Can you add red, yellow and black pens to your paint program? You'll find all of the images you need in your 'Resources' folder. Remember to add keyboard shortcuts for these new pens!
 
-	![screenshot](paint-pens-test.png)
-
-## שמור את הפרויקט שלך { .save }
-
-# שלב 3: עושים טעויות { .activity .new-page }
-
-לפעמים טעויות קורות, אז בוא נוסיף כפתור 'נקה' ומחק לפרויקט שלנו!
-
-## רשימת פעולות { .check }
-
-+ בוא נוסיף כפתור כדי לנקות את הבמה. לשם כך, הוסף את דמות האות 'X-block' לבמה, וצבע אותה באדום.
-
-	![screenshot](paint-x.png)
-
-+ הוסף קוד לכפתור הביטול החדש שלך כדי לנקות את הבמה כאשר לוחצים עליו.
-
-	![screenshot](paint-code-block-7.png)
-
-	שים לב שאתה לא צריך לשלוח הודעה כדי לנקות את הבמה, כיון שכל דמות יכולה לעשות את זה!
-
-+ אתה יכול גם ליצור מחק. אם מדריך המועדון שלך נתן לך תיקיית 'משאבים', לחץ 'העלה תלבושת מקובץ' והוסף את התמונה 'eraser.svg'.
-
-	![screenshot](paint-eraser-costume.png)
-	
-	אם אין לך את התמונה eraser.svg, פשוט תיצור עט לבן חדש במקום!
-
-+ אתה צריך גם להוסיף את תמונת המחק כדמות בורר חדשה. ככה הבמה שלך צריכה להיראות:
-
-	![screenshot](paint-eraser-stage.png)
-
-+ לאחר מכן אתה יכול להוסיף קוד לדמות בורר המחק שלך, כדי לומר לעיפרון להחליף למחק.
-
-	![screenshot](paint-code-block-8.png)
-
-+ כאשר העיפרון מקבל את ההודעה הזו, אתה יכול ליצור מחק על ידי החלפה של תלבושת העיפרון למחק, והחלפת הצבע של העיפרון לצבע של הבמה!
-
-	![screenshot](paint-code-block-9.png)
-
-+ בדוק את הפרויקט שלך, כדי לראות אם אתה יכול לנקות ולמחוק על הבמה.
-
-	![screenshot](paint-erase-test.png)
-
-+ יש עוד בעיה אחת עם העיפרון - אתה יכול לצייר בכל מקום על הבמה, כולל ליד סמלי הבוררים!
-
-	![screenshot](paint-draw-problem.png)
-
-	כדי לתקן זאת, אתה צריך לומר לעיפרון לצייר רק אם העכבר לחוץ וגם אם מיקום ה- y של העכבר גדול מ- -110 (`ערך עכבר בציר y`{.blocksensing}`> -120` {.blockoperators}). שנה את משפט ה- `אם` {.blockcontrol} של העיפרון שלך כדי שיראה כך:
-
-	![screenshot](pencil-gt-code.png)
-
-+ בדוק את הפרויקט שלך; כעת אתה לא אמור להיות מסוגל לצייר ליד סמלי הבוררים.
-
-	![screenshot](paint-fixed.png)
-
-## שמור את הפרויקט שלך { .save }
-
-# שלב 4: שינוי עובי העיפרון { .activity .new-page }
-
-בוא נאפשר למשתמש לצייר באמצעות עפרונות במגוון גדלים שונים.
-
-## רשימת פעולות { .check }
-
-+ ראשית, הוסף משתנה חדש בשם 'עובי'. אם אתה לא בטוח איך לעשות את זה, הפרויקט 'בלונים' יכול לעזור לך.
-
-+ הוסף את השורה הזו _בתוך_ לולאת ה- `לעולמים` {.blockcontrol} בקוד של העיפרון שלך:
-
-	![screenshot](paint-code-block-10.png)
-
-	העובי של העיפרון שלך יקבע כעת שוב ושוב לערך של המשתנה 'עובי' שלך.
-
-+ אתה יכול לשנות את המספר המאוחסן במשתנה זה על ידי לחיצה על המשתנה שלך עם הלחצן הימני (על הבמה) ואז ללחוץ על 'גולל'.
-
-	![screenshot](paint-slider.png)
-
-	עכשיו אתה יכול לגרור את המחוון בנמצא מתחת למשתנה שלך כדי לשנות את הערך שלו.
-
-	![screenshot](paint-slider-change.png)
-
-+ בדוק את הפרויקט שלך, ותראה אם אתה יכול לשנות את עובי העיפרון.
-
-	![screenshot](paint-width-test.png)
-
-	אם אתה מעדיף, אתה יכול לקבוע את הערך הנמוך ביותר והערך הגבוה ביותר האפשריים של המשתנה 'עובי'. כדי לעשות זאת, לחץ על המשתנה שלך עם העכבר הימני שוב ולחץ על 'set slider min and max'. קבע את הערך הנמוך ביותר והערך הגבוה ביותר למשתנה שלך למשהו הגיוני יותר, כמו, 1 ו- 20.
-
-	![screenshot](paint-slider-max.png)
-
-	המשך לבדוק את המשתנה 'עובי' שלך עד שתהיה מרוצה.
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: קיצורי דרך { .challenge }
-האם אתה יכול ליצור קיצורי מקשים לפקודות שלך? לדוגמה:
-
-+ כ = החלף לעט הכחול
-+ י = החלף לעט הירוק
-+ מ = החלף למחק
-+ נ = נקה מסך
-
-אתה יכול גם לאפשר למשתמש לשנות את עובי העט באמצעות מקשי החצים!
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: עטים נוספים { .challenge }
-האם אתה יכול להוסיף עטים בצבע אדום, צהוב ושחור לתוכנת הצייר שלך? אתה תמצא את כל התמונות שאתה צריך בתיקיית ה- 'משאבים' שלך. זכור להוסיף קיצורי מקשים לעטים החדשים האלו!
-
-האם אתה יכול להשתמש בעטים שלך כדי לצייר ציור?
+Can you use your pens to draw a picture?
 
 ![screenshot](paint-final.png)
