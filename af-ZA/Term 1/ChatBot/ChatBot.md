@@ -1,10 +1,10 @@
 * * *
 
-title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
+titel: ChatBot vlak: krap 1 taal: en-GB stylblad gehad: krap embeds: "*.png" materiaal: ["klub leier hulpbronne /*"]...
 
-# Introduction {.intro}
+# Inleiding {.intro}
 
-You are going to learn how to program your own talking robot!
+Jy gaan leer hoe om jou eie praat robot!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26762091/?autostart=false" frameborder="0"></iframe>
