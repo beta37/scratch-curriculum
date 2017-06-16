@@ -23,7 +23,7 @@ You are going to learn how to program your own talking robot!
 
 + Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Choose one of these character sprites, and add them to your project:
++ اختر واحد من هذه العفاريت حرف، وإضافتها إلى المشروع الخاص بك:
     
     ![screenshot](chatbot-characters.png)
 
