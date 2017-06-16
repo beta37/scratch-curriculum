@@ -67,7 +67,7 @@ You can then change the text `hello` to say `Hi`, and drag the light blue `answe
 
 ![screenshot](chatbot-answer.png)
 
-+ Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)
++ اختبار هذا البرنامج الجديد. أنها تعمل كما هو متوقع؟ يمكنك إصلاح أية مشاكل الذي يمكنك أن ترى؟ (تلميح: يمكنك محاولة إضافة في الفضاء في مكان ما!)
 
 + It may be that you want to store the user's name in a variable, so that you can use it again later. Create a new variable called `name` {.blockdata}. If you've forgotten how to do this, the 'Balloons' project will help you.
 
