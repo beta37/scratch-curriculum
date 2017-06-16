@@ -33,7 +33,7 @@ You are going to learn how to program your own talking robot!
 
 ## Save your project {.save}
 
-# Step 2: A talking chatbot {.activity}
+# الخطوة 2: تشاتبوت الحديث {.activity}
 
 Now that you have a chatbot with a personality, let's program it to talk to you.
 
