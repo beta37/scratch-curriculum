@@ -2,7 +2,7 @@
 
 title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# Introduction {.intro}
+# مقدمة {.intro}
 
 You are going to learn how to program your own talking robot!
 
@@ -17,9 +17,9 @@ You are going to learn how to program your own talking robot!
 
 + Before you start making your chatbot, you need to decide on their personality.
     
-    + What is their name?
+    + ما هو الاسم؟
     + Where do they live?
-    + Are they happy? serious? funny? shy? friendly?
+    + هل هم سعداء؟ خطيرة؟ مضحك؟ خجولة؟ ودية؟
 
 + Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
