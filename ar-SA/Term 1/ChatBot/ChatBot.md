@@ -47,7 +47,7 @@ Now that you have a chatbot with a personality, let's program it to talk to you.
     say [What a lovely name!] for (2) secs
 ```
 
-+ Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage.
++ انقر فوق تشاتبوت الخاص بك لاختبار بها. بعد أن يطلب منك اسمك، اكتبه في مربع على طول الجزء السفلي من المرحلة.
     
     ![screenshot](chatbot-text.png)
 
