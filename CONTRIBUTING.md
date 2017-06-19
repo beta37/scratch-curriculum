@@ -1,8 +1,8 @@
-#### Contributing to the Scratch curriculum
+### Contributing to the Scratch curriculum
 
 Instructions on how to contribute to our curriculum can be found [here](https://github.com/CodeClub/curriculum_documentation/blob/master/contributing.md).
 
-#### Contributor License Agreement
+### Contributor License Agreement
 
 By contributing your code to this project you grant the Code Club World Ltd. a non-exclusive, irrevocable, worldwide, royalty-free, sublicenseable, transferable license under all of Your relevant intellectual property rights (including copyright, patent, and any other rights), to use, copy, prepare derivative works of, distribute and publicly perform and display the Contributions on any licensing terms, including without limitation: (a) open source licenses like the GPL license; and (b) binary, proprietary, or commercial licenses. Except for the licenses granted herein, You reserve all right, title, and interest in and to the Contribution.
 
