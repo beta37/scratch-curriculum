@@ -11,6 +11,8 @@ You are going to learn how to program your own talking robot!
   <img src="chatbot-final.png">
 </div>
 
+# Step 0: Test test test =)
+
 # Step 1: Your chatbot {.activity}
 
 ## Activity Checklist {.check}
@@ -33,7 +35,7 @@ You are going to learn how to program your own talking robot!
 
 ## Save your project {.save}
 
-# الخطوة 2: تشاتبوت الحديث {.activity}
+# Step 2: A talking chatbot {.activity}
 
 Now that you have a chatbot with a personality, let's program it to talk to you.
 
