@@ -11,6 +11,8 @@ Jy gaan leer hoe om jou eie praat robot!
   <img src="chatbot-final.png">
 </div>
 
+# Step 0: Test test test =)
+
 # Step 1: Your chatbot {.activity}
 
 ## Activity Checklist {.check}
