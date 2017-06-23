@@ -1,36 +1,35 @@
----
-title: Høvdingebold — Noter til ledere af kodeklub
-language: da-DK
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"] 
-...
+* * *
 
-#Introduktion:
-I dette projekt skal børnene lære, hvordan man laver et platformsspil ved at benytte de Scratch-koncepter og færdigheder, som vi har lært i tidligere projekter.
+title: Dodgeball — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Ressourcer
-Du bør benytte Scratch 2 til dette projekt. Scratch 2 kan tilgås online via [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) og kan også downloades fra  [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) og bruges offline.
+# Introduction:
 
-Du kan finde en færdig version af dette projekt <a href="http://scratch.mit.edu/projects/39740618/#editor">online</a>, og det kan også downloades ved at klikke på linket 'Download Projektmateriale', som indeholder:  
+In this project, children will learn how to make a platform game, making use of Scratch concepts and skills that have been learnt in previous projects.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/39740618/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + Dodgeball.sb2
 
-Der findes også en version af dette projekt med tilhørende eksterne ressourcer, som er loadede i forvejen. Dette er tilgængeligt online via  [jumpto.cc/dodge-resources](http://jumpto.cc/dodge-resources), og kan også downloades via projektets klubleder materiale, som indeholder:
+There is also a version of this project with the external resources pre-loaded. This is available online at [jumpto.cc/dodge-resources](http://jumpto.cc/dodge-resources), or in the downloadable project materials, which contains:
 
 + DodgeballResources.sb2 
 
-Projektet indeholder også en 'Projekt Ressourcer' mappe, der indeholder billeder som børnene får brug for, så de kan fuldføre projektet. Sørg for at børnene har adgang til en kopi af disse ressourcer.
+This link also includes a 'Project Resources' folder, which contains images that children will need to complete this project. Make sure that each child has access to a copy of these resources.
 
-Projekt Ressourcer:
-+ background.png
+Project resources: + background.png
 
-#Læringsmål
-+ Dette projekt underbygger vores læring fra tidligere færdigheder i programmering.
+# Learning Objectives
 
-#Udfordringer  
-+ "Forbedrede hop" - bruge en ekstra `hvis` {.blockcontrol} blok til at løse et adskillige-hop bug;
-+ "Tilfældige bolde" - bruge `vælg tilfældigt mellem` {.blockoperators} blokken til at variere boldens kostume, størrelse og forsinkelse mellem kloner;
-+ "Flere forhindringer" - tilføje yderligere sprites til spillet;
-+ "Forbedret tyngdekraft" - bruge en ekstra `hvis` {.blockcontrol} blok til at løse et bug i `tyngdekraft` {.blockdata}; 
-+ "Flere liv" - tilføjelse af en `liv` {.blockdata} variabel.
++ This project consolidates learning of previous programming skills learnt.
 
+# Challenges
+
++ "Improved jumping" - using an additional `if` {.blockcontrol} block to fix a multiple-jump bug;
++ "Random balls" - using the `random` {.blockoperators} block to vary the ball costume, size and delay between clones;
++ "More obstacles" - adding additional sprites to the game;
++ "Improved gravity" - using an additional `if` {.blockcontrol} block to fix a bug in the `gravity` {.blockdata};
++ "More lives" - addition of a `lives` {.blockdata} variable.
