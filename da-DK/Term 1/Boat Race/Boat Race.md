@@ -1,261 +1,265 @@
----
-title: Bådsejlads
-level: Scratch 1
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*","Projekt Ressourcer/*.*"]
-...
+* * *
 
-# Introduktion { .intro }
+title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-Du skal lære hvordan du laver et spil, hvor man bruger musen til at styre en båd til en øde ø.
+# Introduction {.intro}
+
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# Trin 1: Planlæg dit spil { .activity }
+# Step 1: Planning your game {.activity}
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt og slet katte-spriten så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Klik på din scenebaggrund og planlæg dit niveau. Du bør tilføje:
-	+ Træ som din båd skal undgå; 
-	+ En øde ø som din båd skal nå.
++ Click on your stage backdrop and plan out your level. You should add:
+    
+    + Wood that your boat has to avoid;
+    + A desert island that your boat has to get to.
+    
+    Here's how your game could look:
+    
+    ![screenshot](boat-bg.png)
 
-Sådan skal dit spil se ud:
+# Step 2: Controlling the boat {.activity}
 
-![screenshot](boat-bg.png) 
+## Activity Checklist {.check}
 
-# Trin 2: At kontrollere båden { .activity }
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
+    
+    ![screenshot](boat-boat.png)
+    
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-## Arbejdsliste { .check }
++ You are going to control the boat with your mouse. Add this code to your boat:
+    
+    ```blocks
+    when flag clicked
+    point in direction (0 v)
+    go to x: (-190) y: (-150)
+    forever
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
+```
 
-+ Hvis din instruktør har givet dig en 'Projekt Ressourcer' mappe, så klik på 'Upload sprite fra fil' og tilføj 'boat.png' billedet. Du bør formindske din sprite og stille den i sin start position.
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
+    
+    ![screenshot](boat-mouse.png)
+    
+    **Note: There is currently a bug in Scratch which means your boat may not move towards the mouse pointer. If this happens, click the arrow on the `point towards` {.blockmotion} block and re-select 'mouse-pointer'.**
+    
+    ![screenshot](images/boat-bug.png)
 
-![screenshot](boat-boat.png)
++ What happens if the boat reaches the mouse pointer?
+    
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    
+    ![screenshot](boat-pointer.png)
 
-Hvis du ikke har boat.png billedet, så kan du i stedet tegne din egen båd! 
++ Test out your boat again, to check whether the problem has been fixed.
 
-+ Du skal kontrollere båden med din mus. Tilføj denne kode til din båd:
+## Save your project {.save}
 
-	```blocks 
-			når du klikker på ⚑
-			peg i retning (0 v)
-			gå til x:(-190) y:(-150)
-			for evigt
-	  				 peg mod [musepil v]
-	  			 gå (1) trin
-			end 
-	```  
+# Step 3: Crashing! {.activity.new-page}
 
-+ Afprøv din båd ved at klikke på flaget og flyt på musen. Sejler båden mod musen? 
+Your boat can sail through the wooden barriers! Let's fix that.
 
-![screenshot](boat-mouse.png)
+## Activity Checklist {.check}
 
-+ Hvad sker der, hvis båden når hen til musemarkøren? 
++ You'll need 2 costumes for your boat, one normal costume, and one for when the boat crashes. Duplicate your boat costume, and name them 'normal' and 'hit'.
 
-For at forhindre det, er du nødt til at føje en `hvis` {.blockcontrol} blok til din kode, således at båden kun bevæger sig hvis den befinder sig mere end 5 pixels fra båden.
++ Click on your 'hit' costume, and choose the 'Select' tool to grab bits of the boat and move and rotate them around. Make your boat look as if it's crashed.
+    
+    ![screenshot](boat-hit-costume.png)
 
-![screenshot](boat-pointer.png)	
++ Add this code to your boat, inside the `forever` {.blockcontrol} loop, so that it crashes when it touches any brown wooden bits:
+    
+    ```blocks
+    if <touching color [#603C15]?> then
+        switch costume to [hit v]
+        say [Noooooo!] for (1) secs
+        switch costume to [normal v]
+        point in direction (0 v)
+        go to x: (-215) y: (-160)
+    end
+```
 
-+ Afprøv din båd igen og se om problemet er løst. 
+This code is inside the `forever` {.blockcontrol} loop, so that your code keeps checking if the boat has crashed.
 
-## Gem dit projekt { .save }
++ You should also make sure that your boat always starts looking like it's 'normal'.
 
-# Trin 3: Sammenstød! { .activity .new-page } 
++ Now if you try to sail through a wooden barrier, you should see that your boat crashes and moves back to the start.
+    
+    ![screenshot](boat-crash.png)
 
-Din båd kan sejle gennem træbarriererne! Lad os finde en løsning.
+## Save your project {.save}
 
-## Arbejdsliste { .check }
+## Challenge: Winning! {.challenge}
 
-+ Du får brug for 2 kostumer til din båd- et normalt kostume og et kostume beregnet til når båden styrter sammen. Kopiér dit båds kostume og navngiv dem 'normal' og 'ramt'. 
+Can you add another `if` {.blockcontrol} statement to your boat's code, so that the player wins when they get to the desert island?
 
-+ Klik på dit 'ramt' kostume, og vælg 'Marker' redskabet til at tage nogle bidder af din båd og rotér dem rundt. Få din båd til at se ud som om, den er styrtet sammen.
-
-![screenshot](boat-hit-costume.png)
-
-+ Tilføj denne kode til din båd indeni `for evigt` {.blockcontrol} loopen, således at den styrter sammen, når den rører hvilke som helst former for brune træstykker:
-
-```blocks 
-	hvis <berører farven [#603C15]?> så
-			skift kostume til [ramt v]
-			sig [Neeeeej!] i (1) sekunder
-			skift kostume til [normal v]
-			peg i retning (0 v)
-		gå til x:(-215) y:(-160)
-	end
-``` 
-
-Denne kode ligger indeni `for evigt` {.blockcontrol} loopen, så din kode bliver ved med at tjekke om din båd er stødt sammen med noget.
-	
-+ Sørg også for at din båd altid starter ud med at se ud som 'normal'.   
-
-+ Hvis du nu prøver at sejle gennem en barriere af træ, så bør du se at din båd styrter sammen og bevæger sig tilbage til start. 
-
-![screenshot](boat-crash.png)
-
-## Gem dit projekt { .save }
-
-## Udfordring: Du vinder! {.challenge}
-Kan du tilføje en ny `hvis` {.blockcontrol} erklæring til koden for din båd, således at spilleren vinder, når han/hun ankommer til den øde ø? 
-
-Når båden ankommer til den gule øde ø, så skal den sige 'YEAH!', og spillet skal stoppe. Du får brug for denne kode:
+When the boat gets to the yellow desert island, it should say 'YEAH!' and then the game should stop. You'll need to use this code:
 
 ```blocks
-	sig [YEAH!] i (1) sekunder
-	stop [alle v]
-``` 
+    say [YEAH!] for (1) secs
+    stop [all v]
+```
 
 ![screenshot](boat-win.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Lydeffekter {.challenge}
-Kan du tilføje lydeffekter til dit spil, som afspilles når båden styrter sammen eller den når øen til sidst? Du kan ovenikøbet tilføje noget baggrundsmusik (tag et kig på det tidligere 'Rockband' projekt, hvis du har brug for hjælp). 
+## Challenge: Sound effects {.challenge}
 
-## Gem dit projekt { .save }
+Can you add sound effects to your game, for when the boat crashes, or reaches the island at the end? You could even add background music (see the previous 'Rock Band' project if you need help with this).
 
-# Trin 4: Tidstælling { .activity }
+## Save your project {.save}
 
-Lad os tilføje et stopur til dit spil, så spilleren skal nå hen til den øde ø så hurtigt som muligt.
+# Step 4: Time Trial {.activity}
 
-## Arbejdsliste { .check }
+Let's add a timer to your game, so that the player has to get to the desert island as fast as possible.
 
-+ Tilføj en ny variabel du kalder `tid` {.blockdata} til din scene. Du kan også ændre, hvordan din nye variabel vises. Hvis du har brug for hjælp, så tag et kig på 'Balloons' projektet.
+## Activity Checklist {.check}
 
-![screenshot](boat-variable.png)
++ Add a new variable called `time` {.blockdata} to your stage. You can also change the display of your new variable. If you need help, have a look at the 'Ghostbusters' project.
+    
+    ![screenshot](boat-variable.png)
 
-+ Tilføj denne kode til din __scene__, således at dit stopur tæller op til tidspunktet, hvor din båd når hen til den øde ø:
++ Add this code to your **stage**, so that the timer counts up until the boat reaches the desert island:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [0]
+    forever
+        wait (0.1) secs
+        change [time v] by (0.1)
+    end
+```
 
-	```blocks 
-		når du klikker på ⚑
-		sæt [tid v] til [0] 
-		for evigt
-				vent (0.1) sekunder
-					ændr [tid v] med (0.1)
-		end 
-	```  
++ That's it! Test out your game and see how quickly you can get to the desert island!
+    
+    ![screenshot](boat-variable-test.png)
 
-+ Det var det! Afprøv dit spil og se hvor hurtigt du kan nå hen til den øde ø!
+## Save your project {.save}
 
-![screenshot](boat-variable-test.png)
+# Step 5: Obstacles and power-ups {.activity}
 
-## Gem dit projekt { .save }
+This game is *far* too easy - let's add things to make it more interesting.
 
-# Trin 5: Forhindringer og power-ups { .activity } 
+## Activity Checklist {.check}
 
-Spillet er _alt_ for nemt - lad os tilføje nogle ting og gøre det mere spændende.
++ First let's add some 'boosts' to your game, which will speed up the boat. Edit your stage backdrop and add in some white booster arrows.
+    
+    ![screenshot](boat-boost.png)
 
-## Arbejdsliste { .check }
++ You can now add some code to your boat's `forever` {.blockcontrol} loop, so that it moves 2 *extra* steps when touching a white booster.
+    
+    ```blocks
+    if <touching color [#FFFFFF]?> then
+        move (3) steps
+    end
+```
 
-+ Lad os først tilføje nogle 'forstærkninger' til dit spil, som kan gøre din båd hurtigere. Redigér din scenebaggrund og tilføj nogle hvide forstærkningspile.
++ You can also add in a spinning gate, which your boat has to avoid. Add in a new sprite called 'gate', which looks like this:
+    
+    ![screenshot](boat-gate.png)
+    
+    Make sure that the colour of the gate is the same as the other wooden barriers.
 
-![screenshot](boat-boost.png)
++ Set the centre of the gate sprite.
+    
+    ![screenshot](boat-center.png)
 
-+ Nu kan du tilføje noget kode til din båds `for evigt` {.blockcontrol} loop, således at den flytter sig 2 _ekstra_ trin, når den rører en hvid forstærkning.
++ Add code to your gate, to make it spin slowly `forever` {.blockcontrol}.
 
-	```blocks 
-		hvis <berører farven [#FFFFFF]?> så 
-	   	  gå (3) trin
-		end 
-	``` 
++ Test out your game. You should now have a spinning gate that you must avoid.
+    
+    ![screenshot](boat-gate-test.png)
 
-+ Du kan også tilføje en svingende port, som din båd skal undgå. Tilføj en ny sprite ved navn 'port', der ser således ud:
+## Save your project {.save}
 
-![screenshot](boat-gate.png)
+## Challenge: More obstacles! {.challenge.new-page}
 
-Sørg for at portens farve er den samme farve som de øvrige træbarrierer. 
+Can you add more obstacles to your game? Here are some ideas:
 
-+ Centrér port spriten.
-
-![screenshot](boat-center.png)
-
-+ Tilføj en kode til din port, som får den til at svinge langsomt `for evigt` {.blockcontrol}.
-
-+ Afprøv dit spil. Du bør nu have en svingende port, som du skal undgå.
-
-![screenshot](boat-gate-test.png)
-
-## Gem dit spil { .save }
-
-## Udfordring: Flere forhindringer! {.challenge .new-page}
-Kan du tilføje flere forhindringer til dit spil? Her er nogle idéer:
-
-+ Du kunne tilføje noget grønt slim til din baggrund, som gør spilleren langsommere, når de rører ved det. Til dette kan du bruge en `vent` {.blockcontrol} blok:
++ You could add green slime to your backdrop, which slows the player down when they touch it. You can use a `wait` {.blockcontrol} block to do this:
 
 ```blocks
-	vent (0.01) sekunder
+    wait (0.01) secs
 ````
 
 ![screenshot](boat-algae.png)
 
-+ Du kan også tilføje en genstand, der bevæger sig, fx en træstamme eller en haj! 
++ You could add a moving object, like a log or a shark!
 
 ![screenshot](boat-obstacles.png)
 
-Disse blokke kan måske hjælpe dig:
+These blocks may help you:
 
 ```blocks
-	gå (1) trin
-	hop tilbage ved kanten
-```` 
+    move (1) steps
+    if on edge, bounce
+````
 
-Hvis din nye genstand ikke er brun, så skal du tilføje dette til koden for din båd:
+If your new object isn't brown, you'll need to add to your boat code:
 
 ```blocks
-	hvis <  <berører farven [#603C15]?> eller <berører [haj v]?> > så
-	end
-``` 
+    if <  <touching color [#603C15]?> or <touching [shark v]?> > then
+    end
+```
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Flere både! {.challenge .new-page}
-Kan du forme spillet, så det bliver til et racerløb mellem 2 spillere?
+## Challenge: More boats! {.challenge.new-page}
 
-+ Kopiér din båd, omdøb den 'Spiller 2' og ændr dens farve.
+Can you turn your game into a race between 2 players?
+
++ Duplicate the boat, rename it 'Player 2' and change its colour.
 
 ![screenshot](boat-p2.png)
 
-+ Lav Spiller 2's start position om ved at ændre denne kode: 
++ Change Player 2's starting position, by changing this code:
 
 ```blocks
-	gå til x:(-190) y:(-150)
+    go to x: (-190) y: (-150)
 ```
 
-+ Slet koden, som bruger musen til at kontrollere båden:
++ Delete the code that uses the mouse to control the boat:
 
 ```blocks
-	hvis <(afstand til [musepil v]) > [5]> så
-   		peg mod [musepil v]
-   		gå (1) trin
-	end 
+    if < (distance to [mouse-pointer v]) > [5] > then
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
 ```
 
-...og erstat den med en kode, der kontrollerer båden ved hjælp af piletasterne.
+...and replace it with code to control the boat using the arrow keys.
 
-Du skal bruge denne kode til at flytte båden fremad:
+This is the code you'll need to move the boat forward:
 
 ```blocks
-	hvis <trykket på tasten [pil opad v]?> så 
-   		gå (1) trin
-	end 
+    if < key [up arrow v] pressed? > then
+        move (1) steps
+    end
 ```
 
-Du får også brug for en kode, som kan `dreje` {.blockmotion} båden, når der trykkes på venstre og højre piletast. 
+You'll also need code to `turn` {.blockmotion} the boat when the left and right arrow keys are pressed.
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Flere niveauer! {.challenge .new-page}
-Kan du lave nogle flere baggrunde og gøre det muligt for spilleren at vælge mellem forskellige niveauer?
+## Challenge: More levels! {.challenge.new-page}
+
+Can you create additional backdrops, and allow the player to choose between levels?
 
 ```blocks
-	når du trykker på [mellemrum v]
-    næste baggrund
-``` 
+    when [space v] key pressed
+    next backdrop
+```
 
-## Gem dit projekt { .save } 
- 
+## Save your project {.save}
