@@ -1,215 +1,216 @@
----
-title: Fang Prikkerne
-level: Scratch 2
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*", "Projekt Ressourcer/*.*"]
-beta: true
-...
+* * *
 
-# Introduktion { .intro }
+title: Catch the Dots level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*", "Project Resources/*"] beta: true ...
 
-I dette projekt skal du lære, hvordan du laver et spil, hvor du skal matche farvede prikker med den tilsvarende farvede del af styreenheden. 
+# Introduction {.intro}
+
+In this project you'll learn how to create a game, in which you have to match up coloured dots with the correct part of the controller.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/44942820/?autostart=false" frameborder="0"></iframe>
   <img src="dots-final.png">
 </div>
 
-# Trin 1: Lav en styreenhed { .activity } 
+# Step 1: Creating a controller {.activity}
 
-Lad os starte med at lave en styreenhed (controller), som skal bruges til at samle prikker. 
+Let's start by creating a controller, that will be used to collect dots.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt og slet katte-spriten, så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Hvis din instruktør har givet dig en 'Ressourcer' mappe, så klik på 'Upload sprite fra fil' og tilføj 'controller.svg' billedet. Flyt spriten til midten af scenen.
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'controller.svg' image. You should move this sprite to the center of the stage.
+    
+    ![screenshot](dots-controller.png)
+    
+    If you don't have this image, you can draw it yourself!
 
-	![screenshot](dots-controller.png)
-	
-Hvis du ikke har billedet, så kan du selv tegne en! 
-	
-+ Drej din styeenhed til højre, når der trykkes på højre piletast:   
-
-```blocks
-		når du klikker på ⚑ 
-			for evigt
-   			hvis <trykket på tasten [højrepil v]?> så
-      drej ↻ (3) grader
-   end
-end
++ Turn your controller to the right when the right arrow key is pressed:
+    
+    ```blocks
+    when flag clicked
+    forever
+        if <key [right arrow v] pressed?> then
+            turn right (3) degrees
+        end
+    end
 ```
-+ Afprøv din styreenhed -- den bør nu dreje til højre.
 
-## Gem dit projekt { .save }
++ Test out your controller -- it should spin to the right.
 
-## Udfordring: Drej til venstre {.challenge}  
-Kan du få din styreenhed til at dreje til venstre, når der trykkes på venstre piletast? 
+## Save your project {.save}
 
-## Gem dit projekt { .save }
+## Challenge: Spinning left {.challenge}
 
-# Trin 2: Saml prikker { .activity } 
+Can you make your controller spin to the left when the left arrow key is pressed?
 
-Lad os tilføje nogle prikker, som spilleren skal samle sammen med deres styreenhed. 
+## Save your project {.save}
 
-## Arbejdsliste { .check }
+# Step 2: Collecting dots {.activity}
 
-+ Lav en ny sprite ved navn 'rød'. Spriten skal være en lille, rød prik.  
+Let's add some dots for the player to collect with their controller.
 
-	![screenshot](dots-red.png)
+## Activity Checklist {.check}
 
-+ Tilføj dette script til din røde sprite-prik for at lave en ny klon af din prik med få sekunders mellemrum:
++ Create a new sprite called 'red'. This sprite should be a small red dot.
+    
+    ![screenshot](dots-red.png)
 
-```blocks 
-		når du klikker på ⚑
-		vent (2) sekunder
-		for evigt
-   			opret klon af [mig selv v]
-  			 vent (vælg tilfældigt mellem (5) og (10)) sekunder
-		end
-``` 
- 
-+ Når hver klon er oprettet skal den komme frem i en af de 4 hjørner af scenen.
++ Add this script to your 'red' dot sprite, to create a new dot clone every few seconds:
+    
+    ```blocks
+    when flag clicked
+    hide
+    wait (2) secs
+    forever
+        create clone of [myself v]
+        wait (pick random (5) to (10)) secs
+    end
+```
 
-	![screenshot](dots-start.png)
++ When each clone is created, you want it to appear in one of the 4 corners of the stage.
+    
+    ![screenshot](dots-start.png)
+    
+    To do this, first create a new list variable called `start positions` {.blockdata} and click the `(+)` to add in the values `-180` and `180`.
+    
+    ![screenshot](dots-list.png)
 
-Til dette formål skal du først lave en ny listevariabel, som du kalder `start positioner` {.blockdata} og så klikke på `(+)` for at tilføje værdierne `-180` og `180`.
++ You can use these 2 list items to pick a random corner of the stage. Add this code to the 'dot' sprite, so that each new clone moves to a random corner and then slowly moves towards the controller.
+    
+    ```blocks
+    when I start as a clone
+    go to x: (item (random v) of [start positions v]) y: (item (random v) of [start positions v])
+    point towards [controller v]
+    show
+    repeat until <touching [controller v]?>
+        move (1) steps
+    end
+```
 
-![screenshot](dots-list.png)
+The code above chooses either `-180` or `180` for the x *and* y positions, meaning that each clone starts in one corner of the stage.
 
-+ Du kan bruge disse 2 listeemner til at vælge et tilfældigt hjørne af scenen. Tilføj denne kode til prik-spriten, således at hver ny klon bevæger sig til et tilfældigt hjørne, og dernæst bevæger sig langsomt mod styreenheden.
++ Test your project. You should see lots of red dots appear in each corner of the screen, and move slowly towards the controller.
+    
+    ![screenshot](dots-red-test.png)
 
-```blocks 
-		når jeg starter som klon
-		gå til x:(punkt (random v) på [start positioner v]) y:(punkt (random v) på [start positioner v])
-		peg mod [controller v]
-			vis
-			gentag indtil <berører [controller v]?>
-   		gå (1) trin
-	end
-``` 
++ Create 2 new variables called `lives` {.blockdata} and `score` {.blockdata}.
 
-Ovenstående kode vælger enten `-180` eller `180` for x _og_ y positionerne, hvilket betyder at hver ny klon starter i et hjørne af scenen. 
++ Add code to your stage to set the `lives` {.blockdata} to 3 and the `score` {.blockdata} to 0 at the start of the game.
 
-+ Afprøv dit projekt. Du skulle gerne se en masse røde prikker dukke frem fra hver af de 4 hjørner af skærmen, og som langsomt bevæger sig mod styreenheden. 
++ You need to add code to the end of your red dot's `when I start as a clone` {.blockcontrol} code, so that either 1 is added to the player's `score` {.blockdata} if the colours match, or 1 is taken from the player's `lives` {.blockdata} if the colours don't match.
+    
+    ```blocks
+    move (5) steps
+    if <touching color [#FF0000]?> then
+        change [score v] by (1)
+        play sound [pop v]
+    else
+        change [lives v] by (-1)
+        play sound [laser1 v]
+    end
+    delete this clone
+```
 
-	![screenshot](dots-red-test.png)
++ Add this code to the end of your stage's script, so that the game ends when the player loses all of their lives:
+    
+    ```blocks
+    wait until <(lives) < [1]>
+    stop [all v]
+```
 
-+ Lav 2 nye variabler, som du kalder `liv` {.blockdata} og `score` {.blockdata}.
++ Test your game to make sure this code works as expected.
 
-+ Tilføj en kode til din scene for at sætte `liv` {.blockdata} til 3 og `score` {.blockdata} til 0 i begyndelsen af spillet.
+## Save your project {.save}
 
-+ Du skal tilføje din kode i slutningen af din røde priks `når jeg starter som klon` {.blockcontrol} kode, sådan at enten 1 bliver tilføjet til spillerens `score` {.blockdata} hvis farverne matcher, eller 1 trækkes fra spillerens `liv` {.blockdata} hvis farverne ikke matcher.
+## Challenge: More dots {.challenge}
 
-```blocks 
-		gå (5) trin
-			hvis <berører farven [#FF0000]?> så
-   		 ændr [score v] med (1)
-   		 spil lyden [pop v]
-	ellers
-   		ændr [liv v] med (-1) 
-   		spil lyden [laser1 v]
-	end
-	slet denne klon
-```  
- 
-+ Tilføj denne kode til slutningen af scriptet til din scene, således at spillet slutter, når spilleren mister alle sine liv:
-
-```blocks 
-		vent indtil <(liv) < [1]> 
-		stop [alle v]
-```  
-
-+ Afprøv dit spil for at sikre dig, at koden virker som forventet. 
-
-## Gem dit projekt { .save }
-
-## Udfordring: Flere prikker {.challenge}
-Kopiér din røde sprite-prik to gange, og døb de to nye sprites 'gul' og 'blå'. 
+Duplicate your 'red' dot sprite twice, and name the two new sprites 'yellow' and 'blue'.
 
 ![screenshot](dots-more-dots.png)
 
-Redigér dine sprites (inklusive deres kode), sådan at hver farvede prik matcher deres tilsvarende farve på styreenheden. Husk at afprøve dit projekt, og sørg for at du får point og taber liv på de rigtige tidspunkter, og at dit spil hverken er for nemt eller for svært! 
+Edit these sprites (including their code), so that each coloured dot has to match the correct colour on the controller. Remember to test your project, making sure you gain points and lose lives at the right times, and that your game isn't too easy or too hard!
 
 ![screenshot](dots-all-test.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 3: Forøg sværhedsgraden { .activity .new-page} 
+# Step 3: Increasing the difficulty {.activity.new-page}
 
-Lad os lave spillet sværere jo længere spilleren overlever ved langsomt at reducere den tid der går mellem at prikkerne dukker frem. 
- 
-## Arbejdsliste { .check }
+Let's make the game get more difficult the longer the player survives, by slowly reducing the delay between dots appearing.
 
-+ Lav en ny variabel med navnet `forsinkelse` {.blockdata}.
+## Activity Checklist {.check}
 
-+ Lav et nyt script på din scene, som sætter forsinkelsen til et højt tal, og som så langsomt reducerer den tid, der forsinkes med. 
++ Create a new variable called `delay` {.blockdata}.
 
-```blocks 
-		når du klikker på ⚑
-        sæt [forsinkelse v] til (8)
-        gentag indtil <(forsinkelse) = (2)>
-            vent (10) sekunder
-            ændr [forsinkelse v] med (-0.5)
-		end 
-```  
- 
-Læg mærke til at dette minder en del om, hvordan et stopur virker!  
++ On your stage, create a new script that sets the delay to a high number, and then slowly reduces the delay time.
+    
+    ```blocks
+    when flag clicked
+    set [delay v] to (8)
+    repeat until < (delay) = (2)>
+        wait (10) secs
+        change [delay v] by (-0.5)
+    end
+```
 
-+ Du kan også bruge `forsinkelse` {.blockdata} variablen i scriptene til dine røde, gule og blå prikker. Fjern koden, som venter et tilfældigt antal sekunder mellem at lave kloner, og erstat den med din nye `forsinkelse` {.blockdata} variabel:
+Notice that this is very similar to how a game timer works!
 
-```blocks 
-		vent (forsinkelse) sekunder
-``` 
++ Finally, you can use this `delay` {.blockdata} variable in your red, yellow and blue dots' scripts. Remove the code that waits a random number of seconds between creating clones, and replace it with your new `delay` {.blockdata} variable:
+    
+    ```blocks
+    wait (delay) secs
+```
 
-+ Afprøv din nye `forsinkelse` {.blockdata} variabel, og hold øje med om forsinkelserne mellem prikkerne langsomt reduceres. Virker dette for alle de 3 farvede prikker? Registrerer du at værdien af `forsinkelse` {.blockdata} variablen reduceres? 
++ Test your new `delay` {.blockdata} variable, and see whether the delay between dots reduces slowly. Does this work for all 3 coloured dots? Can you see the value of the `delay` {.blockdata} variable reducing?
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Hurtigt bevægende prikker {.challenge}
-Kan du forbedre dit spil ved at tilføje en `fart` {.blockdata} variabel, sådan at prikkerne starter med at bevæge sig 1 skridt ad gangen, og hvor hastigheden bliver hurtigere og hurtigere? Dette fungerer meget på samme måde som `forsinkelse` {.blockdata} variablen, vi benyttede ovenfor, og brug gerne koden til at hjælpe dig på vej.
+## Challenge: Faster moving dots {.challenge}
 
-## Gem dit projekt { .save }
+Can you improve your game by adding a `speed` {.blockdata} variable, so that the dots start off moving 1 step at a time, and steadily get faster and faster? This will work in a very similar way to the `delay` {.blockdata} variable used above, and you can use this code to help you.
 
-# Trin 4: High score { .activity }
+## Save your project {.save}
 
-Lad os gemme high scoren, så spillerne kan følge med i, hvordan de klarer sig.
+# Step 4: High score {.activity}
 
-## Arbejdsliste { .check }
+Let's save the high score, so that players can see how well they're doing.
 
-+ Lav en ny variabel, som du kalder `high score` {.blockdata}.
+## Activity Checklist {.check}
 
-+ Klik på din scene, og lav en ny brik (Flere Brikker), som du kalder `tjek high score` {.blockmoreblocks}.
++ Create a new variable called `high score` {.blockdata}.
 
-	![screenshot](dots-custom-1.png)
++ Click on your stage, and create a new custom block called `check high score` {.blockmoreblocks}.
+    
+    ![screenshot](dots-custom-1.png)
 
-+ Tilføj din nye brik umiddelbart før slutningen af spillet. 
++ Just before the end of the game, add in your new custom block.
+    
+    ![screenshot](dots-custom-2.png)
 
-	![screenshot](dots-custom-2.png)
++ Add code to your custom block to store the current `score` {.blockdata} as the `high score` {.blockdata} `if` {.blockcontrol} it's the highest score so far:
+    
+    ```blocks
+    define [check high score]
+    if <(score) > (high score)> then
+        set [high score v] to (score)
+    end
+```
 
-+ Tilføj en kode til din brik for at opbevare den nuværende `score` {.blockdata} som vores `high score` {.blockdata} `hvis` {.blockcontrol} det er den højeste score indtil videre:
++ Test the code you've added. Play your game to check whether the `high score` {.blockdata} is updated correctly.
 
-```blocks 
-		definer [object Object]
-        hvis <(score) > (high score)> så
-            sæt [high score v] til (score)
-        end
-``` 
- 
-+ Test den kode, som du har tilføjet. Afprøv dit spil for at sikre dig at din `high score` {.blockdata} opdateres korrekt.
+## Save your project {.save}
 
-## Gem dit projekt { .save }
+## Challenge: Improve your game! {.challenge}
 
-## Udfordring: Forbedr dit spil! {.challenge}
-Kan du kommer i tanker om nogle ting, der kan forbedre dit spil? Du kan for eksempel lave specielle prikker, som: 
+Can you think of ways to improve your game? For example, you could create special dots that:
 
-+ fordobler din score;
-+ gør prikkerne langsommere;
-+ skjuler alle andre prikker på skærmen!
++ double your score;
++ slow down the dots;
++ hide all the other dots on the screen!
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Spilmenu {.challenge}
-Kan du tilføje en menu (med knapper) til dit spil? Du kan tilføje en vejledningsskærm eller en separat skærm, som viser high scoren. 'Hjernetræning' projektet kan hjælpe dig, hvis du får brug for hjælp. 
+## Challenge: Game menu {.challenge}
+
+Can you add a menu (with buttons) to your game? You could add an instructions screen, or a separate screen for showing the high score. If you need help with this, the 'Brain Game' project will help you.
