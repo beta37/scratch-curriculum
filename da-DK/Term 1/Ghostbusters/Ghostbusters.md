@@ -1,188 +1,192 @@
----
-title: Ghostbusters
-level: Scratch 1
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-# Introduktion { .intro }
+title: Ghostbusters level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-Du skal lave et fangelegsspil med spøgelser! 
+## Note: {.challenge.pdf-hidden}
+
+The 'Balloons' project has been moved to the [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) section.
+
+# Introduction {.intro}
+
+You are going to make a ghost-catching game!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
-  <img src="ghost-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
+    <img src="ghost-final.png">
 </div>
 
-# Step 1: Animere et spøgelse { .activity }
+# Step 1: Animating a ghost {.activity}
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt, og slet-katte spriten så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.  
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Tilføj en ny spøgelses-sprite og en passende baggrund. 
++ Add in a new ghost sprite, and a suitable stage backdrop.
+    
+    ![screenshot](ghost-ghost.png)
 
-![screenshot](ghost-ghost.png)
-
-+ Tilføj denne kode til dit spøgelse, så det gentagne gange kommer frem og forsvinder:  
-
-```blocks
-	når du klikker på ⚑
-		for evigt
-			skjul
-			vent (1) sekunder
-			vis
-			vent (1) sekunder  
-	end 
-``` 
- 
-+ Test koden af dit spøgelse ved at klikke på det grønne flag.
-
-## Gem dit projekt { .save }
-
-# Trin 2: Tilfældige spøgelser { .activity }
-
-Dit spøgelse er ret let at fange, for det bevæger sig ikke! 
-
-## Arbejdsliste { .check } 
-
-+ Frem for at blive i samme position kan du lade Scratch vælge tilfældige x og y koordinater i stedet. Tilføj en `gå til` {.blockmotion} blok til koden af dit spøgelse, så den ser således ud:
-
-```blocks
-	når du klikker på ⚑
-	for evigt
-	   skjul
-	   vent (1) sekunder
-	   gå til x:(vælg tilfældigt mellem (-150) og (150)) y:(vælg tilfældigt mellem (-150) og (150))
-	   vis
-	   vent (1) sekunder
-	end 
++ Add this code to your ghost, so that it repeatedly appears and disappears:
+    
+    ```blocks
+    when flag clicked
+    forever
+    hide
+    wait (1) secs
+    show
+    wait (1) secs
+    end
 ```
- 
-+ Afprøv dit spøgelse igen - nu bør du se at det dukker op et forskelligt sted hver gang.
 
-## Gem dit projekt { .save }
++ Test out your ghost's code, by clicking the green flag.
 
-## Udfordring: Mere tilfældighed {.challenge}
-Kan du få dit spøgelse til at `vente` {.blockcontrol} et tilfældigt antal gange før det kommer frem? Kan du bruge `sæt størrelsen` {.blocklooks} blokken til at få dit spøgelse til at være en tilfældig størrelse hver gang det kommer frem? 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 3: Fang spøgelser { .activity }
+# Step 2: Random ghosts {.activity}
 
-Lad os give spilleren mulighed for at fange spøgelser!
+Your ghost is really easy to catch, because it doesn't move!
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ For at give spilleren mulighed for at fange spøgelser, så tilføj denne kode:
++ Instead of staying in the same position, you can let Scratch choose random x and y coordinates instead. Add a `go to` {.blockmotion} block to your ghost's code, so that it looks like this:
+    
+    ```blocks
+    when flag clicked
+    forever
+        hide
+        wait (1) secs
+        go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+        show
+        wait (1) secs
+    end
+```
 
-```blocks
-	når denne sprite klikkes
-	skjul
-``` 
++ Test our your ghost again, and you should notice that it appears in a different place each time.
 
-+ Afprøv dit projekt. Kan du fange spøgelserne, når de kommer frem? Hvis du synes det er svært at fange spøgelserne, så kan du spille spillet i fuldskærm ved at trykke på denne knap:
+## Save your project {.save}
 
-![screenshot](ghost-fullscreen.png)
+## Challenge: More randomness {.challenge}
 
-## Udfordring: Tilføj en lyd { .challenge }
-Kan du lave en lyd, hver gang der fanges et spøgelse? 
+Can you make your ghost `wait` {.blockcontrol} a random amount of time before appearing? Can you use the `set size` {.blocklooks} block to make your ghost a random size each time it appears?
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 4: Tilføj en score { .activity .new-page }
+# Step 3: Catching ghosts {.activity}
 
-Lad os gøre det hele lidt mere spændende ved at lave en pointoptælling (score).
+Let's allow the player to catch ghosts!
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ For at holde øje med en spillers score har du brug for et sted, hvor du kan opbevare den. En __variabel__ er et sted, hvor du kan opbevare data som kan ændre sig, ligesom en score.
++ To allow the player to catch a ghost, add this code:
+    
+    ```blocks
+    when this sprite clicked
+    hide
+```
 
-For at lave en ny variabel, så klik på 'Scripts' fanebladet, vælg `Data` {.blockdata} og klik så på 'Lav en Variabel'.
++ Test out your project. Can you catch ghosts as they appear? If you find it difficult to catch the ghosts, you can play the game in fullscreen mode by clicking this button:
+    
+    ![screenshot](ghost-fullscreen.png)
 
-![screenshot](ghost-score.png)
+## Challenge: Adding a sound {.challenge}
 
-Tast 'score' i navnet på variablen, sørg for at den er tilgængelig for alle sprites, og klik 'OK' for at lave den. Herefter kan du se en del kodeblokke som kan bruges sammen med din `score` {.blockdata} variabel.
+Can you make a sound each time a ghost is caught?
 
-![screenshot](ghost-variable.png)
+## Save your project {.save}
 
-Du vil også kunne se scoren oppe i venstre hjørne af scenen. 
+# Step 4: Adding a score {.activity.new-page}
 
-![screenshot](ghost-stage-score.png)
+Let's make things more interesting by keeping score.
 
-+ Når et nyt spil startes (ved at klikke på flaget), bør du sætte spillerens score til 0: 
+## Activity Checklist {.check}
 
-	```blocks
-	når du klikker på ⚑
-	sæt [score v] til [0]
-	```  
++ To keep the player's score, you need a place to put it. A **variable** is a place to store data that can change, like a score.
+    
+    To create a new variable, click on the 'Scripts' tab, select `Data` {.blockdata} and then click 'Make a Variable'.
+    
+    ![screenshot](ghost-score.png)
+    
+    Type 'score' as the name of the variable, make sure that it is available for all sprites, and click 'OK' to create it. You'll then see lots of code blocks that can be used with your `score` {.blockdata} variable.
+    
+    ![screenshot](ghost-variable.png)
+    
+    You'll also see the score in the top-left of the stage.
+    
+    ![screenshot](ghost-stage-score.png)
 
-+ Når der fanges et spøgelse skal du tilføje 1 til spillerens score: 
++ When a new game is started (by clicking the flag), you should set the player's score to 0:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [0]
+```
 
-![screenshot](ghost-change-score.png)
++ Whenever a ghost is caught, you need to add 1 to the player's score:
+    
+    ![screenshot](ghost-change-score.png)
 
-+ Kør dit program igen og fang nogle spøgelser. Ændrer din score sig? 
++ Run your program again and catch some ghosts. Does your score change?
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 5: Tilføj et stopur { .activity }
+# Step 5: Adding a timer {.activity}
 
-Du kan gøre dit spil mere interessant ved kun at give spilleren 10 sekunder til at fange så mange spøgelser som muligt.
+You can make your game more interesting, by only giving your player 10 seconds to catch as many ghosts as possible.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Du kan bruge en anden variabel til at opbevare den øvrige tid som er tilbage. Klik på scenen og lav en ny variabel, som du kalder 'tid':
++ You can use another variable to store the remaining time left. Click on the stage, and create a new variable called 'time':
+    
+    ![screenshot](ghost-time.png)
 
-	![screenshot](ghost-time.png)
++ This is how the timer should work:
+    
+    + The timer should start at 10 seconds;
+    + The timer should count down every second;
+    + The game should stop when the timer gets to 0.
+    
+    Here's the code to do this, which you can add to your **stage**:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [10]
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]
+```
 
-+ Dit stopur bør fungere således: 
-
-	+ Stopuret bør starte ud med 10 sekunder;
-	+ Stopuret bør tælle ned hvert sekund;
-	+ Spillet bør stoppe når stopuret når ned på 0.
-
-Her er den kode du skal bruge, og som du kan tilføje til din __scene__:
-
-```blocks
-	når du klikker på ⚑
-	sæt [tid v] til [10]
-	gentag indtil <(tid) = [0]>
-		vent (1) sekunder
-		ændr [tid v] med (-1)
-end
-stop [alle v]
-``` 
- 
-Sådan tilføjer du din `gentag indtil`{.blockcontrol}`tid`{.blockdata}`= 0`{.blockoperators} kode:
+This is how you add the `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} code:
 
 ![screenshot](ghost-timer-help.png)
 
-+ Slæb din 'tid' variabel-viser til højre side af scenen. Du kan også højreklikke på variabel-viseren og vælge 'stor visning' for at ændre hvordan stopuret vises.
++ Drag your 'time' variable display to the right side of the stage. You can also right-click on the variable display and choose 'large readout' to change how the time is displayed.
+    
+    ![screenshot](ghost-readout.png)
 
-![screenshot](ghost-readout.png)
++ Ask a friend to test your game. How many points can they score? If your game is too easy, you can:
+    
+    + Give the player less time;
+    + Make the ghosts appear less often;
+    + Make the ghosts smaller.
+    
+    Test your game a few times until you're happy that it's the right level of difficulty.
 
-+ Få en ven til at afprøve dit spil. Hvor mange point kan de score? Hvis dit spil er for nemt, så kan du: 
+## Save your project {.save}
 
-	+ Give spilleren mindre tid;
-	+ Få spøgelserne til at vise sig færre gange
-	+ Lave spøgelserne mindre.
+## Challenge: More objects {.challenge}
 
-Afprøv dit spil et par gange indtil du er tilfreds med sværhedsgraden. 
-
-## Gem dit projekt { .save }
-
-## Udfordring: Flere objekter {.challenge}
-Kan du tilføje andre objekter til dit spil?
+Can you add in other objects to your game?
 
 ![screenshot](ghost-final.png)
 
-Du bør tænke over hvilke objekter du tilføjer. Tænk på: 
+You'll need to think about the objects you're adding. Think about:
 
-+ Hvor stort er det?
-+ Skal det dukke op flere eller færre gange end spøgelserne?  
-+ Hvordan skal det se ud, og lyde, når det fanges?  
-+ Hvor mange point bliver der scoret (eller tabt) når det fanges?  
++ How big is it?
++ Will it appear more or less often than the ghosts?
++ What will it look/sound like when it has been caught?
++ How many points will you score (or lose) for catching it?
 
-Hvis du har brug for hjælp til at tilføje et nyt objekt, så kan du genbruge trinene ovenfor! 
-## Gem dit projekt { .save }
+If you need help adding another object, you can reuse the steps above!
+
+## Save your project {.save}
