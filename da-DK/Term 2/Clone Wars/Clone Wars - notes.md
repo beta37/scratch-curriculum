@@ -1,24 +1,25 @@
----
-title: Bekrig Klonerne — Noter til ledere af kodeklub
-language: da-DK
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-#Introduktion:  
-I dette projekt skal børnene lære at lave et spil, hvor spilleren styrer et rumskib, som kan affyre lyn mod fjender. 
+title: Clone Wars — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Ressourcer
-Du bør benytte Scratch 2 til dette projekt. Scratch 2 kan tilgås online via [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) og kan også downloades fra [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) og bruges offline. 
+# Introduction:
 
-Du kan finde en færdig version af dette projekt <a href="http://scratch.mit.edu/projects/46018140/#editor">online</a>, og det kan også downloades ved at klikke på linket 'Download Projektmateriale', som indeholder:  
+In this project children will learn how to make a game, in which the player controls a spaceship that can fire lightning bolts at enemies.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/46018140/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + CloneWars.sb2
 
-#Læringsmål
-+ Dette projekt underbygger vores læring fra tidligere færdigheder i programmering, og demonstrerer hvordan sprites kan lave kloner af  _andre_ sprites, og hvordan flere kloner kan benyttes som projektiler. 
+# Learning Objectives
 
-#Udfordringer
-+ "Løs Lynene" - benytte en `vent` {.blockcontrol} blok til at reducere hyppigheden af lynene;  
-+ "Liv og Score" - lave `liv` {.blockdata}, `score` {.blockdata} og `highscore` {.blockdata} variabler;
-+ "Forbedr dit spil" - tilføje ekstra fjender, helbredspakker osv.
++ This project consolidates learning of previous programming skills learnt, and demonstrates how sprites can create clones of *other* sprites, and how multiple clones can be used as projectiles.
+
+# Challenges
+
++ "Fixing the lightning" - using a `wait` {.blockcontrol} block to reduce the frequency of the lightning;
++ "Lives and score" - creating `lives` {.blockdata}, `score` {.blockdata} and `highscore` {.blockdata} variables;
++ "Improve your game" - adding extra enemies, health packs, etc.
