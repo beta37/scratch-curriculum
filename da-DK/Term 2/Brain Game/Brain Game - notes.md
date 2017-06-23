@@ -1,29 +1,29 @@
----
-title: Hjernetræning — Noter til ledere af kodeklub
-language: da-DK
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-#Introduktion:
-I dette projekt skal børnene lære at lave et tidsbaseret quizprogram, hvor spilleren har 30 sekunder til at svare rigtigt på så mange spørgsmål som muligt.
+title: Brain Game — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Ressourcer
-Du bør benytte Scratch 2 til dette projekt. Scratch 2 kan tilgås online via [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) og kan også downloades fra  [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) og bruges offline.
+# Introduction:
 
-Du kan finde en færdig version af dette projekt <a href="http://scratch.mit.edu/projects/42225768/#editor">online</a>, og det kan også downloades ved at klikke på linket 'Download Projektmateriale', som indeholder: 
+In this project, children will learn how to make a times table quiz game, in which the player has to answer as many questions correctly as they can in 30 seconds.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/42225768/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + BrainGame.sb2
 
-#Læringsmål
-+ Dette projekt underbygger vores læring fra tidligere færdigheder i programmering, og viser hvordan udsendelse af meddelelser kan bruges til at lave et simpelt menusystem til spil.
+# Learning Objectives
 
-#Udfordringer
-+ "Ændre kostumer" - ændre hvordan spillets figur ser ud, når den reagerer på rigtige og forkerte svar;
-+ "Tilføj en score" - tilføje et point for hvert korrekte svar;
-+ "Startskærm" - ændre baggrundsscenen i respons til `start` {.blockevents} og `afslut` {.blockevents} udsendelsen af meddelelser for at lave 2 spil-skærme; 
-+ "Forbedret animation" - benytte loops og effekter til at forbedre grafikken af rigtig/forkert animationen;
-+ "Lyd og musik" - underbygge vores læring omkring musikloops og lydeffekter; 
-+ "Kapløb til 10 point" - ændre spillogikken for at lave et nyt formål med spillet;
-+ "Skærm med brugervejledning" - underbygge vores læring omkring udsendelser og det at lave en spilmenu ved at tilføje en ny vejledningsknap- og skærm.  
++ This project consolidates learning of previous programming skills learnt, and shows how broadcasts can be used to create a simple game menu system.
 
+# Challenges
+
++ "Changing costumes" - changing how the game character looks in response to correct and incorrect answers;
++ "Adding a score" - adding a point for every correct question answered;
++ "Start screen" - changing the stage backdrop in response to the `start` {.blockevents} and `end` {.blockevents} broadcast messages, creating 2 game 'screens';
++ "Improved animation" - using loops and effects to improve the correct/wrong graphics animation;
++ "Sound and music" - consolidating learning of music loops and sound effects;
++ "Race to 10 points" - changing the game logic to create a new game objective;
++ "Instruction screen" - consolidating the use of broadcasts to create a game menu, by adding a new 'instructions' button and screen.
