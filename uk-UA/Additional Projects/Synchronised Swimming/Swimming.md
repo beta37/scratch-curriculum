@@ -2,7 +2,7 @@
 
 title: Synchronised Swimming level: Scratch + language: en-GB stylesheet: scratch embeds: "*.png" materials: ["project-resources/*", "volunteer-resources/*"] ...
 
-# Introduction {.intro}
+# Введення {.intro}
 
 In celebration of the 2016 Summer Olympics in Rio, you are going to learn how to program a synchronised swimming routine for Scratch the cat by using loops and creating clones.
 
