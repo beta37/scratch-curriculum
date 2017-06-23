@@ -1,252 +1,253 @@
----
-title: Hukommelsesspil
-level: Scratch 2
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"] 
-...
+* * *
 
-## Projekt skabt ved hjælp af brugerbidrag { .challenge .pdf-hidden }
-Dette projekt er lavet sammen med Erik og hans datter Ruth. Hvis du har lyst til at bidrage med dit eget projekt, så [kontakt os på Github](https://github.com/CodeClub).
+title: Memory level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# Introduktion { .intro }
+## Community Contributed Project {.challenge.pdf-hidden}
 
-I dette projekt skal vi lave et hukommelsesspil, hvor du skal huske og gentage en rækkefølge af tilfældige farver!
+This project was created with Erik and his daughter Ruth. If you'd like to contribute a project of your own, then [get in touch with us on Github](https://github.com/CodeClub).
+
+# Introduction {.intro}
+
+In this project, you will create a memory game where you have to memorise and repeat a sequence of random colours!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/34874510/?autostart=false" frameborder="0"></iframe>
   <img src="colour-final.png">
 </div>
 
-# Trin 1: Tilfældige farver { .activity }
+# Step 1: Random colours {.activity}
 
-Lad os først lave lave en figur, som kan ændre sig til en tilfældig rækkefølge af farver, som spilleren skal huske.
+First, let's create a character that can change to a random sequence of colours for the player to memorise.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt og slet katte-spriten, så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Vælg en figur og en baggrund. Din figur behøver ikke være en person, men den skal være i stand til at vise forskellige farver.
++ Choose a character and a backdrop. Your character doesn't have to be a person, but it needs to be able to show different colours.
+    
+    ![screenshot](colour-sprite.png)
 
-![screenshot](colour-sprite.png)
++ In your game, you'll use a different number to represent each colour:
+    
+    + 1 = red;
+    + 2 = blue;
+    + 3 = green;
+    + 4 = yellow.
+    
+    Give your character 4 different colour costumes, one for each of the 4 colours above. Make sure that your coloured costumes are in the right order.
+    
+    ![screenshot](colour-costume.png)
 
-+ I dit spil skal du bruge et forskelligt nummer, som repræsenterer hver enkel farve:
++ To create a random sequence, you need to create a **list**. A list is just a variable that stores lots of data **in order**. Create a new list called `sequence` {.blockdata}. As only your character needs to see the list, we can also click 'For this sprite only'.
+    
+    ![screenshot](colour-list.png)
+    
+    You should now see your empty list in the top-left of your stage, as well as lots of new blocks for using lists.
+    
+    ![screenshot](colour-list-blocks.png)
 
-	+ 1 = rød;
-	+ 2 = blå;
-	+ 3 = grøn;
-	+ 4 = gul.
-
-Giv din figur 4 forskellige farvekostumer, en for hver af de 4 ovenstående farver. Sørg for at dine farvede kostumer ligger i den rigtige rækkefølge.
-
-![screenshot](colour-costume.png)
-
-+ Du skal oprette en _liste_ for at lave en tilfældig rækkefølge. En liste er blot en variabel, som opbevarer en stor mængde data __i ordnet rækkefølge__. Lav en liste som du kalder `rækkefølge` {.blockdata}. Da det kun er din figur, som skal se denne liste, så vælger vi 'Kun for denne sprite'.
-
-![screenshot](colour-list.png)
-
-Nu bør du se din tomme liste øverst til venstre af din scene samt en del nye brikker, der bruger lister.
-
-![screenshot](colour-list-blocks.png)   
-
-+ Tilføj denne kode til din figur for at tilføje et tilfældigt nummer til din liste (og for at vise det korrekte kostume) 5 gange:
-
-```blocks 
-	når du klikker på ⚑
-	slet (alle v) fra [rækkefølge v]
-	gentag (5) gange	
-   	tilføj (vælg tilfældigt mellem (1) og (4)) til [rækkefølge v] 
-   	skift kostume til (punkt (last v) på [rækkefølge v])
-   	vent (1) sekunder 
-end
-``` 
-
-Sørg også for at din liste er tom fra start af. 
-
-## Udfordring: Tilføj lyd {.challenge}
-Afprøv dit projekt et par gange. Måske du har lagt mærke til, at samme nummer vælges to (eller flere) gange i træk, hvilket gør rækkefølgen sværere at huske. Kan du lave en trommelyd hver gang figuren skifter kostume? 
-
-Kan du få en anden trommelyd frem afhængig af det tilfældige nummer, som bliver valgt? Dette ligner _meget_ den kode, som ændrer figurens kostume.
-
-## Gem dit projekt { .save }
-
-# Trin 2: Gentagelse af rækkefølgen { .activity }
-
-Lad os tilføje 4 knapper så spilleren kan gentage den rækkefølge, han/hun har husket på.
-
-## Arbejdsliste { .check }
-
-+ Tilføj 4 sprites til dit projekt, som bliver knapperne. Redigér dine 4 sprites, således der er 1 knap for hver af de 4 farver.
-
-![screenshot](colour-drums.png)
-
-+ Når man klikker på den røde tromme skal du udsende en meddelelse til din figur og lade den vide, at der er blevet klikket på den røde knap. Tilføj denne kode til din røde tromme:
-
-```blocks 
-	når denne sprite klikkes
-	send [rød v] til alle 
-``` 
-
-+ Når din figur modtager denne besked bør den tjekke, om nummeret '1' befinder sig i starten af listen (hvilket betyder at rød er den næste farve i rækkefølgen). Hvis den er det, kan du fjerne nummeret fra listen, da det så er blevet gættet korrekt. Ellers er spillet slut!
-
-```blocks 
-	når jeg modtager [rød v]
-	hvis <(punkt (1 v) på [rækkefølge v]) = [1]> så
-   	slet (1 v) fra [rækkefølge v]
-	ellers
-   	sig [Game over!] i (1) sekunder
-   	stop [alle v]
-end
-``` 
- 
-+ Du kan også vise nogle blinkende lys, når listen er tom, da dette betyder at hele rækkefølgen er blevet gættet korrekt. Tilføj denne kode til slutningen af din figurs `når du klikker på ⚑` {.blockevents} script:
-
-```blocks 
-	vent indtil <(længden af [rækkefølge v]) = [0]>
-	send [vundet v] til alle og vent
-``` 
-
-+ Klik på din scene og tilføj denne kode således at baggrunden ændrer farve, når spilleren har vundet.
-
-```blocks 
-	når jeg modtager [vundet v] 
-	spil lyden [drum machine v]
-	gentag (50) gange
-   	ændr effekten [farve v] med (25)
-   	vent (0.1) sekunder
-	end
-	fjern grafiske effekter
-```	
-
-## Udfordring: Lav 4 knapper {.challenge}
-Gentag trinene ovenfor med din blå, grønne og gule knap. Hvilken kode forbliver den samme, og hvilken kode ændrer sig for hver knap?
-
-Du kan også tilføje lyde, når der trykkes på knapperne.  
-
-Husk at afprøve den kode, du har tilføjet! Kan du lære en rækkefølge på 5 farver udenad? Er rækkefølgen forskellig fra gang til gang?  
-
-## Gem dit projekt { .save }
-
-# Trin 3: Flere niveauer { .activity .new-page }
-
-Indtil videre skal spilleren kun huske på 5 farver. Lad os forbedre dit spil, så rækkefølgen bliver længere.
-
-## Arbejdsliste { .check }
-
-+ Lav en ny variabel, som du kalder `score` {.blockdata}. 
-
-![screenshot](colour-score.png)  
-
-+ Denne `score` {.blockdata} vil vi bruge til at bestemme længden af den rækkefølge, som spilleren skal huske. Så til at starte med er scoren (og længden af rækkefølgen) 3. Tilføj denne kode til begyndelsen af `når du klikker på ⚑` {.blockevents} koden til din figur:
-
-```blocks 
-   sæt [score v] til [3]
-``` 
-
-+ I stedet for altid at lave en rækkefølge på 5 farver, så bruger du nu `score` {.blockdata} variablen til at bestemme længden på rækkefølgen. Ændr din figurs `gentag` {.blockcontrol} loop (til at lave rækkefølgen) til:
-
-```blocks 
-	gentag (score) gange
-	end
-``` 
-
-+ Hvis rækkefølgen bliver gættet korrekt, bør du tilføje 1 til scoren for at forlænge længden af rækkefølgen. 
-
-```blocks 
-	ændr [score v] med (1)
-``` 
-
-+ Til sidst skal du tilføje en `for evigt` {.blockcontrol} loop rundt om koden, så der laves en ny rækkefølge (i rækkefølgen) for hvert niveau. Koden for din figur bør se således ud:    
-
-```blocks 
-	når du klikker på ⚑ 
-	sæt [score v] til [3]
-	for evigt
-   	slet (alle v) fra [rækkefølge v] 
-   	gentag (score) gange
-      	tilføj (vælg tilfældigt mellem (1) og (4)) til [rækkefølge v] 
-        skift kostume til (punkt (sidste v) på [rækkefølge v])
-        vent (1) sekunder 
-   	end
-   	vent indtil <(længden af [rækkefølge v]) = [0]>
-   	send [vundet v] til alle og vent
-   	ændr [score v] med (1) 
++ Add this code to your character, to add a random number to your list (and show the correct costume) 5 times:
+    
+    ```blocks
+    when flag clicked
+    delete (all v) of [sequence v]
+    repeat (5)
+        add (pick random (1) to (4)) to [sequence v]
+        switch costume to (item (last v) of [sequence v]
+        wait (1) secs
     end
-``` 
- 
-+ Få dine venner til at afprøve dit spil. Husk at skjule `rækkefølge` {.blockdata} listen, før de begynder at spille! 
+```
 
-## Gem dit projekt { .save }
+Notice that you have also emptied the list to begin with.
 
-# Trin 4: High score { .activity } 
+## Challenge: Adding sound {.challenge}
 
-Lad os gemme en high score, så du kan spille mod dine venner.
+Test your project a few times. You may notice that sometimes the same number is chosen twice (or more) in a row, making the sequence harder to memorise. Can you make a drum sound play each time the character changes costume?
 
-## Arbejdsliste { .check }
+Can you make a different drum sound play depending on the random number chosen? This will be *very* similar to your code to change the character's costume.
 
-+ Tilføj 2 nye variabler til dit projekt, som du kalder `high score` {.blockdata} og `navn` {.blockdata}.
+## Save your project {.save}
 
-+ Hver gang spillet slutter (ved tryk på den forkerte knap) skal du undersøge, om spillerens score er højere end den nuværende high score. Hvis den er det, skal du gemme scoren som en high score og opbevare spillerens navn. Din røde knap bør se således ud:
+# Step 2: Repeating the sequence {.activity}
 
-```blocks 
-	når jeg modtager [rød v]
-	hvis <(punkt (1 v) på [rækkefølge v]) = [1]> så
-   	slet (1 v) fra [rækkefølge v]
-	ellers
-   	sig [Game over!] i (1) sekunder
-   	hvis <(score) > (high score)> så
-      	sæt [high score v] til (score)
-      	bed om [High score! Hvad er dit navn?] og vent
-      	sæt [navn v] til (svar)
-   	end
-   	stop [alle v]
+Let's add 4 buttons, for the player to repeat the sequence they've remembered.
+
+## Activity Checklist {.check}
+
++ Add 4 sprites to your project, that will become buttons. Edit your 4 sprites, so that there's 1 for each of the 4 colours.
+    
+    ![screenshot](colour-drums.png)
+
++ When the red drum is clicked, you'll need to broadcast a message to your character, letting them know that the red button has been clicked. Add this code to your red drum:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [red v]
+```
+
++ When your character receives this message, they should check whether the number 1 is at the start of the list (which means that red is the next colour in the sequence). If it is, you can remove the number from the list, as it's been guessed correctly. Otherwise it's game over!
+    
+    ```blocks
+    when I receive [red v]
+    if <(item (1 v) of [sequence v])=[1]> then
+        delete (1 v) of [sequence v]
+    else
+        say [Game over!] for (1) secs
+        stop [all v]
     end
-``` 
- 
-+ Du er også nødt til at tilføje denne nye kode til de 3 andre knapper! Har du lagt mærke til at 'Game over' koden i hver af de 4 knapper er præcis den samme?
+```
 
-![screenshot](colour-same.png)  
++ You could also display some flashing lights once the list is empty, as it means the entire sequence has been guessed correctly. Add this code to the end of your character's `when flag clicked` {.blockevents} script:
+    
+    ```blocks
+    wait until < (length of [sequence v]) = [0]>
+    broadcast [won v] and wait
+```
 
-+ Hvis du nogensinde får brug for at ændre noget i denne kode, fx tilføje en lyd eller ændre 'Game over!' beskeden, så bliver du nødt til at ændre den 4 gange! Det kan godt være lidt irriterende og kan føles lidt som tiddspilde.
++ Click on your stage, and add this code to make the backdrop change colour once the player has won.
+    
+    ```blocks
+    when I receive [won v]
+    play sound [drum machine v]
+    repeat (50)
+        change [color v] effect by (25)
+        wait (0.1) secs
+    end
+    clear graphic effects
+```
 
-I stedet kan du definere dine egne brikker og genbruge dem i dit projekt! Her skal du klikke på `Flere Brikker` {.blockmoreblocks} og dernæst 'Skab en Brik'. Kald din nye brik 'Game over'.
+## Challenge: Creating 4 buttons {.challenge}
 
-![screenshot](colour-more.png)  
+Repeat the steps above for your blue, green and yellow buttons. Which code will stay the same, and which code will change for each button?
 
-+ Tilføj `ellers` {.blockcontrol} kodeblokken fra den røde knap til den nye blok: 
+You can also add sounds for when the buttons are pressed.
 
-![screenshot](colour-make-block.png)  
+Remember to test the code you've added! Can you memorise a sequence of 5 colours? Is the sequence different each time?
 
-+ Nu har du lavet en ny _funktion_ der hedder `Game over` {.blockmoreblocks}, som du kan bruge, hvor du ønsker. Slæb din `Game over` {.blockmoreblocks} blok over på de 4 scripts for knapperne.
+## Save your project {.save}
 
-![screenshot](colour-use-block.png)  
+# Step 3: Multiple levels {.activity.new-page}
 
-+ Tilføj nu en lyd når der trykkes på den forkerte knap. Du kan nøjes med at tilføje denne kode _én gang_ i `Game over` {.blockmoreblocks} blokken, og ikke 4 forskellige gange! 
+So far, the player only has to remember 5 colours. Let's improve your game, so that the length of the sequence increases.
 
-![screenshot](colour-cough.png)  
+## Activity Checklist {.check}
 
-## Udfordring: Lav flere brikker {.challenge} 
-Kan du få øje på anden kode, som er den samme for alle 4 knapper? 
++ Create a new variable called `score` {.blockdata}.
+    
+    ![screenshot](colour-score.png)
+
++ This `score` {.blockdata} will be used to decide on the length of the sequence the player has to memorise. So, to begin with the score (and the sequence length) is 3. Add this code block to the start of your character's `when flag clicked` {.blockevents} code:
+    
+    ```blocks
+    set [score v] to [3]
+```
+
++ Instead of always creating a sequence of 5 colours, you now want the `score` {.blockdata} to determine the sequence length. Change your character's `repeat` {.blockcontrol} loop (for creating the sequence) to:
+    
+    ```blocks
+    repeat (score)
+    end
+```
+
++ If the sequence is guessed correctly, you should add 1 to the score, to increase the length of the sequence.
+    
+    ```blocks
+    change [score v] by (1)
+```
+
++ Finally, you need to add a `forever` {.blockcontrol} loop around the code to generate the sequence, so that a new sequence is created for each level. This is how your character's code should look:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [3]
+    forever
+        delete (all v) of [sequence v]
+        repeat (score)
+            add (pick random (1) to (4)) to [sequence v]
+            switch costume to (item (last v) of [sequence v]
+            wait (1) secs
+        end
+        wait until < (length of [sequence v]) = [0]>
+        broadcast [won v] and wait
+        change [score v] by (1)
+    end
+```
+
++ Get your friends to test out your game. Remember to hide the `sequence` {.blockdata} list before they play it!
+
+## Save your project {.save}
+
+# Step 4: High score {.activity}
+
+Let's save the high score, so that you can play against your friends.
+
+## Activity Checklist {.check}
+
++ Add 2 new variables to your project, called `high score` {.blockdata} and `name` {.blockdata}.
+
++ If ever the game ends (by pressing the wrong button), you need to check whether the player's score is higher than the current high score. If it is, you need to save the score as the high score, and store the name of the player. Here's how your red button should look:
+    
+    ```blocks
+    when I receive [red v]
+    if <(item (1 v) of [sequence v])=[1]> then
+        delete (1 v) of [sequence v]
+    else
+        say [Game over!] for (1) secs
+        if < (score) > (high score) > then
+            set [high score v] to (score)
+            ask [High score! What is your name?] and wait
+            set [name v] to (answer)
+        end
+        stop [all v]
+    end
+```
+
++ You'll need to add this new code to the other 3 buttons too! Have you noticed that the 'Game over' code in each of the 4 buttons is exactly the same?
+    
+    ![screenshot](colour-same.png)
+
++ If ever you need to change any of this code, such as adding a sound or changing the 'Game over!' message, you'd have to change it 4 times! That could get annoying, and waste a lot of time.
+    
+    Instead, you can define your own blocks, and reuse them in your project! To do this, click `more blocks` {.blockmoreblocks}, and then 'Make a block'. Call this new block 'Game over'.
+    
+    ![screenshot](colour-more.png)
+
++ Add the code from the `else` {.blockcontrol} block from the red button to the new block that appears:
+    
+    ![screenshot](colour-make-block.png)
+
++ You've now made a new *function* called `Game over` {.blockmoreblocks}, which you can use anywhere you like. Drag your new `Game over` {.blockmoreblocks} block onto the 4 scripts for the buttons.
+    
+    ![screenshot](colour-use-block.png)
+
++ Now add a sound for when the wrong button is pressed. You only need to add this code *once* in the `Game over` {.blockmoreblocks} block that you made, and not 4 separate times!
+    
+    ![screenshot](colour-cough.png)
+
+## Challenge: Making more blocks {.challenge}
+
+Do you notice any other code that is the same for all 4 buttons?
 
 ![screenshot](colour-more-blocks.png)
 
-Kan du lave endnu en brik, som bruges af hver knap?  
+Can you make another custom block, that is used by each button?
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Et andet kostume {.challenge}
-Har du lagt mærke til at dit spil begynder med, at din figur viser en af de 4 farver, og at den altid viser den sidste farve i rækkefølgen, imens spilleren gentager rækkefølgen? 
+## Challenge: Another costume {.challenge}
 
-Kan du tilføje et andet hvidt kostume til din figur, som vises i starten af dit spil, samt når spilleren prøver at kopiere rækkefølgen? 
+Have you noticed that your game starts with your character showing one of the 4 colours, and that they always display the last colour in the sequence while the player is repeating the sequence?
+
+Can you add another plain white costume to your character, which is displayed at the start of your game, and when the player is trying to copy the sequence?
 
 ![screenshot](colour-white.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Sværhedsgrad {.challenge}
-Kan du gøre det muligt for spilleren at vælge mellem 'begynder-niveau' (hvor kun den røde og den blå tromme bruges) og 'normal' (som bruger alle 4 trommer)? 
+## Challenge: Difficulty level {.challenge}
 
-Du kan ovenikøbet tilføje en 'øvet' version, som benytter en femte tromme!
+Can you allow your player to choose between 'easy mode' (using just the red and blue drums) and 'normal mode' (which uses all 4 drums)?
 
-## Gem dit projekt { .save }
+You could even add a 'hard' mode, which makes use of a 5th drum!
+
+## Save your project {.save}
