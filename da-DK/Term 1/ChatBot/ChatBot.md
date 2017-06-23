@@ -1,225 +1,223 @@
----
-title: ChatBot
-level: Scratch 1
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-# Introduktion { .intro }
+title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-Nu skal du lære hvordan du programmerer din egen talende robot! 
+# Introduction {.intro}
+
+You are going to learn how to program your own talking robot!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26762091/?autostart=false" frameborder="0"></iframe>
   <img src="chatbot-final.png">
 </div>
 
-# Trin 1: Din chatbot { .activity }
+# Step 0: Test test test =)
 
-## Arbejdsliste { .check }
+# Step 1: Your chatbot {.activity}
 
-+ Inden du begynder at lave din egen chatbot, så skal du beslutte dig for hvilken personlighed den skal have.
-	+ Hvad er dens navn?  
-	+ Hvor bor den?
-	+ Er den glad? alvorlig? sjov? genert? venlig?
+## Activity Checklist {.check}
 
++ Before you start making your chatbot, you need to decide on their personality.
+    
+    + What is their name?
+    + Where do they live?
+    + Are they happy? serious? funny? shy? friendly?
 
-+ Start et nyt Scratch projekt, og slet katte-spriten så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Vælg en af disse sprite-figurer, og tilføj den til dit projekt:
++ Choose one of these character sprites, and add them to your project:
+    
+    ![screenshot](chatbot-characters.png)
 
-	![screenshot](chatbot-characters.png)
-
-+ Vælg en baggrund som passer til din chatbot. Du kan vælge hvad du har lyst til, men her er et eksempel:
- 
++ Choose a backdrop that fits your chatbot's personality. Here's an example, although yours doesn't have to look like this:
+    
     ![screenshot](chatbot-sprite.png)
- 
-## Gem dit projekt { .save }
 
-# Trin 2: En talende chatbot { .activity }
+## Save your project {.save}
 
-Nu hvor du har en chatbot med sin egen personlighed, så lad os programmere den til at snakke med dig.
+# Step 2: A talking chatbot {.activity}
 
-## Arbejdsliste { .check }
+Now that you have a chatbot with a personality, let's program it to talk to you.
 
-+ Klik på din chatbot og tilføj denne kode:
+## Activity Checklist {.check}
 
-```blocks 
-		når denne sprite klikkes
-		bed om [Hej! Hvad hedder du?] og vent
-		sig [Sikke et dejligt navn!] i (2) sekunder
-```  
- 
-+ Klik på din chatbot for at afprøve den. Efter du er blevet spurgt om dit navn, så indtast det i boksen i bunden af scenen. 
++ Click on your chatbot character, and add this code:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say [What a lovely name!] for (2) secs
+```
 
-	![screenshot](chatbot-text.png)
++ Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage.
+    
+    ![screenshot](chatbot-text.png)
 
-+ Din chatbot svarer blot `sikke et dejligt navn!` hver gang. Du kan gøre din chatbots svar personlig ved at bruge brugerens svar. Ændr koden for din chatbot-sprite, så den ser således ud:
++ Your chatbot simply replies `What a lovely name!` every time. You can personalise your chatbot's reply, by making use of the user's answer. Change the chatbot's code, so that it looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say <join [Hi] (answer)> for (2) secs
+```
 
-```blocks 
-	    når denne sprite klikkes
-		bed om [Hej! Hvad hedder du?] og vent
-		sig <[Hej] tilkobles (svar)> i (2) sekunder
-``` 
-
-For at lave den sidste blok skal du først slæbe en grøn `tilkobles` {.blockoperators} blok hen på `sig` {.blocklooks} blokken.  
+To create the last block, you'll need to first drag on a green `join` {.blockoperators} block, and drag it on to the `say` {.blocklooks} block.
 
 ![screenshot](chatbot-join.png)
 
-Du kan så ændre teksten `Hallo` til `Hej`, og slæbe den lyseblå `svar` {.blocksensing} blok (fra 'Registrering' sektionen) hen på teksten `verden`.
+You can then change the text `hello` to say `Hi`, and drag the light blue `answer` {.blocksensing} block (from the 'Sensing' section) onto the text `world`.
 
 ![screenshot](chatbot-answer.png)
 
-+ Afprøv dit nye program. Virker det som du forventede? Kan du løse eventuelle problemer? (Hint: du kan prøve at tilføje et mellemrum et sted!)  
++ Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)
 
-+ Måske du gerne vil opbevare brugerens navn i en variabel, så du kan bruge det senere. Lav en ny variabel du kalder `navn` {.blockdata}. Hvis du har glemt hvordan du gør, så kan 'Balloons' projektet hjælpe dig.
++ It may be that you want to store the user's name in a variable, so that you can use it again later. Create a new variable called `name` {.blockdata}. If you've forgotten how to do this, the 'Balloons' project will help you.
 
-+ Den information, som du har indtastet, opbevares allerede i en speciel variabel, vi kalder `svar` {.blocksensing}. Gå til blokkene under Registrering og klik på svar blokken og sæt et flueben. Den gældende værdi i `svar` {.blocksensing} bør da vises oppe i venstre hjørne af scenen.
- 
-+ Når du har lavet din nye variabel, så sørg for at koden for din chatbot ser således ud: 
++ The information that you entered is already stored in a special variable called `answer` {.blocksensing}. Go to the Sensing group of blocks and click the answer block so that a tick appears. The current value in `answer` {.blocksensing} should then be shown on the top-left of the stage.
 
-```blocks 
-		når denne sprite klikkes
-		bed om [Hej! Hvad hedder du?] og vent
-		sæt [navn v] til (svar)
-		sig <[Hej] tilkobles (navn)> i (2) sekunder
-```  
- 
-+ Hvis du tester dit program igen, så vil du se, at svaret er opbevaret i `navn` {.blockdata} variablen, og vises i øverste venstre hjørne af scenen. `navn` {.blockdata} variablen bør nu indeholde samme værdi som `svar` {.blocksensing} variablen.
++ Once you've created your new variable, make sure that your chatbot's code looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+```
 
-	![screenshot](chatbot-variable.png)
++ If you test your program again, you'll notice that the answer is stored in the `name` {.blockdata} variable, and is shown in the top-left of the stage. The `name` {.blockdata} variable should now contain the same value as the `answer` {.blocksensing} variable.
+    
+    ![screenshot](chatbot-variable.png)
+    
+    If you'd rather not see the variables on your stage, you can click the tick next to the variable names in the 'Scripts' tab to hide them.
 
-	Hvis du foretrækker ikke at se variablerne på din scene, så skjul dem ved at klikke og fjerne fluebenene ud for variablernes navne under 'Scripts' fanen.
+## Save your project {.save}
 
-## Gem dit projekt { .save }
+## Challenge: More questions {.challenge}
 
-## Udfordring: Flere spørgsmål { .challenge }
-
-Programmér din chatbot til at stille et andet spørgsmål. Kan du opbevare svaret i en variabel?
+Program your chatbot to ask another question. Can you store their answer in a variable?
 
 ![screenshot](chatbot-question.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 3: Lav beslutninger { .activity }
+# Step 3: Making decisions {.activity}
 
-Du kan programmere din chatbot til at tage beslutninger baseret på brugerens respons.
+You can program your chatbot to decide what to do, based on the user's responses.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Lad os få din chatbot til at stille brugeren et spørgsmål som rækker til et `ja` eller `nej` svar. Her er et eksempel, men du kan ændre spørgsmålet, hvis du har lyst: 
++ Let's get your chatbot to ask the user a question which has a `yes` or `no` answer. Here's an example, but you can change the question if you like:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    end
+```
 
-```blocks 
-		når denne sprite klikkes
-		bed om [Hej! Hvad hedder du?] og vent
-		sæt [navn v] til (svar)
-		sig <[Hej] tilkobles (navn)> i (2) sekunder
-		bed om <[Er du OK] tilkobles (navn)> og vent
-		hvis ((svar) = [ja]) så
-  			 sig [Det er godt at høre!] i (2) sekunder
-		end 
-```  
+Notice that now you've stored the user's name in a variable, you can use it as much as you like.
 
-Læg mærke til, at nu hvor du har gemt brugerens navn i en variabel, så kan du bruge det så meget du har lyst til.
++ To test this program properly, you'll need to test it twice - once typing `no` as your answer, and once typing `yes`. You should only get a response from your chatbot `if` {.blockcontrol} you answer `yes`.
 
-+ For at teste programmet ordenligt, så skal du teste det to gange - én gang, hvor du taster `nej` som dit svar, og én gang hvor du taster `ja`. Du bør kun få en respons fra din chatbot `hvis` {.blockcontrol} du svarer `ja`.
++ The trouble with your chatbot is that it doesn't give a reply if the user answers `no`. You can fix this, by changing the `if` {.blockcontrol} block to an `if/else` {.blockcontrol} block, so that your code now looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    else
+        say [Oh no!] for (2) secs
+    end
+```
 
-+ Problemet med din chatbot er, at den ikke giver et svar hvis brugeren svarer `nej`. Dette kan du løse ved at ændre `hvis` {.blockcontrol} blokken til en `hvis/ellers` {.blockcontrol} blok, sådan at din kode nu ser således ud:
++ If you test your code, you'll now see that you get a response when you answer `yes` or `no`. Your chatbot should reply with `That's great to hear!` when you answer `yes`, but will reply with `Oh no!` if you type anything other than `yes` (`else` {.blockcontrol} means 'otherwise').
+    
+    ![screenshot](chatbot-else.png)
 
-```blocks 
-		når denne sprite klikkes
-		bed om [Hej! Hvad hedder du?] og vent
-		sæt [navn v] til (svar)
-		sig <[Hej] tilkobles (navn)> i (2) sekunder
-		bed om <[Er du OK] tilkobles (navn)> og vent
-		hvis ((svar) = [ja]) så 
-  		 	sig [Det er godt at høre!] i (2) sekunder
-		ellers 
-   			sig [Åh nej!] i (2) sekunder
-		end
-``` 
++ You can put any code inside an `if` {.blockcontrol} or `else` {.blockcontrol} block, not just code to make your chatbot speak. For example, you can change the chatbot's costume to match the response.
+    
+    If you have a look at your chatbot's costumes, you may see that there is more than one. (If not, you can always add more yourself!)
+    
+    ![screenshot](chatbot-costumes.png)
+    
+    You can use these costumes as part of your chatbot's response, by adding this code:
+    
+    ![screenshot](chatbot-costumes-code.png)
 
-+ Hvis du tester din kode, så vil du se at du nu får et svar, når du svarer `ja` eller `nej`. Din chatbot bør besvare `ja` med `Det er godt at høre!` og besvare alt andet med `Åh nej!`, hvis du ikke taster `ja`. 
++ Test out your program, and you should see your chatbot's face change depending on the answer you give.
+    
+    ![screenshot](chatbot-face.png)
 
-	![screenshot](chatbot-else.png)
+## Save your project {.save}
 
-+ Du kan putte hvilken som helst kode indeni en `hvis` {.blockcontrol} eller `ellers` {.blockcontrol} blok, ikke kun kode som får din chatbot til at tale. Du kan fx også skifte chatbottens kostume så det matcher dens svar.  
+## Challenge: More decisions {.challenge}
 
-Hvis du tager et kig på din chatbots kostumer, så vil du måske se at der er flere end én. (Hvis ikke, så kan du altid tilføje flere selv!) 
-
-![screenshot](chatbot-costumes.png)
-
-Du kan bruge disse kostumer, som del af din chatbots respons, ved at tilføje denne kode:
-
-![screenshot](chatbot-costumes-code.png)
-
-+ Afprøv dit program. Nu bør se at chatbottens ansigt ændrer sig afhængig af, hvilket svar du giver. 
-
-	![screenshot](chatbot-face.png)
-
-## Gem dit projekt { .save }
-
-## Udfordring: Flere beslutninger { .challenge }
-
-Programmér din chatbot til at stille et andet spørgsmål - et spørgsmål med et `ja` eller `nej` svar. Kan du få din chatbot til at respondere på dit svar?
+Program your chatbot to ask another question - something with a `yes` or `no` answer. Can you make your chatbot respond to the answer?
 
 ![screenshot](chatbot-joke.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 4: Ændre sted { .activity }
+# Step 4: Changing location {.activity}
 
-Du kan også programmere din chatbot til at ændre hvor den befinder sig.
+You can also program your chatbot to change its location.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Tilføj en anden baggrund til din scene, for eksempel 'moon' (måne) baggrunden.
-  
-	![screenshot](chatbot-moon.png)
++ Add another backdrop to your stage, for example the 'moon' backdrop.
+    
+    ![screenshot](chatbot-moon.png)
 
-+ Du kan nu programmere din chatbot til at ændre dens omgivelser ved at tilføje denne kode til din chatbot:
++ You can now program your chatbot to change location, by adding this code to your chatbot:
+    
+    ```blocks
+    ask [I'm going to the moon. Do you want to come with me?] and wait
+    if ((answer) = [yes]) then
+        switch backdrop to [moon v]
+    end
+```
 
-```blocks
-    	bed om [Jeg skal op til månen. Vil du med?] og vent
-		hvis ((svar) = [ja]) så 
-   		skift baggrund til [moon v]  
-		end 
-``` 
++ You also need to make sure that your chatbot is outside when you start talking to it. Add this block to the top of your chatbot code:
+    
+    ![screenshot](chatbot-outside.png)
 
-+ Du er også nødt til at sørge for, at din chatbot er udenfor, når du begynder at tale med den. Tilføj denne kode til begyndelsen af koden til din chatbot:
++ Test your program, and answer `yes` when asked if you want to go to the moon. You should see that the chatbot's location has changed.
+    
+    ![screenshot](chatbot-backdrop.png)
 
-	![screenshot](chatbot-outside.png)
++ Does your chatbot change location if you type `no`? What about if you type `I'm not sure`?
 
-+ Test dit program og svar `ja` når du bliver spurgt, om du har lyst til at tage med på månen. Du bør se at chatbottens omgivelser har ændret sig.
- 
-	![screenshot](chatbot-backdrop.png)
++ You can also add this code inside your `if` {.blockcontrol} block, to make your chatbot jump up and down 4 times if the answer is `yes`:
+    
+    ```scratch
+repeat (4)
+    change y by (10)
+    wait (0.1) secs
+    change y by (-10)
+    wait (0.1) secs
+end
+```
 
-+ Ændrer din chatbots omgivelser sig, hvis du taster `nej`? Hvad hvis du taster `Jeg er ikke sikker`?
-
-+ Du kan også tilføje denne kode til din `hvis` {.blockcontrol} blok for at få din chatbot til at hoppe op og ned 4 gange hvis svaret er `ja`:
-
-```scratch 
-		gentag (4) gange
-   			ændr y med (10)
-   			vent (0.1) sekunder
-   			ændr y med (-10)
-   			vent (0.1) sekunder
-		end
-```  
-	
 ![screenshot](chatbot-loop.png)
 
-+ Test din kode igen. Hopper din chatbot op og ned, når du svarer `ja`?
++ Test your code again. Does your chatbot jump up and down if you answer `yes`?
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Lav din egen chatbot {.challenge}
-Brug hvad du har lært indtil videre til at færddiggøre din interaktive robot. Her er nogle idéer: 
- 
+## Challenge: Make your own chatbot {.challenge}
+
+Use what you've learnt to finish creating your interactive chatbot. Here are some ideas:
+
 ![screenshot](chatbot-ideas.png)
 
-Når hvor du har lavet din chatbot færdig, så få dine venner til at føre en samtale med den! Kan de lide personligheden? Oplevede de nogen problemer? 
+Once you've finished making your chatbot, get your friends to have a conversation with it! Do they like your character? Did they spot any problems?
 
-## Gem dit projekt { .save }
+## Save your project {.save}
