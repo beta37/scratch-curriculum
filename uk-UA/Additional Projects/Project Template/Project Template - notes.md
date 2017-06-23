@@ -6,7 +6,7 @@ title: Project Template — Notes for Club Leaders language: en-GB embeds: "*.pn
 
 Explain the project, focusing on what children will learn. Remember that these notes will be read by club leaders and not children.
 
-# Resources
+# Ресурси
 
 For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
 
