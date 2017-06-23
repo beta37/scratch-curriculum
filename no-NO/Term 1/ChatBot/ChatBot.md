@@ -11,6 +11,8 @@ You are going to learn how to program your own talking robot!
   <img src="chatbot-final.png">
 </div>
 
+# Step 0: Test test test =)
+
 # Step 1: Your chatbot {.activity}
 
 ## Activity Checklist {.check}
