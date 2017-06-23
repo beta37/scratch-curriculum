@@ -2,7 +2,7 @@
 
 title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-# Introduction {.intro}
+# Введення {.intro}
 
 You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
