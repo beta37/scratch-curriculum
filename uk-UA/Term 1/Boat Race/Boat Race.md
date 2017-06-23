@@ -4,7 +4,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
 
 # Введення {.intro}
 
-You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
+Ви збираєтеся дізнатися, як зробити гри, в якій ви будете використовувати мишу, щоб переміщатися катер на безлюдний острів.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
