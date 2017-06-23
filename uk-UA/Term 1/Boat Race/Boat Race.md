@@ -34,7 +34,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
     
     ![screenshot](boat-boat.png)
     
-    If you don't have the boat.png image, you can draw your own boat instead!
+    Якщо ви не маєте boat.png зображення, можна малювати ваш власний човен!
 
 + Ви будете керувати човном за допомогою миші. Додайте цей код вашої човни:
     
