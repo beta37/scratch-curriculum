@@ -48,7 +48,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
     end
 ```
 
-+ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
++ Перевірити свій човен, натиснувши прапор і переміщаючи мишу. Човен вітрилами назустріч миші?
     
     ![screenshot](boat-mouse.png)
     
