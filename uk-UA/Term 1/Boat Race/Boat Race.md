@@ -58,7 +58,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
 
 + What happens if the boat reaches the mouse pointer?
     
-    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    Щоб зупинити це відбувається, потрібно буде додати `Якщо` {.blockcontrol} блок коду, так що човен тільки рухається, якщо це більше 5 пікселів від миші.
     
     ![screenshot](boat-pointer.png)
 
