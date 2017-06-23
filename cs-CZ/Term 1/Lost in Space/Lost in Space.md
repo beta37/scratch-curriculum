@@ -1,188 +1,183 @@
----
-title: Ztraceni ve vesmíru
-level: Scratch 1
-language: cs-CZ
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-# Úvod { .intro }
+title: Lost in Space level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-Dnes se naučíš, jak dělat svoje animace!
+# Introduction {.intro}
+
+You are going to learn how to program your own animation!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
-  <img src="space-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
+    <img src="space-final.png">
 </div>
 
-# Krok 1: Animace vesmírné lodi { .activity .new-page}
+# Step 1: Animating a spaceship {.activity.new-page}
 
-Pojďme udělat raketu, která letí k zemi!
+Let's make a spaceship that flies towards the Earth!
 
-## Seznam úkolů { .check }
+## Activity Checklist {.check}
 
-+ Vytvoř nový Scratch projekt a vymaž postavu kočky tak, aby byl prázdný. Scratch Editor najdeš tady <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Přidej postavy 'Spaceship' a 'Earth' na scénu. Také můžeš přidat kulisu hvězd - 'Stars'. Takhle by měla tvoje scéna vypadat:
++ Add 'Spaceship' and 'Earth' sprites to your stage. You should also add the 'Stars' backdrop to your stage. This is how your stage should look:
+    
+    ![screenshot](space-sprites.png)
 
-	![screenshot](space-sprites.png)
++ Click on your new spaceship sprite, and click the 'Costumes' tab.
+    
+    ![screenshot](space-costume.png)
 
-+ Klikni na postavu rakety a pak na záložku 'Kostýmy'.
++ Use the arrow tool to select the image. Then click on the circular rotate handle, and rotate the image until it is on its side.
+    
+    ![screenshot](space-rotate.png)
 
-	![screenshot](space-costume.png)
++ Add this code to your spaceship sprite:
+    
+    ![screenshot](space-animate.png)
+    
+    Change the numbers in the code blocks, so that the code is exactly the same as in the image above.
 
-+ Použij nástroj 'šipka' abys vybral obrázek. Potom klikni na kruhovou rukojeť a posouvej ji tak, abys otočil(a) raketu na stranu.
++ If you click on the code blocks to run the code, you should see the spaceship speak, turn and move towards the centre of the stage.
+    
+    ![screenshot](space-animate-stage.png)
+    
+    The screen position `x:(0) y:(0)` {.blockmotion} is the centre of the stage. A position like `x:(-150) y:(-150)` {.blockmotion} is towards the bottom-left of the stage, and a position like `x:(150) y:(150)` {.blockmotion} is near the top-right.
+    
+    ![screenshot](space-xy.png)
+    
+    If you need to know the coordinates of a position on the stage, move the mouse to the position you want and make a note of the coordinates, which are displayed below the stage.
+    
+    ![screenshot](space-coordinates.png)
 
-	![screenshot](space-rotate.png)
++ Try out your animation, by clicking on the green flag just above the stage.
+    
+    ![screenshot](space-flag.png)
 
-+ Přidej k raketě tento kód:
+## Challenge: Improving your animation {.challenge}
 
-	![screenshot](space-animate.png)
+Can you change the numbers in your animation code, so that: + The spaceship moves until it touches the Earth? + The spaceship moves more slowly towards the Earth?
 
-	Změň čísla v blocích přesně tak, jak je vidíš na obrázku.
-
-+ Když vše otestuješ, měl(a) bys vidět raketu, která se otáčí k zemi a míří ke středu scény.
-
-	![screenshot](space-animate-stage.png)
-
-	Pozice `x:(0) y:(0)` {.blockmotion} je centrum scény. Pozice `x:(-150) y:(-150)` {.blockmotion} je vlevo dole a pozice `x:(150) y:(150)` {.blockmotion} je vpravo nahoře.
-
-	![screenshot](space-xy.png)
-
-	Pokud potřebuješ vědět jaké jsou koordináty bodu na scéně, přesuň myš na tuto pozici a poznač si koordináty zobrazené pod scénou.
-
-	![screenshot](space-coordinates.png)
-
-+ Vyzkoušej si animaci kliknutím na zelenou vlajku.
-
-	![screenshot](space-flag.png)
-
-## Výzva: Vylepšení animace {.challenge}
-Změn parametry (čísla) v kódu tak:
-+ aby se raketa pohybovala dokud se nedotkne země
-+ aby se raketa pohybovala pomaleji blíže k zemi
-
-Musíš změnit tato čísla v blocích:
+You'll need to change the numbers in this block:
 
 ```blocks
-	klouzej (1) sekund na x:(0) y:(0)
+    glide (1) secs to x:(0) y:(0)
 ```
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-# Krok 2: Animace pomocí cyklů { .activity .new-page }
+# Step 2: Animating using loops {.activity.new-page}
 
-Jiný způsob jak animovat raketu je ten, že se bude pohybovat po malých kouscích víckrát za sebou.
+Another way of animating the spaceship is to tell it to move a small amount, lots of times.
 
-## Seznam úkolů { .check }
+## Activity Checklist {.check}
 
-+ Smaž blok `klouzej` {.blockmotion}, klikni pravým tlačítkem myši a vyber 'smazat'. Blok můžeš smazat tak, že ho přesuneš mimo oblast pro kód, zpět do oblasti pro bloky.
++ Delete the `glide` {.blockmotion} block from your code, by right-clicking on the block and clicking 'delete'. You can also delete code by dragging it off the script area, back into the code blocks area.
+    
+    ![screenshot](space-delete-glide.png)
 
-	![screenshot](space-delete-glide.png)
++ Once you've removed your code, add this code instead:
+    
+    ![screenshot](space-loop.png)
+    
+    The `repeat` {.blockcontrol} block is used to repeat something lots of times, and is also known as a **loop**.
 
-+ Jakmile blok odstraníš, přidej následující:
++ If you click the flag to try out this new code, you'll see that it does pretty much the same thing as before.
 
-	![screenshot](space-loop.png)
++ You can add more code to your loop, to do interesting things. Add the `change color effect by 25` {.blocklooks} block into the loop (from the 'Looks' section), to repeatedly change the colour of the spaceship as it moves:
+    
+    ![screenshot](space-colour.png)
 
-	Blok `opakuj` {.blockcontrol} se používá pro opakování a nazývá se __smyčka__.
++ Click the flag to see your new animation.
+    
+    ![screenshot](space-colour-test.png)
 
-+ Když klikneš na vlaječku, uvidíš, že raketa se pohybuje stejně jako předtím.
++ You can also make your spaceship get smaller as it moves towards the Earth.
+    
+    ![screenshot](space-size.png)
 
-+ Do smyčky můžeš přidat více bloků a dělat zajímavé věci. Přidej blok `změň efekt barva o 25` {.blocklooks} do smyčky (ze sekce 'Looks'), aby se opakovaně měnila barva rakety během pohybu:
++ Test out your animation. What happens if you click the flag a second time? Does your spaceship start off the right size? Can you use this block to fix your animation:
+    
+    ```scratch
+    set size to (100) %
+```
 
-	![screenshot](space-colour.png)
+## Save your project {.save}
 
-+ Vyzkoušej novou animaci.
+# Step 3: Floating Monkey {.activity.new-page}
 
-	![screenshot](space-colour-test.png)
+Let's add monkey to your animation, who's lost in space!
 
-+ Zmenši loď jak se bude blížit k zemi.
+## Activity Checklist {.check}
 
-	![screenshot](space-size.png)
++ Start by adding in the monkey sprite from the library.
+    
+    ![screenshot](space-monkey.png)
 
-+ Otestuj animaci. Co se stane, když klikneš na vlaječku podruhé? Startuje raketa ve správné velikosti? Použij tento blok abys to opravil(a):
++ If you click on your new monkey sprite and then click 'Costumes', you can edit how the monkey looks. Click the 'Ellipse' tool, and draw a white space helmet around the monkey's head.
+    
+    ![screenshot](space-monkey-edit.png)
 
-	```scratch
-	nastav velikost na (100) %
-	```
-
-## Ulož projekt { .save }
-
-# Krok 3: Létající opice { .activity .new-page }
-
-Přidej do animace opici, která je ztracená ve vesmíru! 
-
-## Seznam úkolů { .check }
-
-+ Začni přidáním opice z knihovny postav.
-
-	![screenshot](space-monkey.png)
-
-+ Když klikneš na tvůj novou postavu s opicí a klikneš na záložku 'Kostýmy', můžeš upravit jak vypadá. Klikni na nástroj 'Elipsa' a nakresli bílou helmu okolo hlavy opice.
-
-	![screenshot](space-monkey-edit.png)
-
-+ Klikni na 'Scénáře', a přidej opici následující kód tak, aby se točila navždy pomalu v kruzích:
-	
++ Now click 'Scripts', and add this code to the monkey, so that it spins slowly in a circle forever:
+    
     ```blocks
-		po kliknutí na ⚑
-		opakuj dokola
-		    otoč se o @ (1) stupňů
-		end
-	```    
+    when FLAG clicked
+    forever
+    turn right (1) degrees
+    end
+```
 
-	Blok `opakuj dokola` {.blockcontrol} je další smyčka, ale tentokrát nikdy nekončí.
+The `forever` {.blockcontrol} block is another loop, but this time one that never ends.
 
-+ Klikni na vlajku pro vyzkoušení opice. Aby animace skončila, musíš kliknout na červené tlačítko.
++ Click the flag to test your monkey. You'll have to click the stop button (next to the flag) to end this animation.
+    
+    ![screenshot](space-monkey-loop.png)
 
-	![screenshot](space-monkey-loop.png)
+# Step 4: Bouncing Asteroids {.activity.new-page}
 
-# Krok 4: Odrážející se asteroidy { .activity .new-page }
+Let's add some floating space-rock to your animation.
 
-Přidej několik letících vesmírných kamenů do animace.
+## Activity Checklist {.check}
 
-## Seznam úkolů { .check }
++ Add a 'rock' sprite to your animation.
+    
+    ![screenshot](space-rock-sprite.png)
 
-+ Přidej postavu kámen - 'rock'.
++ Add this code to your rock, to make it bounce around the stage:
+    
+    ```scratch
+    when flag clicked
+    point towards [Earth v]
+    forever
+    move (2) steps
+    if on edge, bounce
+```
 
-	![screenshot](space-rock-sprite.png)
++ Click the flag to test your rock. Does it bounce around the stage?
 
-+ Přidej následující kód ke kamenu, aby se na kraji scény odrazil:
+# Step 5: Shining Stars {.activity.new-page}
 
-	```scratch
-	po kliknutí na ⚑
-	natoč se k [Earth v]
-	opakuj dokola
-		posuň se o (2) kroků
-		když narazíš na okraj, odraž se
-	```
+Let's combine loops to make a shining star.
 
-+ Otestuj asteroid. Odráží se?
+## Activity Checklist {.check}
 
-# Krok 5: Svítící hvězdy { .activity .new-page }
++ Add a 'star' sprite to your animation
+    
+    ![screenshot](space-star-sprite.png)
 
-Nakombinuj cykly a vytvoř svítící hvězdy.
++ Add this code to your star:
+    
+    ![screenshot](space-star.png)
 
-## Seznam úkolů { .check }
++ Click the flag to test out this star animation. What does this code do? Well, the star is made slightly bigger 20 times, and then made slightly smaller 20 times, back to it's original size. These 2 loops are inside a `forever` {.blockcontrol} loop, so the animation keeps repeating.
 
-+ Přidej postavu 'star'
+## Save your project {.save}
 
-	![screenshot](space-star-sprite.png)
+## Challenge: Make your own animation {.challenge}
 
-+ Přidej následující kód ke hvězdě:
+Stop your space animation, and click 'File' and then 'New', to start a new project.
 
-	![screenshot](space-star.png)
-
-+ Otestuj animaci. Co tento kód dělá? Správně - hvězda se dvacetkrát zvětší a zase změnší. Jsou tam dvě smyčky uvnitř smyčky `opakuj dokola` {.blockcontrol}, aby se animace nezastavila.
-
-## Ulož projekt { .save }
-
-## Výzva: Udělej si vlastní animaci {.challenge}
-Zastav animaci a klikni na 'Soubor' potom na 'Nový', pro vytvoření nového projektu.
-
-Použij, co jsi se naučil(a) pro vytvoření vlastní animace. Může to být cokoliv. Tady máš pár příkladů:
+Use what you've learnt in this project to make your own animation. It can be anything you like, but try to make your animation match the setting. Here are some examples:
 
 ![screenshot](space-egs.png)
 
-## Ulož projekt { .save }
+## Save your project {.save}
