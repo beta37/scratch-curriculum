@@ -1,240 +1,223 @@
----
-title: ChatBot - Povídací robot
-level: Scratch 1
-language: cs-CZ
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-# Úvod { .intro }
+title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-V této lekci se naučíš, jak naprogramovat mluvícího robota!
+# Introduction {.intro}
+
+You are going to learn how to program your own talking robot!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26762091/?autostart=false" frameborder="0"></iframe>
   <img src="chatbot-final.png">
 </div>
 
-# Krok 1: Tvůj povídací robot { .activity }
+# Step 0: Test test test =)
 
-## Seznam úkolů { .check }
+# Step 1: Your chatbot {.activity}
 
-+ Předtím než začneš dělat mluvícího robota, musíš se rozhodnout jakou bude mít osobnost.
-	+ Jaké je jeho jméno?
-	+ Kde bydlí?
-	+ Je štastný? Vážný? Veselý? Přátelský? Stydí se?
+## Activity Checklist {.check}
 
-+ Vytvoř si nový projekt a smaž kočičku, takže tvůj projekt bude prázdný. Online editor můžeš nalézt zde: <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Before you start making your chatbot, you need to decide on their personality.
+    
+    + What is their name?
+    + Where do they live?
+    + Are they happy? serious? funny? shy? friendly?
 
-+ Vyber si jednu z těchto postaviček a přidej je do projektu:
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-	![screenshot](chatbot-characters.png)
++ Choose one of these character sprites, and add them to your project:
+    
+    ![screenshot](chatbot-characters.png)
 
-+ Vyber si pozadí, které podpoří osobnost robota. Tady je příklad, jak by mohla (ale nemusí) scéna vypadat:
++ Choose a backdrop that fits your chatbot's personality. Here's an example, although yours doesn't have to look like this:
+    
+    ![screenshot](chatbot-sprite.png)
 
-	![screenshot](chatbot-sprite.png)
+## Save your project {.save}
 
-## Ulož projekt { .save }
+# Step 2: A talking chatbot {.activity}
 
-# Krok 2: Mluvící robot { .activity }
+Now that you have a chatbot with a personality, let's program it to talk to you.
 
-Nyní když máš robota s osobností, naprogramuj ho, aby mluvil
+## Activity Checklist {.check}
 
-## Seznam úkolů { .check }
++ Click on your chatbot character, and add this code:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say [What a lovely name!] for (2) secs
+```
 
-+ Klikni na robota a přidej kód:
++ Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage.
+    
+    ![screenshot](chatbot-text.png)
 
-	```blocks
-		po kliknutí na mě
-		ptej se [Ahoj! Jak se jmenuješ?] a čekej
-		říkej [To je krásné jméno!] příštích (2) sekund
-	```
++ Your chatbot simply replies `What a lovely name!` every time. You can personalise your chatbot's reply, by making use of the user's answer. Change the chatbot's code, so that it looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say <join [Hi] (answer)> for (2) secs
+```
 
-+ Klikni na robota, abys ho vyzkoušel(a). Po té co se zeptá na jména, napiš ho do boxíku, který se objeví.
+To create the last block, you'll need to first drag on a green `join` {.blockoperators} block, and drag it on to the `say` {.blocklooks} block.
 
-	![screenshot](chatbot-text.png)
+![screenshot](chatbot-join.png)
 
-+ Robot odpoví pokaždé jen `To je krásné jméno!`. Teď uprav robotovu odpověď tak, aby použil jméno, které napíšeš. Změn robotův kód takto:
+You can then change the text `hello` to say `Hi`, and drag the light blue `answer` {.blocksensing} block (from the 'Sensing' section) onto the text `world`.
 
-	```blocks
-		po kliknutí na mě
-		ptej se [Ahoj! Jak se jmenuješ?] a čekej
-		říkej <spoj [Ahoj] (answer)> příštích (2) sekund
-	```
+![screenshot](chatbot-answer.png)
 
-	Abys vytvořil poslední blok, musíš přesunout zelený blok `spoj` {.blockoperators} na fialový blok `říkej` {.blocklooks}.
++ Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)
 
-	![screenshot](chatbot-join.png)
++ It may be that you want to store the user's name in a variable, so that you can use it again later. Create a new variable called `name` {.blockdata}. If you've forgotten how to do this, the 'Balloons' project will help you.
 
-	Pak změn text `hello` na `Ahoj`, a přesuň světle modrý blok `answer` {.blocksensing} (ze sekce 'Vnímání') na text `world`.
++ The information that you entered is already stored in a special variable called `answer` {.blocksensing}. Go to the Sensing group of blocks and click the answer block so that a tick appears. The current value in `answer` {.blocksensing} should then be shown on the top-left of the stage.
 
-	![screenshot](chatbot-answer.png)
++ Once you've created your new variable, make sure that your chatbot's code looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+```
 
-+ Vyzkoušej program. Funguje jak jsi čekal? Můžeš opravit problém, který se objevil? (Nápověda: přidej někam mezeru!)
++ If you test your program again, you'll notice that the answer is stored in the `name` {.blockdata} variable, and is shown in the top-left of the stage. The `name` {.blockdata} variable should now contain the same value as the `answer` {.blocksensing} variable.
+    
+    ![screenshot](chatbot-variable.png)
+    
+    If you'd rather not see the variables on your stage, you can click the tick next to the variable names in the 'Scripts' tab to hide them.
 
-+ Pro případ, že bys chtěl zadané jméno použít dále v kódu, musíš ho uložit do proměnné. Vytoř proměnnou nazvanou `name` {.blockdata}. Pokud jsi zapomněl(a) jak se to dělá, podívej se do projektu 'Lovci duchů'.
+## Save your project {.save}
 
-+ Informace, kterou jsi zadal je uložená do speciální proměnné `odpověď` {.blocksensing}. Jdi do skupiny Vnímání; klikni na blok `odpověď` {.blocksensing}, aby se vedle něj objevilo zatržítko. Hodnota uložená v `odpověď` {.blocksensing} se objeví v levém horním rohu scény.
+## Challenge: More questions {.challenge}
 
-+ Jakmile vytvoříte novou proměnnou, upravte kód robota takto:
-
-	```blocks
-		po kliknutí na mě
-		ptej se [Ahoj! Jak se jmenuješ?] a čekej
-		nastav [name v] na (answer)
-		říkej <spoj [Ahoj ] (name)> příštích (2) sekund
-	```
-
-+ Pokud vyzkoušíš znovu svůj program, zjsitíš, že je hodnota odpovědi uložena v proměnné `name` {.blockdata} a ukazuje se v levém horním rohu scény. Proměnná `name` {.blockdata} bude obsahovat stejnou hodnotu jako proměnná `answer` {.blocksensing}.
-
-	![screenshot](chatbot-variable.png)
-
-	Pokud proměnné nechceš na scéně vidět, klikni na ně a odstraň tím zatržítko v levé části.
-
-## Ulož projekt { .save }
-
-## Výzva: Více otázek { .challenge }
-
-Naprogramuj robota tak aby se zeptal na více otázek. Dokážeš uložit odpovědi do proměnných?
+Program your chatbot to ask another question. Can you store their answer in a variable?
 
 ![screenshot](chatbot-question.png)
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-# Krok 3: Rozhodování { .activity }
+# Step 3: Making decisions {.activity}
 
-Robota můžeš naprogramovat tak, aby se rozhodoval co dále bude dělat na základě odpovědi.
+You can program your chatbot to decide what to do, based on the user's responses.
 
-## Seznam úkolů { .check }
+## Activity Checklist {.check}
 
-+ Nech robota se zeptat na otázky, na které jde odpovědět `ano` nebo `ne`. Tady je příklad:
++ Let's get your chatbot to ask the user a question which has a `yes` or `no` answer. Here's an example, but you can change the question if you like:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    end
+```
 
-	```blocks
-		po kliknutí na mě
-		ptej se [Ahoj! Jak se jmenuješ?] a čekej
-		nastav [name v] na (answer)
-		říkej <spoj [Ahoj ] (name)> příštích (2) sekund
-		ptej se <join [Máš se dobře? ] (name)> a čekej
-		když ((answer)=[ano]) tak
-			říkej [To rád slyším!] příštích (2) sekund
-		end
-	```
+Notice that now you've stored the user's name in a variable, you can use it as much as you like.
 
-	Všimni si, že jakmile máš jméno uživatele uložené v proměnné, můžeš ho použít kolikrát chceš.
++ To test this program properly, you'll need to test it twice - once typing `no` as your answer, and once typing `yes`. You should only get a response from your chatbot `if` {.blockcontrol} you answer `yes`.
 
-+ Abys vyzkoušel program pořádně, pusť ho dvakrát a jednou odpověz `ne` a jednou `ano`. Odpověď od robota dostaneš jen když odpovíš `ano`.
++ The trouble with your chatbot is that it doesn't give a reply if the user answers `no`. You can fix this, by changing the `if` {.blockcontrol} block to an `if/else` {.blockcontrol} block, so that your code now looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    else
+        say [Oh no!] for (2) secs
+    end
+```
 
-+ Problém je, že robot neodpoví, když je odpověď `ne`. To můžeš opravit tak, že změníš blok `když` {.blockcontrol} na blok `když/jinak` {.blockcontrol}:
++ If you test your code, you'll now see that you get a response when you answer `yes` or `no`. Your chatbot should reply with `That's great to hear!` when you answer `yes`, but will reply with `Oh no!` if you type anything other than `yes` (`else` {.blockcontrol} means 'otherwise').
+    
+    ![screenshot](chatbot-else.png)
 
-	```blocks
-		po kliknutí na mě
-		ptej se [Ahoj! Jak se jmenuješ?] a čekej
-		nastav [name v] na (answer)
-		říkej <spoj [Ahoj ] (name)> příštích (2) sekund
-		ptej se <join [Máš se dobře? ] (name)> a čekej
-		když ((answer)=[ano]) tak
-			říkej [To rád slyším!] příštích (2) sekund
-		jinak
-			říkej [Ale neee!] příštích (2) sekund
-		end
-	```
++ You can put any code inside an `if` {.blockcontrol} or `else` {.blockcontrol} block, not just code to make your chatbot speak. For example, you can change the chatbot's costume to match the response.
+    
+    If you have a look at your chatbot's costumes, you may see that there is more than one. (If not, you can always add more yourself!)
+    
+    ![screenshot](chatbot-costumes.png)
+    
+    You can use these costumes as part of your chatbot's response, by adding this code:
+    
+    ![screenshot](chatbot-costumes-code.png)
 
-+ Když vyzkoušíš svůj kód, zjistíš, že robot odpovídá jak na `ano` tak na `ne`. Robot odpoví `To rád slyším!` na tvoji odpověd `ano`, ale odpověď `Ale neee!` když zadáš cokoliv jiného než `ano` (blok `jinak` {.blockcontrol} znamená 'jinak').
++ Test out your program, and you should see your chatbot's face change depending on the answer you give.
+    
+    ![screenshot](chatbot-face.png)
 
-	![screenshot](chatbot-else.png)
+## Save your project {.save}
 
-+ Do bloku `když` {.blockcontrol} nebo `jinak` {.blockcontrol} můžeš vložit cokoliv, nejen mluvení robota. Například můžeš změnit vzhled robota (kostým) aby odpovídal odpovědi.
+## Challenge: More decisions {.challenge}
 
-	Pokud se podíváš na kostýmy robota, zjistíš, že jich je tam více než jeden. (Pokud ne, můžeš je přidat)
-
-	![screenshot](chatbot-costumes.png)
-
-	Tyto kostýmy můžeš použít jako část robotovy odpovědi takto:
-
-	![screenshot](chatbot-costumes-code.png)
-
-+ Vyzkoušej program a měl bys vidět, že robot mění vzhled dle tvé odpovědi.
-
-	![screenshot](chatbot-face.png)
-
-## Ulož projekt { .save }
-
-## Výzva: Více rozhodování { .challenge }
-
-Naprogramuj robota tak, aby se ptal více otázek - tak aby odpovědi byly `ano` nebo `ne`.
+Program your chatbot to ask another question - something with a `yes` or `no` answer. Can you make your chatbot respond to the answer?
 
 ![screenshot](chatbot-joke.png)
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-# Krok 4: Změna místa { .activity }
+# Step 4: Changing location {.activity}
 
-Robota můžeš naprogramovat tak, aby měnil místo, kde se nachází.
+You can also program your chatbot to change its location.
 
-## Seznam úkolů { .check }
+## Activity Checklist {.check}
 
-+ Přidej další kulisy na scénu například měsíc - 'moon'.
++ Add another backdrop to your stage, for example the 'moon' backdrop.
+    
+    ![screenshot](chatbot-moon.png)
 
-	![screenshot](chatbot-moon.png)
-
-+ Naprogramuj robota pomocí následujícího kódu:
-
-	```blocks
-		ptej se [Letím na měsíc, chceš jít se mnou?] a čekej
-		když ((answer) = [ano]) tak
-			změň pozadí na [moon v]
-		end
-	```
-
-+ Také potřebuješ přidat kódi, který zajistí, aby robot začínal ve správných kulisách (a se správným kostýmem):
-
-	```blocks
-		po kliknutí na mě
-		změň pozadí na [space v]
-        změň kostým na [nano-b v]
-	```
-
-+ Otestuj program a odpověz `ano`, když se robot zeptá na cestu na měsíc. Měl(a) bys vidět, že se pozadí změní.
-
-	![screenshot](chatbot-backdrop.png)
-
-+ Změní se pozadí, když odpovíš `ne`? Co se stane, když odpovíš `Nejsem si jistý`?
-
-+ Pokud chceš, aby robot poskočil 4x, když odpovíš `ano`, přidej tento kód do bloku `když` {.blockcontrol}:
-
-	```scratch
-	opakuj (4) krát
-		změň y o (10)
-		čekej (0.1) sekund
-		změň y o (-10)
-		čekej (0.1) sekund
-	end
-	```
-    takto 
++ You can now program your chatbot to change location, by adding this code to your chatbot:
     
     ```blocks
-		ptej se [Letím na měsíc, chceš jít se mnou?] a čekej
-		když ((odpověď) = [ano]) tak
-            změň pozadí na [moon v]
-            opakuj (4) krát
-                změň y o (10)
-                čekej (0.1) sekund
-                změň y o (-10)
-                čekej (0.1) sekund
-            end
-		end
-	```	
+    ask [I'm going to the moon. Do you want to come with me?] and wait
+    if ((answer) = [yes]) then
+        switch backdrop to [moon v]
+    end
+```
 
-+ Vyzkoušej svůj program znovu. Skáče robot nahoru a dolů při odpovědi `ano`?
++ You also need to make sure that your chatbot is outside when you start talking to it. Add this block to the top of your chatbot code:
+    
+    ![screenshot](chatbot-outside.png)
 
-## Ulož projekt { .save }
++ Test your program, and answer `yes` when asked if you want to go to the moon. You should see that the chatbot's location has changed.
+    
+    ![screenshot](chatbot-backdrop.png)
 
-## Výzva: Vytvoř si svého vlastního robota {.challenge}
-Použiji, to co ses naučil(a), abys dokončil robota. Tady je pár nápadů:
++ Does your chatbot change location if you type `no`? What about if you type `I'm not sure`?
+
++ You can also add this code inside your `if` {.blockcontrol} block, to make your chatbot jump up and down 4 times if the answer is `yes`:
+    
+    ```scratch
+repeat (4)
+    change y by (10)
+    wait (0.1) secs
+    change y by (-10)
+    wait (0.1) secs
+end
+```
+
+![screenshot](chatbot-loop.png)
+
++ Test your code again. Does your chatbot jump up and down if you answer `yes`?
+
+## Save your project {.save}
+
+## Challenge: Make your own chatbot {.challenge}
+
+Use what you've learnt to finish creating your interactive chatbot. Here are some ideas:
 
 ![screenshot](chatbot-ideas.png)
 
-Jakmile robota dokončíš, nech kamarády, ať ho vyzkouší! Líbí se jim? Jsou s robotem nějaké problémy?
+Once you've finished making your chatbot, get your friends to have a conversation with it! Do they like your character? Did they spot any problems?
 
-## Ulož projekt { .save }
+## Save your project {.save}
