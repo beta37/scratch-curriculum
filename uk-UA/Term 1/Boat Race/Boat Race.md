@@ -19,7 +19,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
 
 + Click on your stage backdrop and plan out your level. You should add:
     
-    + Wood that your boat has to avoid;
+    + Дерево, що ваша човен має уникнути;
     + A desert island that your boat has to get to.
     
     Here's how your game could look:
@@ -30,7 +30,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
 
 ## Activity Checklist {.check}
 
-+ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
++ Якщо клуб лідер дав вам 'Ресурси' папки, натисніть кнопку 'Завантажити спрайт з файлу' і додати малюнок 'boat.png'. Ви повинні зменшити sprite і поклав його у вихідне положення.
     
     ![screenshot](boat-boat.png)
     
