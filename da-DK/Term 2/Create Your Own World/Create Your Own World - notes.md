@@ -1,46 +1,37 @@
----
-title: Create Your Own World — Notes for Club Leaders
-language: da-DK
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-#Introduktion:
-I dette projekt skal børnene lære, hvordan de laver deres eget __åben verden__ spil ved at benytte alle deres tillærte Scratch begreber og færdigheder fra tidligere projekter. 
+title: Create Your Own World — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Ressourcer
-Du bør benytte Scratch 2 til dette projekt. Scratch 2 kan tilgås online via [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) og kan også downloades fra [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) og bruges offline. 
+# Introduction:
 
-Du kan finde en færdig version af dette projekt <a href="http://scratch.mit.edu/projects/34248822/#editor">online</a>, og det kan også downloades ved at klikke på linket 'Download Projektmateriale', som indeholder:  
+In this project, children will learn how to make their own open-world game, making use of all Scratch concepts and skills that have been learnt in previous projects.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/34248822/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + CreateYourOwnWorld.sb2
 
-Der findes også en version af dette projekt med tilhørende eksterne ressourcer, som er loadede i forvejen. Dette er tilgængeligt online via  [jumpto.cc/world-resources](http://jumpto.cc/world-resources), og kan også downloades via projektets klubleder materiale, som indeholder:
+There is also a version of this project with the external resources pre-loaded. This is available online at [jumpto.cc/world-resources](http://jumpto.cc/world-resources), or in the downloadable project materials, which contains:
 
 + CreateYourOwnWorldResources.sb2 
 
-Projektet indeholder også en 'Projekt Ressourcer' mappe, der indeholder billeder som børnene får brug for, så de kan fuldføre projektet. Sørg for at børnene har adgang til en kopi af disse ressourcer.
+This link also includes a 'Project Resources' folder, which contains images that children will need to complete this project. Make sure that each child has access to a copy of these resources.
 
-Projekt ressourcer:
-+ player.png;
-+ room1/2/3.png;
-+ sign.svg;
-+ chest.svg;
-+ person.png;
-+ enemy.png;
-+ coin.svg;
-+ door-blue.png;
-+ key-blue.png.
+Project resources: + player.png; + room1/2/3.png; + sign.svg; + chest.svg; + person.png; + enemy.png; + coin.svg; + door-blue.png; + key-blue.png.
 
+# Learning Objectives
 
-#Læringsmål
-+ Dette projekt underbygger vores læring fra samtlige, tidligere færdigheder i programmering. 
++ This project consolidates learning of all programming skills learnt.
 
-#Udfordringer 
-+ "Bevægelse i alle fire retninger" - tilføje op, ned, venstre og højre spillerkontroller;
-+ "Redigér din spillers bevægelse" - forhindre spilleren i at kunne gå gennem vægge; 
-+ "Gå til det forrige rum" - flytte 1 rum tilbage hvis du rører en gul dør;
-+ "Skat!" - underbygge vores læring ved at tilføje objekter til verdenen;  
-+ "Forbedr din person" - underbygge vores læring ved at tilføje objekter til verdenen;
-+ "Flere fjender" - tilføje livsfarlige, bevægende objekter;
-+ "Skab din egen verden" - åben konsolideringsopgave.
+# Challenges
+
++ "Moving in all four directions" - adding up, down, left and right player controls;
++ "Fixing your player's movement" - not allowing the player to move through walls;
++ "Moving to the previous room" - move back 1 room if touching a yellow door;
++ "Treasure!" - consolidation of adding objects to the world;
++ "Improving your person" - consolidation of adding objects to the world;
++ "More enemies" - adding deadly moving objects;
++ "Create your own world" - open-ended consolidation task.
