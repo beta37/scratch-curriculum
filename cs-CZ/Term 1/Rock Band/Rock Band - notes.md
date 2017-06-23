@@ -1,36 +1,39 @@
----
-title: Rocková skupina — Poznámky pro vedoucí klubu
-language: cs-CZ
-embeds: "*.png"
-...
+* * *
 
-#Úvod
-V tomto projektu se děti naučí jak přidat hudbu do projektu a jak naprogramovat kostýmy u postav.
+title: Rock Band — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Zdroje
-Pro tento projekt použijte Scratch 2. Scratch 2 můžete najít online na [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) nebo stáhnout z [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) pro použití offline.
+# Introduction:
 
-Kompletní verzi projektu najdete <a href="http://scratch.mit.edu/projects/26741186/#editor">online</a>, nebo stáhnete kliknutím na 'Stáhnout materiály k projektu' a tyto materiály obsahují:
+In this project, children will learn how to add sound and music to their projects, as well as changing and programming sprite costumes.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26741186/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + RockBand.sb2
 
-#Učební cíle
-+ Postavy;
-+ Kostýmy;
-+ Sekvenční bloky kódu;
-+ Události;
-+ Zvuky a hudba.
+# Learning Objectives
 
-#Výzvy
-+ "Vylepšení bubnu" - změna zvuku a přidání událostí;
-+ "Změň zpěvačce kostým" - přidání a ovládání kostýmu postavy;
-+ "Vytvoř si svoji hudební skupinu" - použití naučených dovedností k vytvoření nových nástrojů.
++ Sprites;
++ Costumes;
++ Sequential code blocks;
++ Events;
++ Sound and music.
 
-#Časté dotazy
-+ Pokud vytváří vlastní postavy a jejich kostýmy, děti zjistí, že jim poskakují, při přepínání kostýmů. To se děje proto, že kostýmy nejsou správně vycentrované na stejné místo.
+# Challenges
 
-	Pro spravení klikněte na 'Nastav střed kostýmu' na obou _kostýmech_ a ujsitěte se, že jsou vycentrované na stejné místo.
++ "Improving your drum" - Changing sprite sounds and adding events;
++ "Changing your singer's costume" - adding and controlling sprite costumes;
++ "Make your own band" - using the skills learnt to create new instruments.
 
-	![screenshot](band-center.png)
+# Frequently Asked Questions
 
-+ Na Linuxu/Macu nemusí fungovat kliknutí pravým tlačítkem myši pro vyvolání kontextového menu. Podržíte-li shift a levé tlačítko myši, měli byste menu vyvolat.
++ When creating their own sprites, children may find that their sprite 'jumps' when it's clicked, as it changes costume. This is because the two costumes are't centered in the same place.
+    
+    To fix this, click 'Set costume center' on *both* sprites, and make sure they are centered at the same point in both costumes.
+    
+    ![screenshot](band-center.png)
+
++ On Linux, right-clicking to delete a sprite may not work. If this is the case, holding shift and left-clicking will bring up the menu to delete a sprite.
