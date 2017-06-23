@@ -1,310 +1,322 @@
----
-title: Dodgeball
-level: Scratch 2
-language: ro-RO
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# Introducere { .intro }
+title: Dodgeball level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-În acest proiect vei învăța cum să creezi o platformă pentru un joc în care va trebui să te ferești de mingile care se mișcă și să ajungi la sfârșitul nivelului.
+# Introduction {.intro}
+
+In this project you'll learn how to create a platform game, in which you have to dodge the moving balls and reach the end of the level.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/39740618/?autostart=false" frameborder="0"></iframe>
   <img src="dodge-final.png">
 </div>
 
-# Pasul 1: Mișcarea personajului { .activity }
+# Step 1: Character movement {.activity}
 
-Haide să începem prin a crea un personaj care se poate mișca stânga și dreapta și să se cațăre pe stâlpi.
+Let's start by creating a character that can move left and right, as well as climb up poles.
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Începe un nou proiect Scratch și șterge sprite-ul pisică. Poți găsi editorul de Scratch online la <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Pentru proiect vei avea nevoie de un director 'Project Resources' care conține imaginea de fundal de care ai nevoie. Dacă nu găsești directorul roagă-l pe liderul clubului să te ajute.
++ For this project, you should have a 'Project Resources' folder, containing the background image you'll need. Make sure that you can find this folder, and ask your club leader if you can't find it.
+    
+    ![screenshot](dodge-resources.png)
 
-	![screenshot](dodge-resources.png)
++ Add the image 'background.png' as a new stage backdrop, or draw your own! If you're drawing your own level, just make sure that the poles and the floors are different colours, and that there's a door (or something similar) that your player has to reach. Here's how your project should look:
+    
+    ![screenshot](dodge-background.png)
 
-+ Adaugă imaginea "background.png" ca un fundal nou pentru scenă, sau deseneză o nouă scenă! Dacă desenezi propria scenă pentru un nivel, ai grijă ca stâlpii și podelele să fie de culori  diferite, și să existe o ușă (sau ceva similar) la care jucătorul trebuie să ajungă. Iată cum ar trebui să arate proiectul:
++ Add a new sprite, which will be your character. It's better if you choose a sprite with multiple costumes, so that you can make it look as though it's walking.
+    
+    ![screenshot](dodge-characters.png)
 
-	![screenshot](dodge-background.png)
++ Let's use the arrow keys to move your character around. When the player presses the right arrow, you want your character to point right, move a few steps and change to the next costume:
+    
+    ```blocks
+    when flag clicked
+    forever
+        if <key [right arrow v] pressed? > then
+            point in direction (90 v)
+            move (3) steps
+            next costume
+        end
+    end
+```
 
-+ Adaugă un sprite nou care va fi personajul tău. E mai bine dacă alegi un sprite cu mai multe costume, astfel încât să arate ca și cum merge.
++ Test out your character by clicking the flag and then holding down the right arrow key. Does your player move to the right? Does your character look like they are walking?
+    
+    ![screenshot](dodge-walking.png)
 
-	![screenshot](dodge-characters.png)
++ To move your character to the left, you'll need to add another `if` {.blockcontrol} block inside your `forever` {.blockcontrol} loop, which moves your character to the left. Remember to test your new code, to make sure that it works! If your player turns upside down when moving left, add a `set rotation style` {.blockcontrol} block above the `forever` {.blockcontrol} loop:
+    
+    ```blocks
+    when flag clicked
+    set rotation style [left-right v]
+    forever
+        if <key [right arrow v] pressed? > then
+            point in direction (90 v)
+            move (3) steps
+            next costume
+        end
+    end
+```
 
-+ Haide să utilizăm săgețile pentru a mișca personajul tău. Atunci când jucătorul apasă pe săgeata dreaptă, vei dori ca personajul tău să arate înspre dreapta, să facă câțiva pași și să-și schimbe costumul:
++ To climb a pole, your character should move up slightly whenever the up arrow is pressed and they're touching the correct colour. Add this code inside your character's `forever` {.blockcontrol} loop:
+    
+    ```blocks
+    if < <key [up arrow v] pressed?> and <touching color [#FFFF00]?> > then
+        change y by (4)
+    end
+```
 
-	```blocks
-		when flag clicked
-		forever
-			if <key [right arrow v] pressed? > then
-				point in direction (90 v)
-				move (3) steps
-				next costume
-			end
-		end
-	```
++ Test your character - can you climb the yellow poles and get to the end of your level?
+    
+    ![screenshot](dodge-test-character.png)
 
-+ Testează personajul prin apăsarea steagului verde. Ține apăsată săgeata-dreaptă. Se mișcă jucătorul înspre dreapta? Pare că merge?
+## Save your project {.save}
 
-	![screenshot](dodge-walking.png)
+## Challenge: Completing the level {.challenge}
 
-+ Pentru a mișca personajul spre stânga trebuie să adaugi încă un bloc `if` {.blockcontrol} în interiorul buclei `forever` {.blockcontrol}. Nu uita să-ți testezi noul cod, să fii sigur că funcționează!
+Can you add more code to your character, so that they say something `if` {.blockcontrol} they get to the brown door?
 
-+ Pentru a se cățăra pe un stâlp, personajul trebuie să se miște încet în sus în momentul când săgeata-sus este apăsată și a atins culoarea corectă. Adaugă codul de mai jos în scriptul personajului, în interiorul buclei `forever` {.blockcontrol}:
-
-	```blocks
-		if < <key [up arrow v] pressed?> and <touching color [#FFFF00]?> > then
-			change y by (4)
-		end
-	```
-
-+ Testează personajul – poți să te cațeri pe stâlpii galbeni și să ajungi la sfârșitul nivelului?
-
-	![screenshot](dodge-test-character.png)
-
-## Salvează proiectul { .save }
-
-## Provocare: Termină nivelul {.challenge}
-Poți să scrii mai mult cod pentru personajul tău pentru ca să spună ceva când ajunge la ușa maro?
- 
 ![screenshot](dodge-win.png)
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Pasul 2: Gravitația și sărituri { .activity }
+# Step 2: Gravity and jumping {.activity}
 
-Haide să facem personajul să pară mai realist. Vom lua în considerare gravitația și îi vom permite să sară.
- 
-## Lista de activități { .check }
+Let's make your character move more realistically, by adding gravity and allowing them to jump.
 
-+ Poate ai notat că personajul tău poate să meargă prin aer. Încearcă să părăsești platforma și vezi ce se întâmplă.
+## Activity Checklist {.check}
 
-	![screenshot](dodge-no-gravity.png)
++ You may have noticed that your character can walk off a platform into mid-air. Try to walk off of a platform and see what happens.
+    
+    ![screenshot](dodge-no-gravity.png)
 
-+ Pentru a fixa problema aceasta, trebuie să luăm în considerare gravitația. Creează o variabilă numită `gravity` {.blockdata}. Poți să o  ascunzi din scenă dacă vrei.
++ To fix this, let's add gravity to your game. Create a new variable called `gravity` {.blockdata}. You can hide this variable from your stage if you want to.
+    
+    ![screenshot](dodge-gravity.png)
 
-	![screenshot](dodge-gravity.png)
++ Add this new code block, which sets the gravity to a negative number, and then uses this to repeatedly change your character's y-coordinate.
+    
+    ```blocks
+    when flag clicked
+    set [gravity v] to [-4]
+    forever
+        change y by (gravity)
+    end
+```
 
-+ Adaugă noul bloc de cod de mai jos care setează gravitația la un număr negativ, apoi o folosește să schimbe repetitiv coordonată-y a personajului.
++ Click the flag, and then drag your character to the top of the stage. What happens? Does the gravity work as you expected?
+    
+    ![screenshot](dodge-gravity-drag.png)
 
-	```blocks
-		when flag clicked
-		set [gravity v] to [-4]
-		forever
-			change y by (gravity)
-		end
-	```
++ Gravity shouldn't move your character through a platform or a pole! Add an `if` {.blockcontrol} block to your code, so that the gravity only works when your character is in mid-air. The gravity code should now look like this:
+    
+    ```blocks
+    when flag clicked
+    set [gravity v] to [-4]
+    forever
+        if < not < <touching color [#0000FF]?> or <touching color [#FFFF00]?> > > then
+            change y by (gravity)
+        end
+    end
+```
 
-+ Click pe steag, și apoi mută personajul în partea de sus a scenei. Ce se întâmplă? Lucrează gravitația cum ne-am așteptat?
++ Test the gravity again. Does your character stop when they are on a platform or a pole? Can you walk off the edge of platforms to the level below?
+    
+    ![screenshot](dodge-gravity-test.png)
 
-	![screenshot](dodge-gravity-drag.png)
++ Let's also make your character jump when the player presses the space bar. One very easy way to do this is to move your character up a few times, using this code:
+    
+    ```blocks
+    when [space v] key pressed
+    repeat (10)
+        change y by (4)
+    end
+```
 
-+ Gravitația nu ar trebui să tragă jucătorul în jos printr-o platformă sau un stâlp! Adaugă un bloc `if` {.blockcontrol} la cod pentru a fi sigur că gravitația este luată în considerare numai dacă personajul este în aer. Codul care controlează gravitația ar trebui să arate așa:
+As gravity is constantly pushing your character down by 4 pixels, you need to choose a number greater than 4 in your `change y by (4)` {.blockmotion} block. Change this number until you're happy with the height your character jumps.
 
-	```blocks
-		when flag clicked
-		set [gravity v] to [-4]
-		forever
-			if < not < <touching color [#0000FF]?> or <touching color [#FFFF00]?> > > then
-				change y by (gravity)
-			end
-		end
-	```
++ If you test out this code, you'll notice that it works, but the movement isn't very smooth. To make jumping look smoother, you'll need to move your character by smaller and smaller amounts, until they're not jumping anymore.
 
-+ Testează gravitația încă o dată. Se oprește personajul când stă pe o platformă sau pe un stâlp? Poți să cazi de pe o platformă pe nivelul de mai jos?
++ To do this, create another variable called `jump height` {.blockdata}. Again, you can hide this variable if you prefer.
 
-	![screenshot](dodge-gravity-test.png)
++ Delete the jumping code you added to your character, and replace it with this code:
+    
+    ```blocks
+    when [space v] key pressed
+    set [jump height v] to [8]
+    repeat until < (jump height) = [0] >
+        change y by (jump height)
+        change [jump height v] by (-0.5)
+    end
+```
 
-+  Haide să facem personajul să sară când jucătoru apasă tasta ‘space bar’. O variantă foarte ușoară ar fi să mutăm personajul în sus de câteva ori:
+This code moves your character up by 8 pixels, then 7.5 pixels, then 7 pixels, and so on, until your character has finished jumping. This makes jumping look much smoother.
 
-	```blocks
-		when [space v] key pressed
-		repeat (10)
-			change y by (4)
-		end
-	```
++ Change the starting value of your `jump height` {.blockdata} variable and test it until you're happy with the height your character jumps.
 
-	Atunci când gravitația îți împinge personajul în jos cu 4 pixeli, trebuie să alegi un număr mai mare decât 4 în blocul `change y by (4)` {.blockmotion}. Schimbă numărul până când ești fericit cu înălțimea la care sare personajul.
+## Save your project {.save}
 
-+ Dacă testezi codul, vei vedea că funcționează, doar că mișcările nu sunt foarte line. Pentru a face săritura să pară mai lină, trebuie să miști personajul cu din ce în ce mai puțini pixeli până când se oprește din săritură.
+## Challenge: Improved jumping {.challenge}
 
-+ Pentru a face asta trebuie să creezi o altă variabilă numită `jump height` {.blockdata} (înălțimea săriturii). Din nou, poți să ascuzi variabila dacă preferi.
+Your character is able to jump whenever the spacebar is pressed, even if they're already in mid-air. You can test this by just holding down the spacebar. Can you fix this, so that your character can only jump `if` {.blockcontrol} they're touching a blue platform?
 
-+ Șterge codul pentru sărituri și schimbă-l cu codul de mai jos:
+## Save your project {.save}
 
-	```blocks
-		when [space v] key pressed
-		set [jump height v] to [8]
-		repeat until < (jump height) = [0] >
-			change y by (jump height)
-			change [jump height v] by (-0.5)
-		end
-	```
+# Step 3: Dodging balls {.activity.new-page}
 
-	Codul acesta va muta personajul în sus cu 8 pixeli după care cu 7.5, apoi 7, și tot așa, până când personajul tău a terminat de sărit. În felul acesta săritura va părea mai lină.
+Now that you've got your character moving around, let's add some balls for your character to avoid.
 
-+ Schimbă valoarea de început a variabilei `jump height` {.blockdata} și testeaz-o până când ești mulțumit cu săritura personajului tău.
+## Activity Checklist {.check}
 
-## Salvează proiectul { .save }
++ Create a new ball sprite. You can choose any type of ball you like.
+    
+    ![screenshot](dodge-balls.png)
 
-## Provocare: Îmbunătățește săritura {.challenge}
-Personajul tău poate sări oricând apeși tasta spacebar, chiar și atunci când este în aer. Poți verifica asta prin apăsarea continua a tastei spacebar. Poți să fixezi defectul acesta ca să faci personajul să sară numai dacă atinge platforma albastră?
++ Resize your ball, so that your character can jump over it. Try jumping over the ball to test it.
+    
+    ![screenshot](dodge-ball-resize.png)
 
-## Salvează proiectul { .save }
++ Add this code to your ball:
+    
+    ![screenshot](dodge-ball-motion.png)
+    
+    This code creates a new ball clone every 3 seconds. Each new clone moves along the top platform.
 
-# Pasul 3: Evitarea mingilor { .activity .new-page}
++ Click the flag to test this out.
+    
+    ![screenshot](dodge-ball-test.png)
 
-Acum că ai reușit să controlezi mișcările personajului, să încercăm să adăugăm niște mingi care trebuie evitate.
++ Add more code to your ball sprite, so that they move across all 3 platforms.
+    
+    ![screenshot](dodge-ball-more-motion.png)
 
-## Lista de activități { .check }
++ Finally, you'll need code for when your character gets hit by a ball! Add this code to your ball sprite:
+    
+    ```blocks
+    when I start as a clone
+    forever
+        if < touching [Pico walking v]? > then
+            broadcast [hit v]
+        end
+    end
+```
 
-+ Creează un un nou sprite minge. Poți să alegi orice fel de minge vrei.
++ You'll also need to add code to your character, to move back to the start when they're hit:
+    
+    ```blocks
+    when I receive [hit v]
+    point in direction (90 v)
+    go to x: (-210) y: (-120)
+```
 
-	![screenshot](dodge-balls.png)
++ Test out your character and see if they go back to the start when they've been hit by a ball.
 
-+ Redimensionază mingea, astfel încât personajul să poată sări peste ea. Încearcă să sari peste minge pentru a o testa. 
+## Save your project {.save}
 
-	![screenshot](dodge-ball-resize.png)
+## Challenge: Random balls {.challenge}
 
-+ Adaugă codul de mai jos la minge:
+The balls your character has to dodge all look the same, and always appear every 3 seconds. Can you improve them, so that they:
 
-	![screenshot](dodge-ball-motion.png)
-
-	Acest cod creează o nouă minge la un interval de 3 secunde. Fiecare minge nouă se mișcă pe platforma superioară.
-
-+ Click pe steag pentru a testa codul.
-
-	![screenshot](dodge-ball-test.png)
-
-+ Adaugă mai mult cod la sprite-ul minge pentru a o mișca între cele 3 platforme.
-
-	![screenshot](dodge-ball-more-motion.png)
-
-+ În final, vei avea nevoie de cod pentru situația când personajul este lovit de o minge! Adaugă codul de mai jos la minge:
-
-	```blocks
-		when I start as a clone
-		forever
-			if < touching [Pico walking v]? > then
-				broadcast [hit v]
-			end
-		end
-	```
-
-+ Vei avea nevoie de asemenea să adaugi cod la personajul tău ca să revină la start dacă a fost lovit:
-
-	```blocks
-		when I receive [hit v]
-		point in direction (90 v)
-		go to x: (-210) y: (-120)
-	```	
-
-+ Testează codul și vezi dacă personajul revine la poziția inițială dacă a fost lovit de o minge.
-
-## Salvează proiectul { .save }
-
-## Provocare: Mingi aleatorii {.challenge}
-Mingile pe care personajul tău trebuie să le evite arată la fel și vor apărea întotdeauna la 3 secunde între ele. Poți să le îmbunătățești:
-
-+ să nu arate la fel?
-+ să apară după un timp aleatoriu?
-+ să aibă o mărime aleatorie?
++ don't all look the same?
++ appear after a random amount of time?
++ are a random size?
 
 ![screenshot](dodge-ball-random.png)
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-# Step 4: Lasere! { .activity .new-page}
+# Step 4: Lasers! {.activity.new-page}
 
-Haide să facem jocul un pic mai complicat introducând lasere!
+Let's make your game a little harder to complete, by adding lasers!
 
-## Lista de activități { .check }
+## Activity Checklist {.check}
 
-+ Adaugă un nou sprite numit 'Laser'. Ar trebui să aibe două costume numite 'on' și 'off'.
++ Add a new sprite to your game, called 'Laser'. It should have 2 costumes, called 'on' and 'off'.
+    
+    ![screenshot](dodge-lasers-costume.png)
 
-	![screenshot](dodge-lasers-costume.png)
++ Place your new laser anywhere you like, between 2 platforms.
+    
+    ![screenshot](dodge-lasers-position.png)
 
-+ Plasează noul laser oriunde vrei între două platforme.
++ Add code to your laser, to make it switch between the 2 costumes.
+    
+    ```blocks
+    when flag clicked
+    forever
+        switch costume to [on v]
+        wait (2) secs
+        switch costume to [off v]
+        wait (2) secs
+    end
+```
 
-	![screenshot](dodge-lasers-position.png)
+If you prefer, you can `wait` {.blockcontrol} a `random` {.blockoperators} amount of time between costume changes.
 
-+ Adaugă cod la laser astfel încât să-l faci să alterneze între cele două costume.
++ Finally, add code to your laser, so that the 'hit' message is broadcast when the laser touches your character. This code will be the same as the code you added to your ball sprite.
+    
+    You don't need to add any more code to your character - they already know what to do when they get hit!
 
-	```blocks
-		when flag clicked
-		forever
-			switch costume to [on v]
-			wait (2) secs
-			switch costume to [off v]
-			wait (2) secs
-		end
-	```
++ Test out your game to see if you can get past the laser. Change the `wait` {.blockcontrol} times in your code if the lasers are too easy or too hard.
 
-	Dacă preferi poți să aștepți (`wait` {.blockcontrol}) un interval de timp aleatoriu (`random` {.blockoperators}) înainte de a schimba costumul.
+## Challenge: More obstacles {.challenge}
 
-+ În final adaugă cod la laser pentru a se transmite mesajul ‘lovit’ în momentul lovirii personajului. Codul va fi asemănător cu cel pe care l-ai adăugat la sprite-ul minge.
+If you think your game is still too easy, you can add more obstacles to your level. You can add anything you like, but here are some ideas:
 
-	Nu trebuie să adaugi cod nou la personajul tău – el va ști că a fost lovit!
-
-+ Testează jocul pentru a vedea dacă poți să treci de laser. Schimbă numărul de secunde de așteptare (`wait` {.blockcontrol}) în cod dacă laserele sunt prea ușoare sau prea grele.
-
-## Provocare: Mai multe obstacole {.challenge}
-Dacă încă crezi că jocul este prea ușor, poți adăuga mai multe obstacole pe nivel. Poți adăuga orice dorești. Mai jos câteva idei:
-
-+ Un fluture ucigaș;
-+ Platforme care apar și dispar;
-+ Mingi de tenis căzătoare care trebuiesc evitate.
++ A flying killer butterfly;
++ Platforms that appear and disappear;
++ Falling tennis balls that must be avoided.
 
 ![screenshot](dodge-obstacles.png)
 
-Poți crea mai multe fundaluri și să mergi pe nivelul următor când ai ajuns la ușa maro:
+You could even create more than one backdrop, and move to the next level when your character reaches the brown door:
 
 ```blocks
-	if <touching color [#714300]?> then
-		switch backdrop to [next backdrop v]
-		go to x: (-210) y: (-120)
-		wait (1) secs
-	end
+    if <touching color [#714300]?> then
+        switch backdrop to [next backdrop v]
+        go to x: (-210) y: (-120)
+        wait (1) secs
+    end
 ```
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Îmbunătățește gravitatea {.challenge}
-Există un mic defect în joc: gravitatea nu-l trage pe jucător în jos dacă orice parte a lui atinge o platformă albastră! Poți testa asta dacă urci mult de pe un stâlp și apoi te miști stânga.
+## Challenge: Improved gravity {.challenge}
+
+There's one other small bug in your game: gravity doesn't pull your character downwards if *any* part of it is touching a blue platform - even its head! You can test this out by climbing most of the way up a pole and then moving to the left.
 
 ![screenshot](dodge-gravity-bug.png)
 
-Poți să fixezi defectul? Pentru a face asta, trebuie să-i dai jucătorului tău pantaloni colorați diferit (în _toate_ costumele)...
+Can you fix this bug? To do this, you need to give your character different coloured trousers (on *all* costumes)...
 
 ![screenshot](dodge-trousers.png)
 
-...și apoi schimbă codul: 
+...and then replace the code:
 
 ```blocks
-	< touching color [#0000FF]? >
+    < touching color [#0000FF]? >
 ```
 
-cu:
+with:
 
 ```blocks
-	< color [#00FF00] is touching [#0000FF]? >
+    < color [#00FF00] is touching [#0000FF]? >
 ```
 
-Amintește-ți să testezi îmbunătățirile tale ca să fii sigur că ai fixat defectul!
+Remember to test your improvements to make sure you've fixed the bug!
 
-## Salvează proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Mai multe vieți {.challenge}
-Poți să-i dai jucătorului tău 3 `vieți` {.blockdata}, în loc să-l trimiți la start de fiecare dată? Cam așa ar trebui să arate jocul:
+## Challenge: More lives {.challenge}
 
-+ Jucătorul tău începe cu 3 vieți;
-+ Oricând este lovit, pierde o viață și se duce înapoi la start;
-+ Dacă nu mai are vieți, jocul se termină.
+Can you give your player 3 `lives` {.blockdata}, instead of just sending them back to the beginning each time? Here's how your game could work:
 
-## Salvează proiectul { .save }
++ Your player starts with 3 lives;
++ Whenever your player gets hit, one life is lost and they go back to the start;
++ If there are no lives left, the game ends.
 
+## Save your project {.save}

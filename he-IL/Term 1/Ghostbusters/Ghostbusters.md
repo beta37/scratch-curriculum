@@ -1,162 +1,192 @@
-﻿---
-title: מכסחי השדים
-level: סקראצ' 1
-language: he-IL
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-## הערה: { .challenge .pdf-hidden }
-פרויקט "הבלונים"הועבר לקטגוריה [פרויקטים נוספים בסקראצ'](http://projects.codeclubworld.org/he-IL/03_scratch_bonus/index.html).
+title: Ghostbusters level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# הקדמה { .intro }
+## Note: {.challenge.pdf-hidden}
 
-אתה הולך ליצור משחק לתפוס את הרוח!
+The 'Balloons' project has been moved to the [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) section.
+
+# Introduction {.intro}
+
+You are going to make a ghost-catching game!
 
 <div class="scratch-preview">
-	<iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
-	<img src="ghost-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
+    <img src="ghost-final.png">
 </div>
 
-# שלב 1: אנימציה של רוח { .activity }
+# Step 1: Animating a ghost {.activity}
 
-## רשימת פעולות { .check }
+## Activity Checklist {.check}
 
-+ התחל פרויקט סקראצ' חדש, ומחק את דמות החתול כך שהפרויקט יהיה ריק. אתה יכול למצוא את עורך הסקראצ' און ליין בכתובת <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ הוסף דמות של רוח חדשה, ותפאורת רקע מתאימה.
++ Add in a new ghost sprite, and a suitable stage backdrop.
+    
+    ![screenshot](ghost-ghost.png)
 
-	![screenshot](ghost-ghost.png)
++ Add this code to your ghost, so that it repeatedly appears and disappears:
+    
+    ```blocks
+    when flag clicked
+    forever
+    hide
+    wait (1) secs
+    show
+    wait (1) secs
+    end
+```
 
-+ הוסף את הקוד הבא לרוח שלך, כך שהיא תופיע ותיעלם שוב ושוב:
++ Test out your ghost's code, by clicking the green flag.
 
-	![screenshot](ghost-code-block-1.png)
+## Save your project {.save}
 
-+ בדוק את הקוד של הרוח שלך, על ידי לחיצה על הדגל הירוק.
+# Step 2: Random ghosts {.activity}
 
-## שמור את הפרויקט שלך { .save }
+Your ghost is really easy to catch, because it doesn't move!
 
-# שלב 2: רוחות אקראיות { .activity }
+## Activity Checklist {.check}
 
-קל מאוד לתפוס את הרוח שלך, בגלל שהיא לא זזה!
++ Instead of staying in the same position, you can let Scratch choose random x and y coordinates instead. Add a `go to` {.blockmotion} block to your ghost's code, so that it looks like this:
+    
+    ```blocks
+    when flag clicked
+    forever
+        hide
+        wait (1) secs
+        go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+        show
+        wait (1) secs
+    end
+```
 
-## רשימת פעולות { .check }
++ Test our your ghost again, and you should notice that it appears in a different place each time.
 
-+ במקום להישאר באותו המקום, אתה יכול לתת לסקראצ' לבחור נקודות X ו- Y אקראיים. הוסף בלוק `קפוץ אל` {.blockmotion} לקוד של הרוח שלך, כך שזה יראה כך:
+## Save your project {.save}
 
-	![screenshot](ghost-code-block-2.png)
+## Challenge: More randomness {.challenge}
 
-+ בדוק את הרוח שלך שוב, ואתה צריך לשים לב שהיא מופיעה במקום שונה בכל פעם.
+Can you make your ghost `wait` {.blockcontrol} a random amount of time before appearing? Can you use the `set size` {.blocklooks} block to make your ghost a random size each time it appears?
 
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}
 
-## אתגר: עוד אקראיות {.challenge}
-האם אתה יכול לגרום לרוח שלך לחכות עם בלוק `חכה` {.blockcontrol} כמות של זמן אקראית לפני שהיא מופיעה? האם אתה יכול הלשתמש בבלוק `קבע גודל` {.blocklooks} כדי לעשות שהרוח שלך תהיה בגודל אקראי בכל פעם שהיא מופיעה?
+# Step 3: Catching ghosts {.activity}
 
-## שמור את הפרויקט שלך { .save }
+Let's allow the player to catch ghosts!
 
-# שלב 3: לתפוס רוחות { .activity }
+## Activity Checklist {.check}
 
-בוא נאפשר לשחקן לתפוס רוחות!
++ To allow the player to catch a ghost, add this code:
+    
+    ```blocks
+    when this sprite clicked
+    hide
+```
 
-## רשימת פעולות { .check }
++ Test out your project. Can you catch ghosts as they appear? If you find it difficult to catch the ghosts, you can play the game in fullscreen mode by clicking this button:
+    
+    ![screenshot](ghost-fullscreen.png)
 
-+ כדי לאפשר לשחקן לתפוס רוח, הוסף את הקוד הבא:
+## Challenge: Adding a sound {.challenge}
 
-	![screenshot](ghost-code-block-3.png)
+Can you make a sound each time a ghost is caught?
 
-+ בדוק את הפרויקט שלך. האם אתה יכול לתפוס רוחות כאשר הן מופיעות? אם גילית שזה קשה לתפוס את הרוחות, אתה יכול לשחק את המשחק במצב של מסך מלא על ידי לחיצה על הכפתור הזה:
+## Save your project {.save}
 
-	![screenshot](ghost-fullscreen.png)
+# Step 4: Adding a score {.activity.new-page}
 
-## אתגר: הוספת צלילים { .challenge }
-האם אתה יכול להשמיע צליל בכל פעם שתופסים רוח?
+Let's make things more interesting by keeping score.
 
-## שמור את הפרויקט שלך { .save }
+## Activity Checklist {.check}
 
-# שלב 4: הוספת ניקוד { .activity .new-page }
++ To keep the player's score, you need a place to put it. A **variable** is a place to store data that can change, like a score.
+    
+    To create a new variable, click on the 'Scripts' tab, select `Data` {.blockdata} and then click 'Make a Variable'.
+    
+    ![screenshot](ghost-score.png)
+    
+    Type 'score' as the name of the variable, make sure that it is available for all sprites, and click 'OK' to create it. You'll then see lots of code blocks that can be used with your `score` {.blockdata} variable.
+    
+    ![screenshot](ghost-variable.png)
+    
+    You'll also see the score in the top-left of the stage.
+    
+    ![screenshot](ghost-stage-score.png)
 
-בוא נעשה את הדברים קצת יותר מעניינים על ידי שמירת ניקוד.
++ When a new game is started (by clicking the flag), you should set the player's score to 0:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [0]
+```
 
-## רשימת פעולות { .check }
++ Whenever a ghost is caught, you need to add 1 to the player's score:
+    
+    ![screenshot](ghost-change-score.png)
 
-+ כדי לשמור את הניקוד של השחקן, אתה צריך מקום לשמור אותו. __משתנה__ הוא מקום בו מאחסנים מידע שאפשר לשנות, כמו ניקוד.
++ Run your program again and catch some ghosts. Does your score change?
 
-	כדי ליצור משתנה חדש, לחץ על הטאב של "תסריטים", בחר `נתונים` {.blockdata} ולחץ על "צור משתנה".
-	
-	![screenshot](ghost-score.png)
-	
-	הקלד "ניקוד" בשם המשתנה, וודא כי הוא זמין לכל הדמויות, ולחץ "אישור" כדי ליצור אותו. עכשיו אתה תראה המון בלוקים של קוד שאתה יכול להשתמש בהם עם המשתנה `ניקוד` {.blockdata} שיצרת.
-	
-	![screenshot](ghost-variable.png)
-	
-	אתה גם תראה את הניקוד בפינה השמאלית עליונה של תפאורת הרקע.
-	
-	![screenshot](ghost-stage-score.png)
+## Save your project {.save}
 
-+ כאשר משחק חדש מתחיל (על ידי לחיצה על הדגל),אתה צריך לקבוע את הניקוד של השחקן ל- 0:
+# Step 5: Adding a timer {.activity}
 
-	![screenshot](ghost-code-block-4.png)
+You can make your game more interesting, by only giving your player 10 seconds to catch as many ghosts as possible.
 
-+ כאשר רוח רפאים נתפסת, אתה צריך להוסיף 1 לניקוד של השחקן:
+## Activity Checklist {.check}
 
-	![screenshot](ghost-change-score.png)
++ You can use another variable to store the remaining time left. Click on the stage, and create a new variable called 'time':
+    
+    ![screenshot](ghost-time.png)
 
-+ הרץ את התוכנית שלך שוב ותפוס כמה רוחות. האם הניקוד שלך משתנה?
++ This is how the timer should work:
+    
+    + The timer should start at 10 seconds;
+    + The timer should count down every second;
+    + The game should stop when the timer gets to 0.
+    
+    Here's the code to do this, which you can add to your **stage**:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [10]
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]
+```
 
-## שמור את הפרויקט שלך { .save }
+This is how you add the `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} code:
 
-# שלב 5: הוסף שעון עצר { .activity }
+![screenshot](ghost-timer-help.png)
 
-אתה יכול לעשות את המשחק שלך מעניין יותר, על ידי כך שתיתן לשחקן שלך רק 10 שניות לתפוס כמה רוחות רפאים שרק אפשר.
++ Drag your 'time' variable display to the right side of the stage. You can also right-click on the variable display and choose 'large readout' to change how the time is displayed.
+    
+    ![screenshot](ghost-readout.png)
 
-## רשימת פעולות { .check }
++ Ask a friend to test your game. How many points can they score? If your game is too easy, you can:
+    
+    + Give the player less time;
+    + Make the ghosts appear less often;
+    + Make the ghosts smaller.
+    
+    Test your game a few times until you're happy that it's the right level of difficulty.
 
-+ אתה יכול להשתמש במשתנה נוסף לשמור את הזמן שנותר. לחץ על תפאורת הרקע, וצור משתנה חדש בשם "זמן":
+## Save your project {.save}
 
-	![screenshot](ghost-time.png)
+## Challenge: More objects {.challenge}
 
-+ זהו האופן בו שעון העצר צריך לעבוד:
-
-	+ שעון העצר צריך להתחיל ב- 10 שניות;
-	+ שעון העצר צריך לספור למטה כל שניה;
-	+ המשחק צריך לעצור כאשר שעון העצר מגיע ל- 0.
-
-	הנה הקוד שצריך לבצע זאת, שאותו אתה יכול להוסיף לתפאורת __הרקע שלך__:
-
-	![screenshot](ghost-code-block-5.png)
-
-	כך אתה מוסיף את הקוד `חזור עד ש`{.blockcontrol}`זמן`{.blockdata}` = 0`{.blockoperators}:
-
-	![screenshot](ghost-timer-help.png)
-
-+ גרור את תצוגת משתנה ה"זמן" לצד ימין של תפאורת הרקע. אתה גם יכול ללחוץ על תצוגת המשתנה עם המקש הימני ולבחור "large readout" כדי לשנות את תצוגת הזמן.
-
-	![screenshot](ghost-readout.png)
-
-+ בקש מחבר לבחון את המשחק שלך. לכמה נקודות הם יכולים להגיע? אם המשחק שלך קל מידי, אתה יכול:
-
-	+ לתת לשחקן פחות זמן;
-	+ לגרום לרוחות הרפאים להופיע בתדירות נמוכה יותר;
-	+ לעשות את הרוחות קטנות יותר.
-	
-	בדוק את המשחק שלך מספר פעמים עד שתהיה מרוצה ותחליט שזו רמת הקושי הנכונה.
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: אוביקטים נוספים {.challenge}
-האם אתה יכול להוסיף אוביקטים אחרים למשחק שלך?
+Can you add in other objects to your game?
 
 ![screenshot](ghost-final.png)
 
-אתה תצטרך לחשוב על האוביקטים שאתה מוסיף. תחשוב על:
+You'll need to think about the objects you're adding. Think about:
 
-+ כמה גדול הוא יהיה?
-+ האם הוא יופיע בתדירות גבוה או נמוכה מרוחות הרפאים?
-+ איך הוא יראה/ישמע כאשר יתפסו אותו?
-+ כמה נקודות תקבל (או תפסיד) על כך שתפסת אותו?
++ How big is it?
++ Will it appear more or less often than the ghosts?
++ What will it look/sound like when it has been caught?
++ How many points will you score (or lose) for catching it?
 
-אם אתה צריך עזרה להוסיף אוביקט נוסף, אתה יכול להשתמש בצעדים למעלה!
+If you need help adding another object, you can reuse the steps above!
 
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}

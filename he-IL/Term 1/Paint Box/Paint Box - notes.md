@@ -1,36 +1,38 @@
-﻿---
-title: תיבת צביעה - הערות למדריכי המועדון
-language: he-IL
-embeds: "*.png"
-...
+* * *
 
-#הקדמה:
-בפרויקט זה, הילדים ילמדו איך לשדר מסרים בין דמויות.
+title: Paint Box — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#חומרי הלימוד
-לפרויקט זה, יש להשתמש ב- סקראצ' 2. ניתן להשתמש בסקראצ' 2 בין אם באון ליין בכתובת [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) ובין אם אוף ליין בהורדה מהכתובת [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off).
+# Introduction:
 
-אתה יכול למצוא גרסה מלאה של הפרויקט <a href="http://scratch.mit.edu/projects/63473366/#editor">און ליין</a>, או להוריד אותה על ידי לחיצה על הקישור "הורד חומרי פרויקט" לפרויקט זה, אשר מכיל:
+In this project, children will learn how to broadcast messages between sprites.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/63473366/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + PaintBox.sb2
 
-יש גם גרסה של הפרויקט הזה עם המשאבים החיצוניים טעונים מראש. הוא זמין באופן מקוון בכתובת [jumpto.cc/paintbox-resources](http://jumpto.cc/paintbox-resources), או חומרים להורדה של הפרויקט, אשר מכיל:
+There is also a version of this project with the external resources pre-loaded. This is available online at [jumpto.cc/paintbox-resources](http://jumpto.cc/paintbox-resources), or in the downloadable project materials, which contains:
 
 + PaintBoxResources.sb2 
 
-הלינק הזה מכיל גם תיקיית 'משאבי הפרויקט', אשר מכילה תמונות שהילדים יצטרכו כדי להשלים את הפרויקט הזה. וודא שלכל ילד יש גישה להעתק של המשאבים האלו.
+This link also includes a 'Project Resources' folder, which contains images that children will need to complete this project. Make sure that each child has access to a copy of these resources.
 
-משאבי הפרויקט:
-+ eraser.svg
+Project resources: + eraser.svg
 
-#תכני הלימוד
-+ יבוא תמונות;
-+ פעולות של יחסי גודל ואמת ושקר (`>` {.blockoperators} ו- `וגם` {.blockoperators});
-+ שידור בין דמויות.
+# Learning Objectives
 
-#אתגרים
-+ "קיצורי דרך" - שימוש באירועים של `כאשר נלחץ מקש` {.blocksensing} כדי לשדר מסרים;
-+ "עטים נוספים" - הוספת עטים בצבעים שונים, כדי לחזק את הלמידה של שידור מסרים.
++ Importing images;
++ Relational and boolean operators (`>` {.blockoperators} & `and` {.blockoperators});
++ Broadcasting between sprites.
 
-#שאלות נפוצות
-+ שינויים ב- 'מרכז התלבושת' של הדמות לא נשמר עד אשר לוחצים על לשונית אחרת. הילדים צריכים ללחוץ על תלבושת אחרת, או על הלשונית 'סקריפטים' כדי לסיים את תהליך העדכון למרכז של התלבושת.
+# Challenges
+
++ "Shortcuts" - Using `key press` {.blocksensing} events to broadcast messages;
++ "More pens" - Adding more pen colours, to consolidate the learning of broadcasting messages.
+
+# Frequently Asked Questions
+
++ Changes in a sprite's 'costume center' isn't registered until another tab is clicked. Children should click on another costume, or on the 'Scripts' tab to finalise changes to the costume center.

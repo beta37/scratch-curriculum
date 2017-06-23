@@ -1,29 +1,32 @@
-﻿---
-title: מכסחי השדים - הערות למדריכי המועדון
-language: he-IL
-embeds: "*.png"
-...
+* * *
 
-#הקדמה:
-בפרויקט זה, הילדים ילמדו איך להשתמש במשתנים כדי לשמור נתונים בתוכנית שלהם.
+title: Ghostbusters — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#חומרי הלימוד
-לפרויקט זה, יש להשתמש ב- סקראצ' 2. ניתן להשתמש בסקראצ' 2 בין אם באון ליין בכתובת [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) ובין אם אוף ליין בהורדה מהכתובת [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off).
+# Introduction:
 
-אתה יכול למצוא גרסה מלאה של הפרויקט <a href="http://scratch.mit.edu/projects/60787262/#editor">און ליין</a>, או להוריד אותה על ידי לחיצה על הקישור "הורד חומרי פרויקט" לפרויקט זה, אשר מכיל:
+In this project, children will learn how to use variables to store data in their programs.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/60787262/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + Ghostbusters.sb2
 
-#תכני הלימוד
-+ משתנים;
-+ מספרים אקראיים.
+# Learning Objectives
 
-#אתגרים
-+ "עוד אקראיות" - שימוש במספרים אקראיים;
-+ "הוספת צלילים" - סגירת נושא למידת הצלילים;
-+ "אוביקטים נוספים" - יישום מיומנויות כדי ליצור עוד אוביקטים למשחק.
++ Variables;
++ Random numbers.
 
-#שאלות נפוצות
-+ עם ילד מתקשה ללחוץ על הרוחות מבלי לגרור אותם על המסך, הם יכולים לשחק את המשחק במצב של מסך מלא, שבו לא ניתן לגרור את רוחות הרפאים.
+# Challenges
+
++ "More randomness" - using random numbers;
++ "Adding a sound" - consolidating the learning of sounds;
++ "More objects" - applying skills to create another game object.
+
+# Frequently Asked Questions
+
++ If children find it difficult to click the ghosts without dragging them around, they can play the game in fullscreen mode, in which ghosts aren't draggable.
 
 ![screenshot](ghost-fullscreen.png)

@@ -1,184 +1,192 @@
----
-title: Охотники за привидениями
-level: Уровень 1
-language: ru-RU
-stylesheet: scratch
-embeds: "*.png"
-...
+* * *
 
-# Введение { .intro}
-Этот проект похож на ярморочную игру "Ударь крота". Вы получаете очки за попадание по привидениям, которые появляются на экране. Цель - получить как можно больше очков за 30 секунд.
+title: Ghostbusters level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-![screenshot](ghostbsuters_screenshot.png)
+## Note: {.challenge.pdf-hidden}
 
-#ШАГ 1: Создать летающее привидение { .activity}
+The 'Balloons' project has been moved to the [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) section.
 
-## Список действий { .check}
+# Introduction {.intro}
 
-+. __Создайте новый проект.__
-+ __Удалите спрайт кота__ замените фон сцены на __природа/woods__.
-+ Используйте кнопку `выбрать спрайт из библиотеки` чтобы добавить новый спрайт привидения в проект (используйте костюм __фантастика/ghost1__ ). 
+You are going to make a ghost-catching game!
 
-__Теперь мы хотим заставить наше привидение двигаться__
+<div class="scratch-preview">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
+    <img src="ghost-final.png">
+</div>
 
-+ Добавьте `переменную` только для этого спрайта, назовите её `скорость`.
-На __Сцене__, монитор в верхнем левом углу для этой переменной должен говорить “__Ghost1: скорость__”.
-Если он просто говорит “скорость”, удалите эту переменную и создайте её снова, только для этого спрайта. Уберите галочку рядом с названием переменной в __блоке Данные__, так, что она не будет отражаться на Сцене.
-Переменная скорость будет контролировать, как быстро будет двигаться наше привидение. Мы используем переменную так, что мы можем контроллировать, как быстро движется привидение во время выполнения игры.
+# Step 1: Animating a ghost {.activity}
 
-+ Мы хотим, чтобы привидение начало двигаться, когда стартует игра, __сделайте скрип, вроде этого__:
+## Activity Checklist {.check}
 
-```scratch
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-	когда щелкнут по флагу
-	задать [скорость] значение (5)
-	всегда
-		идти [скорость] шагов
-```
-		
-## Проверьте ваш проект{ .flag}
-__Щелкните на зеленый флаг__ и посмотрите, что делает ваш призрак. Почему он застревает на краю экрана?
++ Add in a new ghost sprite, and a suitable stage backdrop.
+    
+    ![screenshot](ghost-ghost.png)
 
-## Список действий { .check}
-
-+ Чтобы остановить застревание привидения, мы должны дать возможность идти другим путем, когда оно касается края экрана. Измените ваш существующий скрипт, добавив к нему блок "если на краю, оттолкнуться" (раздел - движение).
-`move speed steps` block.
-
-```scratch
-
-	когда щелкнут по флагу
-	задать [скорость] значение (5)
-	всегда
-		идти [скорость] шагов
-		если на краю, оттолкнуться
++ Add this code to your ghost, so that it repeatedly appears and disappears:
+    
+    ```blocks
+    when flag clicked
+    forever
+    hide
+    wait (1) secs
+    show
+    wait (1) secs
+    end
 ```
 
-+ Чтобы призрак не крутился с ног на голову, выберите стиль вращения "влево-вправо" в информации спрайта.
++ Test out your ghost's code, by clicking the green flag.
 
-## Проверьте ваш проект { .flag}
-__Щелкните на зеленый флаг.__ 
-Движется ли призрак от края к краю экрана.
+## Save your project {.save}
 
-##Сохраните ваш проект { .save}
+# Step 2: Random ghosts {.activity}
 
-##Эксперементируйте{ .try}
-+ __Попробуйте изменить переменную скорость и посмотрите, как движется привидение, быстро или медленно__
-+ __Как вы можете сделать привидение летящим всё быстрее, в зависимости от того, как долго оно летает.?__
-(Это хитрая штука, так что не беспокойтесь, если вы не увидели, как это сделать. Вы получите больше подсказок, по мере работы над проектом.)
+Your ghost is really easy to catch, because it doesn't move!
 
-#ШАГ 2: Сделать призрака появляющимся и пропадающим произвольно { .activity}
+## Activity Checklist {.check}
 
-Чтобы сделать игру более веселой, мы хотим, чтобы призрак появлялся и испарялся произвольно, случайно. Мы сделаем это с помощью другого скрипта, который выполняется одновременно с тем, который передвигает призрака. Этот новый скрипт должен спрятать привидение на случайное время, затем показать его на случайное время и повторят это вечно (или пока ишра не закончится)
-
-## Список действий { .check}
-
-__Создайте дополнительный скрипт для призрака:__
-
-```scratch
-
-	когда щелкнут по флагу
-	всегда
-		скрыть
-		ждать (выдать случайное от (2) до (5))
-		показать
-		ждать (выдать случайное от (3) до (5))
-
-```
-##Проверьте ваш проект { .flag}
-__Щелкните на зеленый флаг.__ 
-Движется ли призрак по экрану и пропадает ли он и появляется ли снова случайно?
-
-##Сохраните ваш проект { .save}
-
-##Эксперементирйте { .try}
-+ __Попробуйте поменять границы для выбора случайного числа. Что происходит, если вы берете слишком большие или слишком маленькие числа?__
-(Дает ли это вам дополнительные посказки, как увеличивать скорость призрака, по ходу игры?)
-
-#ШАГ 3: Сделать призрака пропадающим, при клике по нему мышкой { .activity}
-
-Чтобы превратить это в игру, мы должны дать игрокам сделать что-то. Они должны кликнуть по призраку, чтобы он исчез. Когда по привидению кликают, мы хотим, чтобы он исчез и издал звук.
-
-## Список действий { .check}
-
-+ На закладке  __Звуки__ , импортируйте звук из библиотеки __электроника/fairydust__. 
-
-+ __Добавьте этот скрипт к призраку__:
-
-```scratch
-
-	когда [спрайт] нажат
-	скрыть
-	играть звук [Fairydust]
-```
-##Проверьте ваш проект { .flag}
-__Щелкните на зеленый флаг.__ 
-
-Исчезает ли призрак и издает ли он звук, когда по нему кликаешь?
-
-##Сохраните ваш проект { .save}
-
-##Эксперементируйте { .try}
-__Спросите учителя, можете ли вы записать собственный звук для проигрывания.__
-
-#ШАГ 4: Добавить счет и таймер { .activity}
-
-Мы имеем привидение, но теперь мы хотим сделать игру! Мы хотим получать очки каждый раз, когда мы кликаем на привидение, но так же мы хотим ограничить лимит времени на игру. Мы можем использовать переменные для счета и таймера.
-
-## Список действий { .check}
-
-+ Создайте новую переменную для всех спрайтов, называемую __счет__, и затем скрипт для привидения, которые увеличивает эту переменную, когда по нему попадают.
-
-```scratch
-
-	когда [спрайт] нажат
-	скрыть
-	играть звук [Fairydust]
-	изменить счет на (1)
-```
-+ Переключитесь на __Сцену__ и создайте __новую переменную__ (на этот раз только для сцены), с названием __таймер__. Добавьте новый скрипт, который при нажатии зеленого флага устанавливает "таймер" значением __30__ и сбрасывает счет до __0__. Затем используйте блок "повторять пока не", чтобы подождать секунду и затем уменьшить значение переменной __таймер__ на 1. Это должно повторяться пока таймер не станет равным __0__, после чего мы используем блок "стоп всё", чтобы остановить игру.
-
-```scratch
-
-	когда щелкнут по флагу
-	задать [таймер] значение (30)
-	задать [счет] значение (0)
-	повторять пока не <[таймер] = 0>
-		ждать (1) секунд
-		изменить [таймер] на (-1)
-	
-	стоп всё
++ Instead of staying in the same position, you can let Scratch choose random x and y coordinates instead. Add a `go to` {.blockmotion} block to your ghost's code, so that it looks like this:
+    
+    ```blocks
+    when flag clicked
+    forever
+        hide
+        wait (1) secs
+        go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+        show
+        wait (1) secs
+    end
 ```
 
++ Test our your ghost again, and you should notice that it appears in a different place each time.
 
-##Проверьте ваш проект { .flag}
-__Щелкните на зеленый флаг.__ 
+## Save your project {.save}
 
-##Сохраните ваш проект { .save}
+## Challenge: More randomness {.challenge}
 
-##Эксперементируйте { .try}
-1. __Как увеличивать скорость призрака, с течением хода игры?__
-2. __Отличная работы, вы закончили базовую игру. Еще остается много вещей, которые можно сделать с игрой. Попробуйте сделать это, приняв вызов!__
+Can you make your ghost `wait` {.blockcontrol} a random amount of time before appearing? Can you use the `set size` {.blocklooks} block to make your ghost a random size each time it appears?
 
-##Вызов: добавить больше призраков { .challenge}
-Один призрак хорошо, а много - лучше! __Давайте сделае три призрака, летающих вокруг.__
-1. Сдублируйте призрака в списке спрайтов, нажав на него правой кнопкой мыши.
-2. Для каждого призрака __поправьте размер спрайта__, чтобы призраки были разных размеров.
-3. Для каждого призрака измените переменную __скорость__, так, чтобы они летали с разными скоростями.
-4. Переместите призраков по сцене, чтобы они летали в разных местах
+## Save your project {.save}
 
-##Проверьте ваш проект { .flag}
-__Щелкните на зеленый флаг.__ 
+# Step 3: Catching ghosts {.activity}
 
-Вы имеет трех призраков, которые движутся от края до края по экрану, произвольно исчезая и пропадая, и пропадая, когда вы кликаете по ним?
+Let's allow the player to catch ghosts!
 
-##Сохраните ваш проект { .save}
+## Activity Checklist {.check}
 
-##Эксперементируйте { .try}
++ To allow the player to catch a ghost, add this code:
+    
+    ```blocks
+    when this sprite clicked
+    hide
+```
 
-1. __Какое количество призраков подходит для этой игры?__
-2. __Вы можете сделать призраков, которые выглядят по разному? Вы можете или отредактировать их костюмы, или использовать блоки из набора Внешность, чтобы изменить их.__
-3. __Вы изменить стоимость призраков, так, чтобы они приносили разные очки? Как насчет токо, чтобы сделать самого быстрого (и самого маленького) призрака стоимостью 10 очков?__
++ Test out your project. Can you catch ghosts as they appear? If you find it difficult to catch the ghosts, you can play the game in fullscreen mode by clicking this button:
+    
+    ![screenshot](ghost-fullscreen.png)
 
+## Challenge: Adding a sound {.challenge}
 
-__Отлично, вы закончили, теперь вы можете насладиться игрой!__
-Не забудьте поделиться вашей игрой с друзьями и семьей, нажав кнопку __Поделиться__ в верхнем правом углу!
+Can you make a sound each time a ghost is caught?
+
+## Save your project {.save}
+
+# Step 4: Adding a score {.activity.new-page}
+
+Let's make things more interesting by keeping score.
+
+## Activity Checklist {.check}
+
++ To keep the player's score, you need a place to put it. A **variable** is a place to store data that can change, like a score.
+    
+    To create a new variable, click on the 'Scripts' tab, select `Data` {.blockdata} and then click 'Make a Variable'.
+    
+    ![screenshot](ghost-score.png)
+    
+    Type 'score' as the name of the variable, make sure that it is available for all sprites, and click 'OK' to create it. You'll then see lots of code blocks that can be used with your `score` {.blockdata} variable.
+    
+    ![screenshot](ghost-variable.png)
+    
+    You'll also see the score in the top-left of the stage.
+    
+    ![screenshot](ghost-stage-score.png)
+
++ When a new game is started (by clicking the flag), you should set the player's score to 0:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [0]
+```
+
++ Whenever a ghost is caught, you need to add 1 to the player's score:
+    
+    ![screenshot](ghost-change-score.png)
+
++ Run your program again and catch some ghosts. Does your score change?
+
+## Save your project {.save}
+
+# Step 5: Adding a timer {.activity}
+
+You can make your game more interesting, by only giving your player 10 seconds to catch as many ghosts as possible.
+
+## Activity Checklist {.check}
+
++ You can use another variable to store the remaining time left. Click on the stage, and create a new variable called 'time':
+    
+    ![screenshot](ghost-time.png)
+
++ This is how the timer should work:
+    
+    + The timer should start at 10 seconds;
+    + The timer should count down every second;
+    + The game should stop when the timer gets to 0.
+    
+    Here's the code to do this, which you can add to your **stage**:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [10]
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]
+```
+
+This is how you add the `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} code:
+
+![screenshot](ghost-timer-help.png)
+
++ Drag your 'time' variable display to the right side of the stage. You can also right-click on the variable display and choose 'large readout' to change how the time is displayed.
+    
+    ![screenshot](ghost-readout.png)
+
++ Ask a friend to test your game. How many points can they score? If your game is too easy, you can:
+    
+    + Give the player less time;
+    + Make the ghosts appear less often;
+    + Make the ghosts smaller.
+    
+    Test your game a few times until you're happy that it's the right level of difficulty.
+
+## Save your project {.save}
+
+## Challenge: More objects {.challenge}
+
+Can you add in other objects to your game?
+
+![screenshot](ghost-final.png)
+
+You'll need to think about the objects you're adding. Think about:
+
++ How big is it?
++ Will it appear more or less often than the ghosts?
++ What will it look/sound like when it has been caught?
++ How many points will you score (or lose) for catching it?
+
+If you need help adding another object, you can reuse the steps above!
+
+## Save your project {.save}

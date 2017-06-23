@@ -1,36 +1,39 @@
----
-title: ロックバンド — リーダー用ノート
-language: ja-JP
-embeds: "*.png"
-...
+* * *
 
-#イントロダクション:
-このプロジェクトでは、スプライトに音を追加したり、スプライトのコスチュームを変更することを学びます。
+title: Rock Band — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#資料
-このプロジェクトではスクラッチ２を使用してください。スクラッチ２はオンラインで使用することができます（[jumpto.cc/scratch-on](http://jumpto.cc/scratch-on)）。また、こちらからダウンロードしてオフラインで使用することも可能です（[jumpto.cc/scratch-off](http://jumpto.cc/scratch-off)）。
+# Introduction:
 
-このプロジェクトの完成版は<a href="http://scratch.mit.edu/projects/26741186/#editor">こちら</a>から確認できます。また、「プロジェクト資料のダウンロード」をクリックしてダウンロードすることもできます。中身は下記の通りです。
+In this project, children will learn how to add sound and music to their projects, as well as changing and programming sprite costumes.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26741186/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + RockBand.sb2
 
-#学習のねらい
-+ スプライト
-+ コスチューム
-+ プログラムのブロックの連なり
-+ イベント
-+ 音
+# Learning Objectives
 
-#チャレンジ
-+ 「ドラムの改良」 - スプライトの音の変更とイベントの追加
-+ 「歌手のコスチュームの変更」 - コスチュームの追加と制御
-+ 「自分のバンドの作成」 - 学習したスキルを使った新しい楽器の作成
++ Sprites;
++ Costumes;
++ Sequential code blocks;
++ Events;
++ Sound and music.
 
-#FAQ
-+ 自分でスプライトを作成した場合に、スプライトをクリックしてコスチュームを変更すると、スプライトがジャンプしてしまうことがあります。これは２つのコスチュームの中心がづれていることが原因です。
+# Challenges
 
-  これを直すには「コスチュームの中心」をクリックして、２つのコスチュームの中心が合っていることを確認してください。
++ "Improving your drum" - Changing sprite sounds and adding events;
++ "Changing your singer's costume" - adding and controlling sprite costumes;
++ "Make your own band" - using the skills learnt to create new instruments.
 
-  ![screenshot](band-center.png)
+# Frequently Asked Questions
 
-+ Linuxでは右クリックでスプライトを削除できないことがあります。この場合、Shift + 左クリックで削除のメニューが表示されます。
++ When creating their own sprites, children may find that their sprite 'jumps' when it's clicked, as it changes costume. This is because the two costumes are't centered in the same place.
+    
+    To fix this, click 'Set costume center' on *both* sprites, and make sure they are centered at the same point in both costumes.
+    
+    ![screenshot](band-center.png)
+
++ On Linux, right-clicking to delete a sprite may not work. If this is the case, holding shift and left-clicking will bring up the menu to delete a sprite.

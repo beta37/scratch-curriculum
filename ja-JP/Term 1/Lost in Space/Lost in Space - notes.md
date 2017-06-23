@@ -1,47 +1,50 @@
----
-title: ロスト・イン・スペース（宇宙で迷子） —  リーダー用ノート
-language: ja-JP
-embeds: "*.png"
-...
+* * *
 
-#イントロダクション:
-このプロジェクトでは、簡単なアニメーションを作成するための、コードブロックの組み合わせ方を学びます。
+title: Lost in Space — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#資料
-このプロジェクトではスクラッチ２を使用してください。スクラッチ２はオンラインで使用することができます（[jumpto.cc/scratch-on](http://jumpto.cc/scratch-on)）。また、こちらからダウンロードしてオフラインで使用することも可能です（[jumpto.cc/scratch-off](http://jumpto.cc/scratch-off)）。
+# Introduction:
 
-このプロジェクトの完成版は<a href="http://scratch.mit.edu/projects/26818098/#editor">こちら</a>から確認できます。また、「プロジェクト資料のダウンロード」をクリックしてダウンロードすることもできます。中身は下記の通りです。:
+In this project, children will learn how to combine code blocks to create a simple animation.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26818098/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + LostInSpace.sb2
 
-また、外部素材を組込済みのバージョンもあります。こちらから [jumpto.cc/space-resources](http://jumpto.cc/space-resources)、もしくは「プロジェクト資料」より入手できます。中身は下記の通りです。:
+There is also a version of this project with the external resources pre-loaded. This is available online at [jumpto.cc/space-resources](http://jumpto.cc/space-resources), or in the downloadable project materials, which contains:
 
 + LostInSpaceResources.sb2 
 
-#学習のねらい
-+ ループ:
-  + `繰り返す` {.blockcontrol} ループ;
-  + `ずっと` {.blockcontrol} ループ.
+# Learning Objectives
 
-#チャレンジ
-+ 「アニメーションの改良」 - プログラムの中にある数値を変更します。;
-+ 「自分のアニメーションをつくろう」 - 学習したことを使って新しいアニメーションをつくります。.
++ Loops: 
+  + `Repeat` {.blockcontrol} loops;
+  + `Forever` {.blockcontrol} loops.
 
-#FAQ
-+ スプライトの位置やサイズなどをアニメーション開始時に「リセット」する方法があります。アニメーションの初めに以下のブロックを挿入することで簡単にできます。:
+# Challenges
+
++ "Improving your animation" - altering the numbers in a short program;
++ "Make your own animation" - applying the learning to make a new animation.
+
+# Frequently Asked Questions
+
++ Children may need reminding to 'reset' a sprite's position, size and other effects at the start of their animation. This can be easily achieved by adding some of the following blocks to the start of their animations:
 
 ```blocks
-  x座標を (0) 、y座標を (0) にする
+  go to x:(0) y:(0)
 ```
 
 ```blocks
-  大きさを (100)undefinedにする
+  set size to (100)%
 ```
 
 ```blocks
-  画像効果をなくす
+  clear graphic effects
 ```
 
-+ 「宇宙船」のスプライトは時計回りで90度回転させないと、横向きに進んでしまいます。宇宙船の回転についてはプロジェクトの説明文にも記載がありますが、上手くいかない場合は宇宙船の代わりに別のスプライトで進めてもかまいません。
-
++ The 'spaceship' sprite will move sideways unless it is rotated 90 degrees clockwise. Rotating the spaceship is part of the project instructions, but another sprite can be substituted for the spaceship if this is causing problems.
+  
   ![screenshot](space-rotate.png)

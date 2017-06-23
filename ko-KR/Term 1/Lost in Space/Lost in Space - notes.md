@@ -1,47 +1,50 @@
-﻿---
-title: 우주에서 길을 잃다 — 클럽 리더를 위한 노트
-language: ko-KR
-embeds: "*.png"
-... 
+* * *
 
-#소개:
-이 프로젝트에서 아이들은 코드 블록들을 합쳐 간단한 애니메이션을 만드는 방법을 배울 것입니다.
+title: Lost in Space — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#소재
-이 프로젝트에는 Scratch 2 가 사용됩니다. Scratch 2 는 [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) 에서 온라인으로 사용하거나 [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) 에서 다운받아 오프라인에서 사용할 수도 있습니다.
+# Introduction:
 
-이 프로젝트의 완성본은 <a href="http://scratch.mit.edu/projects/26818098/#editor">online</a> 에서 보거나  이 프로젝트의 'Download Project Materials' 링크를 클릭해서 다운로드 할 수 있으며 다음을 포함하고 있습니다:
+In this project, children will learn how to combine code blocks to create a simple animation.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26818098/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + LostInSpace.sb2
 
-또한 이 프로젝트에 필요한 외부소재가 미리 받아져 있는 버전도 사용할 수 있으며 다음 링크에서 사용 하거나 [jumpto.cc/space-resources](http://jumpto.cc/space-resources), downloadable project materials에서 받을 수 있으며 다음을 포함하고 있습니다:
+There is also a version of this project with the external resources pre-loaded. This is available online at [jumpto.cc/space-resources](http://jumpto.cc/space-resources), or in the downloadable project materials, which contains:
 
 + LostInSpaceResources.sb2 
 
-#배움 목표
-+ 루프:
-	+ `반복하기` {.blockcontrol} 루프;
-	+ `무한반복하기` {.blockcontrol} 루프.
+# Learning Objectives
 
-#도전과제
-+ "애니메이션 개선하기" - 프로그램 안의 숫자 바꿔 보기;
-+ "자신만의 애니메이션 만들기" - 배운 것을 응용해 새 애니메이션 만들기.
++ Loops: 
+  + `Repeat` {.blockcontrol} loops;
+  + `Forever` {.blockcontrol} loops.
 
-#자주 묻는 질문
-+ 아이들이 스프라이트의 위치, 크기와 다른 효과들을 시작할 때 리셋 해야 된다는 걸 다시 생각나게 해줘야 할지 모릅니다. 다음 블록을 애니메이션의 시작에 더해주면 쉽게 가능합니다:
+# Challenges
+
++ "Improving your animation" - altering the numbers in a short program;
++ "Make your own animation" - applying the learning to make a new animation.
+
+# Frequently Asked Questions
+
++ Children may need reminding to 'reset' a sprite's position, size and other effects at the start of their animation. This can be easily achieved by adding some of the following blocks to the start of their animations:
 
 ```blocks
-	go to x:(0) y:(0)
+  go to x:(0) y:(0)
 ```
 
 ```blocks
-	set size to (100)%
+  set size to (100)%
 ```
 
 ```blocks
-	clear graphic effects
+  clear graphic effects
 ```
 
-+ 'spacship' 스프라이트는 90도 시계방향으로 돌리지 않으면 옆으로 움직일것입니다. 우주선을 돌리는 건 프로젝트의 일부로 나오지만 우주선 대신 다른 스프라이트를 사용해서 문제가 생겼다면 다음을 참조하세요:
-
-	![screenshot](space-rotate.png)
++ The 'spaceship' sprite will move sideways unless it is rotated 90 degrees clockwise. Rotating the spaceship is part of the project instructions, but another sprite can be substituted for the spaceship if this is causing problems.
+  
+  ![screenshot](space-rotate.png)

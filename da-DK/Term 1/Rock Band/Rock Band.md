@@ -1,183 +1,189 @@
----
-title: Rockband
-level: Scratch 1
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-# Introduktion { .intro }
+title: Rock Band level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-I dette projekt skal du lære, hvordan du kan kode dit eget musikinstrument!
+# Introduction {.intro}
+
+In this project you'll learn how to code your own musical instruments!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26741186/?autostart=false" frameborder="0"></iframe>
-  <img src="band-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26741186/?autostart=false" frameborder="0"></iframe>
+    <img src="band-final.png">
 </div>
 
-# Trin 1: Sprites { .activity }
+# Step 1: Sprites {.activity}
 
-Før du kan begynde at animere skal du tilføje en "ting", som du kan animere. I Scratch kaldes disse 'ting' for __sprites__. 
+Before you can start coding, you'll need to add in a 'thing' to code. In Scratch, these 'things' are called **sprites**.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start med at åbne Scratch redigeringsprogrammet. Du kan finde online versionen af Scratch programmet på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>. Det ser således ud:
++ First, open up the Scratch editor. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new" target="_blank">jumpto.cc/scratch-new</a>. It looks like this:
+    
+    ![screenshot](band-scratch.png)
 
-![screenshot](band-scratch.png)
++ The cat sprite that you can see is the Scratch mascot. Let's get rid of it, by right-clicking and then clicking 'delete'.
+    
+    ![screenshot](band-delete.png)
 
-+ Katte-spriten er vores Scratch maskot. Lad os fjerne den ved at højreklikke og derpå klikke 'slet'.
++ Next, click 'Choose sprite from library' to open up a list of all the Scratch sprites.
+    
+    ![screenshot](band-sprite-library.png)
 
-![screenshot](band-delete.png)
++ Scroll down until you see a drum sprite. Click on a drum, and click 'OK' to add it to your project.
+    
+    ![screenshot](band-sprite-drum.png)
 
-+ Klik derefter på 'Vælg sprite fra biblioteket' for at åbne en liste over alle sprites i Scratch.
++ Click the 'shrink' icon, and then click on the drum a few times to make it smaller.
+    
+    ![screenshot](band-shrink.png)
 
-![screenshot](band-sprite-library.png)
+## Save your project {.save}
 
-+ Scroll ned indtil du ser en tromme-sprite. Klik på trommen og klik på 'OK' for at tilføje den til dit projekt.
+Give your program a name, by typing one into the text box in the top-left corner.
 
-![screenshot](band-sprite-drum.png)
-
-+ Klik på 'Formindsk' ikonet, og klik derefter på trommen et par gange for at gøre den mindre.
-
-![screenshot](band-shrink.png)
-
-## Gem dit projekt { .save }
-
-Tildel dit program et navn ved at indtaste et navn i tekstboksen ovenover Scenen.
-
-Du kan så klikke på 'Fil' og dernæst 'Gem nu' for at gemme dit projekt.
+You can then click 'File' and then 'Save now' to save your project.
 
 ![screenshot](band-save.png)
 
-# Trin 2: Scenen { .activity }
+(If you don't have a Scratch account, you can save a copy of your project by clicking 'Download to your computer' instead).
 
-__Scenen__ er området til venstre, hvor dit projekt får liv. Tænk på det som et opvisningområde, ligesom en rigtig scene!
+# Step 2: The Stage {.activity}
 
-## Arbejdsliste { .check }
+The **stage** is the area on the left, and is where your project comes to life. Think of it as a performance area, just like a real stage!
 
-+ Ligenu er scenen hvid og ser temmelig kedelig ud! Lad os tilføje en baggrund til scenen ved at klikke på 'Vælg baggrund fra biblioteket'.
+## Activity Checklist {.check}
 
-![screenshot](band-stage-choose.png)
++ At the moment, the stage is white, and looks pretty boring! Let's add a backdrop to the stage, by clicking 'Choose backdrop from library'.
+    
+    ![screenshot](band-stage-choose.png)
 
-+ Klik på 'Indendørs' i venstre side og klik så på en scenebaggrund og klik 'OK'.
++ Click 'Indoors' on the left, and then click on a stage backdrop and click 'OK'.
+    
+    ![screenshot](band-backdrop.png)
 
-![screenshot](band-backdrop.png)
++ Your stage should now look like this:
+    
+    ![screenshot](band-stage.png)
 
-+ Din scene bør nu se således ud:
+# Step 3: Making a Drum {.activity}
 
-![screenshot](band-stage.png)
+Let's code your drum to make a sound when it's hit.
 
-# Trin 3: Lav en tromme { .activity }
+## Activity Checklist {.check}
 
-Lad os kode din tromme så den laver en lyd, når man slår på den.
++ You can find the code blocks in the 'Scripts' tab, and they are all colour-coded!
+    
+    Click on the drum sprite, and then drag these 2 blocks into the code area to the right, making sure that they are connected together (like Lego blocks):
+    
+    ![screenshot](band-code.png)
 
-## Arbejdsliste { .check }
++ Click the drum to try out your new instrument!
 
-+ Du kan finde kodeblokkene under 'Scripts' fanen, og de er alle farvekodede!
+## Save your project {.save}
 
-Klik på tromme-spriten og træk så disse 2 blokke ind i kodeområdet til højre, og sikr dig at de er forbundne (ligesom legoklodser):
+## Challenge: Improving your drum {.challenge}
 
-![screenshot](band-code.png)
-
-+ Klik på trommen for at afprøve dit nye instrument!
-
-+ Du kan også ændre udseendet på din tromme når man klikker på den ved at lave et nyt kostume. Klik på 'Kostumer' fanebladet - så vil du se trommebilledet.
-
-![screenshot](band-drum-costume.png)
-
-+ Højreklik på kostumet og klik 'Kopier' for at lave en kopi af kostumet.
-
-![screenshot](band-drum-duplicate.png)
-
-+ Klik på det nye kostume (som hedder 'drum2') og vælg dernæst linje-værktøjet og tegn nogle linjer, så det ser ud som om trommen laver en lyd.
-
-![screenshot](band-drum-hit.png)
-
-+ Navnene på kostumerne er ikke særlig hjælpsomme ligenu. Omdøb de 2 kostumenavne til 'ikke slået' og 'slået' ved at taste de nye navne på kostumerne ind i tekstboksen.
-
-![screenshot](band-drum-name.png)
-
-+ Nu hvor du har 2 forskellige kostumer til din tromme, så kan du vælge hvilket kostume, der skal vises! Tilføj disse 2 blokke til din tromme:
-
-![screenshot](band-looks.png)
-
-Kodeblokken, man skal bruge for at ændre kostumer, ligger under `Udseende` {.blocklooks} sektionen.
-
-+ Afprøv din tromme. Når du klikker på den, bør din tromme nu se ud som om, at du har slået på den.
-
-## Gem dit projekt { .save }
-
-##Udfordring: Forbedr din tromme { .challenge } 
-
-+ Kan du ændre den lyd, som din tromme laver, når man klikker på den?
++ Can you change the sound that the drum makes when it's clicked?
 
 ![screenshot](band-drum-sound.png)
 
-+ Kan du også få din tromme til at lave en lyd, når man trykker på mellemrumstasten? Du skal bruge denne `Hændelser` {.blockevents} blok:
++ Can you also get the drum to make a sound when the spacebar is pressed? You'll need to use this `event` {.blockevents} block:
 
 ```blocks
-	når du trykker på [mellemrum v]
+    when [space v] key pressed
 ```
 
-Du kan kopiere din eksisterende kode ved at højreklikke på koden og klikke 'kopier'.
+You can copy your existing code by right-clicking on it and clicking 'duplicate'.
 
 ![screenshot](band-duplicate-code.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 4: Lav en sanger { .activity .new-page }
+# Step 4: Making a Singer {.activity.new-page}
 
-Lad os tilføje en sanger til dit band!
+Let's add a singer to your band!
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Tilføj yderligere 2 sprites til din scene; en sanger og en mikrofon.
++ Add another 2 sprites to your stage; a singer and a microphone.
+    
+    ![screenshot](band-singer-mic.png)
 
-![screenshot](band-singer-mic.png)
++ Before you can make your singer sing, you need to add a sound to your sprite. Make sure that you have selected your singer, then click the 'Sounds' tab, and click 'Choose sound from library':
+    
+    ![screenshot](band-import-sound.png)
 
-+ Før du kan få din sanger til at synge, så skal du tilføje en lyd til din sprite. Sørg for at du har valgt en sanger, klik derefter på 'Lyde' fanebladet, og klik 'Vælg lyd fra biblioteket':
++ If you click 'Vocals' on the left hand side, you will then be able to choose a suitable sound to add to your sprite.
+    
+    ![screenshot](band-choose-sound.png)
 
-![screenshot](band-import-sound.png)
-
-+ Hvis du klikker på 'Stemmer' i venstre side, så kan du vælge en passende lyd, som du kan føje til din sprite.
-
-![screenshot](band-choose-sound.png)
-
-+ Nu hvor du har tilføjet en lyd, så kan du tilføje følgende kode til din sanger:
-
-```blocks
-		når denne sprite klikkes
-        spil lyden [singer1 v] indtil færdig
++ Now that the sound has been added, you can add this code to your singer:
+    
+    ```blocks
+    when this sprite clicked
+    play sound [singer1 v] until done
 ```
 
-+ Klik på din sanger for at sikre dig at hun synger, når man klikker på hende.
++ Click on your singer, to make sure that she sings when clicked.
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-##Udfordring: Ændr din sangers kostume { .challenge }
-Kan du få din sanger til at se ud som om hun synger, når man klikker på hende? Hvis du har brug for hjælp kan du benytte ovenstående instruktioner omkring, hvordan man laver en tromme.
+# Step 5: Costumes {.activity.new-page}
 
-![screenshot](band-singer-final.png)
+Let's make your singer look like she's singing!
 
-Husk at afprøve hvordan din nye kode virker!
+## Activity Checklist {.check}
 
-## Gem dit projekt { .save }
++ You can also change how your singer sprite looks when it's clicked, by creating a new costume. Click the 'Costumes' tab, and you'll see the singer image.
+    
+    ![screenshot](band-singer-costume.png)
 
-##Udfordring: Lav dit eget band { .challenge }
-Brug det du har lært i dette projekt til at lave dit eget band! Du kan skabe hvilket som helst instrument du ønsker, men kig på de tilgængelige lyde og instrumenter for at få nogle idéer.
++ Right-click on the costume and click 'duplicate' to create a copy of the costume.
+    
+    ![screenshot](band-singer-duplicate.png)
+
++ Click on the new costume (called 'Singer2') and then select the line tool and draw lines to make it look like your singer is making a sound.
+    
+    ![screenshot](band-singer-click.png)
+
++ The names of the costumes aren't very helpful at the moment. Rename the 2 costumes to 'not singing' and 'singing' by typing the new name of each costume into the text box.
+    
+    ![screenshot](band-singer-name.png)
+
++ Now that you have 2 different costumes for your singer, you can choose which costume is displayed! Add these 2 blocks to your singer:
+    
+    ![screenshot](band-looks.png)
+    
+    The code block for changing the costume is in the `Looks` {.blocklooks} section.
+
++ Test your singer. When clicked, your singer should now look like she is singing!
+
+## Challenge: Changing your drum's costume {.challenge}
+
+Can you make your drum look like it's being hit? If you need help, you can use the instructions for changing your singer's costume above.
+
+![screenshot](band-drum-final.png)
+
+Remember to test that your new code works!
+
+## Save your project {.save}
+
+## Challenge: Make your own band {.challenge}
+
+Use what you've learnt in this project to make your own band! You can create any instruments you like, but look at the available sounds and instruments to get some ideas.
 
 ![screenshot](band-ideas.png)
 
-Dine instrumenter behøver dog ikke at give mening. Du kan for eksempel lave et klaver, som består af muffins!
+Your instruments don't have to be sensible though. For example, you could make a piano made out of muffins!
 
 ![screenshot](band-piano.png)
 
-Lige så vel som du kan bruge allerede tilgængelige sprites, så kan du også tegne dine egne sprites.
+As well as using existing sprites, you can also draw your own.
+
 ![screenshot](band-draw.png)
 
-Du kan også optage dine egne lyde, hvis du har en mikrofon, og du kan faktisk også bruge et webcam til at slå på dine instrumenter!
+If you have a microphone you can record your own sounds, or even use a webcam to hit your instruments!
 
 ![screenshot](band-io.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}

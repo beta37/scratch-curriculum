@@ -1,208 +1,265 @@
-﻿---
-title: סירת מרוץ
-level: סקראצ' 1
-language: he-IL
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# מבוא { .intro }
+title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-אתה הולך ללמוד איך ליצור משחק, שבו אתה תשתמש בעכבר כדי לנווט סירה לאי בודד.
+# Introduction {.intro}
+
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# שלב 1: תכנון המשחק שלך { .activity }
+# Step 1: Planning your game {.activity}
 
-## רשימת פעולות { .check }
+## Activity Checklist {.check}
 
-+ התחל פרויקט סקראצ' חדש, ומחק את דמות החתול כך שהפרויקט שלך יהיה ריק. אתה יכול למצוא את עורך הסקראצ' און ליין בכתובת <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ הקש על רקע הבמה שלך ותכנן את השלב שלך. אתה צריך להוסיף:
-	+ בולי עץ שהסירה שלך צריכה להימנע מהם;
-	+ אי בודד שהסירה שלך צריכה להגיע אליו.
++ Click on your stage backdrop and plan out your level. You should add:
+    
+    + Wood that your boat has to avoid;
+    + A desert island that your boat has to get to.
+    
+    Here's how your game could look:
+    
+    ![screenshot](boat-bg.png)
 
-	הנה דוגמה איך המשחק שלך יכול להיראות:
+# Step 2: Controlling the boat {.activity}
 
-	![screenshot](boat-bg.png) 
+## Activity Checklist {.check}
 
-# שלב 2: לשלוט בסירה { .activity }
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
+    
+    ![screenshot](boat-boat.png)
+    
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-## רשימת פעולות { .check }
++ You are going to control the boat with your mouse. Add this code to your boat:
+    
+    ```blocks
+    when flag clicked
+    point in direction (0 v)
+    go to x: (-190) y: (-150)
+    forever
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
+```
 
-+ אם מדריך המועדון שלך נתן לך תיקיית 'משאבים', לחץ 'העלה דמות מקובץ' והוסף את התמונה 'boat.png'. אתה צריך להקטין את הדמות ולשים אותה בנקודת ההתחלה שלה.
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
+    
+    ![screenshot](boat-mouse.png)
+    
+    **Note: There is currently a bug in Scratch which means your boat may not move towards the mouse pointer. If this happens, click the arrow on the `point towards` {.blockmotion} block and re-select 'mouse-pointer'.**
+    
+    ![screenshot](images/boat-bug.png)
 
-	![screenshot](boat-boat.png)
++ What happens if the boat reaches the mouse pointer?
+    
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    
+    ![screenshot](boat-pointer.png)
 
-	אם אין לך את התמונה boat.png, אתה יכול לצייר לך סירה משלך במקום!
++ Test out your boat again, to check whether the problem has been fixed.
 
-+ אתה הולך לשלוט בסירה עם העכבר שלך. הוסף את הקוד הזה לסירה שלך:
+## Save your project {.save}
 
-	![screenshot](boat-code-block-1.png)
+# Step 3: Crashing! {.activity.new-page}
 
-+ בדוק את הסירה שלך, על ידי לחיצה על הדגל והוזזת העכבר. האם הסירה שטה לכיוון העכבר?
+Your boat can sail through the wooden barriers! Let's fix that.
 
-	![screenshot](boat-mouse.png)
+## Activity Checklist {.check}
 
-+ מה קורה אם הסירה מגיעה לסמן של העכבר?
++ You'll need 2 costumes for your boat, one normal costume, and one for when the boat crashes. Duplicate your boat costume, and name them 'normal' and 'hit'.
 
-	כדי לגרום לזה להפסיק לקרות, אתה תצטרך להוסיף בלוק `אם` {.blockcontrol} לקוד שלך, כך שהסירה תזוז רק אם היא רחוקה ביותר מ- 5 פיקסלים מהעכבר.
++ Click on your 'hit' costume, and choose the 'Select' tool to grab bits of the boat and move and rotate them around. Make your boat look as if it's crashed.
+    
+    ![screenshot](boat-hit-costume.png)
 
-	![screenshot](boat-pointer.png)	
++ Add this code to your boat, inside the `forever` {.blockcontrol} loop, so that it crashes when it touches any brown wooden bits:
+    
+    ```blocks
+    if <touching color [#603C15]?> then
+        switch costume to [hit v]
+        say [Noooooo!] for (1) secs
+        switch costume to [normal v]
+        point in direction (0 v)
+        go to x: (-215) y: (-160)
+    end
+```
 
-+ בדוק את הסירה שלך שוב, כדי לבדוק אם הבעיה נפתרה.
+This code is inside the `forever` {.blockcontrol} loop, so that your code keeps checking if the boat has crashed.
 
-## שמור את הפרויקט שלך { .save }
++ You should also make sure that your boat always starts looking like it's 'normal'.
 
-# שלב 3: התרסקות! { .activity .new-page }
++ Now if you try to sail through a wooden barrier, you should see that your boat crashes and moves back to the start.
+    
+    ![screenshot](boat-crash.png)
 
-הסירה שלך יכולה לשוט דרך מחסומי העץ! בוא נתקן את זה.
+## Save your project {.save}
 
-## רשימת פעולות { .check }
+## Challenge: Winning! {.challenge}
 
-+ אתה תצטרך שתי תלבושות לסירה שלך, תלבושת אחת רגילה, ואחת לרגע שבו הסירה מתרסקת. שכפל את התלבושת של הסירה שלך, ותן להן שמות 'רגילה' ו-  'מרוסקת'.
+Can you add another `if` {.blockcontrol} statement to your boat's code, so that the player wins when they get to the desert island?
 
-+ לחץ על התלבושת 'מרוסקת', ובחר את הכלי 'בחר' כדי לתפוס חתיכות מהסירה והוזז וסובב אותם מסביב. עשה שהסירה שלך תראה כאילו שהיא התרסקה.
+When the boat gets to the yellow desert island, it should say 'YEAH!' and then the game should stop. You'll need to use this code:
 
-	![screenshot](boat-hit-costume.png)
-
-+ הוסף את הקוד הזה לסירה שלך, בתוך הלולאה `לעולמים` {.blockcontrol}, כך שהיא תתרסק כאשר היא נוגעת בחלק כלשהוא של עץ חום:
-
-	![screenshot](boat-code-block-2.png)
-
-	הקוד הזה הוא בתוך הלולאה `לעולמים` {.blockcontrol}, כך שהקוד שלך ממשיך לבדוק אם הסירה התרסקה.
-
-+ אתה גם צריך לוודא שהסירה שלך תמיד מתחילה כאשר היא נראית 'רגילה'.
-
-+ עכשיו אם אתה מנסה לשוט דרך מחסומי העץ, אתה צריך לראות שהסירה שלך מתרסקת וזזה בחזרה להתחלה.
-
-	![screenshot](boat-crash.png)
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: ניצחון! {.challenge}
-האם אתה יכול להוסיף משפט `אם` {.blockcontrol} אחר לקוד של הסירה שלך, כך שהשחקן ינצח כאשר הוא יגיע לאי הבודד?
-
-כאשר הסירה מגיעה לאי הבודד הצהוב, היא צריכה לומר 'יששש!' ואז המשחק צריך להיעצר. אתה תצטרך להשתמש בקוד הזה:
-
-![screenshot](boat-code-block-3.png)
+```blocks
+    say [YEAH!] for (1) secs
+    stop [all v]
+```
 
 ![screenshot](boat-win.png)
 
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}
 
-## אתגר: אפקטים קוליים {.challenge}
-אתה יכול להוסיף אפקטים קוליים למשחק שלך, למקרים בהם הסירה שלך מתרסקת, או מגיעה לאי בסוף. אתה יכול גם להוסיף מוזיקת רקע (אם אתה צריך עזרה ראה פרויקט קודם בשם 'להקת רוק').
+## Challenge: Sound effects {.challenge}
 
-## שמור את הפרויקט שלך { .save }
+Can you add sound effects to your game, for when the boat crashes, or reaches the island at the end? You could even add background music (see the previous 'Rock Band' project if you need help with this).
 
-# שלב 4: מרוץ נגד השעון { .activity }
+## Save your project {.save}
 
-בוא נוסיף שעון עצר למשחק שלך, כך שהשחקן צריך להגיע לאי הבודד מהר ככל האפשר.
+# Step 4: Time Trial {.activity}
 
-## רשימת פעולות { .check }
+Let's add a timer to your game, so that the player has to get to the desert island as fast as possible.
 
-+ הוסף משתנה חדש בשם `זמן` {.blockdata} לבמה שלך. אתה יכול גם לשנות את התצוגה של המשתנה החדש שלך. אם אתה צריך עזרה, אתה יכול להסתכל על הפרויקט 'בלונים'.
+## Activity Checklist {.check}
 
-	![screenshot](boat-variable.png)
++ Add a new variable called `time` {.blockdata} to your stage. You can also change the display of your new variable. If you need help, have a look at the 'Ghostbusters' project.
+    
+    ![screenshot](boat-variable.png)
 
-+ הוסף את הקוד הזה ל__במה__ שלך, כך ששעון העצר ימשיך לספור עד שהסירה תגיע לאי הבודד:
++ Add this code to your **stage**, so that the timer counts up until the boat reaches the desert island:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [0]
+    forever
+        wait (0.1) secs
+        change [time v] by (0.1)
+    end
+```
 
-	![screenshot](boat-code-block-4.png)
++ That's it! Test out your game and see how quickly you can get to the desert island!
+    
+    ![screenshot](boat-variable-test.png)
 
-+ זהו זה! בדוק את המשחק שלך ותראה כמה מהר אתה יכול להגיע לאי הבודד!
+## Save your project {.save}
 
-	![screenshot](boat-variable-test.png)
+# Step 5: Obstacles and power-ups {.activity}
 
-## שמור את הפרויקט שלך { .save }
+This game is *far* too easy - let's add things to make it more interesting.
 
-# שלב 5: מכשולים ושידרוגים { .activity }
+## Activity Checklist {.check}
 
-המשחק הזה קל בצורה __משמעותית__ - בוא נוסיף דברים כדי לעשות אותו מעניין יותר.
++ First let's add some 'boosts' to your game, which will speed up the boat. Edit your stage backdrop and add in some white booster arrows.
+    
+    ![screenshot](boat-boost.png)
 
-## רשימת פעולות { .check }
++ You can now add some code to your boat's `forever` {.blockcontrol} loop, so that it moves 2 *extra* steps when touching a white booster.
+    
+    ```blocks
+    if <touching color [#FFFFFF]?> then
+        move (3) steps
+    end
+```
 
-+ תחילה בוא נוסיף מספר 'מאיצים' למשחק שלך, אשר יאיצו את הסירה. ערוך את רקע הבמה שלך והוסף לו מספר חיצים מאיצים לבנים.
++ You can also add in a spinning gate, which your boat has to avoid. Add in a new sprite called 'gate', which looks like this:
+    
+    ![screenshot](boat-gate.png)
+    
+    Make sure that the colour of the gate is the same as the other wooden barriers.
 
-	![screenshot](boat-boost.png)
++ Set the centre of the gate sprite.
+    
+    ![screenshot](boat-center.png)
 
-+ עכשיו אתה יכול להוסיף קצת קוד ללולאת ה- `לעולמים` {.blockcontrol} שלך, כך שהיא תזוז 2 צעדים _נוספים_ כאשר היא נוגעת במאיץ לבן.
++ Add code to your gate, to make it spin slowly `forever` {.blockcontrol}.
 
-	![screenshot](boat-code-block-5.png)
++ Test out your game. You should now have a spinning gate that you must avoid.
+    
+    ![screenshot](boat-gate-test.png)
 
-+ אתה יכול גם להוסיף שער מסתובב, שהסירה שלך צריכה להתחמק ממנו. הוסף דמות חדשה בשם 'שער', שנראית כמו זה:
+## Save your project {.save}
 
-	![screenshot](boat-gate.png)
+## Challenge: More obstacles! {.challenge.new-page}
 
-	וודא שהצבע של השער הוא בדיוק כמו הצבע של מחסומי העץ האחרים.
+Can you add more obstacles to your game? Here are some ideas:
 
-+ קבע את המרכז של דמות השער.
++ You could add green slime to your backdrop, which slows the player down when they touch it. You can use a `wait` {.blockcontrol} block to do this:
 
-	![screenshot](boat-center.png)
+```blocks
+    wait (0.01) secs
+````
 
-+ הוסף קוד לשער שלך, כדי לעשות שהוא יסתובב לאט `לעולמים` {.blockcontrol}.
+![screenshot](boat-algae.png)
 
-+ בדוק את המשחק שלך. צריך להיות לך עכשיו שער מסתובב שאתה חייב להתחמק ממנו.
++ You could add a moving object, like a log or a shark!
 
-	![screenshot](boat-gate-test.png)
+![screenshot](boat-obstacles.png)
 
-## שמור את הפרויקט שלך { .save }
+These blocks may help you:
 
-## אתגר: מכשולים נוספים! {.challenge .new-page}
-האם אתה יכול להוסיף עוד מכשולים למשחק שלך? הנה כמה רעיונות:
+```blocks
+    move (1) steps
+    if on edge, bounce
+````
 
-+ אתה יכול להוסיף רפש ירוק לרקע שלך, שיאט את השחקן כאשר הוא נוגע בו. אתה יכול להשתמש בבלוק `חכה` {.blockcontrol} כדי לעשות את זה:
+If your new object isn't brown, you'll need to add to your boat code:
 
-	![screenshot](boat-code-block-6.png)
+```blocks
+    if <  <touching color [#603C15]?> or <touching [shark v]?> > then
+    end
+```
 
-	![screenshot](boat-algae.png)
+## Save your project {.save}
 
-+ אתה יכול להוסיף אוביקט שזז, כמו בול עץ או כריש!
+## Challenge: More boats! {.challenge.new-page}
 
-	![screenshot](boat-obstacles.png)
+Can you turn your game into a race between 2 players?
 
-הבלוקים האלו יכולים לעזור לך:
++ Duplicate the boat, rename it 'Player 2' and change its colour.
 
-![screenshot](boat-code-block-7.png)
+![screenshot](boat-p2.png)
 
-אם האוביקט החדש שלך לא חום, אתה תצטרך להוסיף לסירה שלך קוד:
++ Change Player 2's starting position, by changing this code:
 
-![screenshot](boat-code-block-8.png)
+```blocks
+    go to x: (-190) y: (-150)
+```
 
-## שמור את הפרויקט שלך { .save }
++ Delete the code that uses the mouse to control the boat:
 
-## אתגר: סירות נוספות! {.challenge .new-page}
-האם אתה יכול להפוך את המשחק שלך למרוץ בין שני שחקנים?
+```blocks
+    if < (distance to [mouse-pointer v]) > [5] > then
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
+```
 
-+ שכפל את הסירה, שנה לה את השם ל- 'שחקן 2' ושנה את הצבע שלה.
+...and replace it with code to control the boat using the arrow keys.
 
-	![screenshot](boat-p2.png)
+This is the code you'll need to move the boat forward:
 
-+ שנה את מקום ההתחלה של שחקן 2, על ידי שינוי הקוד הזה:
+```blocks
+    if < key [up arrow v] pressed? > then
+        move (1) steps
+    end
+```
 
-	![screenshot](boat-code-block-9.png)
+You'll also need code to `turn` {.blockmotion} the boat when the left and right arrow keys are pressed.
 
-+ מחק את הקוד שמשתמש בעכבר כדי לשלוט בסירה:
+## Save your project {.save}
 
-	![screenshot](boat-code-block-10.png)
+## Challenge: More levels! {.challenge.new-page}
 
-...והחלף אותו עם קוד שמשתמש במקשי החצים כדי לשלוט בסירה.
+Can you create additional backdrops, and allow the player to choose between levels?
 
-זה הקוד שאתה תצטרך כדי להזיז את הסירה קדימה:
+```blocks
+    when [space v] key pressed
+    next backdrop
+```
 
-![screenshot](boat-code-block-11.png)
-
-אתה תצטרך גם קוד `הסתובב` {.blockmotion} בשביל לסובב את הסירה כאשר לוחצים על החץ השמאלי והימני.
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: שלבים נוספים! {.challenge .new-page}
-האם אתה יכול ליצור רקעים נוספים, ולאפשר לשחקן לבחור בין שלבים?
-
-![screenshot](boat-code-block-12.png)
-
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}

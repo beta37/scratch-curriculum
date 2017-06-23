@@ -1,179 +1,223 @@
-﻿---
-title: צ'אט בוט (רובוט שיחה)
-level: סקראצ' 1
-language: he-IL
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-# מבוא { .intro }
+title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-אתה הולך ללמוד איך לתכנת צ'אט בוט (רובוט שיחה) לגמרי שלך!
+# Introduction {.intro}
+
+You are going to learn how to program your own talking robot!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26762091/?autostart=false" frameborder="0"></iframe>
   <img src="chatbot-final.png">
 </div>
 
-# שלב 1: הצ'אט בוט (רובוט שיחה) שלך { .activity }
+# Step 0: Test test test =)
 
-## רשימת פעולות { .check }
+# Step 1: Your chatbot {.activity}
 
-+ לפני שאתם מתחילים ליצור את הצ'אט בוטים שלכם, אתם צריכים להחליט על האישיות שלהם.
-	+ מה השמות שלהם?
-	+ איפה הם חיים?
-	+ האם הם שמחים? רציניים? מצחיקים? ביישנים? חברותיים?
+## Activity Checklist {.check}
 
-+ צור פרויקט סקראצ' חדש, ומחק את דמות החתול כך שהפרויקט שלך יהיה ריק. אתה יכול למצוא את עורך הסקראצ' און ליין בכתובת <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Before you start making your chatbot, you need to decide on their personality.
+    
+    + What is their name?
+    + Where do they live?
+    + Are they happy? serious? funny? shy? friendly?
 
-+ בחר אחת מהדמויות הבאות, והוסף אותה לפרויקט שלך:
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-	![screenshot](chatbot-characters.png)
++ Choose one of these character sprites, and add them to your project:
+    
+    ![screenshot](chatbot-characters.png)
 
-+ בחר רקע שמתאים לאופי של הצ'אט בוט שלך. הנה דוגמה, למרות ששלך לא חייב להיראות כך:
++ Choose a backdrop that fits your chatbot's personality. Here's an example, although yours doesn't have to look like this:
+    
+    ![screenshot](chatbot-sprite.png)
 
-	![screenshot](chatbot-sprite.png)
+## Save your project {.save}
 
-## שמור את הפרויקט שלך { .save }
+# Step 2: A talking chatbot {.activity}
 
-# שלב 2: צ'אט בוט מדבר { .activity }
+Now that you have a chatbot with a personality, let's program it to talk to you.
 
-כעת שיש לך צ'אט בוט עם אישיות, בא נתכנת אותו לדבר איתך.
+## Activity Checklist {.check}
 
-## רשימת פעולות { .check }
++ Click on your chatbot character, and add this code:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say [What a lovely name!] for (2) secs
+```
 
-+ לחץ על הדמות של הצ'אט בוט שלך, והוסף את הקוד הבא:
++ Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage.
+    
+    ![screenshot](chatbot-text.png)
 
-	![screenshot](chatbot-code-block-1.png)
++ Your chatbot simply replies `What a lovely name!` every time. You can personalise your chatbot's reply, by making use of the user's answer. Change the chatbot's code, so that it looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    say <join [Hi] (answer)> for (2) secs
+```
 
-+ לחץ על הצ'אט בוט שלך כדי לבדוק אותו. אחרי שהוא שואל אותך לשמך, הקלד אותו לתוך התיבה שלאורך החלק התחתון של הבמה.
+To create the last block, you'll need to first drag on a green `join` {.blockoperators} block, and drag it on to the `say` {.blocklooks} block.
 
-	![screenshot](chatbot-text.png)
+![screenshot](chatbot-join.png)
 
-+ הצ'אט בוט שלך פשוט ישיב `איזה שם יפה!` בכל פעם. אתה יכול להתאים אישית את התשובה של הצ'אט בוט שלך, על ידי שימוש בתשובה של המשתמש. שנה את הקוד של הצ'אט בוט, כך שהוא יראה כך:
+You can then change the text `hello` to say `Hi`, and drag the light blue `answer` {.blocksensing} block (from the 'Sensing' section) onto the text `world`.
 
-	![screenshot](chatbot-code-block-2.png)
+![screenshot](chatbot-answer.png)
 
-	כדי ליצור את הבלוק האחרון, אתה תצטרך תחילה לגרור בלוק `חבר` {.blockoperators} ירוק, ולהניח אותו בתוך הבלוק `אמור` {.blocklooks}.
++ Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)
 
-	![screenshot](chatbot-join.png)
++ It may be that you want to store the user's name in a variable, so that you can use it again later. Create a new variable called `name` {.blockdata}. If you've forgotten how to do this, the 'Balloons' project will help you.
 
-	עכשיו אתה יכול לשנות את הטקסט `hello` ולכתוב `היי`, ואז לגרור את הבלוק בצבע כחול בהיר `תשובה` {.blocksensing} (מתוך התפריט 'חיישנים') לתוך הטקסט `world`.
++ The information that you entered is already stored in a special variable called `answer` {.blocksensing}. Go to the Sensing group of blocks and click the answer block so that a tick appears. The current value in `answer` {.blocksensing} should then be shown on the top-left of the stage.
 
-	![screenshot](chatbot-answer.png)
++ Once you've created your new variable, make sure that your chatbot's code looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+```
 
-+ בדוק את התוכנית החדשה. האם היא עובדת כפי שציפית? האם אתה יכול לתקן בעיות שאתה רואה? (רמז: אתה יכול לנסות להוסיף רווח במקום כלשהו!)
++ If you test your program again, you'll notice that the answer is stored in the `name` {.blockdata} variable, and is shown in the top-left of the stage. The `name` {.blockdata} variable should now contain the same value as the `answer` {.blocksensing} variable.
+    
+    ![screenshot](chatbot-variable.png)
+    
+    If you'd rather not see the variables on your stage, you can click the tick next to the variable names in the 'Scripts' tab to hide them.
 
-+ יכול להיות שתרצה לאחסן את שם המשתמש במשתנה, כדי שתוכל להשתמש בו שוב מאוחר יותר. צור משתנה חדש בשם `שם` {.blockdata}. אם שכחת איך עושים את זה, הפרויקט 'מכסחי השדים' יעזור לך.
+## Save your project {.save}
 
-+ המידע שהכנסת כבר מאוחסן במשתנה מיוחד שנקרא `תשובה` {.blocksensing}. עבור אל קבוצת הבלוקים חיישנים ולחץ על בלוק התשובה כך שיופיע סימון. הערך הנוכחי בתוך `תשובה` {.blocksensing} יוצג בפינה השמאלית עליונה של הבמה.
+## Challenge: More questions {.challenge}
 
-+ לאחר שיצרת את המשתנה החדש שלך, וודא שהקוד של הצ'אט בוט שלך נראה כך:
-
-	![screenshot](chatbot-code-block-3.png)
-
-+ אם תבדוק את התוכנית שלך שוב, אתה תבחין שהתשובה מאוחסנת במשתנה `שם` {.blockdata}, והוא מוצג בפינה השמאלית עליונה של הבמה. המשתנה `שם` {.blockdata} מכיל עכשיו את אותו הערך שיש במשתנה `תשובה` {.blocksensing}.
-
-	![screenshot](chatbot-variable.png)
-
-	אם אתה מעדיף לא לראות את המשתנים על הבמה שלך, אתה יכול ללחוץ על תיבת הסימון שליד שמות המשתנים במחיצה 'תסריטים' כדי להסתיר אותם.
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: עוד שאלות { .challenge }
-
-תכנת את הצ'אט בוט שלך לשאול עוד שאלה. אתה יכול לשמור את התשובה שלהם במשתנה?
+Program your chatbot to ask another question. Can you store their answer in a variable?
 
 ![screenshot](chatbot-question.png)
 
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}
 
-# שלב 3: קבלת החלטות { .activity }
+# Step 3: Making decisions {.activity}
 
-אתה יכול לתכנת את הצ'אט בוט שלך להחליט מה לעשות, בהתאם לתשובה של המשתמש.
+You can program your chatbot to decide what to do, based on the user's responses.
 
-## סדר פעולות { .check }
+## Activity Checklist {.check}
 
-+ בא נעשה שהצ'אט בוט שלך ישאל את המשתמש שאלה שיש לה תשובה של `כן` או `לא`. הנה דוגמה, אבל אתה יכול לשנות את השאלה אם אתה רוצה:
++ Let's get your chatbot to ask the user a question which has a `yes` or `no` answer. Here's an example, but you can change the question if you like:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    end
+```
 
-	![screenshot](chatbot-code-block-4.png)
+Notice that now you've stored the user's name in a variable, you can use it as much as you like.
 
-	שים לב שעכשיו אחרי שאחסנת את שם המשתמש בתוך משתנה, אתה יכול להתשמש בו כמה שרק תרצה.
++ To test this program properly, you'll need to test it twice - once typing `no` as your answer, and once typing `yes`. You should only get a response from your chatbot `if` {.blockcontrol} you answer `yes`.
 
-+ כדי לבדוק את התוכנית הזאת כראוי, אתה תצטרך לבדוק אותה פעמיים - פעם אחת להקליד בתשובה שלך `לא`, ופעם אחת להקליד `כן`. אתה צריך לקבל תשובה מהצ'אט בוט שלך רק `אם` {.blockcontrol} התשובה שלך `כן`.
++ The trouble with your chatbot is that it doesn't give a reply if the user answers `no`. You can fix this, by changing the `if` {.blockcontrol} block to an `if/else` {.blockcontrol} block, so that your code now looks like this:
+    
+    ```blocks
+    when this sprite clicked
+    ask [Hey! What's your name?] and wait
+    set [name v] to (answer)
+    say <join [Hi ] (name)> for (2) secs
+    ask <join [Are you OK ] (name)> and wait
+    if ((answer)=[yes]) then
+        say [That's great to hear!] for (2) secs
+    else
+        say [Oh no!] for (2) secs
+    end
+```
 
-+ הבעיה עם הצ'אט בוט שלך היא שהוא לא עונה אם התשובה של המשתמש היא `לא`. אתה יכול לתקן את זה, על ידי החלפת הבלוק `אם` {.blockcontrol} לבלוק `אם/ואם לא` {.blockcontrol}, כך שהקוד שלך יראה עכשיו כך:
++ If you test your code, you'll now see that you get a response when you answer `yes` or `no`. Your chatbot should reply with `That's great to hear!` when you answer `yes`, but will reply with `Oh no!` if you type anything other than `yes` (`else` {.blockcontrol} means 'otherwise').
+    
+    ![screenshot](chatbot-else.png)
 
-	![screenshot](chatbot-code-block-5.png)
++ You can put any code inside an `if` {.blockcontrol} or `else` {.blockcontrol} block, not just code to make your chatbot speak. For example, you can change the chatbot's costume to match the response.
+    
+    If you have a look at your chatbot's costumes, you may see that there is more than one. (If not, you can always add more yourself!)
+    
+    ![screenshot](chatbot-costumes.png)
+    
+    You can use these costumes as part of your chatbot's response, by adding this code:
+    
+    ![screenshot](chatbot-costumes-code.png)
 
-+ אם תבדוק את הקוד שלך, אתה תראה עכשיו שאתה מקבל תשובה כאשר התשובה שלך `כן` או `לא`. הצ'אט בוט שלך צריך לענות `זה נהדר לשמוע!` כאשר התשובה שלך `כן`, אבל הוא יענה `אוי לא!` אם הקלדת כל דבר אחר שונה מ- `כן` (`ואם לא` {.blockcontrol} משמעותו 'אחרת').
++ Test out your program, and you should see your chatbot's face change depending on the answer you give.
+    
+    ![screenshot](chatbot-face.png)
 
-	![screenshot](chatbot-else.png)
+## Save your project {.save}
 
-+ אתה יכול לשים כל קוד בתוך בלוק `אם` {.blockcontrol} או בלוק `ואם לא` {.blockcontrol}, לא רק קוד שגורם לצ'אט בוט שלך לדבר. לדוגמה, אתה יכול לשנות את התלבושת של הצ'אט בוט שלך כדי שתתאים לתגובה.
+## Challenge: More decisions {.challenge}
 
-	אם אתה תסתכל על התלבושות של הצ'אט בוט שלך, אתה תראה שיש יותר מתלבושת אחת. (אם אין, אתה תמיד יכול להוסיף עוד בעצמך!)
-
-	![screenshot](chatbot-costumes.png)
-
-	אתה יכול להשתמש בתלבושות האלו כחלק מהתגובה של הצ'אט בוט שלך, על ידי הוספת הקוד הזה:
-
-	![screenshot](chatbot-costumes-code.png)
-
-+ בדוק את התוכנית שלך, ואתה צריך לראות את הפנים של הצ'אט בוט שלך משתנות בהתאם לתשובה שנתת.
-
-	![screenshot](chatbot-face.png)
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: עוד החלטות { .challenge }
-
-תכנת את הצ'אט בוט שלך לשאול עוד שאלה - שאלה עם תשובה של `כן` או `לא`. אתה יכול לגרום לצ'אט בוט שלך להגיב לתשובה?
+Program your chatbot to ask another question - something with a `yes` or `no` answer. Can you make your chatbot respond to the answer?
 
 ![screenshot](chatbot-joke.png)
 
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}
 
-# שלב 4: שינוי מיקום { .activity }
+# Step 4: Changing location {.activity}
 
-אתה יכול גם לתכנת את הצ'אט בוט שלך לשנות מיקום.
+You can also program your chatbot to change its location.
 
-## סדר פעולות { .check }
+## Activity Checklist {.check}
 
-+ הוסף עוד רקע לבמה שלך, לדוגמה רקע של ה'ירח' (moon).
++ Add another backdrop to your stage, for example the 'moon' backdrop.
+    
+    ![screenshot](chatbot-moon.png)
 
-	![screenshot](chatbot-moon.png)
++ You can now program your chatbot to change location, by adding this code to your chatbot:
+    
+    ```blocks
+    ask [I'm going to the moon. Do you want to come with me?] and wait
+    if ((answer) = [yes]) then
+        switch backdrop to [moon v]
+    end
+```
 
-+ אתה יכול עכשיו לתכנת את הצ'אט בוט שלך לשנות מיקום, על ידי הוספת הקוד הזה לצ'אט בוט שלך:
++ You also need to make sure that your chatbot is outside when you start talking to it. Add this block to the top of your chatbot code:
+    
+    ![screenshot](chatbot-outside.png)
 
-	![screenshot](chatbot-code-block-6.png)
++ Test your program, and answer `yes` when asked if you want to go to the moon. You should see that the chatbot's location has changed.
+    
+    ![screenshot](chatbot-backdrop.png)
 
-+ אתה גם צריך לוודא שהצ'אט בוט שלך נמצא בחוץ כאשר אתה מתחיל לדבר איתו. הוסף את הבלוק הזה לתחילת הקוד של הצ'אט בוט שלך:
++ Does your chatbot change location if you type `no`? What about if you type `I'm not sure`?
 
-	![screenshot](chatbot-outside.png)
++ You can also add this code inside your `if` {.blockcontrol} block, to make your chatbot jump up and down 4 times if the answer is `yes`:
+    
+    ```scratch
+repeat (4)
+    change y by (10)
+    wait (0.1) secs
+    change y by (-10)
+    wait (0.1) secs
+end
+```
 
-+ בדוק את התוכנית שלך, וענה `כן` כאשר הוא שואל אותך אם אתה רוצה לבוא לירח. אתה צריך לראות שמיקום של הצ'אט בוט שלך השתנה.
+![screenshot](chatbot-loop.png)
 
-	![screenshot](chatbot-backdrop.png)
++ Test your code again. Does your chatbot jump up and down if you answer `yes`?
 
-+ האם הצ'אט בוט שלך ישנה מקום אם תקליד `לא`? מה אם תקליד `אני לא בטוח`?
+## Save your project {.save}
 
-+ אתה יכול גם להוסיף את הקוד הזה בתוך בלוק ה- `אם` {.blockcontrol} שלך, כדי לגרום לצ'אט בוט שלך לקפוץ למעלה ולמטה 4 פעמים אם התשובה היא `כן`:
+## Challenge: Make your own chatbot {.challenge}
 
-	![screenshot](chatbot-code-block-7.png)
-
-	![screenshot](chatbot-loop.png)
-
-+ בדוק את הקוד שלך שוב. האם הצ'אט בוט שלך קפץ למעלה ולמטה אם ענית `כן`?
-
-## שמור את הפרויקט שלך { .save }
-
-## אתגר: צור צ'אט בוט משלך {.challenge}
-תשתמש במה שלמדת כדי לסיים ליצור את הצ'אט בוט האינטראקטיבי שלך. הנה כמה רעיונות:
+Use what you've learnt to finish creating your interactive chatbot. Here are some ideas:
 
 ![screenshot](chatbot-ideas.png)
 
-לאחר שסיימת ליצור את הצ'אט בוט שלך, תן לחברים שלך לשוחח איתו! האם הם אהבו את הדמות שלך? האם הם מצאו בעיות כלשהן?
+Once you've finished making your chatbot, get your friends to have a conversation with it! Do they like your character? Did they spot any problems?
 
-## שמור את הפרויקט שלך { .save }
+## Save your project {.save}

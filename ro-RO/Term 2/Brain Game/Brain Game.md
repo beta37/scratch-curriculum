@@ -1,268 +1,271 @@
----
-title: Brain Game
-level: Scratch 2
-language: ro
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-# Introducere { .intro }
+title: Brain Game level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-În acest proiect vei învăţa cum să creezi, un chestionar cu intrebari din tabla înmulţirii, la care trebuie să răspunzi corect la cât mai multe întrebări în 30 de secunde.
+# Introduction {.intro}
+
+In this project you'll learn how to create a times table quiz, in which you have to get as many answers correct as you can in 30 seconds.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/42225768/?autostart=false" frameborder="0"></iframe>
   <img src="brain-final.png">
 </div>
 
-# Pasul 1: Crearea întrebărilor { .activity }
+# Step 1: Creating questions {.activity}
 
-Să începem prin a creea întrebări aleatorii, la care jucătorul va trebui să răspundă.
+Let's start by creating random questions for the player to answer.
 
-## Listă de activităţi { .check }
+## Activity Checklist {.check}
 
-+ Creează un nou proiect Scratch, şi şterge sprite-ul pisică pentru ca proiectul să fie gol. Poţi să găsești editorul Scratch online aici <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Alege un personaj şi un fundal pentru jocul tau. Poţi să alegi ce vrei! Uite un exemplu:
-
-	![screenshot](brain-setting.png)	
++ Choose a character and a backdrop for your game. You can choose any you like! Here's an example:
     
-+ Creează două noi variabile numite `numărul 1` {.blockdata} şi `numărul 2` {.blockdata}. Aceste variabile vor ţine minte cele două numere, care vor fi înmulțite între ele.  
+    ![screenshot](brain-setting.png)
 
-	![screenshot](brain-variables.png)
++ Create 2 new variables called `number 1` {.blockdata} and `number 2` {.blockdata}. These variables will store the 2 numbers that will be multiplied together.
     
-+ Adaugă cod personajului tău, pentru a asigna ambelor variabile un numar `aleator` {.blockoperators} între 2 şi 12
+    ![screenshot](brain-variables.png)
 
-	```blocks
-		cand se dă click pe steag
-        setează [number 1 v] la (alege un numar aleatoriu intre(2) şi (12))
-		setează [number 2 v] la (alege un numar aleatoriu intre(2) şi (12))
-	```
++ Add code to your character, to set both of these variables to a `random` {.blockoperators} number between 2 and 12.
+    
+    ```blocks
+    when flag clicked
+    set [number 1 v] to (pick random (2) to (12))
+    set [number 2 v] to (pick random (2) to (12))
+```
 
-+ Pe urmă poţi întreba jucătorul pentru răspuns, şi să îi zici dacă acesta a fost corect sau nu. 
++ You can then ask the player for the answer, and let them know if they were right or wrong.
+    
+    ```blocks
+    when flag clicked
+    set [number 1 v] to (pick random (2) to (12))
+    set [number 2 v] to (pick random (2) to (12))
+    ask (join (number 1)(join [ x ] (number 2))) and wait
+    if <(answer) = ((number 1)*(number 2))> then
+        say [yes! :)] for (2) secs
+    else
+        say [nope :(] for (2) secs
+    end
+```
 
-	```blocks
-		când se dă click pe steag 
-		setează [number 1 v] la (alege un numar aleatoriu intre (2) şi (12))
-		setează [number 2 v] la (alege un numar aleatoriu intre (2) şi (12))
-		întreabă (îmbină (number 1)(îmbină [ x ] (number 2))) şi aşteaptă
-		dacă <(răspuns) = ((number 1)*(number 2))> atunci
-			spune [yes! :)] pentru (2) secunde
-		altfel
-			spune [nope :(] pentru (2) secunde
-		sfârşit
-	```
++ Test your project fully, by answering one question correctly and one with the wrong answer.
 
-+ Testează-ţi proiectul în întregime, răspunzând corect unei întrebări şi greşit altei întrebări.
++ Add a `forever` {.blockcontrol} loop around this code, so that the player is asked lots of questions.
 
-+ Adaugă o buclă `la infinit` {.blockcontrol} în jurul acestui cod, astfel încât jucătorul să fie întrebat o mulţime de întrebări.
++ Create a countdown timer on the stage, using a variable called `time` {.blockdata}. The 'Balloons' project has instructions for making a timer (in step 6) if you need help!
 
-+ Creează un cronometru pe scenă folosind o variabilă numita  `timp` {.blockdata}. Dacă ai nevoie de ajutor, proiectul 'Balloons' are instrucţiuni pentru creearea unui cronometru (în pasul 6).   
++ Test your project again - you should be able to continue asking questions until the time runs out.
 
-+ Testează-ţi din nou proiectul - ar trebui să poți pune întrebări până îţi expiră timpul.
+## Save your project {.save}
 
-## Salvează-ţi proiectul { .save }
+## Challenge: Changing costumes {.challenge}
 
-## Provocare: Costume schimbatoare {.challenge}
-Poţi să schimbi costumul personajului tau, astfel încât el să reacţioneze la răspunsul jucatorului ?
+Can you change your character's costumes, so that they respond to the player's answer?
 
 ![screenshot](brain-costume.png)
 
-## Provocare: Adăugarea scorului {.challenge} 
-Poţi să adaugi un scor jocului tău? Poţi să adaugi un punct pentru fiecare răspuns corect. Dacă vrei, ai putea să resetezi scorul jucatorului la 0 dacă greşeşte la o întrebare. 
+## Challenge: Adding a score {.challenge}
 
-## Salvează-ţi proiectul { .save }
+Can you add a score to your game? You can add a point for every correct answer. If you're feeling mean, you could even reset the player's score to 0 if they get a question wrong!
 
-# Pasul 2: Jocuri multiple { .activity .new-page}
+## Save your project {.save}
 
-Hai să adăugam un buton 'play' jocului, astfel încât să te poţi juca de o groază de ori.
+# Step 2: Multiple games {.activity.new-page}
 
-## Listă de activităţi { .check }
+Let's add a 'play' button to your game, so that you can play lots of times.
 
-+ Creează un nou buton sprite, numit Play, pe care jucatorul va trebui să dea click, ca să înceapă un joc nou. Poţi să il desenezi chiar tu, sau să modifici un sprite in librăria Scratch.
+## Activity Checklist {.check}
 
-	![screenshot](brain-play.png)
-
-+ Adaugă acest cod noului tău buton.
-
-	```blocks
-		când se da click pe steag
-		afiseaza
-
-        când se da click pe acest sprite
-		ascunde
-		expediere la toţi [start v]
-	```
-
-    Acest cod afișeaza butonul Play când începe proiectul. Când se dă click pe buton, se ascunde şi pe urma transmite un mesaj, care va începe jocul.
-
-+ Va trebui să modifici codul personajului tău, astfel încât jocul să înceapă când primește mesajul `start`  {.blockevents} şi nu când se dă click pe steag.
-
-	Înlocuieşte codul `când se dă click pe steag` {.blockevents} cu `când primesc start` {.blockevents}.
-
-	![screenshot](brain-start.png)
++ Create a new 'Play' button sprite, which your player will click to start a new game. You can draw it yourself, or edit a sprite from the Scratch library.
     
-    + Dă click pe steagul verde și apoi dă click pe noul tau buton de play ca să îl testezi. Ar trebui să vezi că jocul nu se porneşte până când nu se dă click pe buton.
+    ![screenshot](brain-play.png)
 
-+ Ai observat că cronometrul începe când se dă click pe steagul galben şi nu când jocul începe ?
++ Add this code to your new button.
+    
+    ```blocks
+    when flag clicked
+    show
 
-	![screenshot](brain-timer-bug.png)
+    when this sprite clicked
+    hide
+    broadcast [start v]
+```
 
-	Poţi rezolva această problemă ?
+This code shows the play button when your project is started. When the button is clicked, it is hidden and then broadcasts a message that will start the game.
 
-+ Dă click pe scenă şi înlocuieşte blocul `opreşte tot` cu un mesaj  `sfarsit` {.blockevents}.
++ You'll need to edit your character's code, so that the game starts when they receive the `start` {.blockevents} message, and not when the flag is clicked.
+    
+    Replace the `when flag clicked` {.blockevents} code with `when I receive start` {.blockevents}.
+    
+    ![screenshot](brain-start.png)
 
-	![screenshot](brain-end.png)
++ Click the green flag and then click your new play button to test it. You should see that the game doesn't start until the button is clicked.
 
-+ Poţi să adaugi un cod nou butonului tău, să îl arăţi din nou la sfârşitul fiecărui joc.
++ Did you notice that the timer starts when the green flag is clicked, and not when the game starts?
+    
+    ![screenshot](brain-timer-bug.png)
+    
+    Can you fix this problem?
 
-	```blocks
-		când primesc [end v]
-		afişează
-	```
++ Click on the stage, and replace the `stop all` {.blockcontrol} block with an `end` {.blockevents} message.
+    
+    ![screenshot](brain-end.png)
 
-+ De asemenea va trebui să îţi oprești personajul din pus întrebări la sfârşitul fiecărui joc:
++ You can now add code to your button, to show it again at the end of each game.
+    
+    ```blocks
+    when I receive [end v]
+    show
+```
 
-	```blocks
-		cand primesc [end v]
-		opreste [alte script-uri pentru sprite v]
-	```
-+ Testează-ţi butonul Play prin jucarea unor runde. Ar trebui să observi că butonul play apare după fiecare joc. Ca să testezi mai uşor, poţi să scurtezi fiecare joc, astfel încât el să dureze numai cateva secunde.
++ You'll also need to stop your character asking questions at the end of each game:
+    
+    ```blocks
+    when I receive [end v]
+    stop [other scripts in sprite v]
+```
 
-	```blocks
-		setează [timp v] la [10]
-	```
++ Test your play button by playing a couple of games. You should notice that the play button shows after each game. To make testing easier, you can shorten each game, so that it only lasts a few seconds.
+    
+    ```blocks
+    set [time v] to [10]
+```
 
-+ Poţi de asemenea să schimbi cum arată butonul cand pluteşti cu mouse-ul deasupra lui.
-
-	```blocks
-		când se dă click pe steag
-		afişează
-		la infinit
-		dacă <touching [cursorul mouse-lui v]?> atunci
-			setează efectul [ochi de peşte v] la (30)
-		altfel
-			setează efectul [ochi de peşte v] la (0)
-		sfârşit
-		sfârşit
-	```
++ You can even change how the button looks when the mouse hovers over it.
+    
+    ```blocks
+    when flag clicked
+    show
+    forever
+    if <touching [mouse-pointer v]?> then
+        set [fisheye v] effect to (30)
+    else
+        set [fisheye v] effect to (0)
+    end
+    end
+```
 
 ![screenshot](brain-fisheye.png)
 
-## Salvează-ţi proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Ecranul de start {.challenge}
+## Challenge: Start screen {.challenge}
 
-Poţi sa adaugi încă un fundal scenei tale, care va deveni ecranul de start al jocului tău? Poţi să foloseşti blocurile  `când primesc start` {.blockevents} si  `când primesc end` {.blockevents} să schimbi între fundaluri. 
+Can you add another backdrop to your stage, which will become your game's start screen? You can use the `when I receive start` {.blockevents} and `when I receive end` {.blockevents} blocks to switch between backdrops.
 
-Poţi de asemenea să arăţi sau să ascunzi personajul, şi chiar să ascunzi sau să arăţi cronometrul prin folosirea acestor blockuri:
+You can also show and hide your character, and even show and hide your timer by using these blocks:
 
 ```blocks
-afişează variabila [time v]
+show variable [time v]
 ```
+
 ```blocks
-ascunde variabila [time v]
+hide variable [time v]
 ```
 
 ![screenshot](brain-startscreen.png)
 
-## Salvează-ţi proiectul { .save }
+## Save your project {.save}
 
-# Pasul 3: Adăugarea graficelor { .activity .new-page}
+# Step 3: Adding graphics {.activity.new-page}
 
-În loc ca personajul să zică numai  `da! :)` sau `nu :(` jucatorului, hai să adăugam nişte grafice care îi vor zice jucătorului cum se descurcă.
+Instead of your character just saying `yes! :)` or `nope :(` to the player, let's add some graphics that will let the player know how they are doing.
 
-+ Creează un nou sprite numit 'Result', care să conţină o 'bifă' şi un 'X'.
-
-	![screenshot](brain-result.png)
-
-+ Schimbă codul personajului, astfel încât, în loc să zică jucătorului cum a făcut, să transmită mesajele `corect` {.blockevents} şi `gresit` {.blockevents}.
-
-	![screenshot](brain-broadcast-answer.png)
-
-+ Acum poţi folosi aceste mesaje ca să arăţi 'bifa' sau 'X'. Adaugă acest cod sprite-ului 'Result': 
-
-	![screenshot](brain-show-answer.png)	
-
-+ Testează-ţi din nou jocul. Ar trebui să vezi o bifă de fiecare dată când nimereşti un răspuns corect şi un 'x' de fiecare dată când greşeşti.
-
-	![screenshot](brain-test-answer.png)
++ Create a new sprite called 'Result', containing both a 'tick' and a 'cross' costume.
     
-+ Ai observat faptul că codul pentru `când primesc corect`  {.blockevents} este aproape identic cu codul pentru  `când primesc gresit` {.blockevents} ? Hai să creăm o funcţie care să ne permită să modificăm mult mai ușor codului.
+    ![screenshot](brain-result.png)
 
-    În sprite-ul 'Result', dă click pe `Mai multe blocuri` {.blockmoreblocks} şi pe urmă pe 'Creează un block'. Creează o nouă funcţie numită `animate` {.blockmoreblocks}.
++ Change your character's code, so that instead of telling the player how they did, it broadcasts `correct` {.blockevents} and `wrong` {.blockevents} messages instead.
     
-	![screenshot](brain-animate-function.png)
+    ![screenshot](brain-broadcast-answer.png)
+
++ You can now use these messages to show the 'tick' or 'cross' costume. Add this code to your new 'Result' sprite:
     
-    + Pe urmă poţi să adaugi codul de animaţie în noua ta funcţie, si să foloseşti funcţia de două ori:
+    ![screenshot](brain-show-answer.png)
 
-	![screenshot](brain-use-function.png)
++ Test out your game again. You should see a tick whenever you get a question correct, and a cross whenever you get one wrong!
     
-    + Acum, dacă vrei să arăţi bifa și X pentru o perioadă mai lungă sau scurtă de timp, trebuie să faci o singură schimbare codului tau. Încearcă!
+    ![screenshot](brain-test-answer.png)
 
-+ În loc sa arăţi sau să ascunzi, bifa și X dintr-o dată, ar trebui să schimbi funcţia de animaţie, astfel încât graficele să dispară lent.
++ Have you noticed that the code for `when I receive correct` {.blockevents} and `when I receive wrong` {.blockevents} is nearly identical? Let's create a function to make it easier for you to make changes to your code.
+    
+    On your 'Result' sprite, click `More Blocks` {.blockmoreblocks}, and then 'Make a Block'. Create a new function called `animate` {.blockmoreblocks}.
+    
+    ![screenshot](brain-animate-function.png)
 
-	```blocks
-		defineşte [animate]
-		setează efectul [fantomă v] la (100)		
-		afiseaza
-		repetă (25)
-			modifică efectul [fantomă v] cu (-4)
-		sfârşit
-		ascunde
-	```
++ You can then add the animation code into your new animation function, and then just use the function twice:
+    
+    ![screenshot](brain-use-function.png)
 
-## Salvează-ţi proiectul { .save }
++ Now, if you want to show the tick and the cross for a longer or shorter time, you only need to make one change to your code. Try it!
 
-## Provocare: Animatie mai bună {.challenge}
-Poţi să faci animaţia grafică mai bună ? Ai putea să faci bifa şi X astfel încat să dispară în fundal. Sau ai putea să foloseşti alte efecte faine:
++ Instead of just showing and hiding the tick and the cross, you could change your animation function, so that the graphics fade in.
+    
+    ```blocks
+    define [animate]
+    set [ghost v] effect to (100)       
+    show
+    repeat (25)
+        change [ghost v] effect by (-4)
+    end
+    hide
+```
+
+## Save your project {.save}
+
+## Challenge: Improved animation {.challenge}
+
+Can you improve the animation of your graphics? You could code the tick and cross so that they fade out as well as fade in. Or, you could use other cool effects:
 
 ![screenshot](brain-effects.png)
 
-## Salvează-ţi proiectul { .save }
+## Save your project {.save}
 
-## Provocare: Sunet şi muzică {.challenge}
-Poţi să adaugi efecte sonore şi muzică jocului tau ? De exemplu:
+## Challenge: Sound and music {.challenge}
 
-+ Redarea unui sunet când jucătorul nimereşte sau greşeşte un răspuns;
-+ Adăugarea unui sunet de tic cronometrului;
-+ Redarea unui sunet când expiră timpul;
+Can you add sound effects and music to your game? For example:
 
-	```blocks
-		cântă la toba (10 v) pentru (0.1) timpi
-	```
++ Playing a sound when the player gets an answer right or wrong;
++ Adding a ticking sound to your countdown timer;
++ Playing a sound when the time is up;
     
-+ Ai putea de asemenea să pui muzică de fundal într-o bucla (dacă nu eşti sigur cum să faci asta, pasul patru din proiectul 'Rock Band' te va ajuta).
-
-## Salvează-ţi proiectul { .save }
-
-## Provocare: Cursa la 10 points {.challenge}
-Poţi să schimbi jocul, astfel încât, în loc să răspundă la cât mai multe intrebări în 30 de secunde, jucătorul să vadă în cât timp poate să raspundă corect la 10 întrebări ?
-
-Pentru a face asta, va trebui să schimbi codul cronometrului. Poţi să îţi dai seama ce trebuie schimbat ?
-
-```blocks
-	când primesc [start v]
-	setează [time v] la (30)
-	repetă până când <(time) = [0]>
-		aşteaptă (1) sec
-		schimbă  [time v] cu (-1)
-	sfârit
-	expedire la toţi [end v]
+    ```blocks
+    play drum (10 v) for (0.1) beats
 ```
 
-## Salvează-ţi proiectul { .save }
++ You could also constantly play music on a loop (if you're not sure how to do this, step 4 of the 'Rock Band' project will help you).
 
-## Provocare: Ecranul cu instrucţiuni {.challenge}
-Poţi să adaugi un ecran cu instrucţiuni jocului tău, spunându-i jucătorului cum se joacă acest joc ? Vei avea nevoie de un buton 'Instrucţiuni' si de încă un fundal.
+## Save your project {.save}
+
+## Challenge: Race to 10 points {.challenge}
+
+Can you change your game, so that instead of answering as many questions as they can in 30 seconds, the player has to see how quickly they can get 10 questions correct?
+
+To do this, you'll only need to change your timer code. Can you see what needs to be changed?
+
+```blocks
+    when I receive [start v]
+    set [time v] to (30)
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    broadcast [end v]
+```
+
+## Save your project {.save}
+
+## Challenge: Instruction screen {.challenge}
+
+Can you add an instructions screen to your game, telling your player how to play the game? You'll need an 'Instructions' button, and another stage background.
 
 ![screenshot](brain-instructions.png)
 
-S-ar putea să ai nevoie şi de un buton 'Înapoi' să te reîntoarcă la meniul principal.
+You may also need a 'Back' button to take you to the main menu.
 
 ```blocks
-	expediere la toţi [main menu v]
+    broadcast [main menu v]
 ```
 
-## Salvează-ţi proiectul { .save }
+## Save your project {.save}

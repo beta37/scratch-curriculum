@@ -1,324 +1,253 @@
----
-title: זיכרון
-level: Scratch 2
-language: he-IL
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
-﻿## פרויקט שנתרם על ידי הקהילה. { .challenge .pdf-hidden }
-פרויקט זה נתרם על ידי אריק ובתו רות. אם תרצו לתרום פרויקט משלכם, חפשו אותנו ב[גיטהאב](https://github.com/CodeClub)
+* * *
 
+title: Memory level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# מבוא { .intro }
+## Community Contributed Project {.challenge.pdf-hidden}
 
+This project was created with Erik and his daughter Ruth. If you'd like to contribute a project of your own, then [get in touch with us on Github](https://github.com/CodeClub).
 
-בפרויקט זה תצרו משחק זכרון, בו תצטרכו לחזור על רצף אקראי של צבעים.
+# Introduction {.intro}
 
+In this project, you will create a memory game where you have to memorise and repeat a sequence of random colours!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/34874510/?autostart=false" frameborder="0"></iframe>
   <img src="colour-final.png">
 </div>
 
+# Step 1: Random colours {.activity}
 
-# שלב 1: צבעים אקראיים { .activity }
-ראשית, נבחר דמות שתשנה את הצבעים שהשחקנים יצטרכו לזכור.
+First, let's create a character that can change to a random sequence of colours for the player to memorise.
 
+## Activity Checklist {.check}
 
-## סדר פעולות { .check }
-+ התחילו פרויקט סקראצ חדש, ומחקו את דמות החתול כל שהפרויקט יהיה ריק. תוכלו למצוא עורך סקראצ מקוון ב-<a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>
-+ בחרו דמות ורקע. הדמות לא חייבת להיות בן-אדם, אבל היא צריכה להיות מסוגלת להציג את הצבעים השונים.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
++ Choose a character and a backdrop. Your character doesn't have to be a person, but it needs to be able to show different colours.
+    
+    ![screenshot](colour-sprite.png)
 
-![screenshot](colour-sprite.png)
++ In your game, you'll use a different number to represent each colour:
+    
+    + 1 = red;
+    + 2 = blue;
+    + 3 = green;
+    + 4 = yellow.
+    
+    Give your character 4 different colour costumes, one for each of the 4 colours above. Make sure that your coloured costumes are in the right order.
+    
+    ![screenshot](colour-costume.png)
 
++ To create a random sequence, you need to create a **list**. A list is just a variable that stores lots of data **in order**. Create a new list called `sequence` {.blockdata}. As only your character needs to see the list, we can also click 'For this sprite only'.
+    
+    ![screenshot](colour-list.png)
+    
+    You should now see your empty list in the top-left of your stage, as well as lots of new blocks for using lists.
+    
+    ![screenshot](colour-list-blocks.png)
 
-+ במשחק, כל צבע ייוצג על ידי מספר:
-
-	+ 1 = אדום
-	+ 2 = כחול
-	+ 3 = ירוק
-	+ 4 = צהוב
-
-	בחרו לדמות תלבושות בארבעת הצבעים. שימו לב שהתלבושות הצבעוניות יהיו בסדר הנכון.
-
-	![screenshot](colour-costume.png)
-
-+ כדי ליצור רצף אקראי, תצטרכו ליצור __רשימה__. רשימה היא משתנה שמכיל הרבה מידע __בסדר מסוים__.  צרו רשימה בשם `רצף` {.blockdata}. כיוון שרק הדמות צריכה לראות את הרשימה, אפשר לבחור "רק לדמות זו".
-
-
-![screenshot](colour-list.png)
-
-
-אתם אמורים לראות עכשיו רשימה ריקה בצד השמאלי העליון של הבמה, והרבה הוראות חדשות (בלוקים) שנוספו כדי להשתמש ברשימה.
-
-
-![screenshot](colour-list-blocks.png)
-
-+ כדי להוסיף חמישה מספרים אקראיים לרשימה ולהציג את התלבושת המתאימה, הוסיפו את הקוד הזה לדמות שלכם:
-
-
-```blocks
-כאשר לוחצים על  ⚑
-מחק פריט (הכל v) מתוך [רצף v]
-חזור (5) פעמים
-   (בחר מספר אקראי בין (1) ל (4)) ל- [רצף v]  הוסף
-   קבע תלבושת ל (פריט (אחרון v) של [רצף v])
-   חכה (1) שניות
-סוף
++ Add this code to your character, to add a random number to your list (and show the correct costume) 5 times:
+    
+    ```blocks
+    when flag clicked
+    delete (all v) of [sequence v]
+    repeat (5)
+        add (pick random (1) to (4)) to [sequence v]
+        switch costume to (item (last v) of [sequence v]
+        wait (1) secs
+    end
 ```
 
+Notice that you have also emptied the list to begin with.
 
-שימו לב שאתם מרוקנים את הרשימה בהתחלה.
+## Challenge: Adding sound {.challenge}
 
+Test your project a few times. You may notice that sometimes the same number is chosen twice (or more) in a row, making the sequence harder to memorise. Can you make a drum sound play each time the character changes costume?
 
-## אתגר: הוספת צלילים {.challenge}
-בדקו את הפרויקט מספר פעמים. שימו לב שלפעמים אותו מספר נבחר פעמיים (או יותר) ברצף, מה שגורם לכך שקשה יותר לזכור את הרצף. תוכלו להוסיף צליל של תוף בכל פעם שהדמות משנה תלבושת?
+Can you make a different drum sound play depending on the random number chosen? This will be *very* similar to your code to change the character's costume.
 
+## Save your project {.save}
 
-תוכלו לבחור צליל תוף שונה בהתאם למספר האקראי שנבחר? זה יהיה _מאוד_ דומה לקוד שמשנה את התלבושת של הדמות.
+# Step 2: Repeating the sequence {.activity}
 
+Let's add 4 buttons, for the player to repeat the sequence they've remembered.
 
-## שמרו את הפרויקט { .save }
+## Activity Checklist {.check}
 
++ Add 4 sprites to your project, that will become buttons. Edit your 4 sprites, so that there's 1 for each of the 4 colours.
+    
+    ![screenshot](colour-drums.png)
 
-# שלב 2: חזרה על הרצף { .activity }
-
-
-נוסיף ארבעה כפתורים, כך שהשחקנים יוכלו לחזור על הרצף שהם זוכרים.
-
-
-## סדר פעולות { .check }
-
-
-+ הוסיפו ארבע דמויות לפרויקט. דמויות אלה יהיו הכפתורים. ערכו את הדמויות כך שכל אחת מהן תתאים לאחד מארבעת הצבעים.
-
-
-![screenshot](colour-drums.png)
-
-
-+ כשלוחצים על התוף האדום, יש לשדר מסר לדמות שהכפתור האדום נלחץ. הוסיפו את הקוד הזה לתוף האדום:
-
-
-```blocks
-כאשר לוחצים על דמות זו
-שדר מסר [אדום v]
++ When the red drum is clicked, you'll need to broadcast a message to your character, letting them know that the red button has been clicked. Add this code to your red drum:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [red v]
 ```
 
-
-+ כשהדמות מקבלת את המסר הזה, היא תבדוק אם המספר 1 נמצא בראש הרשימה (כלומר שהצבע האדום הוא הצבע הבא ברצף). אם המספר 1 אכן בתחילת הרשימה, אפשר להסיר אותו מהרשימה, כיוון שהשחקנים בחרו את הצבע הנכון. אחרת, המשחק נגמר.
-
-```blocks
-כשמתקבל מסר [אדום v]
-אם <(פריט (1 v) של [רצף v]) = [1]> אז
-   מחק פריט (1 v) מתוך [רצף v]
-ואם לא
-   אמור [סוף המשחק!] למשך (1) שניות
-   עצור [הכל v]
-סוף
++ When your character receives this message, they should check whether the number 1 is at the start of the list (which means that red is the next colour in the sequence). If it is, you can remove the number from the list, as it's been guessed correctly. Otherwise it's game over!
+    
+    ```blocks
+    when I receive [red v]
+    if <(item (1 v) of [sequence v])=[1]> then
+        delete (1 v) of [sequence v]
+    else
+        say [Game over!] for (1) secs
+        stop [all v]
+    end
 ```
 
-
-+ כאשר הרשימה ריקה, כדאי להוסיף אורות מהבהבים, כי זה אומר שהשחקנים הצליחו לזכור את כל הרצף. הוסיפו את הקוד הזה בסוף התסריט של הדמות שמתחיל ב`כאשר לוחצים על  ⚑`{.blockevents}.
-
-
-```blocks
-חכה עד ש <(של [רצף v] אורך) = [0]>
-שדר מסר [נצחון v] וחכה
++ You could also display some flashing lights once the list is empty, as it means the entire sequence has been guessed correctly. Add this code to the end of your character's `when flag clicked` {.blockevents} script:
+    
+    ```blocks
+    wait until < (length of [sequence v]) = [0]>
+    broadcast [won v] and wait
 ```
 
-
-
-
-+ לחצו על הבמה, והוסיפו את הקוד שיגרום לצבעים להשתנות כאשר השחקנים מנצחים.
-
-
-```blocks
-כשמתקבל מסר [נצחון v]
-[drum machine v] נגן צליל
-חזור (50) פעמים
-   שנה אפקט [צבע v] ב (25)
-   חכה (0.1) שניות
-סוף
-נקה אפקטים
++ Click on your stage, and add this code to make the backdrop change colour once the player has won.
+    
+    ```blocks
+    when I receive [won v]
+    play sound [drum machine v]
+    repeat (50)
+        change [color v] effect by (25)
+        wait (0.1) secs
+    end
+    clear graphic effects
 ```
 
+## Challenge: Creating 4 buttons {.challenge}
 
-## אתגר: יצירת ארבעה כפתורים {.challenge}
-חזור על הצעדים עבור הכפתור הכחול, הכפתור הירוק והכפתור הצהוב. איזה חלקים מהקוד ישארו ללא שינוי, ואיזה חלקים ישתנו עבור כל כפתור?
+Repeat the steps above for your blue, green and yellow buttons. Which code will stay the same, and which code will change for each button?
 
+You can also add sounds for when the buttons are pressed.
 
-אתם יכולים גם להוסיף צליל כאשר לוחצים על הכפתורים.
+Remember to test the code you've added! Can you memorise a sequence of 5 colours? Is the sequence different each time?
 
+## Save your project {.save}
 
-זכרו לבדוק את הקוד שהוספתם! האם הצלחתם לזכור רצף של חמישה צבעים? האם הרצף שונה בכל פעם?
+# Step 3: Multiple levels {.activity.new-page}
 
+So far, the player only has to remember 5 colours. Let's improve your game, so that the length of the sequence increases.
 
-# שלב 3: מספר שלבים במשחק { .activity .new-page }
+## Activity Checklist {.check}
 
++ Create a new variable called `score` {.blockdata}.
+    
+    ![screenshot](colour-score.png)
 
-עד עכשיו, השחקנים היו צריכים לזכור חמישה צבעים. כעת, נשפר את המשחק, כך שהאורך של הרצף יגדל בכל פעם שהשחקנים מצליחים לזכור את הרצף.
-
-
-## סדר פעולות { .check }
-
-
-+ צור משתנה בשם `ניקוד` {.blockdata}.
-
-
-![screenshot](colour-score.png)
-
-
-+ המשתנה `ניקוד` {.blockdata}. יקבע את אורך הרצף שהשחקנים ינסו לזכור. בתחילת המשחק הניקוד והאורך של הרצף יהיה 3. הוסיפו את הקוד הזה בתחילת התסריט של הדמות שמתחיל ב`כאשר לוחצים על  ⚑`{.blockevents}.
-
-
-```blocks
-[ניקוד v] -ל [3] קבע
++ This `score` {.blockdata} will be used to decide on the length of the sequence the player has to memorise. So, to begin with the score (and the sequence length) is 3. Add this code block to the start of your character's `when flag clicked` {.blockevents} code:
+    
+    ```blocks
+    set [score v] to [3]
 ```
 
-
-+ במקום ליצור תמיד רצף של 5 צבעים, אנחנו רוצים שהאורך של הרצף ייקבע על ידי `ניקוד` {.blockdata}. שנו את לולאת ה `חזור` {.blockcontrol} של הדמות (הלולאה שיוצרת את הרצף) כך:
-
-
-```blocks
-חזור (ניקוד) פעמים
-סוף
++ Instead of always creating a sequence of 5 colours, you now want the `score` {.blockdata} to determine the sequence length. Change your character's `repeat` {.blockcontrol} loop (for creating the sequence) to:
+    
+    ```blocks
+    repeat (score)
+    end
 ```
 
-+ אם השחקנים חזרו בהצלחה אחרי הרצף, נוסיף 1 לניקוד, כדי שהרצף יתארך.
-
-
-```blocks
-שנה ערך [ניקוד v] ב (1)
++ If the sequence is guessed correctly, you should add 1 to the score, to increase the length of the sequence.
+    
+    ```blocks
+    change [score v] by (1)
 ```
 
-
-
-
-+ לבסוף, נוסיף לולאת `לעולמים` {.blockcontrol} מסביב לקוד שיוצר את הרצף, כך שרצף חדש יווצר בכל שלב. כך צריך להראות הקוד של הדמות:
-
-
-
-
-```blocks
-כאשר לוחצים על  ⚑
-[ניקוד v] -ל [3] קבע
-לעולמים
-   מחק פריט (הכל v) מתוך [רצף v]
-   חזור (ניקוד) פעמים
-      (בחר מספר אקראי בין (1) ל (4)) ל- [רצף v]  הוסף
-      קבע תלבושת ל (פריט (אחרון v) של [רצף v])
-      חכה (1) שניות
-   סוף
-   חכה עד ש <(של [רצף v] אורך) = [0]>
-   שדר מסר [ניצחון v] וחכה
-   שנה ערך [ניקוד v] ב (1)
-סוף
++ Finally, you need to add a `forever` {.blockcontrol} loop around the code to generate the sequence, so that a new sequence is created for each level. This is how your character's code should look:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [3]
+    forever
+        delete (all v) of [sequence v]
+        repeat (score)
+            add (pick random (1) to (4)) to [sequence v]
+            switch costume to (item (last v) of [sequence v]
+            wait (1) secs
+        end
+        wait until < (length of [sequence v]) = [0]>
+        broadcast [won v] and wait
+        change [score v] by (1)
+    end
 ```
 
++ Get your friends to test out your game. Remember to hide the `sequence` {.blockdata} list before they play it!
 
-+ הזמינו חברים לבדוק את המשחק שלכם. זכרו להסתיר את הרשימה `רצף` {.blockdata} לפני שהם מתחילים לשחק!
+## Save your project {.save}
 
+# Step 4: High score {.activity}
 
-## שמרו את הפרויקט { .save }
+Let's save the high score, so that you can play against your friends.
 
+## Activity Checklist {.check}
 
-# שלב 4: הניקוד הגבוה ביותר { .activity }
++ Add 2 new variables to your project, called `high score` {.blockdata} and `name` {.blockdata}.
 
-
-נשמור את הניקוד הגבוה ביותר - כדי שתוכלו להתחרות עם החברים.
-
-
-## סדר פעולות { .check }
-
-
-+ הוסיפו שני משתנים לפרויקט: `הניקוד הגבוה`{.blockdata} ו`שם`{.blockdata}.
-+ כשמשחק מסתיים (כשלוחצים על כפתור לא נכון) בדקו אם הניקוד של השחקנית גבוה יותר מהניקוד הגבוה ביותר כרגע, ואם כן, שמרו את הניקוד בתור הניקוד הגבוה, ושמרו את שם השחקנית. כך צריך להראות הקוד של הכפתור האדום:
-
-
-```blocks
-כשמתקבל מסר [אדום v]
-אם <(פריט (1 v) של [רצף v]) = [1]> אז
-   מחק פריט (1 v) מתוך [רצף v]
-ואם לא
-   אמור [סוף המשחק!] למשך (1) שניות
-   אם <(ניקוד) > (הניקוד הגבוה)> אז
-      [הניקוד הגבוה v] -ל (ניקוד) קבע
-      שאל [הניקוד הגבוה ביותר! מה שמך?] והמתן
-      [שם v] -ל (תשובה) קבע
-   סוף
-   עצור [הכל v]
-סוף
++ If ever the game ends (by pressing the wrong button), you need to check whether the player's score is higher than the current high score. If it is, you need to save the score as the high score, and store the name of the player. Here's how your red button should look:
+    
+    ```blocks
+    when I receive [red v]
+    if <(item (1 v) of [sequence v])=[1]> then
+        delete (1 v) of [sequence v]
+    else
+        say [Game over!] for (1) secs
+        if < (score) > (high score) > then
+            set [high score v] to (score)
+            ask [High score! What is your name?] and wait
+            set [name v] to (answer)
+        end
+        stop [all v]
+    end
 ```
 
++ You'll need to add this new code to the other 3 buttons too! Have you noticed that the 'Game over' code in each of the 4 buttons is exactly the same?
+    
+    ![screenshot](colour-same.png)
 
-+ תצטרכו להוסיף את הקוד הזה גם לשלושת הכפתורים האחרים! שמתם לב שהקוד של "סוף המשחק" בכל אחד מהארבעת הכפתורים הוא בדיוק אותו דבר?
++ If ever you need to change any of this code, such as adding a sound or changing the 'Game over!' message, you'd have to change it 4 times! That could get annoying, and waste a lot of time.
+    
+    Instead, you can define your own blocks, and reuse them in your project! To do this, click `more blocks` {.blockmoreblocks}, and then 'Make a block'. Call this new block 'Game over'.
+    
+    ![screenshot](colour-more.png)
 
++ Add the code from the `else` {.blockcontrol} block from the red button to the new block that appears:
+    
+    ![screenshot](colour-make-block.png)
 
-![screenshot](colour-same.png)
++ You've now made a new *function* called `Game over` {.blockmoreblocks}, which you can use anywhere you like. Drag your new `Game over` {.blockmoreblocks} block onto the 4 scripts for the buttons.
+    
+    ![screenshot](colour-use-block.png)
 
++ Now add a sound for when the wrong button is pressed. You only need to add this code *once* in the `Game over` {.blockmoreblocks} block that you made, and not 4 separate times!
+    
+    ![screenshot](colour-cough.png)
 
-+ אם תרצו פעם לבצע שינוי בקוד הזה, כמו למשל להוסיף צליל או לשנות את ההודעה "סוף המשחק!", תאלצו לבצע את השינוי ארבע פעמים. זה עלול להיות מתיש ולבזבז הרבה זמן.
+## Challenge: Making more blocks {.challenge}
 
-
-במקום זה, תוכלו להגדיר לבנים משלכם, ולהשתמש בהם מספר פעמים בפרויקט. לחצו על `לבנים נוספות` {.blockmoreblocks} ואז על 'צור לבנה'.  קבעו את שם הלבנה ל"סוף המשחק".
-
-
-![screenshot](colour-more.png)
-
-
-+ הוסיפו את הקוד שאחרי הבלוק `ואם לא` {.blockcontrol} מתוך הקוד של הכפתור האדום אל הבלוק החדש, שיראה כך:
-
-
-![screenshot](colour-make-block.png)
-
-
-+ יצרתם עכשיו _פונקציה_ שנקראת `סוף המשחק` {.blockmoreblocks}, שתוכלו להשתמש בה כשתרצו. גררו את הבלוק החדש `סוף המשחק` {.blockmoreblocks} אל ארבעת התסריטים של הכפתורים.
-
-
-![screenshot](colour-use-block.png)
-
-
-+ הוסיפו צליל כאשר נלחץ כפתור שגוי. תצטרכו להוסיף את הקוד _רק פעם אחת_ לבלוק `סוף המשחק` {.blockmoreblocks}, ולא ארבע פעמים!
-
-
-![screenshot](colour-cough.png)
-
-
-## אתגר: יצירת בלוקים נוספים {.challenge}
-
-
-תוכלו למצוא עוד קטעי קוד זהים לכל ארבעת הכפתורים?
-
+Do you notice any other code that is the same for all 4 buttons?
 
 ![screenshot](colour-more-blocks.png)
 
+Can you make another custom block, that is used by each button?
 
-האם תוכלו ליצור בלוק נוסף, שישמש כל אחד מהכפתורים?
+## Save your project {.save}
 
+## Challenge: Another costume {.challenge}
 
-## שמרו את הפרויקט { .save }
+Have you noticed that your game starts with your character showing one of the 4 colours, and that they always display the last colour in the sequence while the player is repeating the sequence?
 
-
-## אתגר: תלבושת נוספת {.challenge}
-שמתם לב שהמשחק מתחיל כשהדמות מראה את אחד מהארבעת הצבעים, ולאחר שהרצף מסתיים הצבע האחרון ממשיך להיות מוצג בכל הזמן שבו השחקנים חוזרים על הרצף?
-
-
-תוכלו להוסיף לדמות תלבושת לבנה שתוצג בתחילת המשחק ובזמן שהשחקנים מנסים לשחזר את הרצף?
-
+Can you add another plain white costume to your character, which is displayed at the start of your game, and when the player is trying to copy the sequence?
 
 ![screenshot](colour-white.png)
 
+## Save your project {.save}
 
-## שמרו את הפרויקט { .save }
+## Challenge: Difficulty level {.challenge}
 
+Can you allow your player to choose between 'easy mode' (using just the red and blue drums) and 'normal mode' (which uses all 4 drums)?
 
-## אתגר: דרגות קושי {.challenge}
-תוכלו לאפשר לשחקנים לבחור בין "דרגת קושי: קל" (יש שימוש רק בתופים האדום והכחול), לבין "דרגת קושי: בינוני" (יש שימוש בכל ארבעת התופים)?
+You could even add a 'hard' mode, which makes use of a 5th drum!
 
-
-תוכלו גם להוסיף "דרגת קושי:קשה" בה יהיה שימוש בתוף חמישי!
-
-
-## שמרו את הפרויקט { .save }
+## Save your project {.save}

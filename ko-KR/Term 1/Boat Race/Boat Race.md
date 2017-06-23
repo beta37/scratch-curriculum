@@ -1,264 +1,265 @@
----
-title: 보트 레이스 
-level: Scratch 1
-language: ko-KR
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# 소개 { .intro }
+title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-마우스로 보트를 사막 섬으로 조종해가는 게임을 만들 것입니다.
+# Introduction {.intro}
+
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# 1 단계: 게임 계획하기 { .activity }
+# Step 1: Planning your game {.activity}
 
-## 단계별 체크리스트 { .check }
+## Activity Checklist {.check}
 
-+ 새 스크래치 프로젝트를 시작하고 고양이 스프라이트를 지워 빈 프로젝트를 만드세요. 스크래치 에디터는 <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a> 이곳에서 찾을 수 있습니다.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ 스테이지 배경을 클릭하고 난이도를 계획하세요. 이런 것들을 더해야 합니다:
-	+ 보트가 피해야 할 나무;
-	+ 보트가 도착해야 할 사막 섬.
++ Click on your stage backdrop and plan out your level. You should add:
+    
+    + Wood that your boat has to avoid;
+    + A desert island that your boat has to get to.
+    
+    Here's how your game could look:
+    
+    ![screenshot](boat-bg.png)
 
-	게임은 이런 모습일 것입니다:
+# Step 2: Controlling the boat {.activity}
 
-	![screenshot](boat-bg.png) 
+## Activity Checklist {.check}
 
-# 2 단계: 보트 조종하기 { .activity }
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
+    
+    ![screenshot](boat-boat.png)
+    
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-## 단계별 체크리스트 { .check }
-
-+ 클럽 리더에게 'Resources' 폴더를 받았다면 '스프라이트 파일 업로드하기' 를 눌러서 'boat.png' 를 업로드하세요. 스프라이트를 축소해서 올바른 시작 포지션에 두세요.
-
-	![screenshot](boat-boat.png)
-
-	boat.png가 없다면 자신의 보트를 직접 그릴 수도 있습니다!
-
-+ 보트는 마우스로 조종할 것입니다. 이 코드를 보트에 더해주세요:
-
-```blocks
-
-깃발 클릭했을 때
-(0 v) 도 방향 보기
-x:(-190) y:(-150) 로 이동하기
-무한 반복하기
-   [마우스의 포인터 v] 쪽 보기
-   (1) 만큼 움직이기
-end
++ You are going to control the boat with your mouse. Add this code to your boat:
+    
+    ```blocks
+    when flag clicked
+    point in direction (0 v)
+    go to x: (-190) y: (-150)
+    forever
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
 ```
 
-+ 깃발을 클릭하고 마우스를 움직이는 것으로 보트를 시험해보세요. 보트가 마우스가 가는 방향으로 가나요?
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
+    
+    ![screenshot](boat-mouse.png)
+    
+    **Note: There is currently a bug in Scratch which means your boat may not move towards the mouse pointer. If this happens, click the arrow on the `point towards` {.blockmotion} block and re-select 'mouse-pointer'.**
+    
+    ![screenshot](images/boat-bug.png)
 
-	![screenshot](boat-mouse.png)
++ What happens if the boat reaches the mouse pointer?
+    
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    
+    ![screenshot](boat-pointer.png)
 
-+ 보트가 마우스 포인터에 다다르면 어떻게 되나요?
++ Test out your boat again, to check whether the problem has been fixed.
 
-	이 문제를 해결하려면 `만약` {.blockcontrol} 블록을 코드에 더해서 보트가 마우스에서 5픽슬 이상 떨어져 있을 때만 움직이도록 해야 합니다.
+## Save your project {.save}
 
-	![screenshot](boat-pointer.png)	
+# Step 3: Crashing! {.activity.new-page}
 
-+ 보트를 다시 시험해서 문제가 해결됐는지 확인 해 보세요.
+Your boat can sail through the wooden barriers! Let's fix that.
 
-## 프로젝트를 저장하세요 { .save }
+## Activity Checklist {.check}
 
-# 3 단계: 충돌! { .activity .new-page }
++ You'll need 2 costumes for your boat, one normal costume, and one for when the boat crashes. Duplicate your boat costume, and name them 'normal' and 'hit'.
 
-지금의 보트는 나무를 뚫고 나갑니다! 그걸 고쳐보죠.
++ Click on your 'hit' costume, and choose the 'Select' tool to grab bits of the boat and move and rotate them around. Make your boat look as if it's crashed.
+    
+    ![screenshot](boat-hit-costume.png)
 
-## 단계별 체크리스트 { .check }
-
-+ 보트에 두개의 모양이 필요합니다. 보통 모양 하나와 충돌했을 때의 모양 하나입니다. 보트 모양을 복사하고 하나는 'normal', 하나는 'hit'라고 이름 지으세요.
-
-+ 'hit' 모양을 클릭하고 '선택하기' 도구를 골라서 보트의 부품들 몇개를 뒤집어 주세요. 보트가 파손된 것처럼 보이게 만드세요.
-
-	![screenshot](boat-hit-costume.png)
-
-+ 이 코드를 보트의  `무한 반복하기` {.blockcontrol} 루프 안에 더해 나무 파편에 부딪히면 충돌하게 만드세요:
-
-```blocks
-만약 <[#603C15] 색에 닿기?> 라면
-   모양을 [hit v] (으)로 바꾸기
-   [안돼에에!] 을(를) (1) 초동안 말하기
-   모양을 [normal v] (으)로 바꾸기
-   (0 v) 도 방향 보기
-   x:(-215) y:(-160) 로 이동하기
-end
++ Add this code to your boat, inside the `forever` {.blockcontrol} loop, so that it crashes when it touches any brown wooden bits:
+    
+    ```blocks
+    if <touching color [#603C15]?> then
+        switch costume to [hit v]
+        say [Noooooo!] for (1) secs
+        switch costume to [normal v]
+        point in direction (0 v)
+        go to x: (-215) y: (-160)
+    end
 ```
 
-	이 코드는 `무한 반복하기` {.blockcontrol} 루프 안에 있기 때문에 코드가 계속해서 보트가 충돌했는지 확인하게 해줍니다.
+This code is inside the `forever` {.blockcontrol} loop, so that your code keeps checking if the boat has crashed.
 
-+ 또한 언제나 보트가 '보통' 모습으로 시작하도록 해야 합니다.
++ You should also make sure that your boat always starts looking like it's 'normal'.
 
-+ 이제 나무 장애물을 뚫고 가려 하면 보트가 충돌 하고 시작 지점으로 돌아가는 걸 볼 수 있습니다.
++ Now if you try to sail through a wooden barrier, you should see that your boat crashes and moves back to the start.
+    
+    ![screenshot](boat-crash.png)
 
-	![screenshot](boat-crash.png)
+## Save your project {.save}
 
-## 프로젝트를 저장하세요 { .save }
+## Challenge: Winning! {.challenge}
 
-## 도전과제: 승리! {.challenge}
-또 하나의 `만약` {.blockcontrol} 조건을 보트에 더해서 플레이어가 사막 섬에 도착하면 승리하도록 만들 수 있나요?
+Can you add another `if` {.blockcontrol} statement to your boat's code, so that the player wins when they get to the desert island?
 
-보트가 사막 섬에 도착하면 '좋았어!’라고 출력되고 게임이 멈춰야 합니다. 이 코드를 넣으세요:
+When the boat gets to the yellow desert island, it should say 'YEAH!' and then the game should stop. You'll need to use this code:
 
 ```blocks
-[좋았어!] 을(를) (1) 초동안 말하기
-[모두 v] 멈추기
-
+    say [YEAH!] for (1) secs
+    stop [all v]
 ```
 
 ![screenshot](boat-win.png)
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}
 
-## 도전과제: 음향효과 {.challenge}
-보트가 충돌했을 때나 섬에 도착했을 때의 음향효과를 넣을 수 있나요? 또한 배경음악도 넣을 수 있습니다 (도움이 필요하면 이전에 했던 '록 밴드' 프로젝트를 돌아보세요)
+## Challenge: Sound effects {.challenge}
 
-## 프로젝트를 저장하세요 { .save }
+Can you add sound effects to your game, for when the boat crashes, or reaches the island at the end? You could even add background music (see the previous 'Rock Band' project if you need help with this).
 
-# 4 단계: 시간 제한 { .activity }
+## Save your project {.save}
 
-타이머를 게임에 넣어서 플레이어가 섬에 최대한 빨리 도착해야 하도록 만들어 봅시다.
+# Step 4: Time Trial {.activity}
 
-## 단계별 체크리스트 { .check }
+Let's add a timer to your game, so that the player has to get to the desert island as fast as possible.
 
-+ 스테이지에 `time` {.blockdata}이라는 신규 변수를 만들어 넣으세요. 또한 변수의 디스플레이도 바꿔 볼 수 있습니다. 도움이 필요하다면 '풍선' 프로젝트를 돌아보세요.
+## Activity Checklist {.check}
 
-	![screenshot](boat-variable.png)
++ Add a new variable called `time` {.blockdata} to your stage. You can also change the display of your new variable. If you need help, have a look at the 'Ghostbusters' project.
+    
+    ![screenshot](boat-variable.png)
 
-+ 이 코드를 __스테이지__에 더해서 타이머가 사막 섬에 도착할 때 까지만 올라가도록 만드세요:
-
-```blocks
-
-깃발 클릭했을 때
-[time v] 에 [0] 저장하기
-무한 반복하기
-   (0.1) 초 기다리기
-   [time v] 을(를) (0.1) 만큼 바꾸기
-end
++ Add this code to your **stage**, so that the timer counts up until the boat reaches the desert island:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [0]
+    forever
+        wait (0.1) secs
+        change [time v] by (0.1)
+    end
 ```
 
-+ 이걸로 끝입니다! 게임을 시작해서 얼마나 빨리 사막 섬에 도착할 수 있는지 보세요!
++ That's it! Test out your game and see how quickly you can get to the desert island!
+    
+    ![screenshot](boat-variable-test.png)
 
-	![screenshot](boat-variable-test.png)
+## Save your project {.save}
 
-## 프로젝트를 저장하세요 { .save }
+# Step 5: Obstacles and power-ups {.activity}
 
-# 5 단계: 장애물과 파워 업 { .activity }
+This game is *far* too easy - let's add things to make it more interesting.
 
-지금 이 게임은 _너무_ 쉽습니다 - 몇가지 요소를 더해 더 흥미롭게 만들어 봅시다.
+## Activity Checklist {.check}
 
-## 단계별 체크리스트 { .check }
++ First let's add some 'boosts' to your game, which will speed up the boat. Edit your stage backdrop and add in some white booster arrows.
+    
+    ![screenshot](boat-boost.png)
 
-+ 첫번째로 게임에 보트의 속도를 올려주는 '부스터' 를 더해봅시다. 스테이지 배경을 편집해서 흰색 부스터 화살표들을 만들어 넣읍시다.
-
-	![screenshot](boat-boost.png)
-
-+ 이제 보트의 `무한 반복하기` {.blockcontrol} 루프에 코드를 더해 흰색 부스터를 건드리면 2 만큼 _더_ 움직이게 만듭시다:
-
-```blocks
-만약 <[#FFFFFF] 색에 닿기?> 라면
-   (3) 만큼 움직이기
-end
++ You can now add some code to your boat's `forever` {.blockcontrol} loop, so that it moves 2 *extra* steps when touching a white booster.
+    
+    ```blocks
+    if <touching color [#FFFFFF]?> then
+        move (3) steps
+    end
 ```
 
-+ 또한 보트가 피해야 할 회전 게이트를 만들어 넣읍시다. 이렇게 생긴 'gate'라는 스프라이트를 넣으세요:
++ You can also add in a spinning gate, which your boat has to avoid. Add in a new sprite called 'gate', which looks like this:
+    
+    ![screenshot](boat-gate.png)
+    
+    Make sure that the colour of the gate is the same as the other wooden barriers.
 
-	![screenshot](boat-gate.png)
++ Set the centre of the gate sprite.
+    
+    ![screenshot](boat-center.png)
 
-	게이트의 색은 나무 배리어와 같게 만듭시다.
++ Add code to your gate, to make it spin slowly `forever` {.blockcontrol}.
 
-+ 게이트 스프라이트의 중심점을 정합시다.
++ Test out your game. You should now have a spinning gate that you must avoid.
+    
+    ![screenshot](boat-gate-test.png)
 
-	![screenshot](boat-center.png)
+## Save your project {.save}
 
-+ 게이트에 코드를 더해 천천히 도는 걸  `무한 반복하기` {.blockcontrol} 하게 하세요.
+## Challenge: More obstacles! {.challenge.new-page}
 
-+ 게임을 다시 시험해보세요. 이제 보트가 피해야 할 회전 게이트가 더해졌을 겁니다.
+Can you add more obstacles to your game? Here are some ideas:
 
-	![screenshot](boat-gate-test.png)
-
-## 프로젝트를 저장하세요 { .save }
-
-## 도전과제: 더 많은 장애물! {.challenge .new-page}
-게임에 더 많은 장애물을 넣을 수 있나요? 몇가지 아이디어들 입니다:
-
-+ 배경에 초록색 점액을 더해 플레이어가 건드리면 느리게 만들어 버릴 수 있습니다 `기다리기` {.blockcontrol} 블록을 사용해 적용할 수 있습니다:
++ You could add green slime to your backdrop, which slows the player down when they touch it. You can use a `wait` {.blockcontrol} block to do this:
 
 ```blocks
-(0.01) 초 기다리기
+    wait (0.01) secs
 ````
 
 ![screenshot](boat-algae.png)
 
-+ 통나무나 상어같은 움직이는 오브젝트를 넣을 수도 있습니다!
++ You could add a moving object, like a log or a shark!
 
 ![screenshot](boat-obstacles.png)
 
-이 블록들이 도움이 될 것입니다:
+These blocks may help you:
 
 ```blocks
-(1) 만큼 움직이기
-벽에 닿으면 튕기기
+    move (1) steps
+    if on edge, bounce
 ````
 
-새 오브젝트가 갈색이 아니라면 보트에 다음 코드를 넣어야 됩니다:
+If your new object isn't brown, you'll need to add to your boat code:
 
 ```blocks
-만약 <<[#603C15] 색에 닿기?> 또는 <[shark v] 에 닿기?>> 라면
-end
+    if <  <touching color [#603C15]?> or <touching [shark v]?> > then
+    end
 ```
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}
 
-## 도전과제: 더 많은 보트! {.challenge .new-page}
-게임을 2명의 플레이어가 경쟁하는 레이스로 만들 수 있나요?
+## Challenge: More boats! {.challenge.new-page}
 
-+ 보트를 복사한 후 이름을 'Player 2'로 바꾸고 색깔도 바꾸세요.
+Can you turn your game into a race between 2 players?
+
++ Duplicate the boat, rename it 'Player 2' and change its colour.
 
 ![screenshot](boat-p2.png)
 
-+ 두번째 보트의 시작점을 이 코드로 바꾸세요:
++ Change Player 2's starting position, by changing this code:
 
 ```blocks
-x:(-190) y:(-150) 로 이동하기
+    go to x: (-190) y: (-150)
 ```
 
-+ 마우스로 보트를 조종하는 코드를 지우세요:
++ Delete the code that uses the mouse to control the boat:
 
 ```blocks
-만약 <([마우스의 포인터 v] 까지 거리) > [5]> 라면
-   [마우스의 포인터 v] 쪽 보기
-   (1) 만큼 움직이기
-end
+    if < (distance to [mouse-pointer v]) > [5] > then
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
 ```
 
-...그리고 방향키로 보트를 조종하는 코드로 바꿔 넣으세요.
+...and replace it with code to control the boat using the arrow keys.
 
-앞으로 움직이게 하는데 필요한 코드는 이것입니다:
+This is the code you'll need to move the boat forward:
 
 ```blocks
-만약 <[위쪽 화살표 v] 키를 눌렀는가?> 라면
-   (1) 만큼 움직이기
-end
+    if < key [up arrow v] pressed? > then
+        move (1) steps
+    end
 ```
 
-또한 보트를 `방향을 돌리는데` {.blockmotion} 필요한 코드도 필요할 것입니다.
+You'll also need code to `turn` {.blockmotion} the boat when the left and right arrow keys are pressed.
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}
 
-## 도전과제: 더 많은 난이도! {.challenge .new-page}
-더 많은 배경을 만들어서 플레이어가 난이도 레벨 사이를 고를 수 있게 만들 수 있나요?
+## Challenge: More levels! {.challenge.new-page}
+
+Can you create additional backdrops, and allow the player to choose between levels?
 
 ```blocks
-
-[스페이스 v] 키 눌릴 때
-다음 배경으로 바꾸기
+    when [space v] key pressed
+    next backdrop
 ```
 
-## 프로젝트를 저장하세요 { .save }
+## Save your project {.save}

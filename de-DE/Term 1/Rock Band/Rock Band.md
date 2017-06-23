@@ -1,252 +1,189 @@
----
-title: Rock-Band
-level: Scratch 1
-language: de-DE
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*.*"]
-base: https://github.com/CodeClub/scratch-curriculum/blob/93cdaf1a69301125114f58c6f056cdfd59634925/en-GB/Term%201/Rock%20Band/Rock%20Band.md
-...
+* * *
 
-# Einleitung { .intro }
+title: Rock Band level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-In diesem Projekt lernst du, wie du deine eigenen Musikinstrumente programmieren kannst!
+# Introduction {.intro}
+
+In this project you'll learn how to code your own musical instruments!
 
 <div class="scratch-preview">
-	<iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26741186/?autostart=true" frameborder="0"></iframe>
-	<img src="band-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26741186/?autostart=false" frameborder="0"></iframe>
+    <img src="band-final.png">
 </div>
 
-# Schritt 1: Eine Trommel programmieren { .activity }
+# Step 1: Sprites {.activity}
 
-Lass uns zuerst eine Trommel entwickeln, die einen Klang von sich gibt, wenn du drauf schlägst.
+Before you can start coding, you'll need to add in a 'thing' to code. In Scratch, these 'things' are called **sprites**.
 
-## Arbeitsschritte { .check }
+## Activity Checklist {.check}
 
-+ Öffne ein neues Scratch-Projekt und lösche die Figur mit der Katze, so dass dein Projekt leer ist.
++ First, open up the Scratch editor. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new" target="_blank">jumpto.cc/scratch-new</a>. It looks like this:
+    
+    ![screenshot](band-scratch.png)
 
-+ Füge eine Trommel-Figur zu deinem leeren Projekt hinzu und suche ein Hintergrundbild für die Bühne, das zum Thema passt.
++ The cat sprite that you can see is the Scratch mascot. Let's get rid of it, by right-clicking and then clicking 'delete'.
+    
+    ![screenshot](band-delete.png)
 
-	![screenshot](band-stage.png)
++ Next, click 'Choose sprite from library' to open up a list of all the Scratch sprites.
+    
+    ![screenshot](band-sprite-library.png)
 
-	Wenn du dir nicht sicher bist, wie das gemacht wird, dann schau dir das vorherige Projekt ("Verloren im Weltall") an!
++ Scroll down until you see a drum sprite. Click on a drum, and click 'OK' to add it to your project.
+    
+    ![screenshot](band-sprite-drum.png)
 
-+ Lass uns die Trommel so programmieren, dass sie einen Klang abspielt, wenn man drauf klickt. Stelle sicher, dass die Trommel ausgewählt ist, und füge diesen Code hinzu:
++ Click the 'shrink' icon, and then click on the drum a few times to make it smaller.
+    
+    ![screenshot](band-shrink.png)
 
-	```blocks
-		Wenn ich angeklickt werde
-		spiele Schlaginstrument (1 v) für (0.25) Schläge
-	```
+## Save your project {.save}
 
-+ Klicke auf die Trommel, um dein neues Instrument zu testen!
+Give your program a name, by typing one into the text box in the top-left corner.
 
-+ Du kannst auch ändern, wie die Trommel aussieht wenn man drauf klickt. Dazu braucht die Trommel ein zweites Kostüm. Klick zuerst auf 'Kostüme', um das aktuelle Bild der Trommel zu sehen.
+You can then click 'File' and then 'Save now' to save your project.
 
-	![screenshot](band-drum-costume.png)
+![screenshot](band-save.png)
 
-+ Klicke mit der rechten Maustaste auf das Kostüm und dann auf 'Duplizieren', um eine Kopie des Kostüms zu erstellen.
+(If you don't have a Scratch account, you can save a copy of your project by clicking 'Download to your computer' instead).
 
-	![screenshot](band-drum-duplicate.png)
+# Step 2: The Stage {.activity}
 
-+ Klicke auf das neue Kostüm ('drum2'), wähle das Linien-Werkzeug aus, und zeichne dann ein paar Linien, damit es so aussieht als ob die Trommel einen Klang von sich gäbe.
+The **stage** is the area on the left, and is where your project comes to life. Think of it as a performance area, just like a real stage!
 
-	![screenshot](band-drum-hit.png)
+## Activity Checklist {.check}
 
-+ Die Namen der Kostüme sind derzeit nicht besonders hilfreich. Benenne die 2 Kostüme um in 'nicht geschlagen' und 'geschlagen' indem du die Namen in das Textfeld des jeweiligen Kostüms eingibst.
++ At the moment, the stage is white, and looks pretty boring! Let's add a backdrop to the stage, by clicking 'Choose backdrop from library'.
+    
+    ![screenshot](band-stage-choose.png)
 
-	![screenshot](band-drum-name.png)
++ Click 'Indoors' on the left, and then click on a stage backdrop and click 'OK'.
+    
+    ![screenshot](band-backdrop.png)
 
-+ Weil es jetzt 2 unterschiedliche Kostüme für die Trommel gibt, kannst du nun auswählen welches Kostüm angezeigt wird! Füge diesen Code zu deiner Trommel hinzu:
++ Your stage should now look like this:
+    
+    ![screenshot](band-stage.png)
 
-	```blocks
-		Wenn die grüne Flagge angeklickt
-		wechsle zu Kostüm [nicht geschlagen v]
+# Step 3: Making a Drum {.activity}
 
-		Wenn ich angeklickt werde
-		wechsle zu Kostüm [geschlagen v]
-		spiele Schlaginstrument (1 v) für (0.25) Schläge
-		wechsle zu Kostüm [nicht geschlagen v]
-	```
+Let's code your drum to make a sound when it's hit.
 
-	Den Code-Block zum Wechseln des Kostüms findest du im Bereich `Aussehen` {.blocklooks}.
+## Activity Checklist {.check}
 
-+ Wenn die Trommel angeklickt wird sollte sie jetzt das Kostüm wechseln, damit man sieht dass sie einen Ton von sich gibt, und dann wieder zurückwechseln.
++ You can find the code blocks in the 'Scripts' tab, and they are all colour-coded!
+    
+    Click on the drum sprite, and then drag these 2 blocks into the code area to the right, making sure that they are connected together (like Lego blocks):
+    
+    ![screenshot](band-code.png)
 
-## Speichere dein Projekt { .save }
++ Click the drum to try out your new instrument!
 
-##Herausforderung: Deine Trommel verbessern { .challenge }
+## Save your project {.save}
 
-+ Kannst du den Klang ändern, den die Trommel von sich gibt, wenn sie angeklickt wird?
+## Challenge: Improving your drum {.challenge}
+
++ Can you change the sound that the drum makes when it's clicked?
 
 ![screenshot](band-drum-sound.png)
 
-+ Kannst du auch die Trommel dazu bringen, einen Klang von sich zu geben, wenn die Leertaste gedrückt wird? Dazu benötigst du diesen Block aus dem Bereich `Ereignisse` {.blockevents}:
++ Can you also get the drum to make a sound when the spacebar is pressed? You'll need to use this `event` {.blockevents} block:
 
 ```blocks
-	Wenn Taste [Leertaste v] gedrückt
+    when [space v] key pressed
 ```
 
-Du kannst den existierenden Code kopieren, indem du mit der rechten Maustaste drauf klickst und 'Duplizieren' wählst.
+You can copy your existing code by right-clicking on it and clicking 'duplicate'.
 
 ![screenshot](band-duplicate-code.png)
 
-## Speichere dein Projekt { .save }
+## Save your project {.save}
 
-# Schritt 2: Eine Sängerin programmieren { .activity .new-page }
+# Step 4: Making a Singer {.activity.new-page}
 
-Lass uns jetzt eine Sängerin zu unserer Band hinzufügen!
+Let's add a singer to your band!
 
-## Arbeitsschritte { .check }
+## Activity Checklist {.check}
 
-+ Füge 2 weitere Figuren zu deiner Bühne hinzu: eine Sängerin und ein Mikrofon.
++ Add another 2 sprites to your stage; a singer and a microphone.
+    
+    ![screenshot](band-singer-mic.png)
 
-	![screenshot](band-singer-mic.png)
++ Before you can make your singer sing, you need to add a sound to your sprite. Make sure that you have selected your singer, then click the 'Sounds' tab, and click 'Choose sound from library':
+    
+    ![screenshot](band-import-sound.png)
 
-+ Bevor du deine Sängerin zum Singen bringen kannst, musst du einen Klang zu deiner Figur hinzufügen. Stelle sicher, dass du die Sängerin ausgewählt hast, und klicke auf 'Klänge und dann auf 'Klang aus der Bibliothek wählen':
++ If you click 'Vocals' on the left hand side, you will then be able to choose a suitable sound to add to your sprite.
+    
+    ![screenshot](band-choose-sound.png)
 
-	![screenshot](band-import-sound.png)
++ Now that the sound has been added, you can add this code to your singer:
+    
+    ```blocks
+    when this sprite clicked
+    play sound [singer1 v] until done
+```
 
-+ Wenn du links auf 'Gesang' klickst, kannst du einen passenden Klang für deine Figur auswählen.
++ Click on your singer, to make sure that she sings when clicked.
 
-	![screenshot](band-choose-sound.png)
+## Save your project {.save}
 
-+ Weil der Klang jetzt hinzugefügt wurde, kannst du diesen Code zu deiner Sängerin hinzufügen:
+# Step 5: Costumes {.activity.new-page}
 
-	```blocks
-		Wenn ich angeklickt werde
-		spiele Klang [singer1 v] ganz
-	```
+Let's make your singer look like she's singing!
 
-+ Klicke auf die Sängerin, um sicherzustellen, dass sie singt, wenn sie geklickt wird.
+## Activity Checklist {.check}
 
-## Speichere dein Projekt { .save }
++ You can also change how your singer sprite looks when it's clicked, by creating a new costume. Click the 'Costumes' tab, and you'll see the singer image.
+    
+    ![screenshot](band-singer-costume.png)
 
-#{ .new-page }
-+ Du kannst auch das Kostüm der Sängerin wechseln, damit man bemerkt, wenn sie singt. Klicke mit der rechten Maustaste auf das Kostüm und wähle 'Duplizieren', damit du genau so wie bei der Trommel eine Kopie hast. Benenne die zwei Kostüme um in 'singt nicht' und 'singt'.
++ Right-click on the costume and click 'duplicate' to create a copy of the costume.
+    
+    ![screenshot](band-singer-duplicate.png)
 
-	![screenshot](band-singer-costume.png)
++ Click on the new costume (called 'Singer2') and then select the line tool and draw lines to make it look like your singer is making a sound.
+    
+    ![screenshot](band-singer-click.png)
 
-+ Zeichne ein paar Linien neben den Mund der Sängerin. Die Sängerin sollte ungefähr so aussehen:
++ The names of the costumes aren't very helpful at the moment. Rename the 2 costumes to 'not singing' and 'singing' by typing the new name of each costume into the text box.
+    
+    ![screenshot](band-singer-name.png)
 
-	![screenshot](band-singer-final.png)
++ Now that you have 2 different costumes for your singer, you can choose which costume is displayed! Add these 2 blocks to your singer:
+    
+    ![screenshot](band-looks.png)
+    
+    The code block for changing the costume is in the `Looks` {.blocklooks} section.
 
-+ Füge jetzt diesen Code zu deiner Sängerin hinzu, damit ihr Kostüm wechselt, wenn sie angeklickt wird:
++ Test your singer. When clicked, your singer should now look like she is singing!
 
-	```blocks
-		Wenn die grüne Flagge angeklickt
-		wechsle zu Kostüm [singt nicht v]
+## Challenge: Changing your drum's costume {.challenge}
 
-		Wenn ich angeklickt werde
-		wechsle zu Kostüm [singt v]
-		spiele Klang [singer1 v] ganz
-		wechsle zu Kostüm [singt nicht v]
-	```
+Can you make your drum look like it's being hit? If you need help, you can use the instructions for changing your singer's costume above.
 
-+ Klicke auf die Sängerin, um zu testen, ob dein neuer Code funktioniert.
+![screenshot](band-drum-final.png)
 
-## Speichere dein Projekt { .save }
+Remember to test that your new code works!
 
-# Schritt 3: Ein Becken programmieren { .activity .new-page }
+## Save your project {.save}
 
-Bisher haben wir für alle Instrumente fertige Bilder aus der Scratch-Bibliothek benutzt. Warum nicht eine eigene Figur zeichnen?
+## Challenge: Make your own band {.challenge}
 
-## Arbeitsschritte { .check }
-
-+ Um dein eigenes Bild für das Becken zu zeichnen, klicke auf das 'Neue Figur zeichnen' Symbol mit dem Pinsel.
-
-	![screenshot](band-draw.png)
-
-+ Wie du siehst, hast du jetzt eine leere Figur namens 'Figur1'. Zeichne das Becken in 'Kostüm1', indem du eine gelbe Ellipse und ein paar schwarze Linien zeichnest. Du solltest dieses Kostüm auch in 'nicht geschlagen' umbenennen, wie bei den anderen Figuren.
-
-	![screenshot](band-cymbal.png)
-
-+ Dupliziere das Becken-Kostüm, um ein zweites Kostüm zu erstellen, und benenne es um in 'geschlagen'.
-
-+ Damit das Becken so aussieht, als ob es geschlagen wurde, kannst du es drehen. Um das zu tun, klicke auf das 'Auswählen'-Werkzeug und ziehe es, um das Becken zu markieren. Du kannst danach den runden 'Dreh'-Griff ziehen, um das Becken zu drehen.
-
-	![screenshot](band-cymbal-rotate.png)
-
-	Die Becken-Kostüme sollten ungefähr so aussehen:
-
-	![screenshot](band-cymbal-hit.png)
-
-+ Das Becken ist wahrscheinlich etwas zu groß. Klicke auf das 'Verkleinern'-Symbol, woraufhin sich der Mauszeiger verändert. Klicke einige Mal auf das Becken, um es zu verkleinern. Du kannst das Becken auch verschieben, um ihm auf der Bühne einen besseren Platz zu geben.
-
-	![screenshot](band-shrink.png)
-
-+ Als nächstes solltest du den Namen der Figur umändern, weil 'Figur1' kein besonders hilfreicher Name ist! Klicke auf das Symbol für die Becken-Figur und dann auf das blaue `i` {.blockmotion} (Information) oben links.
-
-	![screenshot](band-info.png)
-
-	Du kannst jetzt den Namen der Figur in etwas Sinnvolles, wie 'Becken', umändern!
-
-+ Da die Bilder jetzt fertig sind, kannst du einen Klang zur Becken-Figur hinzufügen. Klicke auf 'Klang aus der Bibliothek wählen', dann auf 'Schlagwerk' und wähle den 'cymbal crash'-Klang.
-
-	![screenshot](band-crash.png)
-
-+ Füge diesen Code zum Becken hinzu, so dass es einen Klang von sich gibt und das Kostüm wechselt, wenn es angeklickt wird:
-
-	```blocks
-		Wenn die grüne Flagge angeklickt
-		wechsle zu Kostüm [not hit v]
-
-		Wenn ich angeklickt werde
-		wechsle zu Kostüm [hit v]
-		spiele Klang [cymbal crash v] ganz
-		wechsle zu Kostüm [not hit v]
-	```
-
-+ Teste das Becken, um zu sehen ob es funktioniert!
-
-## Speichere dein Projekt { .save }
-
-# Schritt 4: Hintergrundmusik { .activity .new-page }
-
-Du kannst Hintergrundmusik hinzufügen, die deine Band begleitet!
-
-## Arbeitsschritte { .check }
-
-+ Klicke auf die Bühne, dann auf 'Klänge' und dann auf 'Klang aus der Bibliothek wählen', um Musik zu deiner Bühne hinzuzufügen. Die Musik findest du im Bereich 'Musikschleifen'.
-
-+ Füge diesen Code zu deiner Bühne hinzu und denk daran, die Musik auszuwählen, die du ausgesucht hast:
-
-	```blocks
-		Wenn die grüne Flagge angeklickt
-		wiederhole fortlaufend
-		spiele Klang [eggs v] ganz
-		Ende
-	```
-
-+ Dieser Code spielt die Musik, die du ausgewählt hast, in einer Schleife. Klick auf die Flagge, und probier es aus!
-
-+ Du kannst sogar diesen Code zu deiner Bühne hinzufügen, damit du die Hintergrundmusik stumm schalten oder wieder laut schalten kannst, indem du die Tasten 'm' und 'u' benutzt:
-
-	```blocks
-		Wenn die grüne Flagge angeklickt
-		setze Lautstärke auf (100)%
-		wiederhole fortlaufend
-		spiele Klang [eggs v] ganz
-		Ende
-
-		Wenn Taste [m v] gedrückt
-		setze Lautstärke auf (0)%
-
-		Wenn Taste [u v] gedrückt
-		setze Lautstärke auf (100)%
-	```
-
-## Speichere dein Projekt { .save }
-
-##Herausforderung: Erstelle deine eigene Band { .challenge }
-Benutze das, was du in diesem Projekt gelernt hast, um deine eigene Band zu erstellen! Du kannst alle Instrumente erstellen, die dir gefallen, aber schau dir zuerst die verfügbaren Töne und Instrumente an, um ein paar Ideen zu bekommen.
+Use what you've learnt in this project to make your own band! You can create any instruments you like, but look at the available sounds and instruments to get some ideas.
 
 ![screenshot](band-ideas.png)
 
-Deine Instrumente müssen auch nicht unbedingt sinnvoll sein. Du kannst beispielsweise ein Klavier aus Muffins erstellen!
+Your instruments don't have to be sensible though. For example, you could make a piano made out of muffins!
 
 ![screenshot](band-piano.png)
 
-Kanns du dein eigenes Lied komponieren, oder mit Freunden eine Band zusammenstellen?
+As well as using existing sprites, you can also draw your own.
 
-## Speichere dein Projekt { .save }
+![screenshot](band-draw.png)
 
+If you have a microphone you can record your own sounds, or even use a webcam to hit your instruments!
+
+![screenshot](band-io.png)
+
+## Save your project {.save}

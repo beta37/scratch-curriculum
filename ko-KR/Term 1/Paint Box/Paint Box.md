@@ -1,273 +1,262 @@
----
-title: 페인트 박스 
-level: Scratch 1
-language: ko-KR
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# 소개 { .intro }
+title: Paint Box level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-이 프로젝트에선 페인트 프로그램을 만들어 볼 것입니다!
+# Introduction {.intro}
+
+In this project, you will be making your own paint program!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63473366/?autostart=false" frameborder="0"></iframe>
   <img src="paint-final.png">
 </div>
 
-# 1 단계: 연필 만들기 { .activity }
+# Step 1: Making a pencil {.activity}
 
-스테이지에 그림을 그릴 수 있는 연필을 만드는 걸로 시작합시다.
+Let's start by making a pencil, that can be used to draw on the stage.
 
-## 단계별 체크리스트 { .check }
+## Activity Checklist {.check}
 
-+ 새 스크래치 프로젝트를 만든 후 고양이 스프라이트를 지워서 빈 프로젝트를 만드세요. 온라인 스크래치 에디터는 <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a> 에서 사용할 수 있습니다.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ 연필 스프라이트를 프로젝트에 넣어주세요.
++ Add the pencil sprite to your project.
+    
+    ![screenshot](paint-pencil.png)
 
-	![screenshot](paint-pencil.png) 
++ Click 'Costumes', and delete the 'pencil-b' costume.
+    
+    ![screenshot](paint-pencil-delete.png)
 
-+ '모양'탭을 클릭 한 후 'pencil-b' 모양은 지워주세요.
++ Rename your costume 'pencil-blue', and use the 'Color a shape' tool to make the pencil blue.
+    
+    ![screenshot](paint-pencil-blue.png)
 
-	![screenshot](paint-pencil-delete.png) 
-
-+ 남은 모양의 이름을 'pencil-blue' 로 고쳐주고 '색칠하기' 도구로 파란색으로 만들어 주세요.
-
-	![screenshot](paint-pencil-blue.png) 
-
-+ 마우스를 사용해서 그림을 그릴 거니 연필이 마우스를 `무한반복하기` {.blockcontrol}로 따라가야 할 것입니다. 연필 스프라이트에 이 코드를 더해주세요:
-
-```blocks
-
-깃발 클릭했을 때
-무한 반복하기
-   [mouse pointer v] 위치로 이동하기
-end
++ As you'll be using the mouse to draw, you'll want the pencil to follow the mouse `forever` {.blockcontrol}. Add this code to your pencil sprite:
+    
+    ```blocks
+    when flag clicked
+    forever
+      go to [mouse pointer v]
+    end
 ```
 
-+ 깃발을 클릭해서 마우스를 스테이지 위에서 왔다갔다하게 해보세요. 예상한대로 작동하는 가요?
++ Test out this code by clicking the flag and then moving the mouse around the stage. Does this work as you expected?
 
-+ 마우스 포인터를 따라가는게 연필의 심이 아니라 중간 부분이란 걸 보셨 나요?
++ Have you noticed that it's the centre of the pencil, and not the tip, that follows the mouse pointer?
+    
+    ![screenshot](paint-center.png)
+    
+    To fix this, click on the 'pencil-blue' costume of your pencil sprite, and click 'Set costume center'.
+    
+    ![screenshot](paint-center-icon.png)
 
-	![screenshot](paint-center.png)
++ You should notice that a crosshair appears on the costume. You can now click just below the tip of the pencil, to set this point as the costume centre.
+    
+    ![screenshot](paint-pencil-center.png)
 
-	이걸 고치려면 연필 스프라이트의 'pencil-blue' 모양으로 가서 '모양 중심 설정'을 클릭 해주세요.
++ Click the 'Scripts' tab, and then test out your pencil again - does it work better than it did before?
 
-	![screenshot](paint-center-icon.png)
++ Next, let's make your pencil draw `if` {.blockcontrol} the mouse has been clicked. Add this code to your pencil sprite:
+    
+    ![screenshot](paint-pencil-draw-code.png)
 
-+ 모양에 십자선이 나타날 것입니다. 마우스의 심지 바로 아래부분에 클릭해서 모양의 중심으로 잡아주세요.
++ Test your code again. This time, move the pencil around the stage and hold down the mouse button. Can you draw with your pencil?
+    
+    ![screenshot](paint-draw.png)
 
-	![screenshot](paint-pencil-center.png)
+## Save your project {.save}
 
-+ '스크립트' 탭을 누르고 연필을 다시 시험해보세요. 방금보다 나은가요?
+# Step 2: Coloured pens {.activity}
 
-+ 이제 연필이 `만약` {.blockcontrol} 마우스가 클릭 된 상태라면 그리도록 만듭시다. 연필 스프라이트에 이 코드를 넣어주세요:
+Let's add different colour pens to your project, and allow the user to choose between them!
 
-	![screenshot](paint-pencil-draw-code.png)	
+## Activity Checklist {.check}
 
-+ 코드를 다시 시험해보세요. 이번엔 마우스를 클릭해서 움직여보세요. 연필로 그림을 그릴 수 있나요?
++ Click on your pencil sprite, click 'Costumes' and duplicate your 'pencil-blue' costume.
+    
+    ![screenshot](paint-blue-duplicate.png)
 
-	![screenshot](paint-draw.png)
++ Rename your new costume 'pencil-green', and colour the pencil green.
+    
+    ![screenshot](paint-pencil-green.png)
 
-## 프로젝트를 저장해주세요 { .save }
++ Create two new sprites, which you will use to select the blue or green pencil.
+    
+    ![screenshot](paint-selectors.png)
 
-# 2 단계: 색연필 { .activity }
-
-다른 색의 연필을 더해서 색을 고를 수 있게 해봅시다!
-
-## 단계별 체크리스트 { .check }
-
-+ 연필 스프라이트를 누르고 '모양'탭으로 간 후 'pencil-blue'모양을 복제해 주세요.
-
-	![screenshot](paint-blue-duplicate.png)
-
-+ 새 모양의 이름을 'pencil-green'으로 녹색으로 칠해주세요.
-
-	![screenshot](paint-pencil-green.png)
-
-+ 파란색과 녹색 연필 사이에서 고를 때 사용할 두개의 새로운 스프라이트를 만들어 주세요.
-
-	![screenshot](paint-selectors.png)
-
-+ 녹색 선택 아이콘을 클릭하면 연필 스프라이트에 메시지가 `방송` {.blockevents} 되어서 모양과 색깔을 바꾸도록 해야합니다.
-
-	그러려면 먼저 녹색 선택 아이콘에 이 코드를 더해주세요:
-
-```blocks
-
-이 스프라이트를 클릭했을 때
-[green v] 방송하기
++ When the green selector icon is clicked, you need to `broadcast` {.blockevents} a message to the pencil sprite, telling it to change its costume and pencil colour.
+    
+    To do this, first add this code to the green selector icon:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [green v]
 ```
 
-	`방송` {.blockevents} 블록을 만들려면 아래쪽 화살표를 누른 후  '새 메시지...'를 골라주세요.
+To create the `broadcast` {.blockevents} block, click the down arrow and select 'new message...'.
 
-	![screenshot](paint-broadcast.png)
+![screenshot](paint-broadcast.png)
 
-	이제 새 메시지에 'green'이라고 적어줍시다.
+You can then type 'green' to create your new message.
 
-	![screenshot](paint-green-message.png)
+![screenshot](paint-green-message.png)
 
-+ 다음으로 연필 스프라이트가 메시지를 받으면 무엇을 해야하는지 정해줘야 합니다. 연필 스프라이트에 이 코드를 더해주세요:
-
-```blocks
-
-[green v] 수신할 때
-모양을 [pencil-green v] (으)로 바꾸기
-펜 색깔을 [#00ff00] (으)로 정하기
++ You now need to tell your pencil sprite what to do when it receives the message. Add this code to your pencil sprite:
+    
+    ```blocks
+    when I receive [green v]
+    switch costume to [pencil-green v]
+    set pen color to [#00ff00]
 ```
 
-	연필 색을 녹색으로 만들려면 `펜 색깔을 ... 으로 정하기` {.blockpen} 블록에서 색깔 박스를 클릭하고, 녹색 선택 아이콘을 눌러서 연필 색을 녹색으로 맞춰줍니다.
+To set the pencil colour to green, click the coloured box in the `set color` {.blockpen} block, and click on the green selector icon to choose green as your pencil colour.
 
-+ 파란색 선택 아이콘 스프라이트에 이 코드를 더해 파란색 연필도 선택 가능하게 해줍시다:
-
-```blocks
-
-이 스프라이트를 클릭했을 때
-[blue v] 방송하기
++ You can now do the same for the blue pencil icon, adding this code to the blue selector sprite:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [blue v]
 ```
 
-...그리고 이 코드를 연필 스프라이트에 더해주세요:
+...and adding this code to the pencil sprite:
 
 ```blocks
-
-[blue v] 수신할 때
-모양을 [pencil-blue v] (으)로 바꾸기
-펜 색깔을 [#0000ff] (으)로 정하기
+    when I receive [blue v]
+    switch costume to [pencil-blue v]
+    set pen color to [#0000ff]
 ```
 
-+ 마지막으로 프로젝트가 시작 됬을 땐 어떤 연필 스프라이트와 모양, 색깔을 사용해야 되는지를 정하고 스크린을 깔끔하게 지우게 만들어줍시다. 이 코드를 연필의 `깃발을 클릭했을 때` {.blockevents} 코드의 시작에 (`무한반복하기` {.blockcontrol} 루프 앞에) 넣어줍시다:
-
-```blocks
-지우기
-모양을 [blue-pencil v] (으)로 바꾸기
-펜 색깔을 [#0000ff] (으)로 정하기
++ Finally, you need to tell your pencil sprite what costume and pencil colour to choose, as well as clearing the screen, when your project is started. Add this code to the beginning of the pencil's `when flag clicked` {.blockevents} code (before the `forever` {.blockcontrol} loop):
+    
+    ```blocks
+    clear
+    switch costume to [blue-pencil v]
+    set pen color to [#0000ff]
 ```
 
-	원하신다면 다른 색으로 시작 하셔도 됩니다!
+If you prefer, you can start with a different colour pencil!
 
-+ 프로젝트를 시험해보세요. 파란색과 녹색 연필 사이에서 선택이 가능한가요?
++ Test out your project. Can you switch between the blue and green pens?
+    
+    ![screenshot](paint-pens-test.png)
 
-	![screenshot](paint-pens-test.png)
+## Save your project {.save}
 
-## 프로젝트를 저장하세요 { .save }
+# Step 3: Making mistakes {.activity.new-page}
 
-# 3 단계: 실수 했을 때 { .activity .new-page }
+Sometimes mistakes happen, so let's add a 'clear' button and an eraser to our project!
 
-누구든지 실수할 수 있습니다. 그러니 '다 지우기' 버튼과 지우개를 프로젝트에 더해봅시다!
+## Activity Checklist {.check}
 
-## Activity Checklist { .check }
++ Let's add a button to clear the stage. To do this, add the 'X-block' letter sprite to the stage, and colour it in red.
+    
+    ![screenshot](paint-x.png)
 
-+ 스테이지를 깔끔히 지워줄 버튼을 더해줍시다. 'X-block' 스프라이트를 스테이지에 더해주고 빨간색으로 칠해주세요.
-
-	![screenshot](paint-x.png)
-
-+ 이 버튼을 클릭하면 스테이지를 지워줄 코드를 더해줍시다.
-
-```blocks
-
-이 스프라이트를 클릭했을 때
-지우기
++ Add code to your new cancel button to clear the stage when it's clicked.
+    
+    ```blocks
+    when this sprite clicked
+    clear
 ```
 
-	스테이지를 지우는데 메시지를 보낼 필요가 없다는 점에 주의하세요. 어떤 스프라이트도 할 수 있으니까요!
+Notice that you don't need to send a message to clear the stage, as any sprite can do it!
 
-+ 또한 지우개를 만들 수 있습니다. 클럽 리더에게 'Resources' 폴더를 받았다면 '모양 파일 업로드하기'를 누르고 'eraser.svg' 이미지를 선택해주세요.
++ You can also create an eraser. If your club leader has given you a 'Resources' folder, click 'Upload costume from file' and add the 'eraser.svg' image.
+    
+    ![screenshot](paint-eraser-costume.png)
+    
+    If you don't have the eraser.svg image, just create a new white pen instead!
 
-	![screenshot](paint-eraser-costume.png)
-	
-	eraser.svg 이미지가 없다면 그냥 흰색 연필을 새로 만들어 주세요!
++ You should also add the eraser image as a new selector sprite. This is how your stage shoud look:
+    
+    ![screenshot](paint-eraser-stage.png)
 
-+ 또한 지우개도 새로운 선택 스프라이트로 더해줘야 합니다. 이제 스테이지는 이렇게 생겨야 합니다: 
-
-	![screenshot](paint-eraser-stage.png)
-
-+ 이제 지우개 선택 스프라이트에 이 코드를 넣어서 연필에서 지우개로 바꾸도록 만들어줍시다.
-
-```blocks
-
-이 스프라이트를 클릭했을 때
-[eraser v] 방송하기
++ You can then add code to the eraser selector sprite, to tell the pencil to switch to an eraser.
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [eraser v]
 ```
 
-+ 연필이 이 메시지를 받으면 연필 모양을 지우개로 바꾸고 연필 색을 스테이지 색과 같게 만들어서 지우개를 만들 수 있습니다!
-
-```blocks
-
-[eraser v] 수신할 때
-모양을 [eraser v] (으)로 바꾸기
-펜 색깔을 [#FFFFFF] (으)로 정하기
++ When the pencil receives this message, you can create an eraser by switching the pencil costume to the eraser, and switching the pencil colour to the same colour as the stage!
+    
+    ```blocks
+    when I receive [eraser v]
+    switch costume to [eraser v]
+    set pen color to [#FFFFFF]
 ```
 
-+ 프로젝트를 시험해서 스테이지를 다 지우거나 지우개로 지울 수 있는지 확인해주세요.
++ Test your project, to see if you can clear and erase on the stage.
+    
+    ![screenshot](paint-erase-test.png)
 
-	![screenshot](paint-erase-test.png)
++ There's one more problem with the pencil - you can draw anywhere on the stage, including near the selector icons!
+    
+    ![screenshot](paint-draw-problem.png)
+    
+    To fix this, you have to tell the pencil only to draw if the mouse is clicked *and* if the y-position of the mouse is greater than -110 (`mouse y`{.blocksensing}`> -120` {.blockoperators}). Change your pencil's `if` {.blockcontrol} statement to look like this:
+    
+    ![screenshot](pencil-gt-code.png)
 
-+ 연필엔 또 한가지의 문제가 있습니다 - 스테이지의 어디에도, 심지어 선택 아이콘 옆에도, 그릴 수 있다는 점입니다!
++ Test your project; you now shouldn't be able to draw near the selector blocks.
+    
+    ![screenshot](paint-fixed.png)
 
-	![screenshot](paint-draw-problem.png)
+## Save your project {.save}
 
-	이 문제를 고치려면 연필이 마우스가 클릭 됬을 때나 _또는_ 마우스의 y좌표가 -110 (`mouse y`{.blocksensing}`> -120` {.blockoperators})보다 클 때 그려지게 만들어야 합니다. 연필의 `만약` {.blockcontrol} 코드를 이렇게 바꾸세요:
+# Step 4: Changing the pencil width {.activity.new-page}
 
-	![screenshot](pencil-gt-code.png)
+Let's allow the user to draw using a range of different pencil sizes.
 
-+ 프로젝트를 시험해보세요. 이제 선택 아이콘 가까이엔 그릴 수 없을 것입니다.
+## Activity Checklist {.check}
 
-	![screenshot](paint-fixed.png)
++ First, add a new variable called 'width'. If you're not sure how to do this, the 'Balloons' project will help you.
 
-## 프로젝트를 저장하세요 { .save }
-
-# 4 단계: 연필 굵기 바꾸기 { .activity .new-page }
-
-사용자가 여러가지 크기의 연필을 사용할 수 있게 만들어 봅시다.
-
-## 단계별 체크리스트 { .check }
-
-+ 첫번째로 'width'라고 이름 지은 새 변수를 더해주세요. 어떻게 하는지 모르겠다면 '풍선' 프로젝트를 돌아보는게 도움이 될 것입니다.
-
-+ 이 코드를 연필의 코드의 `무한반복하기` {.blockcontrol} 루프 __안쪽에__ 넣어주세요:
-
-```blocks
-펜 굵기를 (width) (으)로 정하기
++ Add this line *inside* the `forever` {.blockcontrol} loop of your pencil's code:
+    
+    ```blocks
+    set pen size to (width)
 ```
 
-	이제 연필의 굵기는 `width` 변수의 값으로 맞춰질 것입니다.
+Your pencil width will now repeatedly be set to the value of your 'width' variable.
 
-+ 이 변수에 있는 숫자는 스테이지 위의 벼수 디스플레이에 오른쪽 클릭한 후 '슬라이더'를 골라서 바꿀 수 있습니다.
++ You can change the number stored in this variable by right-clicking on your variable (on the stage) and clicking 'slider'.
+    
+    ![screenshot](paint-slider.png)
+    
+    You can now drag the slider below the variable to change its value.
+    
+    ![screenshot](paint-slider-change.png)
 
-	![screenshot](paint-slider.png)
++ Test your project, and see if you can modify the pencil width.
+    
+    ![screenshot](paint-width-test.png)
+    
+    If you prefer, you can set the minimum and maximum value of 'width' that's allowed. To do this, right-click on your variable again and click 'set slider min and max'. Set the minimum and maximum values of your variable to something more sensible, like 1 and 20.
+    
+    ![screenshot](paint-slider-max.png)
+    
+    Keep testing your 'width' variable until you're happy.
 
-	변수 아래의 슬라이더를 드래그 해서 변수의 값을 바꿀 수 있습니다.
+## Save your project {.save}
 
-	![screenshot](paint-slider-change.png)
+## Challenge: Shortcuts {.challenge}
 
-+ 프로젝트를 시험해서 연필 굵기를 바꿀 수 있는지 확인해보세요.
+Can you create keyboard shortcuts for your commands? For example:
 
-	![screenshot](paint-width-test.png)
++ b = switch to blue pen
++ g = switch to green pen
++ e = switch to eraser
++ c = clear screen
 
-	원하신다면 'width'의 최소값과 최대값을 정해 둘 수 있습니다. 그러려면 변수 디스플레이를 다시 오른쪽 클릭 하신 후 '슬라이더 최대값과 최소값 설정하기'를 눌러주세요'. 최소값과 최대값을 1에서 20같이 좀더 현실적 값으로 바꿔주세요.
+You could even allow the user to change the pen width with the arrow keys!
 
-	![screenshot](paint-slider-max.png)
+## Save your project {.save}
 
-	만족할때 까지 'width'변수를 바꿔주세요.
+## Challenge: More pens {.challenge}
 
-## 프로젝트를 저장하세요 { .save }
+Can you add red, yellow and black pens to your paint program? You'll find all of the images you need in your 'Resources' folder. Remember to add keyboard shortcuts for these new pens!
 
-## 도전과제: 바로가기 { .challenge }
-키보드로 선택 바로가기를 만들 수 있나요? 예를 들자면:
-
-+ b = 파란색 연필로 바꾸기
-+ g = 녹색 연필로 바꾸기
-+ e = 지우개로 바꾸기
-+ c = 화면 전체 지우기
-
-또한 연필 굵기를 화살표로 바꿀 수 있게도 만들 수 있습니다!
-
-## 프로젝트를 저장해주세요 { .save }
-
-## 도전과제: 더 많은 연필 { .challenge }
-빨간색, 노란색과 검은색 연필을 프로그램에 더할 수 있겠 나요? 필요한 이미지들은 모두 'Resources' 폴더에서 찾으실 수 있습니다. 이 연필 들에도 키보드 바로가기를 더해주는 걸 잊지 마세요!
-
-이제 이 연필들로 그림을 그려볼 수 있겠 나요?
+Can you use your pens to draw a picture?
 
 ![screenshot](paint-final.png)

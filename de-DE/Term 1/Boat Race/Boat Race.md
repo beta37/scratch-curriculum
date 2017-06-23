@@ -1,264 +1,265 @@
----
-title: Boat Race
-level: Scratch 1
-language: de-DE
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# Einleitung { .intro }
+title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-Du wirst lernen ein Spiel zu programmieren, in dem du mit der Maus ein Boot zur einer Insel steuerst.
+# Introduction {.intro}
+
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# Schritt 1: Plane dein Spiel { .activity }
+# Step 1: Planning your game {.activity}
 
-## Arbeitsschritte { .check }
+## Activity Checklist {.check}
 
-+ Öffne ein neues Scratch-Projekt und lösche die Katzen-Figur, so dass dein Projekt leer ist. Du kannst den online Scratch-Editor hier finden: <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Klicke auf Bühnenbilder und zeichne dein Level. Du solltest hinzufügen:
-	+ Die Holzbalken, um die dein Boot fahren wird;
-	+ Die Insel, zu dem das Boot fahren soll.
-	
-	Hier ein Beispiel, wie dein Spiel aussehen könnte:
++ Click on your stage backdrop and plan out your level. You should add:
+    
+    + Wood that your boat has to avoid;
+    + A desert island that your boat has to get to.
+    
+    Here's how your game could look:
+    
+    ![screenshot](boat-bg.png)
 
-	![screenshot](boat-bg.png) 
+# Step 2: Controlling the boat {.activity}
 
-# Schritt 2: Boot steuern { .activity }
+## Activity Checklist {.check}
 
-## Arbeitsschritte { .check }
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
+    
+    ![screenshot](boat-boat.png)
+    
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-+ Wenn du vom Lehrer den Zugang zum 'Resources' Verzeichnis bekommen hast, klicke auf "Figur aus einer Datei laden" und füge die Bilddatei 'boat.png' hinzu. Verkleinere die Figur und stelle sie auf die Startposition.
++ You are going to control the boat with your mouse. Add this code to your boat:
+    
+    ```blocks
+    when flag clicked
+    point in direction (0 v)
+    go to x: (-190) y: (-150)
+    forever
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
+```
 
-	![screenshot](boat-boat.png)
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
+    
+    ![screenshot](boat-mouse.png)
+    
+    **Note: There is currently a bug in Scratch which means your boat may not move towards the mouse pointer. If this happens, click the arrow on the `point towards` {.blockmotion} block and re-select 'mouse-pointer'.**
+    
+    ![screenshot](images/boat-bug.png)
 
-	Wenn du das boat.png image nicht hast, mal dein eigenes Boot!
++ What happens if the boat reaches the mouse pointer?
+    
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    
+    ![screenshot](boat-pointer.png)
 
-+ Du wirst das Boot mit deiner Maus Steuern. Füge diesen code zu deinem boot hinzu:
++ Test out your boat again, to check whether the problem has been fixed.
 
-	```blocks
-		when flag clicked
-		point in direction (0 v)
-		go to x: (-190) y: (-150)
-		wiederhole fortlaufend
-			point towards [mouse-pointer v]
-			move (1) steps
-		end
-	```
+## Save your project {.save}
 
-+ Teste dein Boot, indem du die Flagge anklickst und die Maus bewegst. Segelt das Boot in Richtung der Maus?
+# Step 3: Crashing! {.activity.new-page}
 
-	![screenshot](boat-mouse.png)
+Your boat can sail through the wooden barriers! Let's fix that.
 
-+ Was passiert wenn das Boot den Mauszeiger berührt?
+## Activity Checklist {.check}
 
-	Um es zu verhindern, füge ein `falls` {.blockcontrol} Skript zu deinem Code hinzu, sodass sich das Boot nur bewegt, wenn es mehr als 5 Pixel von der Maus entfernt ist.
++ You'll need 2 costumes for your boat, one normal costume, and one for when the boat crashes. Duplicate your boat costume, and name them 'normal' and 'hit'.
 
-	![screenshot](boat-pointer.png)	
++ Click on your 'hit' costume, and choose the 'Select' tool to grab bits of the boat and move and rotate them around. Make your boat look as if it's crashed.
+    
+    ![screenshot](boat-hit-costume.png)
 
-+ Teste dein Boot wieder und überprüfe, ob das Problem gelöst ist.
++ Add this code to your boat, inside the `forever` {.blockcontrol} loop, so that it crashes when it touches any brown wooden bits:
+    
+    ```blocks
+    if <touching color [#603C15]?> then
+        switch costume to [hit v]
+        say [Noooooo!] for (1) secs
+        switch costume to [normal v]
+        point in direction (0 v)
+        go to x: (-215) y: (-160)
+    end
+```
 
-## Speichere dein projekt { .save }
+This code is inside the `forever` {.blockcontrol} loop, so that your code keeps checking if the boat has crashed.
 
-# Schritt 3: Unfall! { .activity .new-page }
++ You should also make sure that your boat always starts looking like it's 'normal'.
 
-Dein Boot kann durch die braunen Holzbalken hindurch segeln! Das ändern wir jetzt.
++ Now if you try to sail through a wooden barrier, you should see that your boat crashes and moves back to the start.
+    
+    ![screenshot](boat-crash.png)
 
-## Arbeitsschritte { .check }
+## Save your project {.save}
 
-+ Du brauchst 2 Kostüme für dein Boot: Ein normales Kostüm, und eins für ein kaputtes Boot. Dupliziere das Boot Kostüm, und nenne sie 'Normal' und 'Kaputt'.
+## Challenge: Winning! {.challenge}
 
-+ Klicke dein 'Kaputt' Kostüm und dann das 'Auswählen' Werkzeug an. Damit zerlegst du das Boot in Teile, bewegst und drehst sie. Lasse das Boot so aussehen als hätte es einen Unfall gebaut.
+Can you add another `if` {.blockcontrol} statement to your boat's code, so that the player wins when they get to the desert island?
 
-	![screenshot](boat-hit-costume.png)
-
-+ Füge diesen Code zu deinem Boot hinzu, innerhalb der `wiederhole fortlaufend` {.blockcontrol} Schleife. Damit baut dein Boot jedes mal einen Unfall, wenn es einen der braunen Holzbalken berührt:
-
-	```blocks
-		if <touching color [#603C15]?> then
-			switch costume to [Kaputt v]
-			say [Oh Nein!] for (1) secs
-			switch costume to [Normal v]
-			point in direction (0 v)
-			go to x: (-215) y: (-160)
-		end
-	```
-
-	Dieser Code gehöhrt in die `wiederhole fortlaufend` {.blockcontrol} Schleife, sodass dein Code immer prüft, ob das Boot einen Unfall gebaut hat oder nicht.
-
-+ Stelle sicher, dass dein Boot immer in dem 'Normal' Zustand startet.
-
-+ Wenn du nun versuchst durch einen Holzbalken zu segeln, wirst du sehen, dass dein Boot kaputt geht und zum Start zurückkehrt.
-
-	![screenshot](boat-crash.png)
-
-## Speichere dein Projekt { .save }
-
-## Herausforderung: Gewinnen! {.challenge}
-Kannst du noch ein `falls` {.blockcontrol} Skript zu dem Code deines Bootes, sodass der Spieler gewinnt wenn er zur Wüsteninsel kommt?
-
-Wenn das Boot zur gelben Wüsteninsel kommt, soll es 'JA-A-A!' sagen und das Spiel soll anhalten. Du wirst diesen Code benötigen:
+When the boat gets to the yellow desert island, it should say 'YEAH!' and then the game should stop. You'll need to use this code:
 
 ```blocks
-	say [JA-A-A!] for (1) secs
-	stop [all v]
+    say [YEAH!] for (1) secs
+    stop [all v]
 ```
 
 ![screenshot](boat-win.png)
 
-## Speichere dein Projekt { .save }
+## Save your project {.save}
 
-## Herausforderung: Musik effekte {.challenge}
-Kannst du Musikeffekte zu deinem Spiel hinzufügen, falls dein Boot einen Unfall baut oder die Insel erreicht? Du könntest sogar Hintergrundmusik einfügen (schau dir das letzte projekt 'Rock-Band' an, wenn du Hilfe brauchst).
+## Challenge: Sound effects {.challenge}
 
-## Speichere dein Projekt { .save }
+Can you add sound effects to your game, for when the boat crashes, or reaches the island at the end? You could even add background music (see the previous 'Rock Band' project if you need help with this).
 
-# Step 4: Zeitfahren { .activity }
+## Save your project {.save}
 
-Lass uns einen Timer zum Spiel hinzufügen. Damit soll der Spieler versuchen, so schnell wie möglich zur Wüsteninsel zu kommen.
+# Step 4: Time Trial {.activity}
 
-## Arbeitsschritte { .check }
+Let's add a timer to your game, so that the player has to get to the desert island as fast as possible.
 
-+ Füge eine neue Variable  namens `Zeit` {.blockdata} zu deiner Bühne hinzu. Du kannst auch das Aussehen  der Variable ändern. Wenn du Hilfe brauchst schaue dir das 'Luftballons' Projekt an.
+## Activity Checklist {.check}
 
-	![screenshot](boat-variable.png)
++ Add a new variable called `time` {.blockdata} to your stage. You can also change the display of your new variable. If you need help, have a look at the 'Ghostbusters' project.
+    
+    ![screenshot](boat-variable.png)
 
-+ Füge diesen Code zu deiner __Bühne__ hinzu, sodass der Timer läuft bis das Boot an der Wüsteninsel ankommt:
++ Add this code to your **stage**, so that the timer counts up until the boat reaches the desert island:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [0]
+    forever
+        wait (0.1) secs
+        change [time v] by (0.1)
+    end
+```
 
-	```blocks
-		when flag clicked
-		set [time v] to [0]
-		forever
-			wait (0.1) secs
-			change [time v] by (0.1)
-		end
-	```
++ That's it! Test out your game and see how quickly you can get to the desert island!
+    
+    ![screenshot](boat-variable-test.png)
 
-+ Das war's! Teste dein Spiel und versuch, so schnell wie möglich zur Wüsteninsel zu kommen.
+## Save your project {.save}
 
-	![screenshot](boat-variable-test.png)
+# Step 5: Obstacles and power-ups {.activity}
 
-## Speichere dein Projekt { .save }
+This game is *far* too easy - let's add things to make it more interesting.
 
-# Step 5: Hindernisse und Schübe { .activity }
+## Activity Checklist {.check}
 
-Dieses Spiel ist _viel_ zu leicht - Lass uns ein paar Dinge hinzufügen, um es spannender zu machen.
++ First let's add some 'boosts' to your game, which will speed up the boat. Edit your stage backdrop and add in some white booster arrows.
+    
+    ![screenshot](boat-boost.png)
 
-## Arbeitsschritte { .check }
++ You can now add some code to your boat's `forever` {.blockcontrol} loop, so that it moves 2 *extra* steps when touching a white booster.
+    
+    ```blocks
+    if <touching color [#FFFFFF]?> then
+        move (3) steps
+    end
+```
 
-+ Als erstes füge ein paar 'Schübe' zu deinem Spiel, die das Boot beschleunigen. Ändere deinen Bühnen backdrop und füge ein paar weiße Schubpfeile hinzu.
++ You can also add in a spinning gate, which your boat has to avoid. Add in a new sprite called 'gate', which looks like this:
+    
+    ![screenshot](boat-gate.png)
+    
+    Make sure that the colour of the gate is the same as the other wooden barriers.
 
-	![screenshot](boat-boost.png)
++ Set the centre of the gate sprite.
+    
+    ![screenshot](boat-center.png)
 
-+ Füge jetzt einen anderen Code zu deiner `wiederhole fortlaufend` {.blockcontrol} Schleife hinzu, sodass es 2 _extra_ Schritte macht, wenn es über einen Schubpfeil fährt.
++ Add code to your gate, to make it spin slowly `forever` {.blockcontrol}.
 
-	```blocks
-		if <touching color [#FFFFFF]?> then
-			move (3) steps
-		end
-	```
++ Test out your game. You should now have a spinning gate that you must avoid.
+    
+    ![screenshot](boat-gate-test.png)
 
-+ Du kannst ein drehendes Tor erstellen, das dein Boot meiden soll. Füge ein neues Kostüm dazu und nenne es 'Tor'. So soll es aussehen:
+## Save your project {.save}
 
-	![screenshot](boat-gate.png)
+## Challenge: More obstacles! {.challenge.new-page}
 
-	Die Farbe des Tors soll mit der Farbe der Holzbalken übereinstimmen.
+Can you add more obstacles to your game? Here are some ideas:
 
-+ Markiere den Drehpunkt des Kostüms.
-
-	![screenshot](boat-center.png)
-
-+ Füge den Code `wiederhole fortlaufend` {.blockcontrol} hinzu, damit sich das Tor sich langsam dreht.
-
-+ Teste das Spiel. Jetzt sollst du ein drehendes Tor sehen, dass du lieber umschiffen sollst.
-
-	![screenshot](boat-gate-test.png)
-
-## Speichere dein Projekt { .save }
-
-## Herausforderung: Noch mehr Hindernisse! {.challenge .new-page}
-Kannst Du noch mehr Hindernisse in dein Spiel einbauen? Hier sind ein paar Ideen:
-
-+ Du kannst einen Schlammgebiet ins Bühnenbild einfügen, das das Boot verlangsamt, wenn es in den Schlamm reinsegelt. Nutze dafür das `warte` {.blockcontrol} Skript:
++ You could add green slime to your backdrop, which slows the player down when they touch it. You can use a `wait` {.blockcontrol} block to do this:
 
 ```blocks
-	wait (0.01) secs
+    wait (0.01) secs
 ````
 
 ![screenshot](boat-algae.png)
 
-+ Du kannst ein Objekt einfügen, das sich ständig bewegegt, z.B. einen Holzklotz oder einen Hai sein!
++ You could add a moving object, like a log or a shark!
 
 ![screenshot](boat-obstacles.png)
 
-Diese Skripte können dir helfen:
+These blocks may help you:
 
 ```blocks
-	move (1) steps
-	if on edge, bounce
+    move (1) steps
+    if on edge, bounce
 ````
 
-Wenn das neue Objekt ist nicht braun, denke dran, seine Farbe im Code aufzunehmen:
+If your new object isn't brown, you'll need to add to your boat code:
 
 ```blocks
-	if <  <touching color [#603C15]?> or <touching [shark v]?> > then
-	end
+    if <  <touching color [#603C15]?> or <touching [shark v]?> > then
+    end
 ```
 
-## Speichere dein Projekt { .save }
+## Save your project {.save}
 
-## Herausforderung: Mehr Boote! {.challenge .new-page}
-Kannst du das Spiel so ausbauen, dass zwei Spieler das gleichzeitig spielen können.
+## Challenge: More boats! {.challenge.new-page}
 
-+ Dupliziere das Boot, nenne es 'Spieler 2' und ändere seine Farbe.
+Can you turn your game into a race between 2 players?
+
++ Duplicate the boat, rename it 'Player 2' and change its colour.
 
 ![screenshot](boat-p2.png)
 
-+ Ändere die Startposition des Spieler 2, indem du diesen Code änderst:
++ Change Player 2's starting position, by changing this code:
 
 ```blocks
-	go to x: (-190) y: (-150)
+    go to x: (-190) y: (-150)
 ```
 
-+ Lösche den Code für die Maussteuerung:
++ Delete the code that uses the mouse to control the boat:
 
 ```blocks
-	if < (distance to [mouse-pointer v]) > [5] > then
-		point towards [mouse-pointer v]
-		move (1) steps
-	end
+    if < (distance to [mouse-pointer v]) > [5] > then
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
 ```
 
-...und ersetze ihn mit dem Code für die Tastatursteuerung mit den Pfeiltasten.
+...and replace it with code to control the boat using the arrow keys.
 
-Mit diesem Code wird das Boot vorwärts bewegt:
+This is the code you'll need to move the boat forward:
 
 ```blocks
-	if < key [up arrow v] pressed? > then
-		move (1) steps
-	end
+    if < key [up arrow v] pressed? > then
+        move (1) steps
+    end
 ```
 
-Du brauchst auch den Code zum `drehen` {.blockmotion} des Boots, wenn der Spieler auf die Pfeiltasten 'Links' oder 'Rechts' drückt.
+You'll also need code to `turn` {.blockmotion} the boat when the left and right arrow keys are pressed.
 
-## Speichere dein Projekt { .save }
+## Save your project {.save}
 
-## Herausforderung: Weitere Levels! {.challenge .new-page}
-Kannst du weitere Bühnen erstellen und dem Spieler erlauben, einen Level auszuwählen?
+## Challenge: More levels! {.challenge.new-page}
+
+Can you create additional backdrops, and allow the player to choose between levels?
 
 ```blocks
-	when [space v] key pressed
-	next backdrop
+    when [space v] key pressed
+    next backdrop
 ```
 
-## Speichere dein Projekt { .save }
-
-## Community Contributed Translation { .challenge .pdf-hidden }
-
-This project was translated by Ilja Gendler and Oleg Bascurov. Our amazing translation volunteers help us give children around the world the chance to learn to code.  You can help us reach more children by translating a Code Club project via [Github](https://github.com/CodeClub/curriculum_documentation/blob/master/contributing.md) or by getting in touch with us at hello@codeclubworld.
+## Save your project {.save}
