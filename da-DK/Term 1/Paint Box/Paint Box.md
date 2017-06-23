@@ -1,266 +1,262 @@
----
-title: Tegnekasse
-level: Scratch 1
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*","Projekt Ressourcer/*.*"]
-...
+* * *
 
-# Introduktion { .intro }
+title: Paint Box level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-I dette projekt skal du lave dit eget tegneprogram! 
+# Introduction {.intro}
+
+In this project, you will be making your own paint program!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63473366/?autostart=false" frameborder="0"></iframe>
   <img src="paint-final.png">
 </div>
 
-# Trin 1: Lav en blyant { .activity }
+# Step 1: Making a pencil {.activity}
 
-Lad os starte med at lave en blyant, som vi kan bruge til at tegne med på scenen.
+Let's start by making a pencil, that can be used to draw on the stage.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt og slet katte-spriten så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Tilføj blyant-spriten til dit projekt.
++ Add the pencil sprite to your project.
+    
+    ![screenshot](paint-pencil.png)
 
-![screenshot](paint-pencil.png) 
++ Click 'Costumes', and delete the 'pencil-b' costume.
+    
+    ![screenshot](paint-pencil-delete.png)
 
-+ Klik på 'Kostumer' og slet 'pencil-b' kostumet.
++ Rename your costume 'pencil-blue', and use the 'Color a shape' tool to make the pencil blue.
+    
+    ![screenshot](paint-pencil-blue.png)
 
-![screenshot](paint-pencil-delete.png) 
++ As you'll be using the mouse to draw, you'll want the pencil to follow the mouse `forever` {.blockcontrol}. Add this code to your pencil sprite:
+    
+    ```blocks
+    when flag clicked
+    forever
+      go to [mouse pointer v]
+    end
+```
 
-+ Omdøb dit kostume til 'blyant-blå', og brug 'Farvelæg en figur' redskabet til at farve blyanten blå. 
++ Test out this code by clicking the flag and then moving the mouse around the stage. Does this work as you expected?
 
-![screenshot](paint-pencil-blue.png) 
++ Have you noticed that it's the centre of the pencil, and not the tip, that follows the mouse pointer?
+    
+    ![screenshot](paint-center.png)
+    
+    To fix this, click on the 'pencil-blue' costume of your pencil sprite, and click 'Set costume center'.
+    
+    ![screenshot](paint-center-icon.png)
 
-+ Siden du bruger musen til at tegne, så skal du have blyanten til at følge musen `for evigt` {.blockcontrol}. Tilføj denne kode til din blyantssprite:
++ You should notice that a crosshair appears on the costume. You can now click just below the tip of the pencil, to set this point as the costume centre.
+    
+    ![screenshot](paint-pencil-center.png)
 
-```blocks 
-		når du klikker på ⚑
-		for evigt 
-  			 gå til [musepil v]
-		end 
-```  
++ Click the 'Scripts' tab, and then test out your pencil again - does it work better than it did before?
 
-+ Afprøv koden ved at klikke på flaget og dernæst flytte musen rundt på scenen. Virker det som du forventede? 
++ Next, let's make your pencil draw `if` {.blockcontrol} the mouse has been clicked. Add this code to your pencil sprite:
+    
+    ![screenshot](paint-pencil-draw-code.png)
 
-+ Har du lagt mærke til at det er midten af blyanten, og ikke spidsen af blyanten, som følger musemarkøren? 
++ Test your code again. This time, move the pencil around the stage and hold down the mouse button. Can you draw with your pencil?
+    
+    ![screenshot](paint-draw.png)
 
-![screenshot](paint-center.png)
+## Save your project {.save}
 
-Løs dette ved at klikke på 'blyant-blå' kostumet på din blyant-sprite, og klik på 'Sæt kostumets..'. 
+# Step 2: Coloured pens {.activity}
 
-![screenshot](paint-center-icon.png)
+Let's add different colour pens to your project, and allow the user to choose between them!
 
-+ Som du kan se er der et kryds over kostumet. Klik lige nedenfor blyantens spids for at sætte dette punkt til kostumets midte.
+## Activity Checklist {.check}
 
-![screenshot](paint-pencil-center.png)
++ Click on your pencil sprite, click 'Costumes' and duplicate your 'pencil-blue' costume.
+    
+    ![screenshot](paint-blue-duplicate.png)
 
-+ Klik på 'Scripts' fanen, og afprøv din blyant igen - fungerer den bedre end den gjorde før? 
++ Rename your new costume 'pencil-green', and colour the pencil green.
+    
+    ![screenshot](paint-pencil-green.png)
 
-+ Lad os nu få din blyant til at tegne `hvis` {.blockcontrol} der er blevet klikket med musen. Tilføj denne kode til din blyant-sprite. 
++ Create two new sprites, which you will use to select the blue or green pencil.
+    
+    ![screenshot](paint-selectors.png)
 
-![screenshot](paint-pencil-draw-code.png)	
++ When the green selector icon is clicked, you need to `broadcast` {.blockevents} a message to the pencil sprite, telling it to change its costume and pencil colour.
+    
+    To do this, first add this code to the green selector icon:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [green v]
+```
 
-+ Afprøv din kode igen. Og flyt denne gang din blyant rundt på scenen og hold museknappen nede. Kan du tegne med din blyant? 
-
-![screenshot](paint-draw.png)
-
-## Gem dit projekt { .save }
-
-# Trin 2: Farveblyanter { .activity }
-
-Lad os tilføje nogle forskellige farveblyanter til dit projekt og give brugerne mulighed for at vælge mellem dem! 
-
-## Arbejdsliste { .check }
-
-+ Klik på din blyant-sprite og klik så på 'Kostumer' og kopiér dit 'blyant-blå' kostume.
-
-![screenshot](paint-blue-duplicate.png)
-
-+ Omdøb dit nye kostume til 'blyant-grøn', og farv blyanten grøn.
-
-![screenshot](paint-pencil-green.png)
-
-+ Lav to nye sprites, der skal bruges sådan, at man kan vælge den blå eller den grønne blyant.
-
-![screenshot](paint-selectors.png)
-
-+ Når der klikkes på det grønne selektor ikon skal du `sende` {.blockevents} en meddelelse til blyantsspriten og fortælle den, at den skal ændre sit kostume og blyantsfarve.
-
-Start med at tilføje denne kode til det grønne selektor ikon: 
-
-```blocks 
-		når denne sprite klikkes
-		send [grøn v] til alle
-```  
-
-For at lave `send` {.blockevents} blokken skal du klikke på den nedadgående pil og vælge 'ny meddelelse...'.
+To create the `broadcast` {.blockevents} block, click the down arrow and select 'new message...'.
 
 ![screenshot](paint-broadcast.png)
 
-Du kan dernæst taste 'grøn' for at lave din meddelelse. 
+You can then type 'green' to create your new message.
 
 ![screenshot](paint-green-message.png)
 
-+ Du skal nu fortælle din blyant-sprite, hvad den skal gøre, når den modtager meddelelsen. Tilføj denne kode til din blyant-sprite: 
++ You now need to tell your pencil sprite what to do when it receives the message. Add this code to your pencil sprite:
+    
+    ```blocks
+    when I receive [green v]
+    switch costume to [pencil-green v]
+    set pen color to [#00ff00]
+```
 
-```blocks 
-			når jeg modtager [grøn v]
-			skift kostume til [blyant-grøn v]
-			skift penfarve til [#00ff00]
-``` 
- 
-For at sætte blyanten til at farve grøn, så klik på den farvede boks i `skift penfarve til` {.blockpen} blokken, og klik på det grønne __selektor__ ikon for at vælge grøn som din blyantsfarve. 
+To set the pencil colour to green, click the coloured box in the `set color` {.blockpen} block, and click on the green selector icon to choose green as your pencil colour.
 
-+ Du kan nu gøre det samme med ikonet for den blå blyant ved at tilføje denne kode til den blå selektor sprite:
++ You can now do the same for the blue pencil icon, adding this code to the blue selector sprite:
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [blue v]
+```
 
-```blocks 
-		når denne sprite klikkes
-		send [blå v] til alle
-```  
+...and adding this code to the pencil sprite:
 
-...og tilføje denne kode til blyant-spriten:
+```blocks
+    when I receive [blue v]
+    switch costume to [pencil-blue v]
+    set pen color to [#0000ff]
+```
 
-```blocks 
-		når jeg modtager [blå v]
-		skift kostume til [blyant-blå v] 
-		skift penfarve til [#0000ff]
-```  
- 
-+ Til sidst skal du fortælle din blyant hvilket kostume og blyantsfarve der skal vælges, og ligeledes at skærmen skal ryddes når dit projekt startes. Tilføj denne kode til begyndelsen af din blyants `når du klikker på ⚑` {.blockevents} kode (inden `for evigt` {.blockcontrol} loopen):
++ Finally, you need to tell your pencil sprite what costume and pencil colour to choose, as well as clearing the screen, when your project is started. Add this code to the beginning of the pencil's `when flag clicked` {.blockevents} code (before the `forever` {.blockcontrol} loop):
+    
+    ```blocks
+    clear
+    switch costume to [blue-pencil v]
+    set pen color to [#0000ff]
+```
 
-```blocks 
-		ryd  
-		skift kostume til [blyant-blå v] 
-		skift penfarve til [#0000ff] 
-```  
- 
-Hvis du hellere vil, så kan du starte ud med en anden farveblyant! 
+If you prefer, you can start with a different colour pencil!
 
-+ Afprøv dit projekt. Kan du skifte mellem blå og grønne blyanter?
++ Test out your project. Can you switch between the blue and green pens?
+    
+    ![screenshot](paint-pens-test.png)
 
-![screenshot](paint-pens-test.png)
+## Save your project {.save}
 
-## Gem dit projekt { .save }
+# Step 3: Making mistakes {.activity.new-page}
 
-# Trin 3: At lave fejl { .activity .new-page }
+Sometimes mistakes happen, so let's add a 'clear' button and an eraser to our project!
 
-Nogle gange opstår der nogle fejl, så lad os tilføje en 'ryd' knap og et viskelæder til vores projekt!
+## Activity Checklist {.check}
 
-## Arbejdsliste { .check }
++ Let's add a button to clear the stage. To do this, add the 'X-block' letter sprite to the stage, and colour it in red.
+    
+    ![screenshot](paint-x.png)
 
-+ Lad os tilføje en knap for at rydde scenen. Tilføj 'X-block' bogstavet til din scene og farv bogstavet rødt.
++ Add code to your new cancel button to clear the stage when it's clicked.
+    
+    ```blocks
+    when this sprite clicked
+    clear
+```
 
-![screenshot](paint-x.png)
+Notice that you don't need to send a message to clear the stage, as any sprite can do it!
 
-+ Tilføj denne kode til din nye annullér knap, som rydder scenen, når der klikkes på knappen. 
++ You can also create an eraser. If your club leader has given you a 'Resources' folder, click 'Upload costume from file' and add the 'eraser.svg' image.
+    
+    ![screenshot](paint-eraser-costume.png)
+    
+    If you don't have the eraser.svg image, just create a new white pen instead!
 
-```blocks 
-		når denne sprite klikkes
-		ryd
-```  
++ You should also add the eraser image as a new selector sprite. This is how your stage shoud look:
+    
+    ![screenshot](paint-eraser-stage.png)
 
-Læg mærke til at du ikke behøver sende en meddelelse for at rydde scenen, for det kan hvilken som helst sprite gøre!   
++ You can then add code to the eraser selector sprite, to tell the pencil to switch to an eraser.
+    
+    ```blocks
+    when this sprite clicked
+    broadcast [eraser v]
+```
 
-+ Du kan også lave et viskelæder. Hvis din instruktør har givet dig en 'Projekt Ressourcer' mappe, så klik på 'Upload kostume fra fil' og tilføj 'eraser.svg' billedet.
++ When the pencil receives this message, you can create an eraser by switching the pencil costume to the eraser, and switching the pencil colour to the same colour as the stage!
+    
+    ```blocks
+    when I receive [eraser v]
+    switch costume to [eraser v]
+    set pen color to [#FFFFFF]
+```
 
-![screenshot](paint-eraser-costume.png)
-	
-Hvis du ikke har eraser.svg billedet, så bare lav en ny hvid blyant i stedet for! 
++ Test your project, to see if you can clear and erase on the stage.
+    
+    ![screenshot](paint-erase-test.png)
 
-+ Du bør også tilføje viskelæderbilledet som en ny sprite, så du både har viskelæderet som et kostume til din blyant-sprite og som en sprite for sig selv. Din scene bør se således ud: 
++ There's one more problem with the pencil - you can draw anywhere on the stage, including near the selector icons!
+    
+    ![screenshot](paint-draw-problem.png)
+    
+    To fix this, you have to tell the pencil only to draw if the mouse is clicked *and* if the y-position of the mouse is greater than -110 (`mouse y`{.blocksensing}`> -120` {.blockoperators}). Change your pencil's `if` {.blockcontrol} statement to look like this:
+    
+    ![screenshot](pencil-gt-code.png)
 
-![screenshot](paint-eraser-stage.png)
++ Test your project; you now shouldn't be able to draw near the selector blocks.
+    
+    ![screenshot](paint-fixed.png)
 
-+ Du kan derefter tilføje en kode til din viskelæder-sprite for at fortælle blyanten, at den skal skifte over til et viskelæder. 
+## Save your project {.save}
 
-```blocks 
-		når denne sprite klikkes
-		send [viskelæder v] til alle
-```  
+# Step 4: Changing the pencil width {.activity.new-page}
 
-+ Når blyanten modtager denne meddelelse, så kan du lave et viskelæder ved at udskifte blyantskostumet til viskelæderet, og skifte blyantsfarven til at være samme farve som scenen! 
+Let's allow the user to draw using a range of different pencil sizes.
 
-```blocks 
-		når jeg modtager [viskelæder v]
-		skift kostume til [viskelæder v]
-		skift penfarve til [#FFFFFF] 
-``` 
+## Activity Checklist {.check}
 
-+ Afprøv dit projekt for at se, om du kan rydde og viske ud på scenen.
++ First, add a new variable called 'width'. If you're not sure how to do this, the 'Balloons' project will help you.
 
-![screenshot](paint-erase-test.png)
++ Add this line *inside* the `forever` {.blockcontrol} loop of your pencil's code:
+    
+    ```blocks
+    set pen size to (width)
+```
 
-+ Der er nogle problemer med blyanten - du kan tegne hvor som helst på scenen, også nær _selektor_ ikonerne!  
+Your pencil width will now repeatedly be set to the value of your 'width' variable.
 
-![screenshot](paint-draw-problem.png)
++ You can change the number stored in this variable by right-clicking on your variable (on the stage) and clicking 'slider'.
+    
+    ![screenshot](paint-slider.png)
+    
+    You can now drag the slider below the variable to change its value.
+    
+    ![screenshot](paint-slider-change.png)
 
-For at løse dette problem bliver du nødt til at fortælle blyanten, at der kun skal tegnes hvis der klikkes med musen _og_ hvis musens y-position er større end -110 (`musens y-position`{.blocksensing}`> -120` {.blockoperators}). Ændr din blyants `hvis` {.blockcontrol} erklæring til at se således ud:
++ Test your project, and see if you can modify the pencil width.
+    
+    ![screenshot](paint-width-test.png)
+    
+    If you prefer, you can set the minimum and maximum value of 'width' that's allowed. To do this, right-click on your variable again and click 'set slider min and max'. Set the minimum and maximum values of your variable to something more sensible, like 1 and 20.
+    
+    ![screenshot](paint-slider-max.png)
+    
+    Keep testing your 'width' variable until you're happy.
 
-![screenshot](pencil-gt-code.png)
+## Save your project {.save}
 
-+ Test dit projekt; nu burde du ikke kunne tegne nær selektor ikonerne.
+## Challenge: Shortcuts {.challenge}
 
-![screenshot](paint-fixed.png)
+Can you create keyboard shortcuts for your commands? For example:
 
-## Gem dit projekt { .save }
++ b = switch to blue pen
++ g = switch to green pen
++ e = switch to eraser
++ c = clear screen
 
-# Trin 4: Ændre bredden på din blyant { .activity .new-page } 
+You could even allow the user to change the pen width with the arrow keys!
 
-Lad os give brugeren mulighed for at tegne ved brug af en række forskellige blyantsstørrelser.
+## Save your project {.save}
 
-## Arbejdsliste { .check }
+## Challenge: More pens {.challenge}
 
-+ Start med at tilføje en ny variabel, som du kalder 'bredde'. Hvis du er usikker på, hvordan du gør det, så kan 'Balloons' projektet hjælpe dig. 
+Can you add red, yellow and black pens to your paint program? You'll find all of the images you need in your 'Resources' folder. Remember to add keyboard shortcuts for these new pens!
 
-+ Tilføj denne linje _inden i_ `for evigt` {.blockcontrol} loopen af koden til din blyant:
-
-```blocks 
-		skift penstørrelse til (bredde)
-``` 
-
-Bredden på din blyant sættes nu repetitivt til værdien af din 'bredde' variabel. 
-
-+ Du kan ændre det opbevarede tal i denne variabel ved at højreklikke på din variabel (på scenen) og klikke på 'skyder'. 
-
-![screenshot](paint-slider.png)
-
-Nu kan du så glide skyderen, under variablen, for at ændre dets værdi.
-
-![screenshot](paint-slider-change.png)
-
-+ Afprøv dit projekt og se om du kan modificere blyantens bredde. 
-
-![screenshot](paint-width-test.png)
-
-Hvis foretrækker, så kan du sætte en tilladt minimum og maksimum værdi på 'bredden'. Højreklik på din variabel igen og klik på 'sæt skyderen til min og maks'. Sæt minimum og maksimum værdierne til noget mere fornuftigt, såsom 1 og 20.
-
-![screenshot](paint-slider-max.png)
-
-Bliv ved med at afprøve din 'bredde'-variabel indtil du er tilfreds.
-
-## Gem dit projekt { .save }
- 
-## Udfordring: Genveje { .challenge }
-
-Kan du lave tasteturgenveje til dine kommandoer? For eksempel:
-
-+ b = skift til blå blyant
-+ g = skift til grøn blyant
-+ v = skift til viskelæder
-+ r = ryd skærmen
-
-Du kan ovenikøbet tillade brugeren at ændre blyantsbredden med piletasterne! 
-
-## Gem dit projekt { .save }
-
-## Udfordring: Flere blyanter { .challenge }
-Kan du tilføje røde, gule og sorte blyanter til dit tegneprogram? Du kan finde alle de billeder, du har brug for i din 'Ressourcer' mappe. Husk at tilføje tasteturgenveje til disse nye blyanter! 
-
-Kan du bruge dine blyanter til at tegne et billede? 
+Can you use your pens to draw a picture?
 
 ![screenshot](paint-final.png)
