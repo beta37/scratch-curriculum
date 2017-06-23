@@ -1,195 +1,192 @@
----
-title: Lovci duchů
-level: Scratch 1
-language: cs-CZ
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*"]
-...
+* * *
 
-## Poznámka: { .challenge .pdf-hidden }
-Projekt 'Balónky' byl přesunut do sekce [Další Scratch projekty](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html).
+title: Ghostbusters level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# Úvod { .intro }
+## Note: {.challenge.pdf-hidden}
 
-Chystáme se udělat hru s chytáním duchů!
+The 'Balloons' project has been moved to the [Additional Scratch Projects](http://projects.codeclub.org.uk/en-GB/03_scratch_bonus/index.html) section.
+
+# Introduction {.intro}
+
+You are going to make a ghost-catching game!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
-  <img src="ghost-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/60787262/?autostart=false" frameborder="0"></iframe>
+    <img src="ghost-final.png">
 </div>
 
-# Step 1: Animace ducha { .activity }
+# Step 1: Animating a ghost {.activity}
 
-## Seznam úkolů { .check }
+## Activity Checklist {.check}
 
-+ Vytvoř si nový projekt a smaž kočičku, takže tvůj projekt bude prázdný. Online editor můžeš nalézt zde: <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Přidej postavu ducha a vhodné pozadí.
++ Add in a new ghost sprite, and a suitable stage backdrop.
+    
+    ![screenshot](ghost-ghost.png)
 
-	![screenshot](ghost-ghost.png)
++ Add this code to your ghost, so that it repeatedly appears and disappears:
+    
+    ```blocks
+    when flag clicked
+    forever
+    hide
+    wait (1) secs
+    show
+    wait (1) secs
+    end
+```
 
-+ Přidej následující kód k duchovi, aby se opakovaně objevoval a mizel:
++ Test out your ghost's code, by clicking the green flag.
 
-	```blocks
-		po kliknutí na ⚑
-		opakuj dokola
-			skryj se
-			čekej (1) sekund
-			ukaž se
-			čekej (1) sekund
-		end
-	```
+## Save your project {.save}
 
-+ Otestuj ducha kliknutím na zelenou vlajku.
+# Step 2: Random ghosts {.activity}
 
-## Ulož projekt { .save }
+Your ghost is really easy to catch, because it doesn't move!
 
-# Step 2: Náhodný pohyb ducha { .activity }
+## Activity Checklist {.check}
 
-Chytit tohoto ducha je velmi lehké, protože se nepohybuje!
++ Instead of staying in the same position, you can let Scratch choose random x and y coordinates instead. Add a `go to` {.blockmotion} block to your ghost's code, so that it looks like this:
+    
+    ```blocks
+    when flag clicked
+    forever
+        hide
+        wait (1) secs
+        go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+        show
+        wait (1) secs
+    end
+```
 
-## Seznam úkolů { .check }
++ Test our your ghost again, and you should notice that it appears in a different place each time.
 
-+ Místo zústáváni ve stejné pozici, můžeš nechat Scratch vybírat náhodnou pozici koordinátů x a y. Přidej blok `skoč na pozici` {.blockmotion} k duchovi tak, aby to vypadalo následovně:
+## Save your project {.save}
 
-	```blocks
-		po kliknutí na ⚑
-		opakuj dokola
-			skryj se
-			čekej (1) sekund
-			skoč na pozici x:(náhodné číslo od (-150) do (150)) y:(náhodné číslo od (-150) do (150))
-			ukaž se
-			čekej (1) sekund
-		end
-	```
+## Challenge: More randomness {.challenge}
 
-+ Otestuj ducha znovu, měl by se ukazovat pokaždé na jiném místě.
+Can you make your ghost `wait` {.blockcontrol} a random amount of time before appearing? Can you use the `set size` {.blocklooks} block to make your ghost a random size each time it appears?
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-## Výzva: Více náhody {.challenge}
-Zkus nastavit ducha tak, aby čekal pomocí bloku `čekej` {.blockcontrol} náhodnou dobu před objevením. Použij blok `nastav velikost na` {.blocklooks}, aby měl duch pokaždé jinou velikost.
+# Step 3: Catching ghosts {.activity}
 
-## Ulož projekt { .save }
+Let's allow the player to catch ghosts!
 
-# Step 3: Chytání duchů { .activity }
+## Activity Checklist {.check}
 
-Pojďme dovolit hráči chytat duchy!
++ To allow the player to catch a ghost, add this code:
+    
+    ```blocks
+    when this sprite clicked
+    hide
+```
 
-## Seznam úkolů { .check }
++ Test out your project. Can you catch ghosts as they appear? If you find it difficult to catch the ghosts, you can play the game in fullscreen mode by clicking this button:
+    
+    ![screenshot](ghost-fullscreen.png)
 
-+ Přidej následující kód:
+## Challenge: Adding a sound {.challenge}
 
-	```blocks
-		po kliknutí na mě
-		skryj se
-	```
+Can you make a sound each time a ghost is caught?
 
-+ Vyzkoušej projekt. Můžeš chytat duchy jakmile se objeví? Pokud je to těžké, spusť hru na celé obrazovce pomocí tohoto tlačítka:
+## Save your project {.save}
 
-	![screenshot](ghost-fullscreen.png)
+# Step 4: Adding a score {.activity.new-page}
 
-## Výzva: Přidání zvuků { .challenge }
-Přidej zvuk tak, aby hrál, když chytneš ducha.
+Let's make things more interesting by keeping score.
 
-## Ulož projekt { .save }
+## Activity Checklist {.check}
 
-# Step 4: Přidání skóre { .activity .new-page }
++ To keep the player's score, you need a place to put it. A **variable** is a place to store data that can change, like a score.
+    
+    To create a new variable, click on the 'Scripts' tab, select `Data` {.blockdata} and then click 'Make a Variable'.
+    
+    ![screenshot](ghost-score.png)
+    
+    Type 'score' as the name of the variable, make sure that it is available for all sprites, and click 'OK' to create it. You'll then see lots of code blocks that can be used with your `score` {.blockdata} variable.
+    
+    ![screenshot](ghost-variable.png)
+    
+    You'll also see the score in the top-left of the stage.
+    
+    ![screenshot](ghost-stage-score.png)
 
-Udělejme to zajímavějším přidáním počítání skóre.
++ When a new game is started (by clicking the flag), you should set the player's score to 0:
+    
+    ```blocks
+    when flag clicked
+    set [score v] to [0]
+```
 
-## Seznam úkolů { .check }
++ Whenever a ghost is caught, you need to add 1 to the player's score:
+    
+    ![screenshot](ghost-change-score.png)
 
-+ Pro uchování skóre hráče potřebuješ místo, kam ho uložíš. Proměnná - __variable__ - je takové místo pro uschování dat, která se mohou měnit, jako je například skóre.
++ Run your program again and catch some ghosts. Does your score change?
 
-	Pro vytvoření nové proměnné klikni na záložku 'Scénáře', vyber `Data` {.blockdata} a klikni na 'Vytvořit proměnnou'.
+## Save your project {.save}
 
-	![screenshot](ghost-score.png)
+# Step 5: Adding a timer {.activity}
 
-	Napiš 'score' jako jméno proměnné, ujisti se že bude dostupná pro všechny postavy (zaškrtnout 'Pro všechny postavy') a klikni 'OK'. Pak budeš mít možnost používat bloky pro práci s touto proměnnou - `score` {.blockdata}.
-	
-	Skóre uvidíš v levém horním rohu scény.
+You can make your game more interesting, by only giving your player 10 seconds to catch as many ghosts as possible.
 
-	![screenshot](ghost-stage-score.png)
+## Activity Checklist {.check}
 
-+ Po startu hry je nutné skóre vynulovat.
++ You can use another variable to store the remaining time left. Click on the stage, and create a new variable called 'time':
+    
+    ![screenshot](ghost-time.png)
 
-	```blocks
-	po kliknutí na ⚑
-	nastav [score v] na [0]
-	```
++ This is how the timer should work:
+    
+    + The timer should start at 10 seconds;
+    + The timer should count down every second;
+    + The game should stop when the timer gets to 0.
+    
+    Here's the code to do this, which you can add to your **stage**:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [10]
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]
+```
 
-+ Jakmile chytneš ducha je potřeba zvednout skóre o jeden bod:
+This is how you add the `repeat until`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} code:
 
-	```blocks
-		po kliknutí na mě
-		skryj se
-        přehraj zvuk [pop v]
-        změň [score v] o [1]
-	```
+![screenshot](ghost-timer-help.png)
 
-+ Spusť projekt znovu a otestuj jestli se skóre počítá správně.
++ Drag your 'time' variable display to the right side of the stage. You can also right-click on the variable display and choose 'large readout' to change how the time is displayed.
+    
+    ![screenshot](ghost-readout.png)
 
-## Ulož projekt { .save }
++ Ask a friend to test your game. How many points can they score? If your game is too easy, you can:
+    
+    + Give the player less time;
+    + Make the ghosts appear less often;
+    + Make the ghosts smaller.
+    
+    Test your game a few times until you're happy that it's the right level of difficulty.
 
-# Step 5: Přidání časovače { .activity }
+## Save your project {.save}
 
-Hru můžeš udělat mnohem zajímavější, když dáš hráči jen 10 vteřin na to, aby chytil tolik duchů, kolik zvládne.
+## Challenge: More objects {.challenge}
 
-## Seznam úkolů { .check }
-
-+ Použij jinou proměnnou pro uschování zbývajícího času. Klikni na scénu a přidej proměnnou 'time':
-
-	![screenshot](ghost-time.png)
-
-+ Takto by měl časovač pracovat:
-
-	+ Časovač by měl začít na 10 vteřinách;
-	+ Časovač by měl odpočítávat po vteřině;
-	+ Hra by se měla zastavit, když časovač dosáhne 0.
-
-	Tady je kód, který to udělá, ten přidej do tvé __scény__:
-
-	```blocks
-		po kliknutí na ⚑
-		nastav [time v] na [10]
-		opakuj dokud nenastane <(time) = [0]>
-			čekej (1) sekund
-			změň [time v] o (-1)
-		end
-		zastav [všechno v]
-	```
-
-	Tady vidíš jak přidat blok `opakuj dokud nenastane`{.blockcontrol}`time`{.blockdata}`= 0`{.blockoperators} :
-
-	![screenshot](ghost-timer-help.png)
-
-+ Přesuň proměnnou 'time' do pravého rohu scény. Můžeš kliknout pravým tlačítkem myši na proměnnou a vybrat 'zvětšené zobrazení', abys změnil(a), jak bude proměnná s časem vypadat.
-
-	![screenshot](ghost-readout.png)
-
-+ Požádej kamaráda o otestování hry. Kolika bodů dosáhne? Pokud je hra moc lehká tak můžeš:
-
-	+ Dát hráči míň času;
-	+ Nechat duchy zobrazovat se méně často;
-	+ Zmenšit duchy.
-
-	Otestuj hru několikrát, dokud nejsi spokojený(á) s obtížností.
-
-## Ulož projekt { .save }
-
-## Výzva: Více objektů {.challenge}
-Můžeš přidat do hry více objektů?
+Can you add in other objects to your game?
 
 ![screenshot](ghost-final.png)
 
-Nad přidávanými objekty musíš zapřemýšlet:
+You'll need to think about the objects you're adding. Think about:
 
-+ Jak je velký?
-+ Bude se objevovat častěji než duchové nebo ne?
-+ Jaký zvuk bude vydávat při chycení?
-+ Jak hodně bodů přidá nebo ubere?
-+ Použiješ objekty které přidají či uberou čas?
++ How big is it?
++ Will it appear more or less often than the ghosts?
++ What will it look/sound like when it has been caught?
++ How many points will you score (or lose) for catching it?
 
-## Ulož projekt { .save }
+If you need help adding another object, you can reuse the steps above!
+
+## Save your project {.save}
