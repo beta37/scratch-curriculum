@@ -36,7 +36,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
     
     If you don't have the boat.png image, you can draw your own boat instead!
 
-+ You are going to control the boat with your mouse. Add this code to your boat:
++ Ви будете керувати човном за допомогою миші. Додайте цей код вашої човни:
     
     ```blocks
     when flag clicked
