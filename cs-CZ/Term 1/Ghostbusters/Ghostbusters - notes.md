@@ -1,29 +1,32 @@
----
-title: Lovci duchů — Poznámky pro vedoucí klubu
-language: cs-CZ
-embeds: "*.png"
-...
+* * *
 
-#Úvod
-V tomto projektu se děti naučí používat proměnné pro ukládání dat.
+title: Ghostbusters — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Zdroje
-Pro tento projekt použijte Scratch 2. Scratch 2 můžete najít online na [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) nebo stáhnout z [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) pro použití offline.
+# Introduction:
 
-Kompletní verzi projektu najdete <a href="http://scratch.mit.edu/projects/60787262/#editor">online</a>, nebo stáhnete kliknutím na 'Stáhnout materiály k projektu' a tyto materiály obsahují:
+In this project, children will learn how to use variables to store data in their programs.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/60787262/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + Ghostbusters.sb2
 
-#Učební cíle
-+ Proměnné;
-+ Náhodná čísla.
+# Learning Objectives
 
-#Výzvy
-+ "Více náhody" - použití náhodných čísel;
-+ "Přidání zvuků" - konsolidace znalostí o zvucích a hudbě;
-+ "Více objektů" - použití znalostí pro vytvořená dalších objektů.
++ Variables;
++ Random numbers.
 
-#Časté dotazy
-+ Pokud je pro děti obtížné klikání na duchy bez táhnutí myší, mohou hru hrát ve fullscreenu kde duchy není možné táhnout.
+# Challenges
+
++ "More randomness" - using random numbers;
++ "Adding a sound" - consolidating the learning of sounds;
++ "More objects" - applying skills to create another game object.
+
+# Frequently Asked Questions
+
++ If children find it difficult to click the ghosts without dragging them around, they can play the game in fullscreen mode, in which ghosts aren't draggable.
 
 ![screenshot](ghost-fullscreen.png)
