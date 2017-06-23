@@ -1,26 +1,28 @@
----
-title: ChatBot - Povídací robot — Poznámky pro vedoucí klubu
-language: cs-CZ
-embeds: "*.png"
-...
+* * *
 
-#Úvod
-V tomto projektu se děti naučí použití bloků 'když' pro rozhodování v programu.
+title: ChatBot — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-#Zdroje
-Pro tento projekt použijte Scratch 2. Scratch 2 můžete najít online na [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) nebo stáhnout z [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) pro použití offline.
+# Introduction:
 
-Kompletní verzi projektu najdete <a href="http://scratch.mit.edu/projects/26762091/#editor">online</a>, nebo stáhnete kliknutím na 'Stáhnout materiály k projektu' a tyto materiály obsahují:
+In this project, children will learn how to use 'if' statements to make decisions in their programs.
+
+# Resources
+
+For this project, Scratch 2 should be used. Scratch 2 can either be used online at [jumpto.cc/scratch-on](http://jumpto.cc/scratch-on) or can be downloaded from [jumpto.cc/scratch-off](http://jumpto.cc/scratch-off) and used offline.
+
+You can find a completed version of this project [online](http://scratch.mit.edu/projects/26762091/#editor), or it can be downloaded by clicking the 'Download Project Materials' link for this project, which contains:
 
 + ChatBot.sb2
 
-#Učební cíle
-+ Textové vstupy;
-+ Rozhodování:
-	+ `když ... tak` {.blockcontrol};
-	+ `když ... tak ... jinak` {.blockcontrol}.
+# Learning Objectives
 
-#Výzvy
-+ "Více otázek" - konsolidace znalostí vstupu (dotazu) a bloku `odpověd` {.blocksensing};
-+ "Více rozhodování" - použití podmínek;
-+ "Vytvoř si svého vlastního robota" - konsolidace znalostí z tohoto a minulých projektů.
++ Text input;
++ Decisions: 
+    + `if ... then` {.blockcontrol} statements;
+    + `if ... then ... else` {.blockcontrol} statements.
+
+# Challenges
+
++ "More questions" - consolidating learning of input and the `answer` {.blocksensing} block;
++ "More decisions" - using decisions;
++ "Make your own chatbot" - consolidation of learning from this and past projects.
