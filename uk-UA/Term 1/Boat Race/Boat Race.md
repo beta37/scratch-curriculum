@@ -22,7 +22,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
     + Дерево, що ваша човен має уникнути;
     + A desert island that your boat has to get to.
     
-    Here's how your game could look:
+    Нижче описано, як ваша гра може виглядати:
     
     ![screenshot](boat-bg.png)
 
