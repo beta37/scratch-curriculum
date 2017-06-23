@@ -26,7 +26,7 @@ You are going to learn how to make a game, in which you'll use the mouse to navi
     
     ![screenshot](boat-bg.png)
 
-# Step 2: Controlling the boat {.activity}
+# Крок 2: Контроль човен {.activity}
 
 ## Activity Checklist {.check}
 
