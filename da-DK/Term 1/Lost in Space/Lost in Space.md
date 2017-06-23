@@ -1,190 +1,183 @@
----
-title: Rumfart
-level: Scratch 1
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"]
-...
+* * *
 
-# Introduktion { .intro }
+title: Lost in Space level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-Nu skal du lære hvordan du programmerer din egen animation!
+# Introduction {.intro}
+
+You are going to learn how to program your own animation!
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
-  <img src="space-final.png">
+    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
+    <img src="space-final.png">
 </div>
 
-# Trin 1: Animér et rumskib { .activity .new-page}
+# Step 1: Animating a spaceship {.activity.new-page}
 
-Lad os lave et rumskib som flyver mod Jorden!
+Let's make a spaceship that flies towards the Earth!
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt og slet katte-spriten, så dit projekt er tomt. Du kan finde et online Scratch redigeringsprogram på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Tilføj 'Spaceship' og 'Earth' sprites til din scene. Tilføj også 'Stars' baggrunden til din scene. Sådan bør din scene se ud:
++ Add 'Spaceship' and 'Earth' sprites to your stage. You should also add the 'Stars' backdrop to your stage. This is how your stage should look:
+    
+    ![screenshot](space-sprites.png)
 
-![screenshot](space-sprites.png)
++ Click on your new spaceship sprite, and click the 'Costumes' tab.
+    
+    ![screenshot](space-costume.png)
 
-+ Klik på din nye rumskibs-sprite, og klik så på 'Kostumer' fanebladet.
++ Use the arrow tool to select the image. Then click on the circular rotate handle, and rotate the image until it is on its side.
+    
+    ![screenshot](space-rotate.png)
 
-![screenshot](space-costume.png)
++ Add this code to your spaceship sprite:
+    
+    ![screenshot](space-animate.png)
+    
+    Change the numbers in the code blocks, so that the code is exactly the same as in the image above.
 
-+ Brug pileredskabet til at vælge dit billede. Klik så på roteringshåndtaget og rotér dit billede indtil det ligger på siden.
++ If you click on the code blocks to run the code, you should see the spaceship speak, turn and move towards the centre of the stage.
+    
+    ![screenshot](space-animate-stage.png)
+    
+    The screen position `x:(0) y:(0)` {.blockmotion} is the centre of the stage. A position like `x:(-150) y:(-150)` {.blockmotion} is towards the bottom-left of the stage, and a position like `x:(150) y:(150)` {.blockmotion} is near the top-right.
+    
+    ![screenshot](space-xy.png)
+    
+    If you need to know the coordinates of a position on the stage, move the mouse to the position you want and make a note of the coordinates, which are displayed below the stage.
+    
+    ![screenshot](space-coordinates.png)
 
-![screenshot](space-rotate.png)
++ Try out your animation, by clicking on the green flag just above the stage.
+    
+    ![screenshot](space-flag.png)
 
-+ Tilføj denne kode til din rumskibs-sprite:
+## Challenge: Improving your animation {.challenge}
 
-![screenshot](space-animate.png)
+Can you change the numbers in your animation code, so that: + The spaceship moves until it touches the Earth? + The spaceship moves more slowly towards the Earth?
 
-Ændr tallene i kodeblokkene, så koden er præcis den samme som på ovenstående billede.
-
-+ Hvis du klikker på kodeblokkene for at køre koden, så bør du se at rumskibet drejer og flytter sig mod midten af scenen.
-
-	![screenshot](space-animate-stage.png)
-
-Skærmpositionen `x:(0) y:(0)` {.blockmotion} betegner midten af scenen. En position som `x:(-150) y:(-150)` {.blockmotion} ligger mod scenens venstre bund, og en position som `x:(150) y:(150)` {.blockmotion} er tæt på scenens højre top.
-
-![screenshot](space-xy.png)
-
-Hvis du har brug for at vide din scenes koordinater, så flyt pilen til din ønskede position, og notér koordinaterne som vises under scenen.
-
-![screenshot](space-coordinates.png)
-
-+ Afprøv din  nye animation ved at klikke på det grønne flag lige over scenen.
-
-![screenshot](space-flag.png)
-
-## Udfordring: Forbedr din animation {.challenge} 
-Kan du ændre tallene i din animationskode således at:
-+ Rumskibet flytter sig indtil det rører Jorden?
-+ Rumskibet flytter sig mere langsomt mod Jorden?
-
-Du skal ændre tallene i denne blok:
+You'll need to change the numbers in this block:
 
 ```blocks
-	glid i (1) sek. til x:(0) y:(0)
+    glide (1) secs to x:(0) y:(0)
 ```
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 2: Animere ved brug af loops { .activity .new-page }
+# Step 2: Animating using loops {.activity.new-page}
 
-En anden måde du kan animere dit rumskib på, er ved at fortælle det at det skal flytte sig en lille smule, mange gange.
+Another way of animating the spaceship is to tell it to move a small amount, lots of times.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Slet `glid` {.blockmotion} blokken fra din kode ved at højreklikke på blokken og klik 'Slet'. Du kan også slette din kode ved at trække den ud af script området og tilbage til området med kodeblokkene. 
- 
-![screenshot](space-delete-glide.png)
++ Delete the `glide` {.blockmotion} block from your code, by right-clicking on the block and clicking 'delete'. You can also delete code by dragging it off the script area, back into the code blocks area.
+    
+    ![screenshot](space-delete-glide.png)
 
-+ Når du har fjernet din kode, så tilføj denne kode i stedet:
++ Once you've removed your code, add this code instead:
+    
+    ![screenshot](space-loop.png)
+    
+    The `repeat` {.blockcontrol} block is used to repeat something lots of times, and is also known as a **loop**.
 
-![screenshot](space-loop.png)
++ If you click the flag to try out this new code, you'll see that it does pretty much the same thing as before.
 
-`Gentag` {.blockcontrol} blokken bruges til at gentage noget mange gange, og kendes også som et __loop__.
++ You can add more code to your loop, to do interesting things. Add the `change color effect by 25` {.blocklooks} block into the loop (from the 'Looks' section), to repeatedly change the colour of the spaceship as it moves:
+    
+    ![screenshot](space-colour.png)
 
-+ Hvis du klikker på flaget for at afprøve denne nye kode, så vil du se, at den faktisk gør det samme som før.
++ Click the flag to see your new animation.
+    
+    ![screenshot](space-colour-test.png)
 
-+ Du kan tilføje mere kode til dit loop for at gøre nogle spændende ting. Tilføj `ændr effekten farve med 25` {.blocklooks} blokken til loop'en (fra 'Udseende' sektionen) for gentagne gange at ændre farven på dit rumskib, når det flytter sig:
++ You can also make your spaceship get smaller as it moves towards the Earth.
+    
+    ![screenshot](space-size.png)
 
-![screenshot](space-colour.png)
-
-+ Klik på flaget for at se din nye animation.
-
-![screenshot](space-colour-test.png)
-
-+ Du kan også lave dit rumskib mindre og mindre jo nærmere det kommer mod Jorden.
-	
-![screenshot](space-size.png)
-
-+ Afprøv din animation. Hvad sker der, hvis du klikker på flaget endnu en gang? Starter dit rumskib ud i den rigtige størrelse? Kan du bruge denne blok med henblik på at fikse din animation:
-
- 
-```scratch   
-	sæt størrelsen til (100)%
++ Test out your animation. What happens if you click the flag a second time? Does your spaceship start off the right size? Can you use this block to fix your animation:
+    
+    ```scratch
+    set size to (100) %
 ```
- 
-## Gem dit projekt { .save } 
- 
-# Trin 3: Svævende Abe { .activity .new-page }
 
-Lad os tilføje en abe til din animation, som er forsvundet ud i rummet! 
+## Save your project {.save}
 
-## Arbejdsliste { .check }
+# Step 3: Floating Monkey {.activity.new-page}
 
-+ Begynd med at tilføje abe-spriten fra dit bibliotek (Monkey). 
+Let's add monkey to your animation, who's lost in space!
 
-![screenshot](space-monkey.png)
+## Activity Checklist {.check}
 
-+ Hvis du klikker på din nye abe-sprite og derpå klikker på 'Kostumer', så kan du redigere hvordan din abe ser ud. Klik på 'Ellipse' redskabet og tegn en hvid rumhjelm omkring abens hoved.
++ Start by adding in the monkey sprite from the library.
+    
+    ![screenshot](space-monkey.png)
 
-![screenshot](space-monkey-edit.png)
++ If you click on your new monkey sprite and then click 'Costumes', you can edit how the monkey looks. Click the 'Ellipse' tool, and draw a white space helmet around the monkey's head.
+    
+    ![screenshot](space-monkey-edit.png)
 
-+ Klik nu på 'Scripts', og tilføj denne kode til aben, så den langsomt roterer rundt i en cirkel for evigt:
++ Now click 'Scripts', and add this code to the monkey, so that it spins slowly in a circle forever:
+    
+    ```blocks
+    when FLAG clicked
+    forever
+    turn right (1) degrees
+    end
+```
 
-```blocks 
-		når du klikker på ⚑  
-			for evigt 
-   			drej ↻ (1) grader
-		end
-``` 
+The `forever` {.blockcontrol} block is another loop, but this time one that never ends.
 
-`For evigt` {.blockcontrol} blokken er endnu et loop, men denne gang er det et loop som aldrig stopper. 
- 
-+ Klik på flaget for at afprøve din abe. Du er nødt til at klikke på stopknappen (ved siden af flaget) for at afslutte animationen.
++ Click the flag to test your monkey. You'll have to click the stop button (next to the flag) to end this animation.
+    
+    ![screenshot](space-monkey-loop.png)
 
-![screenshot](space-monkey-loop.png)
+# Step 4: Bouncing Asteroids {.activity.new-page}
 
-# Trin 4: Hårdtrammende Asteroider { .activity .new-page } 
+Let's add some floating space-rock to your animation.
 
-Lad os tilføje nogle svævende rumsten til din animation.
+## Activity Checklist {.check}
 
-## Arbejdsliste { .check }
++ Add a 'rock' sprite to your animation.
+    
+    ![screenshot](space-rock-sprite.png)
 
-+ Tilføj en sten-sprite (Rocks) til din animation.
++ Add this code to your rock, to make it bounce around the stage:
+    
+    ```scratch
+    when flag clicked
+    point towards [Earth v]
+    forever
+    move (2) steps
+    if on edge, bounce
+```
 
-![screenshot](space-rock-sprite.png)
++ Click the flag to test your rock. Does it bounce around the stage?
 
-+ Tilføj denne kode til din sten, så den bevæger sig rundt på scenen:
+# Step 5: Shining Stars {.activity.new-page}
 
-```scratch
-		når du klikker på ⚑ 
-		peg mod [Earth v] 
-		for evigt
-   			gå (2) trin
-   			hop tilbage ved kanten
-		end
-``` 
+Let's combine loops to make a shining star.
 
-+ Klik på flaget for at afprøve din sten. Bevæger den sig rundt på scenen?  
+## Activity Checklist {.check}
 
-# Trin 5: Skinnende Stjerner { .activity .new-page }
++ Add a 'star' sprite to your animation
+    
+    ![screenshot](space-star-sprite.png)
 
-Lad os kombinere nogle loops for at lave en skinnende stjerne.
++ Add this code to your star:
+    
+    ![screenshot](space-star.png)
 
-## Arbejdsliste { .check }
++ Click the flag to test out this star animation. What does this code do? Well, the star is made slightly bigger 20 times, and then made slightly smaller 20 times, back to it's original size. These 2 loops are inside a `forever` {.blockcontrol} loop, so the animation keeps repeating.
 
-+ Tilføj en stjerne-sprite (Star) til din animation.
+## Save your project {.save}
 
-![screenshot](space-star-sprite.png)
+## Challenge: Make your own animation {.challenge}
 
-+ Tilføj denne kode til din stjerne:
+Stop your space animation, and click 'File' and then 'New', to start a new project.
 
-![screenshot](space-star.png)
-
-+ Klik på flaget for at afprøve din stjerneanimation. Hvad gør koden? Stjernen er gjort en anelse større 20 gange, og er derefter gjort en anelse mindre 20 gange, tilbage til sin oprindelige størrelse. Disse 2 loops er indeni et `for evigt` {.blockcontrol} loop, så animationen bliver ved med at gentage sig selv.
-
-## Gem dit projekt { .save }
-
-## Udfordring: Lav din egen animation {.challenge}
-Afslut din rumanimation og klik på 'Fil' og dernæst 'Ny' for at starte et nyt projekt.
-
-Brug hvad du har lært i dette projekt til at lave din egen animation. Det kan være hvad som helst du har lyst til, men prøv at tilpasse din animation med omgivelserne. Her er nogle eksempler:
+Use what you've learnt in this project to make your own animation. It can be anything you like, but try to make your animation match the setting. Here are some examples:
 
 ![screenshot](space-egs.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
