@@ -11,11 +11,11 @@ You are going to learn how to make a game, in which you'll use the mouse to navi
   <img src="boat-final.png">
 </div>
 
-# Step 1: Planning your game {.activity}
+# Крок 1: Планування вашої гри {.activity}
 
 ## Activity Checklist {.check}
 
-+ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
++ Почати новий проект нуля а видаліть спрайт кіт, так що ваш проект буде порожньою. Ви можете знайти онлайн нуля редактор на [jumpto.cc/скретч новий](http://jumpto.cc/scratch-new).
 
 + Click on your stage backdrop and plan out your level. You should add:
     
