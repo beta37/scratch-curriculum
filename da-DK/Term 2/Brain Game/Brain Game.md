@@ -1,267 +1,271 @@
----
-title: Hjernetræning
-level: Scratch 2
-language: da-DK
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Klubleder Ressourcer/*.*"] 
-...
+* * *
 
-# Introduktion { .intro }
+title: Brain Game level: Scratch 2 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-I dette projekt skal du lære, hvordan du laver et tidsbaseret quizprogram, hvor du har 30 sekunder til at svare rigtigt på så mange spørgsmål som muligt. 
+# Introduction {.intro}
+
+In this project you'll learn how to create a times table quiz, in which you have to get as many answers correct as you can in 30 seconds.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/42225768/?autostart=false" frameborder="0"></iframe>
   <img src="brain-final.png">
 </div>
 
-# Trin 1: At lave spørgsmålene { .activity }
+# Step 1: Creating questions {.activity}
 
-Lad os starte med at lave nogle tilfældige spørgsmål, som spilleren skal svare på.
+Let's start by creating random questions for the player to answer.
 
-## Arbejdsliste { .check }
+## Activity Checklist {.check}
 
-+ Start et nyt Scratch projekt og slet katte-spriten, så dit projekt står tomt. Du kan finde Scratch redigeringsprogrammet online på <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Vælg en figur og en baggrund til dit spil. Du kan vælge lige hvad du har lyst til! Her er et eksempel:
++ Choose a character and a backdrop for your game. You can choose any you like! Here's an example:
+    
+    ![screenshot](brain-setting.png)
 
-	![screenshot](brain-setting.png)	
++ Create 2 new variables called `number 1` {.blockdata} and `number 2` {.blockdata}. These variables will store the 2 numbers that will be multiplied together.
+    
+    ![screenshot](brain-variables.png)
 
-+ Lav 2 nye variabler du kalder `nummer 1` {.blockdata} og `nummer 2` {.blockdata}. Disse variabler vil så opbevare de to tal, der skal ganges sammen.  
++ Add code to your character, to set both of these variables to a `random` {.blockoperators} number between 2 and 12.
+    
+    ```blocks
+    when flag clicked
+    set [number 1 v] to (pick random (2) to (12))
+    set [number 2 v] to (pick random (2) to (12))
+```
 
-	![screenshot](brain-variables.png)
++ You can then ask the player for the answer, and let them know if they were right or wrong.
+    
+    ```blocks
+    when flag clicked
+    set [number 1 v] to (pick random (2) to (12))
+    set [number 2 v] to (pick random (2) to (12))
+    ask (join (number 1)(join [ x ] (number 2))) and wait
+    if <(answer) = ((number 1)*(number 2))> then
+        say [yes! :)] for (2) secs
+    else
+        say [nope :(] for (2) secs
+    end
+```
 
-+ Tilføj følgende kode for at sætte begge disse variabler til et `tilfældigt` {.blockoperators} tal mellem 2 og 12.
++ Test your project fully, by answering one question correctly and one with the wrong answer.
 
-```blocks 
-		når du klikker på ⚑
-		sæt [nummer 1 v] til (vælg tilfældigt mellem (2) og (12))
-		sæt [nummer 2 v] til (vælg tilfældigt mellem (2) og (12)) 
-```  
- 
-+ Derefter kan du efterspørge et svar fra spilleren og give dem besked, om de har svaret rigtigt eller forkert.
++ Add a `forever` {.blockcontrol} loop around this code, so that the player is asked lots of questions.
 
-```blocks 
-		når du klikker på ⚑
-		sæt [nummer 1 v] til (vælg tilfældigt mellem (2) og (12))
-		sæt [nummer 2 v] til (vælg tilfældigt mellem (2) og (12))
-		bed om ((nummer 1) tilkobles ([x] tilkobles (nummer 2))) og vent
-		hvis <(svar) = ((nummer 1) * (nummer 2))> så 
-   sig [ja! :)] i (2) sekunder
-		ellers
-   sig [nej :(] i (2) sekunder
-	end
-		end 
-``` 
++ Create a countdown timer on the stage, using a variable called `time` {.blockdata}. The 'Balloons' project has instructions for making a timer (in step 6) if you need help!
 
-+ Afprøv dit projekt ved at svare rigtigt og forkert på henholdsvis 2 spørgsmål.
++ Test your project again - you should be able to continue asking questions until the time runs out.
 
-+ Tilføj en `for evigt` {.blockcontrol} loop rundt om koden, så spilleren stilles en masse spørgsmål.
+## Save your project {.save}
 
-+ Lav et stopur på scenen som tæller ned ved at benytte en variabel du kalder `tid` {.blockdata}. 'Balloons' projektet indeholder instruktioner i at lave et stopur (trin 6), hvis du har brug for hjælp!
+## Challenge: Changing costumes {.challenge}
 
-+ Afprøv dit projekt igen - du bør være i stand til at fortsætte med at stille spørgsmål indtil tiden løber ud.
+Can you change your character's costumes, so that they respond to the player's answer?
 
-## Gem dit projekt { .save }
+![screenshot](brain-costume.png)
 
-## Udfordring: Ændre kostumer {.challenge}
-Kan du ændre din figurs kostume, så den reagerer på spillerens svar? 
+## Challenge: Adding a score {.challenge}
 
-![screenshot](brain-costume.png)  
+Can you add a score to your game? You can add a point for every correct answer. If you're feeling mean, you could even reset the player's score to 0 if they get a question wrong!
 
-## Udfordring: Tilføj en score {.challenge}
-Kan du tilføje en score til dit spil? Du kan tilføje et point for hvert korrekte svar. Hvis du vil være lidt besværlig, så kan du ovenikøbet nulstille din spillers score, hvis de svarer forkert på et spørgsmål! 
+## Save your project {.save}
 
-## Gem dit projekt { .save }
+# Step 2: Multiple games {.activity.new-page}
 
-# Trin 2: Flere spil { .activity .new-page}
+Let's add a 'play' button to your game, so that you can play lots of times.
 
-Lad os tilføje en 'play' knap til dit spil, så du kan spille flere gange. 
+## Activity Checklist {.check}
 
-## Arbejdsliste { .check }
++ Create a new 'Play' button sprite, which your player will click to start a new game. You can draw it yourself, or edit a sprite from the Scratch library.
+    
+    ![screenshot](brain-play.png)
 
-+ Lav en ny 'Play' knap sprite, som din spiller skal klikke på for at starte et nyt spil. Du kan enten tegne den selv eller redigere en sprite fra Scratch biblioteket. 
- 
-	![screenshot](brain-play.png)  
++ Add this code to your new button.
+    
+    ```blocks
+    when flag clicked
+    show
 
-+ Tilføje denne kode til din nye knap.
+    when this sprite clicked
+    hide
+    broadcast [start v]
+```
 
-```blocks 
-		når du klikker på ⚑
-		vis
+This code shows the play button when your project is started. When the button is clicked, it is hidden and then broadcasts a message that will start the game.
 
-		når denne sprite klikkes 
-		skjul
-		send [start v] til alle
-``` 
- 
-Koden viser play knappen, når dit projekt starter op. Når der klikkes på knappen skjules den, og den udsender så en meddelelse som starter spillet. 
++ You'll need to edit your character's code, so that the game starts when they receive the `start` {.blockevents} message, and not when the flag is clicked.
+    
+    Replace the `when flag clicked` {.blockevents} code with `when I receive start` {.blockevents}.
+    
+    ![screenshot](brain-start.png)
 
-+ Du skal redigere koden til din figur, sådan at spillet starter når den modtager `start` {.blockevents} meddelelsen, og ikke når der klikkes på flaget. 
++ Click the green flag and then click your new play button to test it. You should see that the game doesn't start until the button is clicked.
 
-	Erstat `når du klikker på ⚑` {.blockevents} koden med `når jeg modtager start` {.blockevents}. 
++ Did you notice that the timer starts when the green flag is clicked, and not when the game starts?
+    
+    ![screenshot](brain-timer-bug.png)
+    
+    Can you fix this problem?
 
-	![screenshot](brain-start.png)  
++ Click on the stage, and replace the `stop all` {.blockcontrol} block with an `end` {.blockevents} message.
+    
+    ![screenshot](brain-end.png)
 
-+ Klik på det grønne flag, og klik så på din nye play knap for at teste det. Du bør se at spillet ikke starter før der klikkes på knappen. 
++ You can now add code to your button, to show it again at the end of each game.
+    
+    ```blocks
+    when I receive [end v]
+    show
+```
 
-+ Lagde du mærke til at stopuret begynder, når der klikkes på flaget, og ikke når spillet starter? 
++ You'll also need to stop your character asking questions at the end of each game:
+    
+    ```blocks
+    when I receive [end v]
+    stop [other scripts in sprite v]
+```
 
-	![screenshot](brain-timer-bug.png)
++ Test your play button by playing a couple of games. You should notice that the play button shows after each game. To make testing easier, you can shorten each game, so that it only lasts a few seconds.
+    
+    ```blocks
+    set [time v] to [10]
+```
 
-	Kan du løse dette problem?
-
-+ Klik på scenen og erstat `stop alle` {.blockcontrol} brikken med en `afslut` {.blockevents} meddelelse.
-
-	![screenshot](brain-end.png)  
-
-+ Nu kan du så tilføje en kode til din knap, så den vises igen efter hvert spil. 
-
-```blocks 
-	når jeg modtager [afslut v] 
-	vis  
-```   
-+ Du skal også få din figur til at stoppe med at stille spørgsmål efter hvert spil: 
-
-```blocks 
-	når jeg modtager [afslut v]
-	stop [andre script i sprite v]	 
-	 
-```  
-+ Afprøv din play knap ved at spille et par spil. Du bør så lægge mærke til, at play knappen vises efter hvert spil. For at gøre afprøvningen nemmere, så kan du forkorte hvert spil, så det kun varer nogle få sekunder. 
-
-```blocks    
-	sæt [tid v] til [10] 
-``` 
-+ Du kan ovenikøbet ændre, hvordan knappen ser ud, når musen føres over den. 
-
-```blocks
-	når du klikker på ⚑
-	vis
-	for evigt
-   		hvis <berører [musepil v]?> så
-      	sæt effekten [fiskeøje v] til (30)
-   		ellers
-      	sæt effekten [fiskeøje v] til (0)
-   	end
-end
-``` 	
++ You can even change how the button looks when the mouse hovers over it.
+    
+    ```blocks
+    when flag clicked
+    show
+    forever
+    if <touching [mouse-pointer v]?> then
+        set [fisheye v] effect to (30)
+    else
+        set [fisheye v] effect to (0)
+    end
+    end
+```
 
 ![screenshot](brain-fisheye.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-## Udfordring: Startskærm {.challenge}
-Kan du tilføje en anden baggrund til din scene, som bliver startskærmen for dit spil? Du kan bruge `når jeg modtager start` {.blockevents} og `når jeg modtager [afslut v] ` {.blockevents} brikkerne til at skifte mellem baggrunde.
+## Challenge: Start screen {.challenge}
 
-Du kan også vise og skjule din figur, og dette gælder faktisk også for dit stopur. Du skal bruge disse brikker: 
+Can you add another backdrop to your stage, which will become your game's start screen? You can use the `when I receive start` {.blockevents} and `when I receive end` {.blockevents} blocks to switch between backdrops.
+
+You can also show and hide your character, and even show and hide your timer by using these blocks:
 
 ```blocks
- 	vis variabel [tid v]
+show variable [time v]
 ```
+
 ```blocks
-	skjul variabel [tid v]
+hide variable [time v]
 ```
 
 ![screenshot](brain-startscreen.png)
 
-## Gem dit projekt { .save }
+## Save your project {.save}
 
-# Trin 3: Tilføj grafik { .activity .new-page}
+# Step 3: Adding graphics {.activity.new-page}
 
-I stedet for at din figur bare siger `ja! :)` eller `nej :(` til spilleren, så lad os tilføje noget grafik, som fortæller spilleren hvordan de klarer sig.
+Instead of your character just saying `yes! :)` or `nope :(` to the player, let's add some graphics that will let the player know how they are doing.
 
-+ Lav en ny sprite, som du kalder 'resultat', og som indeholder både et fluebens- og et krydskostume. 
++ Create a new sprite called 'Result', containing both a 'tick' and a 'cross' costume.
+    
+    ![screenshot](brain-result.png)
 
-	![screenshot](brain-result.png)  
++ Change your character's code, so that instead of telling the player how they did, it broadcasts `correct` {.blockevents} and `wrong` {.blockevents} messages instead.
+    
+    ![screenshot](brain-broadcast-answer.png)
 
-+ Ændr koden til din figur, så den udsender `rigtigt` {.blockevents} og `forkert` {.blockevents} meddelelser i stedet for at fortælle spilleren, hvordan de har klaret sig.
++ You can now use these messages to show the 'tick' or 'cross' costume. Add this code to your new 'Result' sprite:
+    
+    ![screenshot](brain-show-answer.png)
 
-	![screenshot](brain-broadcast-answer.png)
++ Test out your game again. You should see a tick whenever you get a question correct, and a cross whenever you get one wrong!
+    
+    ![screenshot](brain-test-answer.png)
 
-+ Nu kan du bruge disse meddelelser til at vise 'fluebens' -eller 'kryds' kostumet. Tilføj denne kode til din nye resultat-sprite: 
++ Have you noticed that the code for `when I receive correct` {.blockevents} and `when I receive wrong` {.blockevents} is nearly identical? Let's create a function to make it easier for you to make changes to your code.
+    
+    On your 'Result' sprite, click `More Blocks` {.blockmoreblocks}, and then 'Make a Block'. Create a new function called `animate` {.blockmoreblocks}.
+    
+    ![screenshot](brain-animate-function.png)
 
-	![screenshot](brain-show-answer.png)	 
++ You can then add the animation code into your new animation function, and then just use the function twice:
+    
+    ![screenshot](brain-use-function.png)
 
-+ Afprøv dit spil igen. Du bør se et flueben, når du svarer rigtigt på et spørgsmål, og et kryds, når du svarer forkert! 
++ Now, if you want to show the tick and the cross for a longer or shorter time, you only need to make one change to your code. Try it!
 
-	![screenshot](brain-test-answer.png)
-
-+ Har du lagt mærke til at koden for `når jeg modtager rigtigt` {.blockevents} og `når jeg modtager forkert` {.blockevents} næsten er identiske? Lad os lave en funktion, som gør det lettere for dig at lave ændringer i din kode.
-
-Vælg din resultat-sprite og klik så på `Flere Brikker` {.blockmoreblocks} og dernæst `Skab en Brik`. Lav en ny funktion du kalder `animer` {.blockmoreblocks}.
-
-![screenshot](brain-animate-function.png)  
-
-+ Nu kan du tilføje animationskoden til din nye animationsfunktion, og så bruge funktionen to gange: 
-
-	![screenshot](brain-use-function.png)   
-
-+ Hvis du ønsker at vise fluebenet og krydset lidt længere tid ad gangen, så skal du blot lave én ændring i din kode. Prøv det! 
- 
-+ I stedet for bare at vise og skjule fluebent og krydset, så kan du ændre din animationsfunktion, sådan at grafikken forsvinder lidt efter lidt.
-
-```blocks 
-	definer [object Object]
-        sæt effekten [spøgelse v] til (100)
-        vis
-        gentag (25) gange
-    	ændr effekten [spøgelse v] med (-4) 
-    	end 
-	skjul
-```  
- 
-## Gem dit projekt { .save }
-
-## Udfordring: Forbedret animation {.challenge}
-Kan du forbedre animationen af din grafik? Du kan fx kode fluebenet og krydset, så de både forsvinder og kommer frem lidt efter lidt. Du kan også benytte andre seje effekter:
-
-![screenshot](brain-effects.png)    
-
-## Gem dit projekt { .save }
-
-## Udfordring: Lyd og musik {.challenge}
-Kan du tilføje lydeffekter og musik til dit spil? Eksempelvis:
-
-+ Afspille en lyd når spilleren svarer rigtigt eller forkert på et spørgsmål; 
-+ Tilføje en tikkende lyd til dit stopur som tæller ned; 
-+ Afspille en lyd, når tiden er gået;
-
-```blocks 
-	spil tromme (10 v) i (0.1) slag 
-``` 
-
-+ Du kan også vælge at afspille musik i en loop (hvis du ikke er sikker på hvordan du gør, så kan trin 4 i 'Rockband' projektet hjælpe dig). 
-
-## Gem dit projekt { .save }
-
-## Udfordring: Kapløb til 10 point {.challenge}
-Kan du ændre spillet så spillerne kan se hvor hurtigt de kan svare rigtigt på 10 spørgsmål, i stedet for at de skal svare på så mange spørgsmål som muligt på 30 sekunder? 
-
-Du skal kun ændre koden til dit stopur. Kan du se hvilke ændringer der skal til?
-
-```blocks
-	når jeg modtager [start v]
-    	sæt [tid v] til (30)
-    	gentag indtil <(tid) = [0]>
-  	vent (1) sekunder 
-  	ændr [tid v] med (-1) 
++ Instead of just showing and hiding the tick and the cross, you could change your animation function, so that the graphics fade in.
+    
+    ```blocks
+    define [animate]
+    set [ghost v] effect to (100)       
+    show
+    repeat (25)
+        change [ghost v] effect by (-4)
     end
-send [afslut v] til alle
-``` 
- 
-## Gem dit projekt { .save }
-
-## Udfordring: Skærm med brugervejledning {.challenge}
-Kan du tilføje en skærm, som viser en vejledning til dit spil? Du får brug for en 'Vejlednings' knap og en anden baggrund. 
-
-![screenshot](brain-instructions.png)    
-
-Måske du også skal bruge en 'Tilbage' knap som fører tilbage til hovedmenuen.  
-
-```blocks
-	send [hovedmenu v] til alle
+    hide
 ```
 
-## Gem dit projekt { .save }
+## Save your project {.save}
+
+## Challenge: Improved animation {.challenge}
+
+Can you improve the animation of your graphics? You could code the tick and cross so that they fade out as well as fade in. Or, you could use other cool effects:
+
+![screenshot](brain-effects.png)
+
+## Save your project {.save}
+
+## Challenge: Sound and music {.challenge}
+
+Can you add sound effects and music to your game? For example:
+
++ Playing a sound when the player gets an answer right or wrong;
++ Adding a ticking sound to your countdown timer;
++ Playing a sound when the time is up;
+    
+    ```blocks
+    play drum (10 v) for (0.1) beats
+```
+
++ You could also constantly play music on a loop (if you're not sure how to do this, step 4 of the 'Rock Band' project will help you).
+
+## Save your project {.save}
+
+## Challenge: Race to 10 points {.challenge}
+
+Can you change your game, so that instead of answering as many questions as they can in 30 seconds, the player has to see how quickly they can get 10 questions correct?
+
+To do this, you'll only need to change your timer code. Can you see what needs to be changed?
+
+```blocks
+    when I receive [start v]
+    set [time v] to (30)
+    repeat until <(time) = [0]>
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    broadcast [end v]
+```
+
+## Save your project {.save}
+
+## Challenge: Instruction screen {.challenge}
+
+Can you add an instructions screen to your game, telling your player how to play the game? You'll need an 'Instructions' button, and another stage background.
+
+![screenshot](brain-instructions.png)
+
+You may also need a 'Back' button to take you to the main menu.
+
+```blocks
+    broadcast [main menu v]
+```
+
+## Save your project {.save}
