@@ -1,270 +1,265 @@
----
-title: Závod lodí
-level: Scratch 1
-language: cs-CZ
-stylesheet: scratch
-embeds: "*.png"
-materials: ["Club Leader Resources/*","Project Resources/*"]
-...
+* * *
 
-# Úvod { .intro }
+title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-Naučíš se jak vytvořit hru, ve které budeš používat myš k navigaci loďky na opuštěný ostrov.
+# Introduction {.intro}
+
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# Krok 1: Naplánování hry { .activity }
+# Step 1: Planning your game {.activity}
 
-## Seznam úkolů { .check }
+## Activity Checklist {.check}
 
-+ Vytvoř si nový projekt a smaž kočičku, takže tvůj projekt bude prázdný. Online editor můžeš nalézt zde: <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ Naplánuj si tvůj level hry. Klikni na Scénu a na záložku "Pozadí". Měl(a) bys přidat:
-	+ Dřevo, kterému se bude loďka vyhýbat;
-	+ Opuštěný ostrov, na kterém má loďka přistát.
++ Click on your stage backdrop and plan out your level. You should add:
+    
+    + Wood that your boat has to avoid;
+    + A desert island that your boat has to get to.
+    
+    Here's how your game could look:
+    
+    ![screenshot](boat-bg.png)
 
-	Tady je obrázek, jak by měla tvoje hra vypadat:
+# Step 2: Controlling the boat {.activity}
 
-	![screenshot](boat-bg.png) 
+## Activity Checklist {.check}
 
-# Krok 2: Ovládání loďky { .activity }
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
+    
+    ![screenshot](boat-boat.png)
+    
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-## Seznam úkolů { .check }
-
-+ Pokud ti dal vedoucí klubu adresář se soubory, klikni na 'Nahrát postavu ze souboru' a vyber obrázek 'boat.png'. Měl bys zmenšit obrázek a vložit ho na startovní pozici.
-
-	![screenshot](boat-boat.png)
-
-	Pokud obrázek nemáš, můžeš si loďku nakreslit!
-
-+ Abys mohl(a) ovládat loďku myší, přidej tento kód:
-
-	```blocks
-		po kliknutí na ⚑
-		natoč se směrem (0 v)
-		skoč na pozici x: (-190) y: (-150)
-		opakuj dokola
-			natoč se k [ukazatel myši v]
-			posuň se o (1) kroků
-		end
-	```
-
-+ Vyzkoušej loďku tak, že klikneš na zelenou vlaječku a budeš hýbat myší. Plave loďka za myší?
-
-	![screenshot](boat-mouse.png)
-
-+ Co se stane, když loďka doplave ke kurzoru myši?
-
-	Abys tomuto chování zabránil(a), musíš přidat blok `když` {.blockcontrol} tak, aby se loďka pohybovala jen když je dále než 5 pixelů od myši.
-
++ You are going to control the boat with your mouse. Add this code to your boat:
+    
     ```blocks
-		po kliknutí na ⚑
-		natoč se směrem (0 v)
-		skoč na pozici x: (-190) y: (-150)
-		opakuj dokola
-            když ((vzdálenost od [ukazatel myší v]) > [5]) tak
-                natoč se k [ukazatel myši v]
-                posuň se o (1) kroků
-            end
-		end
-	```
+    when flag clicked
+    point in direction (0 v)
+    go to x: (-190) y: (-150)
+    forever
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
+```
 
-+ Vyzkoušej znovu tvoji loďku, zda byl problém vyřešen.
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
+    
+    ![screenshot](boat-mouse.png)
+    
+    **Note: There is currently a bug in Scratch which means your boat may not move towards the mouse pointer. If this happens, click the arrow on the `point towards` {.blockmotion} block and re-select 'mouse-pointer'.**
+    
+    ![screenshot](images/boat-bug.png)
 
-## Ulož projekt { .save }
++ What happens if the boat reaches the mouse pointer?
+    
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
+    
+    ![screenshot](boat-pointer.png)
 
-# Krok 3: Havárie! { .activity .new-page }
++ Test out your boat again, to check whether the problem has been fixed.
 
-Nyní může vaše loďka proplouvat dřevěnýma bariérama! Pojďme to opravit.
+## Save your project {.save}
 
-## Seznam úkolů { .check }
+# Step 3: Crashing! {.activity.new-page}
 
-+ Budeš potřebovat dva "kostýmy" pro tvoji loďku, jeden normální, a jeden pro loďku po nárazu. Zduplikuj kostým tvojí loďky a nazvi je 'normal' (normální) a 'hit' (náraz).
+Your boat can sail through the wooden barriers! Let's fix that.
 
-+ Klikni na kostým 'hit' a vyber nástroj 'Select' abys loďku rozdělil(a) na kousky a ty různě natoč. Upravt loďku tak, aby vypadala jako po nárazu.
+## Activity Checklist {.check}
 
-	![screenshot](boat-hit-costume.png)
++ You'll need 2 costumes for your boat, one normal costume, and one for when the boat crashes. Duplicate your boat costume, and name them 'normal' and 'hit'.
 
-+ Přidej tento kód k tvojí loďce do bloku `opakuj dokola` {.blockcontrol}, tak aby loďka narazila, jakmile se dotkne hnědého dřeva:
++ Click on your 'hit' costume, and choose the 'Select' tool to grab bits of the boat and move and rotate them around. Make your boat look as if it's crashed.
+    
+    ![screenshot](boat-hit-costume.png)
 
-	```blocks
-		když <dotýká se barvy [#603C15]?> tak
-			změň kostým na [hit v]
-			říkej [Neeee!] příštích (1) sekund
-			změň kostým na [normal v]
-			natoč se směrem (0 v)
-			skoč na pozici x: (-215) y: (-160)
-		end
-	```
++ Add this code to your boat, inside the `forever` {.blockcontrol} loop, so that it crashes when it touches any brown wooden bits:
+    
+    ```blocks
+    if <touching color [#603C15]?> then
+        switch costume to [hit v]
+        say [Noooooo!] for (1) secs
+        switch costume to [normal v]
+        point in direction (0 v)
+        go to x: (-215) y: (-160)
+    end
+```
 
-	Tento kód je ve smyčcce `opaku dokola` {.blockcontrol}, takže tvůj kód trvale kontroluje, zda nedochází k nárazu loďky.
+This code is inside the `forever` {.blockcontrol} loop, so that your code keeps checking if the boat has crashed.
 
-+ Také musíš zajistit, aby loďka začínala nenabouraná - kostým 'normal'.
++ You should also make sure that your boat always starts looking like it's 'normal'.
 
-+ Nyní, když loďka dopluje ke dřevu, měla by narazit a objevit se znovu na začátku.
++ Now if you try to sail through a wooden barrier, you should see that your boat crashes and moves back to the start.
+    
+    ![screenshot](boat-crash.png)
 
-	![screenshot](boat-crash.png)
+## Save your project {.save}
 
-## Ulož projekt { .save }
+## Challenge: Winning! {.challenge}
 
-## Výhra! {.challenge}
-Přidej další blok s podmínkou `když` {.blockcontrol} do kódu loďky tak, aby hráč vyhrál, když se dostane na ostrov.
+Can you add another `if` {.blockcontrol} statement to your boat's code, so that the player wins when they get to the desert island?
 
-Když se loďka dostane na žlutý ostrov měla by říci 'YEAH!' a hra se zastaví. K tomu potřebuješ následující kód:
+When the boat gets to the yellow desert island, it should say 'YEAH!' and then the game should stop. You'll need to use this code:
 
 ```blocks
-	říkej [YEAH!] příštích (1) sekund
-	zastav [vše v]
+    say [YEAH!] for (1) secs
+    stop [all v]
 ```
 
 ![screenshot](boat-win.png)
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-## Zvukové efekty {.challenge}
-Nyní můžeš přidat zvukové efekty pro náraz nebo pro konec hry. Stejně tak můžeš přidat hudbu na pozadi. (v projektu 'Rock Band' se naučíš jak).
+## Challenge: Sound effects {.challenge}
 
-## Ulož projekt { .save }
+Can you add sound effects to your game, for when the boat crashes, or reaches the island at the end? You could even add background music (see the previous 'Rock Band' project if you need help with this).
 
-# Krok 4: Závod na čas { .activity }
+## Save your project {.save}
 
-Přidej do hry časovač proto, aby se hráč snažil dostat do cíle co nejrychleji.
+# Step 4: Time Trial {.activity}
 
-## Seznam úkolů { .check }
+Let's add a timer to your game, so that the player has to get to the desert island as fast as possible.
 
-+ Přidej proměnnou nazvanou `time` {.blockdata} na scénu. Můžeš také změnit její vzhled, pokud chceš vědět jak, podívejte se na projekt 'Lovci duchů'.
+## Activity Checklist {.check}
 
-	![screenshot](boat-variable.png)
++ Add a new variable called `time` {.blockdata} to your stage. You can also change the display of your new variable. If you need help, have a look at the 'Ghostbusters' project.
+    
+    ![screenshot](boat-variable.png)
 
-+ Přidej tento kód na tvoji  __scénu__, tak aby se počítal čas, dokud loďka nedopluje na ostrov:
++ Add this code to your **stage**, so that the timer counts up until the boat reaches the desert island:
+    
+    ```blocks
+    when flag clicked
+    set [time v] to [0]
+    forever
+        wait (0.1) secs
+        change [time v] by (0.1)
+    end
+```
 
-	```blocks
-		po kliknutí na ⚑
-		nastav [time v] na [0]
-		opakuj dokola
-			čekej (0.1) sekund
-			změň [time v] o (0.1)
-		end
-	```
++ That's it! Test out your game and see how quickly you can get to the desert island!
+    
+    ![screenshot](boat-variable-test.png)
 
-+ To je ono! Vyzkoušej hru a uvidíš jak rychlý dokážeš být!
+## Save your project {.save}
 
-	![screenshot](boat-variable-test.png)
+# Step 5: Obstacles and power-ups {.activity}
 
-## Ulož projekt { .save }
+This game is *far* too easy - let's add things to make it more interesting.
 
-# Krok 5: Překážky a bonusy { .activity }
+## Activity Checklist {.check}
 
-Nyní je hra moc jednoduchá - přidáme pár věcí, aby byla zajímavější.
++ First let's add some 'boosts' to your game, which will speed up the boat. Edit your stage backdrop and add in some white booster arrows.
+    
+    ![screenshot](boat-boost.png)
 
-## Seznam úkolů { .check }
++ You can now add some code to your boat's `forever` {.blockcontrol} loop, so that it moves 2 *extra* steps when touching a white booster.
+    
+    ```blocks
+    if <touching color [#FFFFFF]?> then
+        move (3) steps
+    end
+```
 
-+ Jako první přidáme 'zrychlovače'. Nakresli do tvojí hry několik bílých šipek.
++ You can also add in a spinning gate, which your boat has to avoid. Add in a new sprite called 'gate', which looks like this:
+    
+    ![screenshot](boat-gate.png)
+    
+    Make sure that the colour of the gate is the same as the other wooden barriers.
 
-	![screenshot](boat-boost.png)
++ Set the centre of the gate sprite.
+    
+    ![screenshot](boat-center.png)
 
-+ Nyní je potřeba přidat do cyklu `opakuj dokola` {.blockcontrol} pár říkazů tak, aby se loďka posunula rychleji o 2 _extra_ kroky, když najede na zrychlovač.
++ Add code to your gate, to make it spin slowly `forever` {.blockcontrol}.
 
-	```blocks
-		když <dotýká se barvy [#FFFFFF]?> tak
-			posuň se o (3) kroků
-		end
-	```
++ Test out your game. You should now have a spinning gate that you must avoid.
+    
+    ![screenshot](boat-gate-test.png)
 
-+ Můžeš také přidat otáčivou bránu, které se musí loďka vyhnout:
+## Save your project {.save}
 
-	![screenshot](boat-gate.png)
+## Challenge: More obstacles! {.challenge.new-page}
 
-	Ujisti se, že má stejnou barvu jako dřevěné bariéry.
+Can you add more obstacles to your game? Here are some ideas:
 
-+ Nastav střed brány.
-
-	![screenshot](boat-center.png)
-
-+ Přidej kód k bráně tak, aby se otáčela pomalu stále dokola v bloku `opakuj dokola` {.blockcontrol}.
-
-+ Vyzkoušej si hru. Nyní by se měla objevit brána, která se otáčí a které se musíš vyhnout.
-
-	![screenshot](boat-gate-test.png)
-
-## Ulož projekt { .save }
-
-## Výzva: více překážek! {.challenge .new-page}
-Přidej více překážek, tady je pár nápadů:
-
-+ Můžeš přidat zelený sliz, který hráče zpomalí. Použij blok `čekej` {.blockcontrol}:
++ You could add green slime to your backdrop, which slows the player down when they touch it. You can use a `wait` {.blockcontrol} block to do this:
 
 ```blocks
-	čekej (0.01) sekund
+    wait (0.01) secs
 ````
 
 ![screenshot](boat-algae.png)
 
-+ Přidej pohyblivé objekty jako jsou plovoucí polena nebo žraloci!
++ You could add a moving object, like a log or a shark!
 
 ![screenshot](boat-obstacles.png)
 
-Tyto bloky ti pomůžou:
+These blocks may help you:
 
 ```blocks
-	posuň se o (1) kroků
-	když narazíš na okraj, odraž se
+    move (1) steps
+    if on edge, bounce
 ````
 
-Pokud není objekt hnědý, musíš přidat následující kód k loďce:
+If your new object isn't brown, you'll need to add to your boat code:
 
 ```blocks
-	když <  <dotýká se barvy [#603C15]?> nebo <dotýká se [žralok v]?> > tak
-	end
+    if <  <touching color [#603C15]?> or <touching [shark v]?> > then
+    end
 ```
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-## Výzva: Více lodí! {.challenge .new-page}
-Zkusíš změnit hru na závod mezi dvěma hráči?
+## Challenge: More boats! {.challenge.new-page}
 
-+ Zduplikuj loďku, přejmenuj ji na 'Hráč 2' a změň barvu.
+Can you turn your game into a race between 2 players?
+
++ Duplicate the boat, rename it 'Player 2' and change its colour.
 
 ![screenshot](boat-p2.png)
 
-+ Změň startovací pozici pro druhou loďku změnou kódu:
++ Change Player 2's starting position, by changing this code:
 
 ```blocks
-	skoč na pozici x: (-190) y: (-150)
+    go to x: (-190) y: (-150)
 ```
 
-+ Smaž kód pro kontrolu loďky myší:
++ Delete the code that uses the mouse to control the boat:
 
 ```blocks
-	když < (vzdálenost od [ukazatel myši v]) > [5] > tak
-		natoč se k [ukazatel myši v]
-		posuň se o (1) kroků
-	end
+    if < (distance to [mouse-pointer v]) > [5] > then
+        point towards [mouse-pointer v]
+        move (1) steps
+    end
 ```
 
-...a nahraď ho kódem pro kontrolu pomocí šipek na klávesnici.
+...and replace it with code to control the boat using the arrow keys.
 
-Toto je kód pro posun loďky dopředu:
+This is the code you'll need to move the boat forward:
 
 ```blocks
-	když < klávesa [šipka nahoru v] stisknuta? > tak
-		posuň se o (1) kroků
-	end
+    if < key [up arrow v] pressed? > then
+        move (1) steps
+    end
 ```
 
-Také budeš potřebovat kód pro otočení loďky - `otoč se` {.blockmotion} když stiskneš levou a pravou šipku.
+You'll also need code to `turn` {.blockmotion} the boat when the left and right arrow keys are pressed.
 
-## Ulož projekt { .save }
+## Save your project {.save}
 
-## Více levelů! {.challenge .new-page}
-Zkus přidat více pozadí, a umožni je hráči přepínat.
+## Challenge: More levels! {.challenge.new-page}
+
+Can you create additional backdrops, and allow the player to choose between levels?
 
 ```blocks
-	klávesa [mezerník v] stisknuta
-	změn pozadí na [další pozadí v]
+    when [space v] key pressed
+    next backdrop
 ```
 
-## Ulož projekt { .save }
+## Save your project {.save}
