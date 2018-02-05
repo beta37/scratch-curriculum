@@ -20,7 +20,17 @@ There is also a version of this project with the external resources pre-loaded. 
 
 This link also includes a 'Project Resources' folder, which contains images that children will need to complete this project. Make sure that each child has access to a copy of these resources.
 
-Project resources: + player.png; + room1/2/3.png; + sign.svg; + chest.svg; + person.png; + enemy.png; + coin.svg; + door-blue.png; + key-blue.png.
+Project resources:
+
++ player.png;
++ room1/2/3.png;
++ sign.svg;
++ chest.svg;
++ person.png;
++ enemy.png;
++ coin.svg;
++ door-blue.png;
++ key-blue.png.
 
 # Learning Objectives
 
