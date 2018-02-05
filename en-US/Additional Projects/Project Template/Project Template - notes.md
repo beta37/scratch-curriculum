@@ -16,7 +16,9 @@ You can find a completed version of this project [online](http://scratch.mit.edu
 
 [Remove this section if your project doesn't require any additional resources.] This link also includes a 'Project Resources' folder, which contains images that children will need to complete this project. Make sure that each child has access to a copy of these resources.
 
-Project resources: + List any resources here.
+Project resources:
+
++ List any resources here.
 
 # Learning Objectives
 
