@@ -2,41 +2,41 @@
 
 title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*","Project Resources/*"] ...
 
-# Введення {.intro}
+# Introduction {.intro}
 
-Ви збираєтеся дізнатися, як зробити гри, в якій ви будете використовувати мишу, щоб переміщатися катер на безлюдний острів.
+You are going to learn how to make a game, in which you'll use the mouse to navigate a boat to a desert island.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/63957956/?autostart=false" frameborder="0"></iframe>
   <img src="boat-final.png">
 </div>
 
-# Крок 1: Планування вашої гри {.activity}
+# Step 1: Planning your game {.activity}
 
 ## Activity Checklist {.check}
 
-+ Почати новий проект нуля а видаліть спрайт кіт, так що ваш проект буде порожньою. Ви можете знайти онлайн нуля редактор на [jumpto.cc/скретч новий](http://jumpto.cc/scratch-new).
++ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
 + Click on your stage backdrop and plan out your level. You should add:
     
-    + Дерево, що ваша човен має уникнути;
+    + Wood that your boat has to avoid;
     + A desert island that your boat has to get to.
     
-    Нижче описано, як ваша гра може виглядати:
+    Here's how your game could look:
     
     ![screenshot](boat-bg.png)
 
-# Крок 2: Контроль човен {.activity}
+# Step 2: Controlling the boat {.activity}
 
 ## Activity Checklist {.check}
 
-+ Якщо клуб лідер дав вам 'Ресурси' папки, натисніть кнопку 'Завантажити спрайт з файлу' і додати малюнок 'boat.png'. Ви повинні зменшити sprite і поклав його у вихідне положення.
++ If your club leader has given you a 'Resources' folder, click 'Upload sprite from file' and add the 'boat.png' image. You should shrink the sprite and put it in it's starting position.
     
     ![screenshot](boat-boat.png)
     
-    Якщо ви не маєте boat.png зображення, можна малювати ваш власний човен!
+    If you don't have the boat.png image, you can draw your own boat instead!
 
-+ Ви будете керувати човном за допомогою миші. Додайте цей код вашої човни:
++ You are going to control the boat with your mouse. Add this code to your boat:
     
     ```blocks
     when flag clicked
@@ -48,7 +48,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
     end
 ```
 
-+ Перевірити свій човен, натиснувши прапор і переміщаючи мишу. Човен вітрилами назустріч миші?
++ Test out your boat, by clicking the flag and moving the mouse. Does the boat sail towards the mouse?
     
     ![screenshot](boat-mouse.png)
     
@@ -58,7 +58,7 @@ title: Boat Race level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*
 
 + What happens if the boat reaches the mouse pointer?
     
-    Щоб зупинити це відбувається, потрібно буде додати `Якщо` {.blockcontrol} блок коду, так що човен тільки рухається, якщо це більше 5 пікселів від миші.
+    To stop this happening, you'll need to add an `if` {.blockcontrol} block to your code, so that the boat only moves if it is more than 5 pixels away from the mouse.
     
     ![screenshot](boat-pointer.png)
 
