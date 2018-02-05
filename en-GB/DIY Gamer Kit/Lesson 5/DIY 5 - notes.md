@@ -1,9 +1,6 @@
----
-title: Lesson 5 - Notes for Club Leader
-language: en-GB
-embeds: ["*.png"]
-materials: [""]
-...
+* * *
+
+title: Lesson 5 - Notes for Club Leader language: en-GB embeds: ["*.png"] materials: [""] ...
 
 # Club leader resources
 
