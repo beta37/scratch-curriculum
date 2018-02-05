@@ -1,14 +1,10 @@
----
-title: Lesson 1 - Notes for Club Leader
-language: en-GB
-embeds: ["*.png"]
-materials: [""]
-...
+* * *
+
+title: Lesson 1 - Notes for Club Leader language: en-GB embeds: ["*.png"] materials: [""] ...
 
 # Club leader resources
 
-[Intro to DIY Gamer Kit (video)](https://www.youtube.com/watch?v=VhS-M1i5H4g&feature=youtu.be)
-[What you'll be doing](https://www.techwillsaveus.com/az/wp-content/uploads/2014/06/CodeClub_DIYGamer_TermOverview.pdf)
+[Intro to DIY Gamer Kit (video)](https://www.youtube.com/watch?v=VhS-M1i5H4g&feature=youtu.be) [What you'll be doing](https://www.techwillsaveus.com/az/wp-content/uploads/2014/06/CodeClub_DIYGamer_TermOverview.pdf)
 
 # Equipment needed for the session
 
