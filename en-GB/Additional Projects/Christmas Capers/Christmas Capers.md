@@ -1,15 +1,10 @@
----
-title: Christmas Capers
-level: Scratch +
-language: en-GB
-stylesheet: scratch
-embeds: "*.png"
-materials: ["*.sb2", "Resources/*"]
-...
+* * *
 
-# Introduction { .intro}
+title: Christmas Capers level: Scratch + language: en-GB stylesheet: scratch embeds: "*.png" materials: ["*.sb2", "Resources/*"] ...
 
-__In this project we’ll create a game with scrolling backgrounds, scoring and a festive game over screen.__
+# Introduction {.intro}
+
+**In this project we’ll create a game with scrolling backgrounds, scoring and a festive game over screen.**
 
 A disaster in a toy factory has sent presents flying into the sky, help Rudolph to save Christmas by catching the presents!
 
@@ -17,12 +12,13 @@ A disaster in a toy factory has sent presents flying into the sky, help Rudolph 
 
 # Step 1: Make Rudolph fly {.activity}
 
-## Activity Checklist { .check}
+## Activity Checklist {.check}
 
-+ Start a new Scratch project. Delete the cat by right-clicking it and selecting Delete
-+ Replace the background with **SkyBackground.png**.
-+ Add the Rudolph sprite to the project (use the **resources/Rudolph.png** file)
-+ Make Rudolph follow the mouse by using the following script:
+* Start a new Scratch project. Delete the cat by right-clicking it and selecting Delete
+* Replace the background with **SkyBackground.png**.
+* Add the Rudolph sprite to the project (use the **resources/Rudolph.png** file)
+* Make Rudolph follow the mouse by using the following script:
+
 ```blocks
     when FLAG clicked
         go to front
@@ -30,16 +26,17 @@ A disaster in a toy factory has sent presents flying into the sky, help Rudolph 
             go to [mouse-pointer v]
 ```
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag and move the mouse.__ Does Rudolph follow the mouse?
+**Click the green flag and move the mouse.** Does Rudolph follow the mouse?
 
-## Save your project { .save}
+## Save your project {.save}
 
-+ To make the game more interesting we will add some moving snowy hills to make it look like Rudolph is flying. Add the Snow sprite to the project (use the __SnowHills.png__ file).
-+ Rename the sprite to __Snow1__.
-+ Create a new variable by clicking the *Data* tab and then **make a variable**. Call it `ScrollX`{.blockorange} and make it for all sprites, then uncheck the box next to it to remove it from the stage. This will be used to control how the hills move.
-+ Add the following script to make the hills move:
+* To make the game more interesting we will add some moving snowy hills to make it look like Rudolph is flying. Add the Snow sprite to the project (use the **SnowHills.png** file).
+* Rename the sprite to **Snow1**.
+* Create a new variable by clicking the *Data* tab and then **make a variable**. Call it `ScrollX`{.blockorange} and make it for all sprites, then uncheck the box next to it to remove it from the stage. This will be used to control how the hills move.
+* Add the following script to make the hills move:
+
 ```blocks
     when FLAG clicked
         set y to (0)
@@ -50,15 +47,16 @@ __Click the green flag and move the mouse.__ Does Rudolph follow the mouse?
                 set [ScrollX v] to [0]
 ```
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag.__ Do the hills move? What happens as the hills move to the side of the screen?
+**Click the green flag.** Do the hills move? What happens as the hills move to the side of the screen?
 
-## Save your project { .save}
+## Save your project {.save}
 
-+ Let’s fix the issue with the snowy hills suddenly reappearing. Add a second set of hills to the stage. Use the __new sprite from file__ button to add the Snow sprite to the project again (use the **SnowHills.png** file).
-+ Rename the sprite to __Snow2__.
-+ Add the following script to the Snow2 sprite to allow the second set of hills to follow closely behind the first:
+* Let’s fix the issue with the snowy hills suddenly reappearing. Add a second set of hills to the stage. Use the **new sprite from file** button to add the Snow sprite to the project again (use the **SnowHills.png** file).
+* Rename the sprite to **Snow2**.
+* Add the following script to the Snow2 sprite to allow the second set of hills to follow closely behind the first:
+
 ```blocks
     when FLAG clicked
         set y to (0)
@@ -66,21 +64,22 @@ __Click the green flag.__ Do the hills move? What happens as the hills move to t
             set x to <(ScrollX) + [479]>
 ```
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag.__ Do the hills move? Has the issue with the reappearing trees been fixed?
+**Click the green flag.** Do the hills move? Has the issue with the reappearing trees been fixed?
 
-## Save your project { .save}
+## Save your project {.save}
 
-# Step 2: Falling Presents { .activity .new-page }
+# Step 2: Falling Presents {.activity.new-page}
 
-## Activity Checklist { .check}
+## Activity Checklist {.check}
 
-+ We now need to add in the presents for Rudolph to collect. Add the **Present** sprite to the project (use the **Present.png** file).
-+ __Create a new variable__ by clicking the `Data`{.blocklightgrey}  tab and then **make a variable**. Call it `Finish`{.blockorange} and make it for this sprite only, then uncheck the box next to it to remove it from the stage. This will be used to control when the present should be removed from the game.
-+ __Create another variable__ and call it `Speed`{.blockorange} and make it for this sprite only, then uncheck the box next to it to remove it from the stage. This will be used to control the speed that the present falls down the screen.
-+ Add the following script to the **Present** sprite to allow it to fall from the sky. Note that we will use `pick random`{.blockgreen} to make the present appear in a different place each time.
-+ By using the `touching [ Rudolph ]`{.blocklightblue} block we can make the present disappear when touched. We can use this later to keep a score.
+* We now need to add in the presents for Rudolph to collect. Add the **Present** sprite to the project (use the **Present.png** file).
+* **Create a new variable** by clicking the `Data`{.blocklightgrey} tab and then **make a variable**. Call it `Finish`{.blockorange} and make it for this sprite only, then uncheck the box next to it to remove it from the stage. This will be used to control when the present should be removed from the game.
+* **Create another variable** and call it `Speed`{.blockorange} and make it for this sprite only, then uncheck the box next to it to remove it from the stage. This will be used to control the speed that the present falls down the screen.
+* Add the following script to the **Present** sprite to allow it to fall from the sky. Note that we will use `pick random`{.blockgreen} to make the present appear in a different place each time.
+* By using the `touching [ Rudolph ]`{.blocklightblue} block we can make the present disappear when touched. We can use this later to keep a score.
+
 ```blocks
     when FLAG clicked
         forever
@@ -96,14 +95,15 @@ __Click the green flag.__ Do the hills move? Has the issue with the reappearing 
                     set (Finish) to [1]
 ```
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag.__ Do the presents fall from the sky? Do they disappear when Rudolph touches them or they hit the ground?
+**Click the green flag.** Do the presents fall from the sky? Do they disappear when Rudolph touches them or they hit the ground?
 
-## Save your project { .save}
+## Save your project {.save}
 
-+ Let’s make the game more interesting by changing the colour of the presents each time they fall. Do this by using the `change colour`{.blockpurple} block.
-+ Change the speed of each present by replacing `set Speed to -1`{.blockorange} with the `pick random`{.blockgreen} block. Try different values such as **-10** to **-1**. Your script should now look like this.
+* Let’s make the game more interesting by changing the colour of the presents each time they fall. Do this by using the `change colour`{.blockpurple} block.
+* Change the speed of each present by replacing `set Speed to -1`{.blockorange} with the `pick random`{.blockgreen} block. Try different values such as **-10** to **-1**. Your script should now look like this.
+
 ```blocks
     when FLAG clicked
         forever
@@ -120,19 +120,20 @@ __Click the green flag.__ Do the presents fall from the sky? Do they disappear w
                     set (Finish) to [1]
 ```
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag.__ Do the presents fall at different speeds and colours?
+**Click the green flag.** Do the presents fall at different speeds and colours?
 
-## Save your project { .save}
+## Save your project {.save}
 
-# Step 3: Scoring and Sound Effects { .activity}
+# Step 3: Scoring and Sound Effects {.activity}
 
-## Activity Checklist { .check}
+## Activity Checklist {.check}
 
-+ __Let’s change our script to keep track of a score within the game.__ We can then use this later to work out when the game over message should appear.
-+ Create a new variable. Call it `Score`{.blockorange} and make it for all sprites. Leave this variable ticked so it appears on the screen.
-+ Change the script behind the **Present** sprite to look like this. Note we have both added sound effects with the `play drum`{.blockpink} command and also `change [ score ] by 1`{.blockorange} when Rudolph touches the present.
+* **Let’s change our script to keep track of a score within the game.** We can then use this later to work out when the game over message should appear.
+* Create a new variable. Call it `Score`{.blockorange} and make it for all sprites. Leave this variable ticked so it appears on the screen.
+* Change the script behind the **Present** sprite to look like this. Note we have both added sound effects with the `play drum`{.blockpink} command and also `change [ score ] by 1`{.blockorange} when Rudolph touches the present.
+
 ```blocks
     when FLAG clicked
         forever
@@ -154,9 +155,10 @@ __Click the green flag.__ Do the presents fall at different speeds and colours?
 
 Let’s add some music to the game:
 
-+ Import the sound file **Jingle_Bells.mp3** to the __Stage__.
+* Import the sound file **Jingle_Bells.mp3** to the **Stage**.
 
-+ Add the following script to the __Stage__. This will `set score to 0`{.blockorange} when the game is started. It will also play Jingle Bells while the game is being played.
+* Add the following script to the **Stage**. This will `set score to 0`{.blockorange} when the game is started. It will also play Jingle Bells while the game is being played.
+
 ```blocks
     when FLAG clicked
         set [ScrollX v] to [0]
@@ -166,16 +168,17 @@ Let’s add some music to the game:
 
 Note, if at first the music sounds ‘choppy’, save your project, close Scratch and then open your project again.
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag.__ Does the score change when Rudolph touches a present?
+**Click the green flag.** Does the score change when Rudolph touches a present?
 
-## Save your project { .save}
+## Save your project {.save}
 
-# Step 4: Game over { .activity}
+# Step 4: Game over {.activity}
 
-+ Let’s use our score to work out when the game over message should appear.
-+ Change the script on the __Stage__ so when the `Score`{.blockorange} reaches **10** we will `broadcast`{.blockyellow} a __GameOver__ message.
+* Let’s use our score to work out when the game over message should appear.
+* Change the script on the **Stage** so when the `Score`{.blockorange} reaches **10** we will `broadcast`{.blockyellow} a **GameOver** message.
+
 ```blocks
     when FLAG clicked
         set [ScrollX v] to [0]
@@ -186,8 +189,9 @@ __Click the green flag.__ Does the score change when Rudolph touches a present?
             broadcast [GameOver v] and wait
 ```
 
-+ We now need to add in our GameOver message. Add the __GameOver__ sprite to the project (use the **GameOver.png** file).
-+ __Add the following script to the GameOver sprite.__ This will `hide`{.blockpurple} the picture when the game starts and `show`{.blockpurple} it when the GameOver message is received.
+* We now need to add in our GameOver message. Add the **GameOver** sprite to the project (use the **GameOver.png** file).
+* **Add the following script to the GameOver sprite.** This will `hide`{.blockpurple} the picture when the game starts and `show`{.blockpurple} it when the GameOver message is received.
+
 ```blocks
     when FLAG clicked
         hide
@@ -198,20 +202,20 @@ __Click the green flag.__ Does the score change when Rudolph touches a present?
             stop [all v]
 ```
 
-## Test Your Project { .flag}
+## Test Your Project {.flag}
 
-__Click the green flag.__ Does the score change when Rudolph touches a present?
+**Click the green flag.** Does the score change when Rudolph touches a present?
 
-## Save your project { .save}
+## Save your project {.save}
 
-##Challenge: Make the game harder { .challenge}
+## Challenge: Make the game harder {.challenge}
 
 * Can you make the presents wobble on their way down the screen?
 * Can you add more than one present to the game at the same time?
 * Change the game over message to appear after 20 presents are collected.
 * Can you reduce the score by 1 when a present hits the ground?
 
-## Save your project { .save}
+## Save your project {.save}
 
 Well done, you’ve finished! Now you can enjoy your game!
 
