@@ -1,14 +1,10 @@
----
-title: Lesson 3 - Notes for Club Leader
-language: en-GB
-embeds: ["*.png"]
-materials: [""]
-...
+* * *
+
+title: Lesson 3 - Notes for Club Leader language: en-GB embeds: ["*.png"] materials: [""] ...
 
 # Club leader resources
 
-[Intro to Arduino (video)](https://www.youtube.com/watch?v=k3GJ0HcxNlQ)
-[Intro to Arduino Software (video)](https://www.youtube.com/watch?v=gv8oHPmdKMU)
+[Intro to Arduino (video)](https://www.youtube.com/watch?v=k3GJ0HcxNlQ) [Intro to Arduino Software (video)](https://www.youtube.com/watch?v=gv8oHPmdKMU)
 
 # Equipment needed for the session
 
