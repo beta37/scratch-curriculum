@@ -2,7 +2,7 @@
 
 title: Beat the Goalie — Notes for Club Leaders language: en-GB embeds: "*.png" ...
 
-# Вступ:
+# Introduction:
 
 In this project, children will learn how to create a football game in which the player has to score as many goals as they can in 30 seconds.
 
