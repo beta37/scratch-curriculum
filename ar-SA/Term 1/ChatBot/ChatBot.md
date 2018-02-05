@@ -2,7 +2,7 @@
 
 title: ChatBot level: Scratch 1 language: en-GB stylesheet: scratch embeds: "*.png" materials: ["Club Leader Resources/*"] ...
 
-# مقدمة {.intro}
+# Introduction {.intro}
 
 You are going to learn how to program your own talking robot!
 
@@ -19,13 +19,13 @@ You are going to learn how to program your own talking robot!
 
 + Before you start making your chatbot, you need to decide on their personality.
     
-    + ما هو الاسم؟
+    + What is their name?
     + Where do they live?
-    + هل هم سعداء؟ خطيرة؟ مضحك؟ خجولة؟ ودية؟
+    + Are they happy? serious? funny? shy? friendly?
 
 + Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at [jumpto.cc/scratch-new](http://jumpto.cc/scratch-new).
 
-+ اختر واحد من هذه العفاريت حرف، وإضافتها إلى المشروع الخاص بك:
++ Choose one of these character sprites, and add them to your project:
     
     ![screenshot](chatbot-characters.png)
 
@@ -49,7 +49,7 @@ Now that you have a chatbot with a personality, let's program it to talk to you.
     say [What a lovely name!] for (2) secs
 ```
 
-+ انقر فوق تشاتبوت الخاص بك لاختبار بها. بعد أن يطلب منك اسمك، اكتبه في مربع على طول الجزء السفلي من المرحلة.
++ Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage.
     
     ![screenshot](chatbot-text.png)
 
@@ -69,7 +69,7 @@ You can then change the text `hello` to say `Hi`, and drag the light blue `answe
 
 ![screenshot](chatbot-answer.png)
 
-+ اختبار هذا البرنامج الجديد. أنها تعمل كما هو متوقع؟ يمكنك إصلاح أية مشاكل الذي يمكنك أن ترى؟ (تلميح: يمكنك محاولة إضافة في الفضاء في مكان ما!)
++ Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)
 
 + It may be that you want to store the user's name in a variable, so that you can use it again later. Create a new variable called `name` {.blockdata}. If you've forgotten how to do this, the 'Balloons' project will help you.
 
