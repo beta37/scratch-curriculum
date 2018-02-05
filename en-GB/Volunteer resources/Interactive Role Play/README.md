@@ -1,10 +1,10 @@
-#Interactive Role Play - Introduction
+# Interactive Role Play - Introduction
 
-##What is this?
+## What is this?
 
 The following documents are ideas on interactive role plays that can be conducted with the kids in the attempt to cement some of the core programming concepts in their minds.
 
-##Why do we need this?
+## Why do we need this?
 
 Well, in short, you don't.
 
@@ -18,10 +18,9 @@ I thought I'd try this as a way to hopefully cement some of the core concepts su
 
 By having the kids pretend to be `sprite`s and acting out the `script`s they will hopefully work up a connection between what they are doing and what they end up programming.
 
+## Contribute
 
-##Contribute
-
-This is a work in progress.  I intend to add more examples as I try them out.
+This is a work in progress. I intend to add more examples as I try them out.
 
 Please use these if you think they will come in handy and even more importantly, please contribute to them if you have any great ideas or find something works particularly well, or not so.
 
