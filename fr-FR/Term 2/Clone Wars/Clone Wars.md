@@ -288,7 +288,9 @@ Because you've used a `broadcast [game over] and wait` {.blockevents} block on y
 
 ## Challenge: Improve your game {.challenge}
 
-What improvements can you make to your game? Here are some ideas: + Add health packs that you can collect to gain extra lives;
+What improvements can you make to your game? Here are some ideas:
+
++ Add health packs that you can collect to gain extra lives;
 
 ![screenshot](invaders-aid.png)
 
