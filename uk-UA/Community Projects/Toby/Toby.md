@@ -349,8 +349,11 @@ But the problem is: nothing happens when Toby touches the ball. Let's fix this!
 
 ## Challenge 2: make the game more challenging {.challenge}
 
-What could you do to make the game more challenging? Here are some suggestions: + Make the bowls hide more quickly, and for longer. Which parameters do you need to modify to achieve this?  
-+ Make the ball move a lot faster, or add another ball: maybe it could be a basketball this time. You can copy the script from the beach ball onto the basketball using drag and drop, there is no need to rewrite the whole script... + You could make a level 2 for your game, with a different background, and more balls bouncing around. Instead of collecting cheese-puffs bowls, Toby could this time collect some donuts. (There is a **donut** sprite in the Scratch library). You could create a `level` {.blockdata} variable to keep track of the level you're currently playing.
+What could you do to make the game more challenging? Here are some suggestions:
+
++ Make the bowls hide more quickly, and for longer. Which parameters do you need to modify to achieve this? 
++ Make the ball move a lot faster, or add another ball: maybe it could be a basketball this time. You can copy the script from the beach ball onto the basketball using drag and drop, there is no need to rewrite the whole script...
++ You could make a level 2 for your game, with a different background, and more balls bouncing around. Instead of collecting cheese-puffs bowls, Toby could this time collect some donuts. (There is a **donut** sprite in the Scratch library). You could create a `level` {.blockdata} variable to keep track of the level you're currently playing.
 
 ## Save your project {.save}
 
