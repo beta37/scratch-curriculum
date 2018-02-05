@@ -1,15 +1,10 @@
----
-title: Lesson 2 - Notes for Club Leader
-language: en-GB
-embeds: ["*.png"]
-materials: [""]
-...
+* * *
+
+title: Lesson 2 - Notes for Club Leader language: en-GB embeds: ["*.png"] materials: [""] ...
 
 # Club leader resources
 
-[How to solder (video)](https://www.youtube.com/watch?v=CYr-6ut-pkM&index=3&list=PL3qxdM6ba83QwHoPyv0Vrxrmf4C1Je68W)
-[How to desolder (video)](https://www.youtube.com/watch?v=Ib3EXLCRKHw&index=4&list=PL3qxdM6ba83QwHoPyv0Vrxrmf4C1Je68W)
-[Soldering the DIY Gamer (video - optional)](https://www.youtube.com/watch?v=BgBFNmVMjQ4)
+[How to solder (video)](https://www.youtube.com/watch?v=CYr-6ut-pkM&index=3&list=PL3qxdM6ba83QwHoPyv0Vrxrmf4C1Je68W) [How to desolder (video)](https://www.youtube.com/watch?v=Ib3EXLCRKHw&index=4&list=PL3qxdM6ba83QwHoPyv0Vrxrmf4C1Je68W) [Soldering the DIY Gamer (video - optional)](https://www.youtube.com/watch?v=BgBFNmVMjQ4)
 
 # Equipment needed for the session
 
