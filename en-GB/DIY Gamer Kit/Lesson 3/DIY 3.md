@@ -1,10 +1,6 @@
----
-title: Introducing Arduino
-level: DIY Gamer Kit
-language: en-GB
-stylesheet: scratch
-embeds: ["*.png"]
-...
+* * *
+
+title: Introducing Arduino level: DIY Gamer Kit language: en-GB stylesheet: scratch embeds: ["*.png"] ...
 
 # Resources
 
